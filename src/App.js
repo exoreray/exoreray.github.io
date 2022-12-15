@@ -4,6 +4,8 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
+// import ThreeScene from './components/3D';
+import Cube from './components/Cube';
 import './App.css';
 
 const App = () => {
@@ -15,6 +17,8 @@ const App = () => {
         <Projects />
         <Skills />
         <Footer />
+        <Cube/>
+        {/* <ThreeScene/> */}
     </div>
   );
 }
