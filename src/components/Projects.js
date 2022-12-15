@@ -1,5 +1,5 @@
 // Create your Projects component here
-import Project from '../assets/login.png';
+import Project from '../assets/project.png';
 import data from '../data/projects.json';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
