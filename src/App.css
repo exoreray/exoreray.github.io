@@ -20,6 +20,7 @@ a, a:active, a:hover {
 }
 
 .header-logo {
+  z-index: 3;
   padding: 0px 10px;
   position: fixed;
   display: flex;
@@ -27,6 +28,7 @@ a, a:active, a:hover {
 }
 
 .header-name {
+  z-index: 2;
   color: #edf2f4;
   border: 1px solid #edf2f4;
   padding: 0.5em;
@@ -173,7 +175,7 @@ a, a:active, a:hover {
   font-size: 4rem;
   text-transform: uppercase;
   letter-spacing: .3rem;
-  color: black;
+  color: rgb(82, 82, 82);
 }
 
 .about-info {
@@ -190,6 +192,7 @@ a, a:active, a:hover {
   display: flex;
   display: block;
   align-items: center;
+  color: rgb(151, 151, 151);
 }
 
 .about .about-img {
@@ -643,3 +646,12 @@ a, a:active, a:hover {
     display: inline-block;
 }
 /* End Footer section  */
+
+.cube {
+  z-index: -1;
+  position:fixed; /* position the component absolutely within the parent element */
+  left: 50%; /* align the left edge of the component with the horizontal center of the parent element */
+  top: 50%; /* align the top edge of the component with the vertical center of the parent element */
+  transform: translate(-50%, -50%); /* move the component back by half its width and height to center it within the parent element */
+  overflow: hidden; /* hide the content of the component when it overflows its bounds */
+}
