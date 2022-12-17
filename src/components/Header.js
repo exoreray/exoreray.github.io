@@ -2,9 +2,9 @@
 const Header = () => {
     return (
         <div className="header">
-                <div className="header-logo">
-                    <a href="#app"><h3 className="header-name">Ray Xi</h3></a>
-                </div>
+                <a href="#app"><div className="header-logo">
+                    <h3 className="header-name">Ray Xi</h3>
+                </div></a>
                 <div className="header-container">
                     <div className="nav-item"><a href="#about">About</a></div>
                     <div className="nav-item"><a href="#projects">Projects</a></div>
