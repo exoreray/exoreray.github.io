@@ -188,7 +188,7 @@ a, a:active, a:hover {
   line-height: 2rem;
   max-width: 50%;
   margin-top: -0.2rem;
-  overflow: scroll;
+  /* overflow: scroll; */
   display: flex;
   display: block;
   align-items: center;
