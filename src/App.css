@@ -107,14 +107,14 @@ a, a:active, a:hover {
   width: 120%;
   transform: scale(.95);
   position: relative;  /* position the image relative to its normal position */
-  z-index: 1;  /* set the z-index of the image to 1 to ensure it is positioned above the circular hole */
+  z-index: 3;  /* set the z-index of the image to 1 to ensure it is positioned above the circular hole */
   width: 200px;  /* set the width of the image to 200 pixels */
   height: 200px;  /* set the height of the image to 200 pixels */
 }
 
 .hole {
   position: absolute;  /* position the hole absolutely, relative to its parent container */
-  z-index: 0;  /* set the z-index of the hole to 0 to ensure it is positioned below the image */
+  z-index: 2;  /* set the z-index of the hole to 0 to ensure it is positioned below the image */
   top: 42%;  /* position the hole at the center of the image vertically */
   left: 50%;  /* position the hole at the center of the image horizontally */
   transform: translate(-50%, -50%);  /* shift the hole 50% left and 50% up to properly center it */
@@ -122,24 +122,28 @@ a, a:active, a:hover {
   height: 150px;  /* set the height of the hole to 150 pixels */
   border-radius: 50%;  /* make the hole circular */
   border-style: solid;
+  box-shadow: 0px -5px 20px 10px rgb(164, 164, 164);
   border-color: #ffffff6d;  /* set the background color of the hole to white (#ffffff) */
 }
 
 .body-content {
   padding-top: 2rem;
   text-align: center;
+  z-index: 2;
 }
 
 .body-headline {
   font-size: 3rem;
   padding-bottom: 1rem;
   color: white;
+  z-index: 2;
 }
 
 .body-text {
   font-size: 1.5rem;
   padding-bottom: 1rem;
   color: lightgray;
+  z-index: 2;
 }
 
 .body-icons {
@@ -147,16 +151,19 @@ a, a:active, a:hover {
   width: 100%;
   justify-content: center;
   font-size: 2.8rem;
+  z-index: 2;
 }
 
 .body .icon-link {
   padding: 0.8rem 0.8rem;
   color: white;
+  z-index: 2;
 }
 
 .icon-link:hover {
   color: lightgray;
   transform: scale(1.05);
+  z-index: 2;
 }
 /* End Body Section */ 
 
@@ -175,7 +182,7 @@ a, a:active, a:hover {
   font-size: 4rem;
   text-transform: uppercase;
   letter-spacing: .3rem;
-  color: rgb(82, 82, 82);
+  color: rgb(156, 156, 156);
 }
 
 .about-info {
@@ -655,3 +662,33 @@ a, a:active, a:hover {
   transform: translate(-50%, -50%); /* move the component back by half its width and height to center it within the parent element */
   overflow: hidden; /* hide the content of the component when it overflows its bounds */
 }
+
+.raindrop {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: blue;
+  border-radius: 50%;
+}
+.rain-scene {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+}
+
+.random-letter {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  color: rgb(87, 87, 87);
+  /* background: rgba(0, 255, 55, 0.285); */
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+}
+.random-letter-grid {
+  position: absolute;
+  z-index: 1;
+}
+
