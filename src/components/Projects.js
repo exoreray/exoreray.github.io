@@ -36,7 +36,13 @@ const Projects = () => {
                         return (
                             <div key={key} className="project">
                                 <div className="content">
-                                    <img src={Project} alt="Project" />
+                                <a
+                                        target="_blank"
+                                        href={project.link}
+                                        rel="noreferrer"
+                                        >
+                                    <img src={Project} alt="Project" >
+                                    </img>
                                     <h2 className="name">{project.name}</h2>
                                     {
                                         project.description.length > 130 
@@ -52,6 +58,7 @@ const Projects = () => {
                                         >Detail
                                         </a>
                                     </div>
+                                    </a>
                                 </div>
                             </div>
                         )

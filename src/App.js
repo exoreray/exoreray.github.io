@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 import Cube from './components/Cube';
 // import Raindrop from './components/Rain';
 // import RandomLetter from './components/RandomLetter';
-import RandomLetterGrid from './components/RandomLetterGrid';
+// import RandomLetterGrid from './components/RandomLetterGrid';
 import './App.css';
 
 const App = () => {
