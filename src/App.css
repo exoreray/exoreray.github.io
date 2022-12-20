@@ -20,7 +20,7 @@ a, a:active, a:hover {
 }
 
 .header-logo {
-  z-index: 4;
+  z-index: 5;
   padding: 0px 10px;
   position: fixed;
   display: flex;
