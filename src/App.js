@@ -4,8 +4,10 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
-// import ThreeScene from './components/3D';
 import Cube from './components/Cube';
+// import Raindrop from './components/Rain';
+// import RandomLetter from './components/RandomLetter';
+import RandomLetterGrid from './components/RandomLetterGrid';
 import './App.css';
 
 const App = () => {
@@ -18,8 +20,10 @@ const App = () => {
         <Skills />
         <Footer />
         <Cube/>
-        {/* <ThreeScene/> */}
+        {/* <RandomLetterGrid /> */}
+
     </div>
+    
   );
 }
 

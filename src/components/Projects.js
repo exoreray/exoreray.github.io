@@ -29,36 +29,36 @@ const Projects = () => {
             <div className="heading">
                 <h2>WORKS</h2>
             </div>
-                <div className="projects-container">
-                    <Slider {...settings}>
-                    {
-                        data.map((project, key) => {
-                            return (
-                                <div key={key} className="project">
-                                    <div className="content">
-                                        <img src={Project} alt="Project" />
-                                        <h2 className="name">{project.name}</h2>
-                                        {
-                                            project.description.length > 130 
-                                            ? <p className='description-min'>{project.description}</p>
-                                            :  <p className='description'>{project.description}</p>                                            
-                                        }
-                                        <div>
-                                            <a
-                                            className="project-button"
-                                            target="_blank"
-                                            href={project.link}
-                                            rel="noreferrer"
-                                            >GitHub
-                                            </a>
-                                        </div>
+            <div className="projects-container">
+                <Slider {...settings}>
+                {
+                    data.map((project, key) => {
+                        return (
+                            <div key={key} className="project">
+                                <div className="content">
+                                    <img src={Project} alt="Project" />
+                                    <h2 className="name">{project.name}</h2>
+                                    {
+                                        project.description.length > 130 
+                                        ? <p className='description-min'>{project.description}</p>
+                                        :  <p className='description'>{project.description}</p>                                            
+                                    }
+                                    <div>
+                                        <a
+                                        className="project-button"
+                                        target="_blank"
+                                        href={project.link}
+                                        rel="noreferrer"
+                                        >Detail
+                                        </a>
                                     </div>
                                 </div>
-                            )
-                        })
-                    }
-                    </Slider>
-                </div>
+                            </div>
+                        )
+                    })
+                }
+                </Slider>
+            </div>
         </div>
     )
 }

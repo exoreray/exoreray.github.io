@@ -1,5 +1,15 @@
 [
     {
+        "name" : "resume",
+        "description" : "resume document",
+        "link" : "https://drive.google.com/file/d/1s997iR1ZtaIX0FfwX6QCV4qbPaafM2EI/view?usp=sharing"
+    },
+    {
+        "name" : "Robotic",
+        "description" : "Robotic Demo",
+        "link" : "https://playwithrobot-berkeley.github.io/"
+    },
+    {
         "name" : "Music",
         "description" : "EDM\n future bass",
         "link" : "https://on.soundcloud.com/UbjDj"
@@ -8,16 +18,6 @@
         "name" : "CS",
         "description" : "CS projects",
         "link" : "https://github.com/"
-    },
-    {
-        "name" : "Robotic",
-        "description" : "Robotic Demo",
-        "link" : "https://playwithrobot-berkeley.github.io/"
-    },
-    {
-        "name" : "resume",
-        "description" : "resume document",
-        "link" : "https://drive.google.com/file/d/1s997iR1ZtaIX0FfwX6QCV4qbPaafM2EI/view?usp=sharing"
     },
     {
         "name" : "Empty Slot",
