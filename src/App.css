@@ -15,12 +15,12 @@ a, a:active, a:hover {
   left: 0;
   right: 0;
   height: 5rem;
-  z-index: 2;
+  z-index: 4;
   background: rgb(43, 43, 43);
 }
 
 .header-logo {
-  z-index: 3;
+  z-index: 4;
   padding: 0px 10px;
   position: fixed;
   display: flex;
@@ -28,7 +28,7 @@ a, a:active, a:hover {
 }
 
 .header-name {
-  z-index: 2;
+  z-index: 4;
   color: #edf2f4;
   border: 1px solid #edf2f4;
   padding: 0.5em;
@@ -46,7 +46,7 @@ a, a:active, a:hover {
   padding: 1.65rem;
   text-align: right;
   color: lightgrey;
-  z-index: 2;
+  z-index: 4;
   transition: all .2s linear;
 }
 
