@@ -49,16 +49,12 @@ const Projects = () => {
                                         ? <p className='description-min'>{project.description}</p>
                                         :  <p className='description'>{project.description}</p>                                            
                                     }
-                                    <div>
-                                        <a
+                                    <div
                                         className="project-button"
-                                        target="_blank"
-                                        href={project.link}
                                         rel="noreferrer"
                                         >Detail
-                                        </a>
                                     </div>
-                                    </a>
+                                </a>
                                 </div>
                             </div>
                         )
