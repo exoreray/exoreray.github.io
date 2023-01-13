@@ -5,7 +5,8 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Footer from './components/Footer';
 import Cube from './components/Cube';
-import LoginPage from './components/LoginPage';
+import Login from './components/Login';
+import Register from './components/Register';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 const App = () => {
@@ -13,7 +14,8 @@ const App = () => {
     <BrowserRouter>
     <Routes>
       <Route path="/" element={<><Header/><Body /><About /><Projects/><Skills/><Footer/><Cube/></>}/>
-      <Route path="/login" element={<LoginPage />}/>
+      <Route path="/login" element={<Login />}/>
+      <Route path="/register" element={<Register />}/>
     </Routes>
   </BrowserRouter>
   );
