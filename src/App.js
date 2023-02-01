@@ -19,7 +19,7 @@ const App = () => {
         <meta property="og:title" content="The Rock" />
         <meta property="og:type" content="video.movie" />
         <meta property="og:url" content="https://exoreray.github.io/" />
-        <meta property="og:image" content="https://ia.media-imdb.com/images/rock.jpg" />
+        <meta property="og:image" content="https://www.databricks.com/wp-content/uploads/2022/09/2022-09-mit-cio-vision-report.png" />
       </Helmet>
       <BrowserRouter>
         <Routes>
