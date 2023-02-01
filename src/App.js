@@ -17,7 +17,9 @@ const App = () => {
       <Helmet>
         <title>The Rock (1996)</title>
         <meta property="og:title" content="The Rock" />
-        <meta property="og:type" content="video.movie" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="Sean Connery found fame and fortune as the
+           suave, sophisticated British agent, James Bond." />
         <meta property="og:url" content="https://exoreray.github.io/" />
         <meta property="og:image" content="https://www.databricks.com/wp-content/uploads/2022/09/2022-09-mit-cio-vision-report.png" />
       </Helmet>
