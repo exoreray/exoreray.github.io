@@ -8,21 +8,11 @@ import Cube from './components/Cube';
 import Login from './components/Login';
 import Register from './components/Register';
 import './App.css';
-import { Helmet } from "react-helmet";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 const App = () => {
   return (
     <div>
-      <Helmet>
-        <title>The Rock (1996)</title>
-        <meta property="og:title" content="The Rock" />
-        <meta property="og:type" content="website" />
-        <meta property="og:description" content="Sean Connery found fame and fortune as the
-           suave, sophisticated British agent, James Bond." />
-        <meta property="og:url" content="https://exoreray.github.io/" />
-        <meta property="og:image" content="https://www.databricks.com/wp-content/uploads/2022/09/2022-09-mit-cio-vision-report.png" />
-      </Helmet>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<><Header /><Body /><About /><Projects /><Skills /><Footer /><Cube /></>} />
