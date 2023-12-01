@@ -11,6 +11,7 @@ const Projects = () => {
         infinite: false,
         initialSlide: 0,
         slidesToShow: 3,
+        className: "custom-slider",
         slidesToScroll: 3,
         responsive: [
         {
