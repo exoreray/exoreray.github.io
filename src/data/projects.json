@@ -1,27 +1,42 @@
 [
     {
-        "name" : "resume",
-        "description" : "resume document",
-        "link" : "https://drive.google.com/file/d/1s997iR1ZtaIX0FfwX6QCV4qbPaafM2EI/view?usp=sharing"
+        "name" : "FlowGPT",
+        "description" : "FlowGPT",
+        "link" : "https://flowgpt.com/",
+        "thumbnail" : "https://flowgpt.com/flowgpt.png"
     },
     {
-        "name" : "Robotic",
-        "description" : "Robotic Demo",
-        "link" : "https://playwithrobot-berkeley.github.io/"
+        "name" : "StartUp Harbor",
+        "description" : "StartUp Harbor",
+        "link" : "https://startup-matching.vercel.app/",
+        "thumbnail" : "https://startup-matching.vercel.app/favicon.ico"
     },
     {
         "name" : "Music",
         "description" : "EDM\n future bass",
-        "link" : "https://on.soundcloud.com/UbjDj"
+        "link" : "https://on.soundcloud.com/UbjDj",
+        "thumbnail" : "https://www.svgrepo.com/download/9944/soundcloud-logo.svg"
     },
     {
-        "name" : "CS",
-        "description" : "CS projects",
-        "link" : "https://github.com/"
+        "name" : "F1 autonomous racing car",
+        "description" : "F1 autonomous racing car",
+        "link" : "https://eecs106b-banana-radiation.github.io/",
+        "thumbnail" : "https://i0.wp.com/roar.berkeley.edu/wp-content/uploads/2019/01/cropped-Vive-Center-Logo.jpg"
+
     },
     {
-        "name" : "Empty Slot",
-        "description" : "for future",
-        "link" : "https://github.com/"
+        "name" : "Handwriting robot",
+        "description" : "Handwriting robot",
+        "link" : "https://playwithrobot-berkeley.github.io/",
+        "thumbnail" : "https://exoreray.github.io/static/media/project.e0da2530164713549545.png"
+
+    },
+    {
+        "name" : "resume",
+        "description" : "resume document",
+        "link" : "https://drive.google.com/file/d/1s997iR1ZtaIX0FfwX6QCV4qbPaafM2EI/view?usp=sharing",
+        "thumbnail" : "https://exoreray.github.io/static/media/project.e0da2530164713549545.png"
+
     }
+    
 ]
