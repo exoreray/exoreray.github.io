@@ -65,11 +65,9 @@ const CursorTrail = () => {
       // Ignore synthetic mouse events that occur after touch events
       const now = Date.now();
       if (now - lastTouchTime < 500) {
-        console.log('Ignoring synthetic mousemove after touch');
         return;
       }
 
-      console.log('mousemove fired:', e.clientX, e.clientY);
       cursorRef.current = { x: e.clientX, y: e.clientY };
 
       // Create new particles (reduced for performance)
