@@ -15,8 +15,7 @@ const LandingPage = () => {
           {/* Simplified lighting for better performance */}
           <ambientLight intensity={0.6} />
           <directionalLight position={[5, 5, 5]} intensity={1.5} color="#FFD700" />
-          <pointLight position={[-5, 3, -5]} intensity={1} color="#9B88DA" />
-          <pointLight position={[0, -3, 3]} intensity={0.8} color="#FF69B4" />
+          <directionalLight position={[-5, 0, -3]} intensity={0.8} color="#FFF8F0" />
 
           <Suspense fallback={null}>
             <Crystal />
@@ -37,7 +36,7 @@ const LandingPage = () => {
       <div className="relative z-20 flex flex-col items-center justify-center h-full text-center px-4">
         {/* Name Animation - Elegant Serif */}
         <motion.h1
-          className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-6 tracking-wide text-white-warm"
+          className="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-6 tracking-wide text-text-light dark:text-text-dark"
           style={{
             textShadow: '0 0 40px rgba(255, 215, 0, 0.3), 0 0 80px rgba(255, 215, 0, 0.1)',
             fontWeight: 300,
@@ -94,7 +93,7 @@ const LandingPage = () => {
 
         {/* Subtitle - Display Font */}
         <motion.p
-          className="font-display text-lg sm:text-xl md:text-2xl text-champagne max-w-2xl mb-8 tracking-wider"
+          className="font-display text-lg sm:text-xl md:text-2xl text-bronze dark:text-champagne max-w-2xl mb-8 tracking-wider"
           style={{
             textShadow: '0 0 20px rgba(247, 231, 206, 0.2)',
             fontWeight: 300
@@ -108,7 +107,7 @@ const LandingPage = () => {
 
         {/* Description */}
         <motion.p
-          className="font-sans text-sm sm:text-base md:text-lg text-cream/80 max-w-xl mb-12 leading-relaxed"
+          className="font-sans text-sm sm:text-base md:text-lg text-text-light/80 dark:text-cream/80 max-w-xl mb-12 leading-relaxed"
           style={{ fontWeight: 300 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -132,7 +131,7 @@ const LandingPage = () => {
             repeatDelay: 0.5
           }}
         >
-          <p className="font-display text-xs sm:text-sm text-champagne/60 mb-2 tracking-widest">
+          <p className="font-display text-xs sm:text-sm text-bronze dark:text-champagne/60 mb-2 tracking-widest">
             SCROLL TO EXPLORE
           </p>
           <svg

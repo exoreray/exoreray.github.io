@@ -28,11 +28,17 @@ const CursorTrail = () => {
         this.speedY = Math.random() * 2 - 1;
         this.life = 1;
         this.decay = Math.random() * 0.015 + 0.008;
-        // Golden particles
-        const colorChoices = [
+        // Check theme from HTML element
+        const isDark = document.documentElement.classList.contains('dark');
+        // Particles adapt to theme
+        const colorChoices = isDark ? [
           '255, 215, 0',   // Gold
           '255, 182, 193', // Light pink
           '155, 136, 218', // Violet
+        ] : [
+          '255, 215, 0',   // Bright gold
+          '255, 193, 102', // Light amber
+          '240, 180, 80',  // Light golden
         ];
         this.colorBase = colorChoices[Math.floor(Math.random() * colorChoices.length)];
       }
@@ -74,28 +80,33 @@ const CursorTrail = () => {
         return particle.life > 0;
       });
 
-      // Draw cursor - golden ring
+      // Draw cursor - adapts to theme
       const { x, y } = cursorRef.current;
       if (x && y) {
+        // Check theme from HTML element
+        const isDark = document.documentElement.classList.contains('dark');
+        const ringColor = isDark ? '255, 215, 0' : '255, 215, 0';
+        const dotColor = isDark ? '250, 250, 250' : '220, 180, 80';
+
         // Outer glow
         ctx.beginPath();
         ctx.arc(x, y, 25, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 215, 0, 0.08)';
+        ctx.fillStyle = `rgba(${ringColor}, 0.08)`;
         ctx.fill();
 
         // Middle ring
         ctx.beginPath();
         ctx.arc(x, y, 15, 0, Math.PI * 2);
-        ctx.strokeStyle = 'rgba(255, 215, 0, 0.3)';
+        ctx.strokeStyle = `rgba(${ringColor}, 0.3)`;
         ctx.lineWidth = 1.5;
         ctx.stroke();
 
         // Inner cursor dot
         ctx.beginPath();
         ctx.arc(x, y, 4, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(250, 250, 250, 0.9)';
+        ctx.fillStyle = `rgba(${dotColor}, 0.9)`;
         ctx.shadowBlur = 15;
-        ctx.shadowColor = 'rgba(255, 215, 0, 0.6)';
+        ctx.shadowColor = `rgba(${ringColor}, 0.6)`;
         ctx.fill();
       }
 
@@ -116,7 +127,6 @@ const CursorTrail = () => {
     <canvas
       ref={canvasRef}
       className="fixed top-0 left-0 w-full h-full pointer-events-none z-50"
-      style={{ mixBlendMode: 'screen' }}
     />
   );
 };

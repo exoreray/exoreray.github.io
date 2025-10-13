@@ -7,7 +7,7 @@ import NetworkGraph from '../NetworkGraph';
 
 const Chapter6Community = () => {
   return (
-    <Chapter id="community" className="bg-gradient-to-b from-charcoal-warm to-navy">
+    <Chapter id="community" className="bg-gradient-to-b from-bg-light-secondary dark:from-bg-dark-secondary to-bg-light dark:to-bg-dark">
       <div className="absolute inset-0 flex flex-col lg:flex-row-reverse items-center justify-center gap-8 px-8 lg:px-16">
 
         {/* 3D Scene - Right Side */}
@@ -42,10 +42,10 @@ const Chapter6Community = () => {
             viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white-warm mb-4">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-text-light dark:text-white-warm mb-4">
               Chapter 6
             </h2>
-            <h3 className="font-display text-3xl md:text-4xl text-champagne mb-6">
+            <h3 className="font-display text-3xl md:text-4xl text-bronze dark:text-champagne mb-6">
               Building Bridges
             </h3>
           </motion.div>
@@ -57,26 +57,26 @@ const Chapter6Community = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-4"
           >
-            <p className="font-sans text-lg md:text-xl text-cream/90 leading-relaxed">
+            <p className="font-sans text-lg md:text-xl text-text-light/90 dark:text-cream/90 leading-relaxed">
               Technology connects. But{' '}
               <span className="text-gold font-semibold">community transforms</span>.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-text-light/80 dark:text-cream/80 leading-relaxed">
               I founded <span className="text-gold font-semibold">StartupHarbor</span>, a place where dreamers
               could find their crew, where founders could share struggles and victories, where
               ideas could collide and create something greater.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
-              Collaborating with <span className="text-teal font-semibold">Bay Area Founders Club</span>, we built
+            <p className="font-sans text-base md:text-lg text-text-light/80 dark:text-cream/80 leading-relaxed">
+              Collaborating with <span className="text-amber-dark dark:text-amber font-semibold">Bay Area Founders Club</span>, we built
               a network of <span className="text-gold italic">30,000 members</span>—30,000 stories,
               aspirations, and journeys intertwined.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-text-light/80 dark:text-cream/80 leading-relaxed">
               Each connection, each conversation, each shared moment of breakthrough—
-              <span className="text-champagne font-semibold">that's where true innovation lives</span>.
+              <span className="text-bronze dark:text-champagne font-semibold">that's where true innovation lives</span>.
               Not in isolation, but in the spaces between us.
             </p>
           </motion.div>

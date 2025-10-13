@@ -7,7 +7,7 @@ import CollegePathway from '../CollegePathway';
 
 const Chapter3Berkeley = () => {
   return (
-    <Chapter id="berkeley" className="bg-gradient-to-b from-navy to-charcoal-warm">
+    <Chapter id="berkeley" className="bg-gradient-to-b from-bg-light dark:from-bg-dark to-bg-light-secondary dark:to-bg-dark-secondary">
       <div className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 px-8 lg:px-16">
 
         {/* 3D Scene - Left Side */}
@@ -43,10 +43,10 @@ const Chapter3Berkeley = () => {
             viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white-warm mb-4">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-text-light dark:text-white-warm mb-4">
               Chapter 3
             </h2>
-            <h3 className="font-display text-3xl md:text-4xl text-champagne mb-6">
+            <h3 className="font-display text-3xl md:text-4xl text-bronze dark:text-champagne mb-6">
               The One Path
             </h3>
           </motion.div>
@@ -58,25 +58,25 @@ const Chapter3Berkeley = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-4"
           >
-            <p className="font-sans text-lg md:text-xl text-cream/90 leading-relaxed">
+            <p className="font-sans text-lg md:text-xl text-text-light/ dark:text-cream/90 leading-relaxed">
               Arriving in America with a dream, I began at a community college—a place where
               paths diverge and aspirations are tested.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
               The goal seemed impossible: transfer to{' '}
               <span className="text-gold font-semibold">UC Berkeley's EECS program</span>—one of the
               most competitive in the world.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
               That year, I became <span className="text-gold italic">the only student</span> from my entire college
               to be accepted into Berkeley EECS. Among hundreds who tried, one path lit up in gold.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
               It wasn't just about getting in—it was about proving that{' '}
-              <span className="text-champagne font-semibold">determination and relentless work</span>{' '}
+              <span className="text-bronze dark:text-champagne font-semibold">determination and relentless work</span>{' '}
               could overcome any odds.
             </p>
           </motion.div>

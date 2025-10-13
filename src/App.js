@@ -14,6 +14,7 @@ import Chapter5Apple from './components/chapters/Chapter5Apple';
 import Chapter6Community from './components/chapters/Chapter6Community';
 import Chapter7Livia from './components/chapters/Chapter7Livia';
 import PhilosophySection from './components/PhilosophySection';
+import ThemeToggle from './components/ThemeToggle';
 import { ThemeProvider } from './context/ThemeContext';
 import './App.css';
 
@@ -40,7 +41,8 @@ const App = () => {
 
   return (
     <ThemeProvider>
-      <div className="App relative min-h-screen bg-navy text-white-soft overflow-x-hidden">
+      <div className="App relative min-h-screen bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark overflow-x-hidden transition-colors duration-300">
+        <ThemeToggle />
         <CursorTrail />
         <RippleEffect />
         <ImprovedLetterRain />

@@ -1,13 +1,18 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
 const RippleEffect = () => {
   const canvasRef = useRef(null);
   const ripplesRef = useRef([]);
+  const { darkMode } = useContext(ThemeContext);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     let animationFrameId;
+
+    // Capture darkMode value for use in Ripple class
+    const isDark = darkMode;
 
     // Set canvas size
     const resizeCanvas = () => {
@@ -36,21 +41,25 @@ const RippleEffect = () => {
       }
 
       draw() {
+        // Outer ripple - bright gold in both modes
+        const outerColor = isDark ? '255, 215, 0' : '255, 215, 0'; // Gold
+        const innerColor = isDark ? '255, 193, 102' : '240, 180, 80'; // Amber or light golden
+
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(255, 215, 0, ${this.opacity})`;
+        ctx.strokeStyle = `rgba(${outerColor}, ${this.opacity})`;
         ctx.lineWidth = this.width;
         ctx.shadowBlur = 15;
-        ctx.shadowColor = `rgba(255, 215, 0, ${this.opacity})`;
+        ctx.shadowColor = `rgba(${outerColor}, ${this.opacity})`;
         ctx.stroke();
 
         // Inner ripple
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius * 0.7, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(255, 182, 193, ${this.opacity * 0.6})`;
+        ctx.strokeStyle = `rgba(${innerColor}, ${this.opacity * 0.6})`;
         ctx.lineWidth = this.width * 0.5;
         ctx.shadowBlur = 10;
-        ctx.shadowColor = `rgba(255, 182, 193, ${this.opacity * 0.5})`;
+        ctx.shadowColor = `rgba(${innerColor}, ${this.opacity * 0.5})`;
         ctx.stroke();
       }
     }
@@ -87,7 +96,7 @@ const RippleEffect = () => {
       window.removeEventListener('resize', resizeCanvas);
       cancelAnimationFrame(animationFrameId);
     };
-  }, []);
+  }, [darkMode]);
 
   return (
     <canvas
