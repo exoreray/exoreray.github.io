@@ -15,9 +15,9 @@ const Chapter7Livia = () => {
           <Canvas gl={{ antialias: true, alpha: true }} dpr={[1, 1.5]}>
             <PerspectiveCamera makeDefault position={[0, 0, 6]} />
 
-            <ambientLight intensity={0.4} />
-            <directionalLight position={[5, 5, 5]} intensity={0.8} color="#E8B4B8" />
-            <pointLight position={[-3, 3, -3]} intensity={1} color="#B4A5E8" />
+            <ambientLight intensity={0.2} />
+            <directionalLight position={[5, 5, 5]} intensity={0.3} color="#E8B4B8" />
+            <pointLight position={[-3, 3, -3]} intensity={0.4} color="#B4A5E8" />
 
             <Suspense fallback={null}>
               <LiviaHeart />
