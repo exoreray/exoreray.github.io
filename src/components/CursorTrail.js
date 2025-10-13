@@ -80,7 +80,6 @@ const CursorTrail = () => {
     const handleTouchMove = (e) => {
       lastTouchTime = Date.now();
       const touch = e.touches[0];
-      console.log('touchmove:', touch.clientX, touch.clientY);
       cursorRef.current = { x: touch.clientX, y: touch.clientY };
 
       // Create particles on touch move
@@ -92,16 +91,13 @@ const CursorTrail = () => {
     const handleTouchStart = (e) => {
       lastTouchTime = Date.now();
       const touch = e.touches[0];
-      console.log('touchstart:', touch.clientX, touch.clientY);
       cursorRef.current = { x: touch.clientX, y: touch.clientY };
     };
 
     const handleTouchEnd = (e) => {
       lastTouchTime = Date.now();
-      console.log('touchend event fired');
       // Clear cursor position on touch end to hide the dot
       cursorRef.current = { x: 0, y: 0 };
-      console.log('cursor position after touchend:', cursorRef.current);
     };
 
     // Animation loop
@@ -117,10 +113,6 @@ const CursorTrail = () => {
 
       // Draw cursor - adapts to theme
       const { x, y } = cursorRef.current;
-      // Debug log to see when cursor is being drawn
-      if (x !== 0 || y !== 0) {
-        console.log('Drawing cursor at:', x, y);
-      }
       if (x && y) {
         // Check theme from HTML element
         const isDark = document.documentElement.classList.contains('dark');
