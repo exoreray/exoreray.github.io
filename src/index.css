@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *, :after, :before {
     box-sizing: border-box;
 }
@@ -11,4 +15,25 @@ html {
 body {
     padding: 0;
     margin: 0;
+    background: #0A0E27;
+    overflow-x: hidden;
+}
+
+/* Custom cursor styles - show pointer on interactive elements */
+* {
+    cursor: none;
+}
+
+/* Show pointer cursor on clickable elements */
+a, button, input[type="range"], [role="button"] {
+    cursor: pointer !important;
+}
+
+/* Keep default cursor in navigation/menu areas */
+nav, [role="navigation"], [class*="nav"], [class*="menu"] {
+    cursor: auto !important;
+}
+
+nav *, [role="navigation"] *, [class*="nav"] *, [class*="menu"] * {
+    cursor: pointer !important;
 }
