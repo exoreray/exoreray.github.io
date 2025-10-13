@@ -8,19 +8,21 @@ const ThemeToggle = () => {
   return (
     <motion.button
       onClick={toggleDarkMode}
-      className="fixed top-6 left-6 z-50 p-3 rounded-full bg-gold/20 backdrop-blur-sm border border-gold/30 hover:bg-gold/30 transition-all duration-300"
-      whileHover={{ scale: 1.1 }}
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      className="fixed top-8 right-8 z-50 p-3 border border-gold/20 hover:border-gold/50 hover:bg-gold/5 transition-all duration-500"
       whileTap={{ scale: 0.95 }}
       aria-label="Toggle theme"
     >
       {darkMode ? (
         // Sun icon for light mode
         <svg
-          className="w-6 h-6 text-gold"
+          className="w-5 h-5 text-gold"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth="2"
+          strokeWidth="1.5"
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
@@ -29,11 +31,11 @@ const ThemeToggle = () => {
       ) : (
         // Moon icon for dark mode
         <svg
-          className="w-6 h-6 text-gold"
+          className="w-5 h-5 text-gold"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"
-          strokeWidth="2"
+          strokeWidth="1.5"
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
