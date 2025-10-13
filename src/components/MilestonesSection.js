@@ -2,8 +2,9 @@ import { motion } from 'framer-motion';
 import Chapter1Wangjing from './chapters/Chapter1Wangjing';
 import Chapter2Transition from './chapters/Chapter2Transition';
 import Chapter3Berkeley from './chapters/Chapter3Berkeley';
-import Chapter4FlowGPT from './chapters/Chapter4FlowGPT';
-import Chapter5Apple from './chapters/Chapter5Apple';
+import Chapter4Robotics from './chapters/Chapter4Robotics';
+import Chapter5FlowGPT from './chapters/Chapter5FlowGPT';
+import Chapter6Apple from './chapters/Chapter6Apple';
 import Chapter6Community from './chapters/Chapter6Community';
 import Chapter7Livia from './chapters/Chapter7Livia';
 
@@ -51,8 +52,9 @@ const MilestonesSection = ({ onBack }) => {
       <Chapter1Wangjing />
       <Chapter2Transition />
       <Chapter3Berkeley />
-      <Chapter4FlowGPT />
-      <Chapter5Apple />
+      <Chapter4Robotics />
+      <Chapter5FlowGPT />
+      <Chapter6Apple />
       <Chapter6Community />
       <Chapter7Livia />
     </div>

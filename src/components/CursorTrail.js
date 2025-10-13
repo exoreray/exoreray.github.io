@@ -31,11 +31,11 @@ const CursorTrail = () => {
         this.decay = Math.random() * 0.015 + 0.008;
         // Check theme from HTML element
         const isDark = document.documentElement.classList.contains('dark');
-        // Particles adapt to theme
+        // Particles adapt to theme - all gold tones, lighter for dark mode
         const colorChoices = isDark ? [
-          '255, 215, 0',   // Gold
-          '255, 182, 193', // Light pink
-          '155, 136, 218', // Violet
+          '255, 235, 100', // Light gold
+          '255, 225, 80',  // Lighter gold
+          '250, 215, 60',  // Soft gold
         ] : [
           '255, 215, 0',   // Bright gold
           '255, 193, 102', // Light amber
