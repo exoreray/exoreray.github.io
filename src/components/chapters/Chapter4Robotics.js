@@ -3,6 +3,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera, Box, Torus, Sphere, Cone } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import Chapter from '../Chapter';
+import siteCopy from '../../data/siteCopy.json';
 
 // F1 Racing 3D Scene Component
 const F1RacingScene = () => {
@@ -81,6 +82,13 @@ const F1RacingScene = () => {
 };
 
 const Chapter4Robotics = () => {
+  const { milestones } = siteCopy;
+  const copy = milestones.chapters.find((chapter) => chapter.id === 'robotics');
+
+  if (!copy) {
+    return null;
+  }
+
   return (
     <Chapter id="robotics" className="bg-gradient-to-b from-bg-light-secondary dark:from-bg-dark-secondary to-bg-light dark:to-bg-dark">
       <div className="absolute inset-0 flex flex-col lg:flex-row-reverse items-center justify-center gap-8 px-8 lg:px-16">
@@ -118,10 +126,10 @@ const Chapter4Robotics = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-text-light dark:text-white-warm mb-4">
-              Chapter 4
+              {copy.number}
             </h2>
             <h3 className="font-display text-3xl md:text-4xl text-bronze dark:text-champagne mb-6">
-              Racing at the Edge
+              {copy.title}
             </h3>
           </motion.div>
 
@@ -132,48 +140,36 @@ const Chapter4Robotics = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-4"
           >
-            <p className="font-sans text-lg md:text-xl text-text-light/ dark:text-cream/90 leading-relaxed">
-              At Berkeley EECS, I pushed the boundaries of what machines could do—
-              <span className="text-gold font-semibold"> building an F1 autonomous racing car</span> from the ground up.
-            </p>
-
-            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
-              This wasn't just about speed. It was about creating{' '}
-              <span className="text-amber-dark dark:text-amber font-semibold">intelligence at velocity</span>—
-              computer vision processing at 120fps, path planning algorithms making microsecond decisions,
-              sensor fusion creating perfect spatial awareness.
-            </p>
-
-            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
-              Every line of code had to be flawless. At those speeds, there's no room for error.
-              The car became an extension of algorithmic precision—
-              <span className="text-bronze dark:text-champagne font-semibold"> where mathematics meets adrenaline</span>.
-            </p>
-
-            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
-              This project shaped my philosophy: build systems that perform at the edge of possibility,
-              elegant under pressure, <span className="text-gold italic">reliable at scale</span>.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="pt-4"
-          >
-            <a
-              href="https://eecs106b-banana-radiation.github.io/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-3 border border-amber/30 hover:border-amber/60 hover:bg-amber/5 rounded-sm transition-all duration-300"
-            >
-              <p className="font-mono text-sm text-amber tracking-wider">
-                VIEW F1 PROJECT →
+            {copy.paragraphs.map((paragraph, index) => (
+              <p
+                key={index}
+                className={`font-sans ${index === 0 ? 'text-lg md:text-xl text-text-light/90 dark:text-cream/90' : 'text-base md:text-lg text-text-light/80 dark:text-cream/80'} leading-relaxed`}
+              >
+                {paragraph}
               </p>
-            </a>
+            ))}
           </motion.div>
+
+          {copy.ctaUrl && copy.ctaLabel && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="pt-4"
+            >
+              <a
+                href={copy.ctaUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-8 py-3 border border-amber/30 hover:border-amber/60 hover:bg-amber/5 rounded-sm transition-all duration-300"
+              >
+                <p className="font-mono text-sm text-amber tracking-wider">
+                  {copy.ctaLabel}
+                </p>
+              </a>
+            </motion.div>
+          )}
         </div>
       </div>
 
@@ -183,6 +179,9 @@ const Chapter4Robotics = () => {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
+        <p className="font-display text-xs text-champagne/60 mb-2 tracking-widest">
+          {milestones.scrollIndicatorLabel}
+        </p>
         <svg
           className="w-6 h-6 mx-auto text-gold"
           fill="none"

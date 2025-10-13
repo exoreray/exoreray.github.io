@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import siteCopy from '../data/siteCopy.json';
 
 const GlobalMusicPlayer = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,15 +12,15 @@ const GlobalMusicPlayer = () => {
   const [currentTime, setCurrentTime] = useState(0);
   const audioRef = useRef(null);
 
-  // 你的音乐列表
-  const playlist = [
-    {
-      id: 1,
-      title: 'Broken',
-      artist: 'Ray Xi',
-      url: '/music/broken.mp3'
-    },
-  ];
+  const { globalMusicPlayer, musicShowcase } = siteCopy;
+
+  // Centralized playlist using site copy
+  const playlist = musicShowcase.tracks.map((track, index) => ({
+    id: index + 1,
+    title: track.title,
+    artist: track.artist,
+    url: track.url,
+  }));
 
   // Initialize audio element
   useEffect(() => {
@@ -182,7 +183,9 @@ const GlobalMusicPlayer = () => {
 
               {/* Now Playing */}
               <div className="mb-8">
-                <p className="font-display text-xs tracking-[0.3em] uppercase text-text-light/60 dark:text-text-dark/60 mb-3">Now Playing</p>
+                <p className="font-display text-xs tracking-[0.3em] uppercase text-text-light/60 dark:text-text-dark/60 mb-3">
+                  {globalMusicPlayer.nowPlayingLabel}
+                </p>
                 <h3 className="font-display text-3xl text-text-light dark:text-text-dark mb-2">
                   {playlist[currentTrack].title}
                 </h3>
@@ -269,7 +272,9 @@ const GlobalMusicPlayer = () => {
 
               {/* Playlist */}
               <div>
-                <p className="font-display text-xs tracking-[0.2em] uppercase text-text-light/60 dark:text-text-dark/60 mb-4">Playlist</p>
+                <p className="font-display text-xs tracking-[0.2em] uppercase text-text-light/60 dark:text-text-dark/60 mb-4">
+                  {globalMusicPlayer.playlistLabel}
+                </p>
                 <div className="space-y-2 max-h-40 overflow-y-auto">
                   {playlist.map((track, index) => (
                     <button

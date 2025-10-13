@@ -7,8 +7,11 @@ import Chapter5FlowGPT from './chapters/Chapter5FlowGPT';
 import Chapter6Apple from './chapters/Chapter6Apple';
 import Chapter6Community from './chapters/Chapter6Community';
 import Chapter7Livia from './chapters/Chapter7Livia';
+import siteCopy from '../data/siteCopy.json';
 
 const MilestonesSection = ({ onBack }) => {
+  const { milestones } = siteCopy;
+
   return (
     <div className="relative">
       {/* Back Button */}
@@ -40,10 +43,10 @@ const MilestonesSection = ({ onBack }) => {
       >
         <div className="text-center">
           <h1 className="font-serif text-5xl md:text-7xl text-text-light dark:text-text-dark mb-4">
-            Milestones
+            {milestones.header.title}
           </h1>
           <p className="font-display text-xl md:text-2xl text-bronze dark:text-champagne">
-            Seven Chapters of Growth
+            {milestones.header.tagline}
           </p>
         </div>
       </motion.div>

@@ -4,8 +4,16 @@ import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import Chapter from '../Chapter';
 import ApplePark from '../ApplePark';
+import siteCopy from '../../data/siteCopy.json';
 
 const Chapter6Apple = () => {
+  const { milestones } = siteCopy;
+  const copy = milestones.chapters.find((chapter) => chapter.id === 'apple');
+
+  if (!copy) {
+    return null;
+  }
+
   return (
     <Chapter id="apple" className="bg-gradient-to-b from-bg-light dark:from-bg-dark to-bg-light-secondary dark:to-bg-dark-secondary">
       <div className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 px-8 lg:px-16">
@@ -43,10 +51,10 @@ const Chapter6Apple = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-text-light dark:text-white-warm mb-4">
-              Chapter 6
+              {copy.number}
             </h2>
             <h3 className="font-display text-3xl md:text-4xl text-bronze dark:text-champagne mb-6">
-              Among Thousands, One
+              {copy.title}
             </h3>
           </motion.div>
 
@@ -57,48 +65,33 @@ const Chapter6Apple = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-4"
           >
-            <p className="font-sans text-lg md:text-xl text-text-light/ dark:text-cream/90 leading-relaxed">
-              <span className="text-gold font-semibold">Apple</span>—a place where{' '}
-              <span className="text-bronze dark:text-champagne italic">craft meets innovation</span>, where every
-              detail matters, where design is not just how it looks but how it works.
-            </p>
-
-            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
-              That year, among thousands of applicants, I became{' '}
-              <span className="text-gold font-semibold">the only bachelor's degree graduate from Berkeley</span>{' '}
-              accepted as a new grad. Not because of years of experience, but because of vision,
-              craft, and relentless attention to detail.
-            </p>
-
-            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
-              I joined the masters of craft. I learned that technology, at its best, disappears—
-              leaving only delight, only intuition, only{' '}
-              <span className="text-bronze dark:text-champagne font-semibold">恰到好处</span>.
-            </p>
-
-            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
-              Apple taught me that excellence isn't flashy. It's quiet. Elegant. Inevitable.
-            </p>
+            {copy.paragraphs.map((paragraph, index) => (
+              <p
+                key={index}
+                className={`font-sans ${index === 0 ? 'text-lg md:text-xl text-text-light/90 dark:text-cream/90' : 'text-base md:text-lg text-text-light/80 dark:text-cream/80'} leading-relaxed`}
+              >
+                {paragraph}
+              </p>
+            ))}
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="pt-4 flex gap-4 flex-wrap"
-          >
-            <div className="inline-block px-6 py-2 border border-gold/30 rounded-sm">
-              <p className="font-mono text-sm text-gold tracking-wider">
-                THE ONE
-              </p>
-            </div>
-            <div className="inline-block px-6 py-2 border border-gray-400/30 rounded-sm">
-              <p className="font-mono text-sm text-gray-300 tracking-wider">
-                APPLE
-              </p>
-            </div>
-          </motion.div>
+          {copy.badges?.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="pt-4 flex gap-4 flex-wrap"
+            >
+              {copy.badges.map((badge) => (
+                <div key={badge} className="inline-block px-6 py-2 border border-gold/30 rounded-sm">
+                  <p className="font-mono text-sm text-gold tracking-wider">
+                    {badge}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+          )}
         </div>
       </div>
 
@@ -108,6 +101,9 @@ const Chapter6Apple = () => {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
+        <p className="font-display text-xs text-champagne/60 mb-2 tracking-widest">
+          {milestones.scrollIndicatorLabel}
+        </p>
         <svg
           className="w-6 h-6 mx-auto text-gold"
           fill="none"

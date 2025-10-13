@@ -1,7 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import siteCopy from '../data/siteCopy.json';
 
 const MusicShowcase = () => {
+  const { musicShowcase } = siteCopy;
+  const tracks = musicShowcase.tracks;
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(0);
   const [audioData, setAudioData] = useState(new Array(128).fill(0));
@@ -10,16 +14,6 @@ const MusicShowcase = () => {
   const audioContextRef = useRef(null);
   const analyserRef = useRef(null);
   const animationRef = useRef(null);
-
-  const tracks = [
-    {
-      title: 'Broken',
-      artist: 'Rui Xi',
-      genre: 'Future Bass / EDM',
-      url: '/music/broken.mp3',
-      soundcloudUrl: 'https://on.soundcloud.com/UbjDj'
-    }
-  ];
 
   useEffect(() => {
     return () => {
@@ -134,10 +128,10 @@ const MusicShowcase = () => {
         >
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent mx-auto mb-8" />
           <h1 className="font-serif text-6xl md:text-8xl text-text-light dark:text-white-warm mb-6">
-            Music Gallery
+            {musicShowcase.title}
           </h1>
           <p className="font-display text-2xl text-bronze dark:text-champagne tracking-wider">
-            Where emotion becomes structure
+            {musicShowcase.tagline}
           </p>
         </motion.div>
 
@@ -274,7 +268,7 @@ const MusicShowcase = () => {
                 rel="noopener noreferrer"
                 className="font-mono text-sm text-gold/40 hover:text-gold tracking-widest uppercase transition-colors duration-500"
               >
-                SoundCloud
+                {track.soundcloudLabel}
               </a>
             </div>
           </motion.div>
@@ -349,11 +343,13 @@ const MusicShowcase = () => {
         >
           <div className="w-24 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent mx-auto mb-8" />
           <p className="font-serif text-xl text-text-light/60 dark:text-text-dark/60 leading-relaxed italic">
-            "The art is knowing what to add, and more importantly, what to leave out."
+            {musicShowcase.quote.text}
           </p>
-          <p className="font-display text-lg text-gold/60 mt-4">
-            恰到好处
-          </p>
+          {musicShowcase.quote.attribution && (
+            <p className="font-display text-lg text-gold/60 mt-4">
+              {musicShowcase.quote.attribution}
+            </p>
+          )}
         </motion.div>
       </div>
     </div>

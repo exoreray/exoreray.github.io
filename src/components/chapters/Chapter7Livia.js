@@ -4,8 +4,16 @@ import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import Chapter from '../Chapter';
 import LiviaHeart from '../LiviaHeart';
+import siteCopy from '../../data/siteCopy.json';
 
 const Chapter7Livia = () => {
+  const { milestones } = siteCopy;
+  const copy = milestones.chapters.find((chapter) => chapter.id === 'livia');
+
+  if (!copy) {
+    return null;
+  }
+
   return (
     <Chapter id="livia" className="bg-gradient-to-b from-bg-light dark:from-bg-dark to-bg-light-secondary dark:to-bg-dark-secondary">
       <div className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 px-8 lg:px-16">
@@ -43,10 +51,10 @@ const Chapter7Livia = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-text-light dark:text-white-warm mb-4">
-              Chapter 7
+              {copy.number}
             </h2>
             <h3 className="font-display text-3xl md:text-4xl text-bronze dark:text-champagne mb-6">
-              The Heart
+              {copy.title}
             </h3>
           </motion.div>
 
@@ -57,47 +65,33 @@ const Chapter7Livia = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-4"
           >
-            <p className="font-sans text-lg md:text-xl text-text-light/ dark:text-cream/90 leading-relaxed">
-              <span className="text-rose font-semibold">Livia</span>—born from a simple truth:{' '}
-              <span className="text-bronze dark:text-champagne italic">every human deserves to feel loved, cared for, and understood</span>.
-            </p>
-
-            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
-              We live in a world rich with technology but starved for genuine connection.
-              I'm building Livia to bridge that gap—to use AI not as a replacement for human
-              warmth, but as a channel to amplify it.
-            </p>
-
-            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
-              <span className="text-gold font-semibold">博爱</span>—universal love—is not just philosophy.
-              It's my north star. Better resource allocation, deeper emotional intelligence,
-              technology that serves humanity's highest potential.
-            </p>
-
-            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
-              This is why I build. This is my purpose.{' '}
-              <span className="text-bronze dark:text-champagne font-semibold">To spread love and care to every human through AI</span>.
-            </p>
+            {copy.paragraphs.map((paragraph, index) => (
+              <p
+                key={index}
+                className={`font-sans ${index === 0 ? 'text-lg md:text-xl text-text-light/90 dark:text-cream/90' : 'text-base md:text-lg text-text-light/80 dark:text-cream/80'} leading-relaxed`}
+              >
+                {paragraph}
+              </p>
+            ))}
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="pt-4 flex gap-4 flex-wrap"
-          >
-            <div className="inline-block px-6 py-2 border border-rose/30 rounded-sm">
-              <p className="font-mono text-sm text-rose tracking-wider">
-                博爱
-              </p>
-            </div>
-            <div className="inline-block px-6 py-2 border border-violet/30 rounded-sm">
-              <p className="font-mono text-sm text-violet tracking-wider">
-                UNIVERSAL LOVE
-              </p>
-            </div>
-          </motion.div>
+          {copy.badges?.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="pt-4 flex gap-4 flex-wrap"
+            >
+              {copy.badges.map((badge) => (
+                <div key={badge} className="inline-block px-6 py-2 border border-gold/30 rounded-sm">
+                  <p className="font-mono text-sm text-gold tracking-wider">
+                    {badge}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+          )}
         </div>
       </div>
 
@@ -107,6 +101,9 @@ const Chapter7Livia = () => {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
+        <p className="font-display text-xs text-champagne/60 mb-2 tracking-widest">
+          {milestones.scrollIndicatorLabel}
+        </p>
         <svg
           className="w-6 h-6 mx-auto text-gold"
           fill="none"
