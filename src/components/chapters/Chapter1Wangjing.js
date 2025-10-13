@@ -7,7 +7,7 @@ import WangjingSOHO from '../WangjingSOHO';
 
 const Chapter1Wangjing = () => {
   return (
-    <Chapter id="wangjing" className="bg-gradient-to-b from-navy to-charcoal-warm">
+    <Chapter id="wangjing" className="bg-gradient-to-b from-bg-light to-bg-light-secondary dark:from-bg-dark dark:to-bg-dark-secondary">
       <div className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 px-8 lg:px-16">
 
         {/* 3D Scene - Left Side */}
@@ -42,10 +42,10 @@ const Chapter1Wangjing = () => {
             viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white-warm mb-4">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-text-light dark:text-white-warm mb-4">
               Chapter 1
             </h2>
-            <h3 className="font-display text-3xl md:text-4xl text-champagne mb-6">
+            <h3 className="font-display text-3xl md:text-4xl text-bronze dark:text-champagne mb-6">
               Origins in Wangjing
             </h3>
           </motion.div>
@@ -57,18 +57,18 @@ const Chapter1Wangjing = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-4"
           >
-            <p className="font-sans text-lg md:text-xl text-cream/90 leading-relaxed">
+            <p className="font-sans text-lg md:text-xl text-text-light/90 dark:text-cream/90 leading-relaxed">
               From <span className="text-gold font-semibold">Wangjing, Beijing</span> — where Zaha Hadid's iconic curved towers
               pierce the sky like dreams made concrete.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
-              This is where it began. Where I learned that <span className="text-champagne italic">beauty lives in structure</span>,
+            <p className="font-sans text-base md:text-lg text-text-light/80 dark:text-cream/80 leading-relaxed">
+              This is where it began. Where I learned that <span className="text-bronze dark:text-champagne italic">beauty lives in structure</span>,
               that architecture isn't just about buildings — it's about shaping experience,
               creating spaces where people feel something profound.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-text-light/80 dark:text-cream/80 leading-relaxed">
               The curves taught me to see beyond straight lines. The scale taught me ambition.
               The harmony of form and function became my first language.
             </p>

@@ -7,7 +7,7 @@ import ApplePark from '../ApplePark';
 
 const Chapter5Apple = () => {
   return (
-    <Chapter id="apple" className="bg-gradient-to-b from-navy to-charcoal-warm">
+    <Chapter id="apple" className="bg-gradient-to-b from-bg-light dark:from-bg-dark to-bg-light-secondary dark:to-bg-dark-secondary">
       <div className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 px-8 lg:px-16">
 
         {/* 3D Scene - Left Side */}
@@ -42,10 +42,10 @@ const Chapter5Apple = () => {
             viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white-warm mb-4">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-text-light dark:text-white-warm mb-4">
               Chapter 5
             </h2>
-            <h3 className="font-display text-3xl md:text-4xl text-champagne mb-6">
+            <h3 className="font-display text-3xl md:text-4xl text-bronze dark:text-champagne mb-6">
               Among Thousands, One
             </h3>
           </motion.div>
@@ -57,26 +57,26 @@ const Chapter5Apple = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-4"
           >
-            <p className="font-sans text-lg md:text-xl text-cream/90 leading-relaxed">
+            <p className="font-sans text-lg md:text-xl text-text-light/ dark:text-cream/90 leading-relaxed">
               <span className="text-gold font-semibold">Apple</span>—a place where{' '}
-              <span className="text-champagne italic">craft meets innovation</span>, where every
+              <span className="text-bronze dark:text-champagne italic">craft meets innovation</span>, where every
               detail matters, where design is not just how it looks but how it works.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
               That year, among thousands of applicants, I became{' '}
               <span className="text-gold font-semibold">the only bachelor's degree graduate from Berkeley</span>{' '}
               accepted as a new grad. Not because of years of experience, but because of vision,
               craft, and relentless attention to detail.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
               I joined the masters of craft. I learned that technology, at its best, disappears—
               leaving only delight, only intuition, only{' '}
-              <span className="text-champagne font-semibold">恰到好处</span>.
+              <span className="text-bronze dark:text-champagne font-semibold">恰到好处</span>.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
               Apple taught me that excellence isn't flashy. It's quiet. Elegant. Inevitable.
             </p>
           </motion.div>

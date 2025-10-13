@@ -18,11 +18,11 @@ export const ThemeProvider = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        // Apply theme class to body
+        // Apply theme class to html element for Tailwind dark mode
         if (darkMode) {
-            document.body.classList.add('dark-theme');
+            document.documentElement.classList.add('dark');
         } else {
-            document.body.classList.remove('dark-theme');
+            document.documentElement.classList.remove('dark');
         }
 
         // Save preference

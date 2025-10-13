@@ -3,17 +3,30 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        // Base colors - warmer, more elegant
+        // Light theme backgrounds
+        'bg-light': '#FDFBF7',
+        'bg-light-secondary': '#F5F1EB',
+
+        // Dark theme backgrounds
+        'bg-dark': '#1A1410',
+        'bg-dark-secondary': '#2A1F1A',
+
+        // Text colors
+        'text-light': '#2A2520',
+        'text-dark': '#FAFAFA',
+
+        // Legacy colors for compatibility
         navy: {
-          deep: '#0F0F23',
-          DEFAULT: '#0F0F23',
+          deep: '#1A1410',
+          DEFAULT: '#1A1410',
         },
         charcoal: {
-          warm: '#1C1C2E',
-          DEFAULT: '#1C1C2E',
+          warm: '#2A1F1A',
+          DEFAULT: '#2A1F1A',
         },
         white: {
           soft: '#FAFAFA',
@@ -21,29 +34,29 @@ module.exports = {
           DEFAULT: '#FAFAFA',
         },
         cream: '#F5EBE0',
-        silver: '#D4AF37', // More gold-silver
+        silver: '#D4AF37',
 
-        // Accent colors - sophisticated palette
+        // Accent colors - warm metallic palette
         champagne: '#F7E7CE',
         gold: {
           light: '#FFD700',
           DEFAULT: '#D4AF37',
           dark: '#B8860B',
         },
-        rose: {
-          light: '#FFE4E9',
-          DEFAULT: '#FFB6C1',
-          dark: '#FF69B4',
+        amber: {
+          light: '#FFC166',
+          DEFAULT: '#FF9500',
+          dark: '#CC7700',
         },
-        violet: {
-          light: '#E6E6FA',
-          DEFAULT: '#9B88DA',
-          dark: '#6A5ACD',
+        bronze: {
+          light: '#E0A96D',
+          DEFAULT: '#CD7F32',
+          dark: '#8B5A2B',
         },
-        teal: {
-          light: '#B2F5EA',
-          DEFAULT: '#38B2AC',
-          dark: '#2C7A7B',
+        copper: {
+          light: '#F4A460',
+          DEFAULT: '#B87333',
+          dark: '#8B4513',
         },
       },
       fontFamily: {

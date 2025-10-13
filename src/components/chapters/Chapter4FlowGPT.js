@@ -7,7 +7,7 @@ import FlowGPTGrowth from '../FlowGPTGrowth';
 
 const Chapter4FlowGPT = () => {
   return (
-    <Chapter id="flowgpt" className="bg-gradient-to-b from-charcoal-warm to-navy">
+    <Chapter id="flowgpt" className="bg-gradient-to-b from-bg-light-secondary dark:from-bg-dark-secondary to-bg-light dark:to-bg-dark">
       <div className="absolute inset-0 flex flex-col lg:flex-row-reverse items-center justify-center gap-8 px-8 lg:px-16">
 
         {/* 3D Scene - Right Side */}
@@ -42,10 +42,10 @@ const Chapter4FlowGPT = () => {
             viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white-warm mb-4">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-text-light dark:text-white-warm mb-4">
               Chapter 4
             </h2>
-            <h3 className="font-display text-3xl md:text-4xl text-champagne mb-6">
+            <h3 className="font-display text-3xl md:text-4xl text-bronze dark:text-champagne mb-6">
               The Scale
             </h3>
           </motion.div>
@@ -57,27 +57,27 @@ const Chapter4FlowGPT = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-4"
           >
-            <p className="font-sans text-lg md:text-xl text-cream/90 leading-relaxed">
+            <p className="font-sans text-lg md:text-xl text-text-light/90 dark:text-cream/90 leading-relaxed">
               What begins with a single spark can become a wildfire.{' '}
-              <span className="text-teal font-semibold">FlowGPT</span> started with an idea:
+              <span className="text-amber-dark dark:text-amber font-semibold">FlowGPT</span> started with an idea:
               make AI accessible, delightful, and empowering for everyone.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-text-light/80 dark:text-cream/80 leading-relaxed">
               As <span className="text-gold font-semibold">Founding Designer & Engineer</span>, I didn't just
               build features—I architected experiences. Every pixel, every interaction, every line of code
               was crafted with intention.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
-              From <span className="text-violet italic">0 users</span> on day one to{' '}
-              <span className="text-teal font-semibold">6,000,000+</span> at scale.
+            <p className="font-sans text-base md:text-lg text-text-light/80 dark:text-cream/80 leading-relaxed">
+              From <span className="text-bronze-dark dark:text-bronze italic">0 users</span> on day one to{' '}
+              <span className="text-amber-dark dark:text-amber font-semibold">6,000,000+</span> at scale.
               Exponential growth, sustained delight.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-text-light/80 dark:text-cream/80 leading-relaxed">
               I learned that scale isn't just about numbers—it's about{' '}
-              <span className="text-champagne font-semibold">maintaining soul while growing fast</span>.
+              <span className="text-bronze dark:text-champagne font-semibold">maintaining soul while growing fast</span>.
               Every one of those six million users deserved delight, and we delivered it.
             </p>
           </motion.div>

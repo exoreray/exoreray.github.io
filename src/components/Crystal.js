@@ -1,11 +1,13 @@
-import { useRef } from 'react';
+import { useRef, useContext } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Float } from '@react-three/drei';
+import { ThemeContext } from '../context/ThemeContext';
 import * as THREE from 'three';
 
 const Crystal = () => {
   const meshRef = useRef();
   const particlesRef = useRef();
+  const { darkMode } = useContext(ThemeContext);
 
   // Smooth rotation animation
   useFrame((state) => {
@@ -24,6 +26,11 @@ const Crystal = () => {
     }
   });
 
+  // Colors based on theme
+  const mainColor = darkMode ? "#FFD700" : "#B8860B"; // Gold or darker gold
+  const particleColor = darkMode ? "#FFD700" : "#CD7F32"; // Gold or bronze
+  const opacity = darkMode ? 0.5 : 0.7;
+
   return (
     <Float speed={1.5} rotationIntensity={0.2} floatIntensity={0.3}>
       <group>
@@ -31,21 +38,10 @@ const Crystal = () => {
         <mesh ref={meshRef} scale={1.8}>
           <icosahedronGeometry args={[1, 2]} />
           <meshBasicMaterial
-            color="#FFD700"
+            color={mainColor}
             wireframe
             transparent
-            opacity={0.5}
-          />
-        </mesh>
-
-        {/* Inner wireframe for depth */}
-        <mesh scale={1.4}>
-          <icosahedronGeometry args={[1, 1]} />
-          <meshBasicMaterial
-            color="#D4AF37"
-            wireframe
-            transparent
-            opacity={0.25}
+            opacity={opacity}
           />
         </mesh>
 
@@ -71,24 +67,13 @@ const Crystal = () => {
           </bufferGeometry>
           <pointsMaterial
             size={0.03}
-            color="#FFD700"
+            color={particleColor}
             transparent
-            opacity={0.6}
+            opacity={darkMode ? 0.6 : 0.8}
             sizeAttenuation
             blending={THREE.AdditiveBlending}
           />
         </points>
-
-        {/* Soft golden glow */}
-        <mesh scale={2.2}>
-          <sphereGeometry args={[1, 16, 16]} />
-          <meshBasicMaterial
-            color="#FFD700"
-            transparent
-            opacity={0.02}
-            side={THREE.BackSide}
-          />
-        </mesh>
       </group>
     </Float>
   );

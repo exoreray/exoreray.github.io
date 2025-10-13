@@ -7,7 +7,7 @@ import LiviaHeart from '../LiviaHeart';
 
 const Chapter7Livia = () => {
   return (
-    <Chapter id="livia" className="bg-gradient-to-b from-navy to-charcoal-warm">
+    <Chapter id="livia" className="bg-gradient-to-b from-bg-light dark:from-bg-dark to-bg-light-secondary dark:to-bg-dark-secondary">
       <div className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 px-8 lg:px-16">
 
         {/* 3D Scene - Left Side */}
@@ -42,10 +42,10 @@ const Chapter7Livia = () => {
             viewport={{ once: false }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-white-warm mb-4">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-text-light dark:text-white-warm mb-4">
               Chapter 7
             </h2>
-            <h3 className="font-display text-3xl md:text-4xl text-champagne mb-6">
+            <h3 className="font-display text-3xl md:text-4xl text-bronze dark:text-champagne mb-6">
               The Heart
             </h3>
           </motion.div>
@@ -57,26 +57,26 @@ const Chapter7Livia = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-4"
           >
-            <p className="font-sans text-lg md:text-xl text-cream/90 leading-relaxed">
+            <p className="font-sans text-lg md:text-xl text-text-light/ dark:text-cream/90 leading-relaxed">
               <span className="text-rose font-semibold">Livia</span>—born from a simple truth:{' '}
-              <span className="text-champagne italic">every human deserves to feel loved, cared for, and understood</span>.
+              <span className="text-bronze dark:text-champagne italic">every human deserves to feel loved, cared for, and understood</span>.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
               We live in a world rich with technology but starved for genuine connection.
               I'm building Livia to bridge that gap—to use AI not as a replacement for human
               warmth, but as a channel to amplify it.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
               <span className="text-gold font-semibold">博爱</span>—universal love—is not just philosophy.
               It's my north star. Better resource allocation, deeper emotional intelligence,
               technology that serves humanity's highest potential.
             </p>
 
-            <p className="font-sans text-base md:text-lg text-cream/80 leading-relaxed">
+            <p className="font-sans text-base md:text-lg text-text-light/ dark:text-cream/80 leading-relaxed">
               This is why I build. This is my purpose.{' '}
-              <span className="text-champagne font-semibold">To spread love and care to every human through AI</span>.
+              <span className="text-bronze dark:text-champagne font-semibold">To spread love and care to every human through AI</span>.
             </p>
           </motion.div>
 
