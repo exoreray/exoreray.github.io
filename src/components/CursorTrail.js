@@ -76,28 +76,63 @@ const CursorTrail = () => {
       }
     };
 
+    // Store previous touch position for interpolation
+    let previousTouch = { x: 0, y: 0 };
+
     // Touch handlers for mobile
     const handleTouchMove = (e) => {
       lastTouchTime = Date.now();
       const touch = e.touches[0];
-      cursorRef.current = { x: touch.clientX, y: touch.clientY };
+      const currentX = touch.clientX;
+      const currentY = touch.clientY;
 
-      // Create particles on touch move
-      for (let i = 0; i < 2; i++) {
-        particlesRef.current.push(new Particle(touch.clientX, touch.clientY));
+      // Calculate distance from previous touch
+      const dx = currentX - previousTouch.x;
+      const dy = currentY - previousTouch.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      // Interpolate particles between previous and current position for smooth trail
+      if (previousTouch.x !== 0 && previousTouch.y !== 0 && distance > 0) {
+        // More particles for longer distances (fast swipes)
+        const steps = Math.max(1, Math.min(10, Math.floor(distance / 10)));
+
+        for (let step = 0; step <= steps; step++) {
+          const t = step / steps;
+          const x = previousTouch.x + dx * t;
+          const y = previousTouch.y + dy * t;
+
+          // Create more particles for fast movements
+          const particleCount = distance > 50 ? 3 : 2;
+          for (let i = 0; i < particleCount; i++) {
+            particlesRef.current.push(new Particle(x, y));
+          }
+        }
       }
+
+      cursorRef.current = { x: currentX, y: currentY };
+      previousTouch = { x: currentX, y: currentY };
     };
 
     const handleTouchStart = (e) => {
       lastTouchTime = Date.now();
       const touch = e.touches[0];
-      cursorRef.current = { x: touch.clientX, y: touch.clientY };
+      const x = touch.clientX;
+      const y = touch.clientY;
+
+      cursorRef.current = { x, y };
+      previousTouch = { x, y };
+
+      // Create initial particles on touch start
+      for (let i = 0; i < 4; i++) {
+        particlesRef.current.push(new Particle(x, y));
+      }
     };
 
     const handleTouchEnd = (e) => {
       lastTouchTime = Date.now();
       // Clear cursor position on touch end to hide the dot
       cursorRef.current = { x: 0, y: 0 };
+      previousTouch = { x: 0, y: 0 };
     };
 
     // Animation loop
