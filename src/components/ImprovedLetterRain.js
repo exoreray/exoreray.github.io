@@ -99,8 +99,8 @@ const ImprovedLetterRain = () => {
         this.y = Math.random() * (canvas.height * 2) - canvas.height;
         this.speed = Math.random() * 2.0 + 1.5; // Moderate speed: 1.5-3.5
         this.char = chars[Math.floor(Math.random() * chars.length)];
-        this.opacity = Math.random() * 0.25 + 0.15;
-        this.glowIntensity = 0.6; // Fixed intensity, no pulsing
+        this.opacity = darkMode ? Math.random() * 0.4 + 0.35 : Math.random() * 0.3 + 0.25;
+        this.glowIntensity = 0.75; // Slightly stronger glow
         this.color = this.getColor();
         this.changeInterval = Math.floor(Math.random() * 20) + 10;
         this.frameCount = 0;
@@ -108,18 +108,21 @@ const ImprovedLetterRain = () => {
       }
 
       getColor() {
-        // Bright metallic colors in light mode
-        const colors = darkMode ? [
-          'rgba(255, 215, 0',   // Gold
-          'rgba(212, 175, 55',  // Dark gold
-          'rgba(255, 149, 0',   // Amber
-          'rgba(205, 127, 50',  // Bronze
-        ] : [
-          'rgba(255, 215, 0',   // Bright gold
-          'rgba(255, 193, 102', // Light amber
-          'rgba(218, 165, 32',  // Goldenrod
-          'rgba(240, 180, 80',  // Light golden
+        const darkColors = [
+          'rgba(255, 235, 180', // Soft luminous gold
+          'rgba(255, 220, 155', // Warm amber
+          'rgba(255, 255, 210', // Pale glow
+          'rgba(255, 210, 140', // Honey light
         ];
+
+        const lightColors = [
+          'rgba(200, 140, 35',  // Rich bronze-gold
+          'rgba(185, 120, 25',  // Deep amber
+          'rgba(210, 150, 45',  // Goldenrod
+          'rgba(170, 110, 30',  // Burnished copper
+        ];
+
+        const colors = darkMode ? darkColors : lightColors;
         return colors[Math.floor(Math.random() * colors.length)];
       }
 
@@ -143,7 +146,7 @@ const ImprovedLetterRain = () => {
         ctx.shadowColor = 'transparent';
 
         // Subtle glow effect
-        ctx.shadowBlur = 8;
+        ctx.shadowBlur = 12;
         ctx.shadowColor = `${this.color}, ${alpha * 0.5})`;
 
         // Draw character
@@ -195,12 +198,13 @@ const ImprovedLetterRain = () => {
     let frameCounter = 0;
     const animate = () => {
       // Fade out trails - match background color based on theme
+      const trailOpacity = darkMode ? 0.45 : 0.55;
       if (darkMode) {
         // Dark theme: #1A1410 = rgb(26, 20, 16)
-        ctx.fillStyle = 'rgba(26, 20, 16, 0.6)';
+        ctx.fillStyle = `rgba(26, 20, 16, ${trailOpacity})`;
       } else {
         // Light theme: #FDFBF7 = rgb(253, 251, 247)
-        ctx.fillStyle = 'rgba(253, 251, 247, 0.6)';
+        ctx.fillStyle = `rgba(253, 251, 247, ${trailOpacity})`;
       }
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -267,7 +271,8 @@ const ImprovedLetterRain = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 opacity-30 blur-[2px]"
+      className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 blur-[2px]"
+      style={{ opacity: darkMode ? 0.5 : 0.65 }}
     />
   );
 };

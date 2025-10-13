@@ -3,8 +3,12 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import Crystal from './Crystal';
+import siteCopy from '../data/siteCopy.json';
 
 const LandingPage = () => {
+  const { landingPage } = siteCopy;
+  const nameCharacters = landingPage.fullName.split('');
+
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* 3D Canvas Background */}
@@ -46,49 +50,17 @@ const LandingPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
         >
-          <motion.span
-            className="inline-block"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1 }}
-          >
-            R
-          </motion.span>
-          <motion.span
-            className="inline-block"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.1 }}
-          >
-            a
-          </motion.span>
-          <motion.span
-            className="inline-block"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.2 }}
-          >
-            y
-          </motion.span>
-          <motion.span className="inline-block mx-3 sm:mx-4">
-            {' '}
-          </motion.span>
-          <motion.span
-            className="inline-block"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.3 }}
-          >
-            X
-          </motion.span>
-          <motion.span
-            className="inline-block"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.4 }}
-          >
-            i
-          </motion.span>
+          {nameCharacters.map((character, index) => (
+            <motion.span
+              key={`${character}-${index}`}
+              className={`inline-block${character === ' ' ? ' mx-3 sm:mx-4' : ''}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
+            >
+              {character === ' ' ? '\u00A0' : character}
+            </motion.span>
+          ))}
         </motion.h1>
 
         {/* Subtitle - Display Font */}
@@ -102,7 +74,7 @@ const LandingPage = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2 }}
         >
-          Architect of Digital Dreams
+          {landingPage.subtitle}
         </motion.p>
 
         {/* Description */}
@@ -113,9 +85,12 @@ const LandingPage = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2.5 }}
         >
-          Software Engineer @ Apple | EECS @ Berkeley
-          <br />
-          Building delightful experiences at the intersection of art and technology
+          {landingPage.descriptionLines.map((line, index) => (
+            <span key={`${line}-${index}`}>
+              {line}
+              {index < landingPage.descriptionLines.length - 1 && <br />}
+            </span>
+          ))}
         </motion.p>
 
         {/* Scroll Hint */}
@@ -132,7 +107,7 @@ const LandingPage = () => {
           }}
         >
           <p className="font-display text-xs sm:text-sm text-bronze dark:text-champagne/60 mb-2 tracking-widest">
-            SCROLL TO EXPLORE
+            {landingPage.scrollHintLabel}
           </p>
           <svg
             className="w-5 h-5 sm:w-6 sm:h-6 mx-auto text-gold"

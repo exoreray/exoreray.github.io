@@ -1,26 +1,9 @@
 import { motion } from 'framer-motion';
+import siteCopy from '../data/siteCopy.json';
 
 const MainSections = ({ onSectionClick }) => {
-  const sections = [
-    {
-      id: 'milestones',
-      number: '01',
-      title: 'Milestones',
-      description: 'Seven chapters of growth, transformation, and discovery',
-    },
-    {
-      id: 'works',
-      number: '02',
-      title: 'Works',
-      description: 'Writing, music, philosophy, and design',
-    },
-    {
-      id: 'skills',
-      number: '03',
-      title: 'Skills',
-      description: 'Technical and creative expertise visualized',
-    },
-  ];
+  const { mainSections } = siteCopy;
+  const sections = mainSections.items;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-8 py-32">
@@ -34,7 +17,7 @@ const MainSections = ({ onSectionClick }) => {
         >
           <div className="w-12 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent mx-auto mb-8" />
           <p className="font-display text-sm tracking-[0.3em] text-text-light/60 dark:text-text-dark/60 uppercase">
-            Explore
+            {mainSections.headerLabel}
           </p>
         </motion.div>
 
@@ -74,7 +57,7 @@ const MainSections = ({ onSectionClick }) => {
 
                   {/* Arrow indicator */}
                   <div className="flex items-center gap-3 text-sm font-display tracking-[0.2em] text-gold/80 group-hover:text-gold group-hover:gap-5 transition-all duration-700">
-                    <span>VIEW</span>
+                    <span>{section.ctaLabel}</span>
                     <svg
                       className="w-5 h-5"
                       fill="none"

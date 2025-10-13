@@ -3,45 +3,26 @@ import { motion, AnimatePresence } from 'framer-motion';
 import PhilosophySection from './PhilosophySection';
 import ProjectsSection from './ProjectsSection';
 import MusicShowcase from './MusicShowcase';
+import siteCopy from '../data/siteCopy.json';
 
 const WorksSection = ({ onBack }) => {
   const [activeCategory, setActiveCategory] = useState(null);
 
-  const categories = [
-    {
-      id: 'projects',
-      number: '01',
-      title: 'Projects',
-      description: 'Building at the intersection of design and engineering',
-      component: ProjectsSection
-    },
-    {
-      id: 'music',
-      number: '02',
-      title: 'Music',
-      description: 'Interactive audio visualizer and soundscapes',
-      component: MusicShowcase
-    },
-    {
-      id: 'philosophy',
-      number: '03',
-      title: 'Philosophy',
-      description: 'Reflections on life, consciousness, and existence',
-      component: PhilosophySection
-    },
-    {
-      id: 'design',
-      number: '04',
-      title: 'Design',
-      description: 'UI/UX and visual design explorations',
-      items: [
-        { title: 'Coming Soon', description: 'UI/UX and visual design work' }
-      ]
-    },
-  ];
+  const { works } = siteCopy;
+  const componentById = {
+    projects: ProjectsSection,
+    music: MusicShowcase,
+    philosophy: PhilosophySection,
+  };
+  const categories = works.categories.map((category) => ({
+    ...category,
+    component: componentById[category.id] || null,
+  }));
 
-  if (activeCategory === 'philosophy' || activeCategory === 'projects' || activeCategory === 'music') {
-    const ActiveComponent = categories.find(c => c.id === activeCategory).component;
+  const activeCategoryData = categories.find((category) => category.id === activeCategory);
+
+  if (activeCategoryData?.component) {
+    const ActiveComponent = activeCategoryData.component;
     return (
       <div className="relative">
         <motion.button
@@ -80,7 +61,7 @@ const WorksSection = ({ onBack }) => {
         <div className="text-center mb-24">
           <div className="w-12 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent mx-auto mb-8" />
           <p className="font-display text-sm tracking-[0.3em] text-text-light/60 dark:text-text-dark/60 uppercase">
-            Works
+            {works.headerLabel}
           </p>
         </div>
 
@@ -117,7 +98,7 @@ const WorksSection = ({ onBack }) => {
 
                   {/* Arrow indicator */}
                   <div className="flex items-center gap-3 text-xs font-display tracking-[0.2em] text-gold/80 group-hover:text-gold group-hover:gap-5 transition-all duration-700">
-                    <span>VIEW</span>
+                    <span>{category.ctaLabel}</span>
                     <svg
                       className="w-4 h-4"
                       fill="none"

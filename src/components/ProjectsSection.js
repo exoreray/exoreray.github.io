@@ -1,29 +1,9 @@
 import { motion } from 'framer-motion';
+import siteCopy from '../data/siteCopy.json';
 
 const ProjectsSection = () => {
-  const projects = [
-    {
-      name: 'Luxiphos',
-      description: 'My technology company building transformative products including StartUp Harbor, Fireworks, Livia AI, and CoinFlip—pioneering solutions at the intersection of innovation and human experience.',
-      link: 'https://www.luxiphos.com/',
-      tag: 'COMPANY',
-      color: 'gold'
-    },
-    {
-      name: 'FlowGPT',
-      description: 'AI accessible, delightful, and empowering for everyone. Grew from 0 to 6M+ users as Founding Designer & Engineer.',
-      link: 'https://flowgpt.com/',
-      tag: 'PRODUCT',
-      color: 'violet'
-    },
-    {
-      name: 'F1 Autonomous Racing',
-      description: 'Berkeley EECS 106B: Building an autonomous racing car from scratch with computer vision and path planning.',
-      link: 'https://eecs106b-banana-radiation.github.io/',
-      tag: 'ROBOTICS',
-      color: 'amber'
-    }
-  ];
+  const { projectsSection } = siteCopy;
+  const projects = projectsSection.items;
 
   return (
     <div className="relative min-h-screen flex items-center justify-center px-8 py-32 bg-gradient-to-b from-bg-light to-bg-light-secondary dark:from-bg-dark dark:to-bg-dark-secondary">
@@ -37,10 +17,10 @@ const ProjectsSection = () => {
         >
           <div className="w-12 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent mx-auto mb-8" />
           <h2 className="font-serif text-5xl md:text-7xl text-text-light dark:text-text-dark mb-6">
-            Projects
+            {projectsSection.header.title}
           </h2>
           <p className="font-display text-xl text-bronze dark:text-champagne">
-            Building at the intersection of design, engineering, and impact
+            {projectsSection.header.tagline}
           </p>
         </motion.div>
 

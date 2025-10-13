@@ -1,0 +1,268 @@
+{
+  "landingPage": {
+    "fullName": "Ray Xi",
+    "subtitle": "Architect of Digital Dreams",
+    "descriptionLines": [
+      "Building delightful experiences at the intersection of art and technology."
+    ],
+    "scrollHintLabel": "SCROLL TO EXPLORE"
+  },
+  "mainSections": {
+    "headerLabel": "Explore",
+    "items": [
+      {
+        "id": "milestones",
+        "number": "01",
+        "title": "Milestones",
+        "description": "Chapters of growth, transformation, and discovery.",
+        "ctaLabel": "VIEW"
+      },
+      {
+        "id": "works",
+        "number": "02",
+        "title": "Works",
+        "description": "Thought & creation.",
+        "ctaLabel": "VIEW"
+      },
+      {
+        "id": "skills",
+        "number": "03",
+        "title": "Ability",
+        "description": "A growing map of all-around capability, pushing beyond boundaries.",
+        "ctaLabel": "VIEW"
+      }
+    ]
+  },
+  "milestones": {
+    "header": {
+      "title": "Milestones",
+      "tagline": "Chapters of Growth, Transformation, and Discovery"
+    },
+    "scrollIndicatorLabel": "CONTINUE",
+    "chapters": [
+      {
+        "id": "wangjing",
+        "number": "Chapter 1",
+        "title": "Origins in Wangjing",
+        "paragraphs": [
+          "From Wangjing (望京), Beijing (北京) — where Zaha Hadid's iconic curved towers pierce the sky like dreams made concrete.",
+          "This is where it began. Where I learned that beauty lives in structure, that architecture isn't just about buildings — it's about shaping experience, creating spaces where people feel something profound.",
+          "The curves taught me to see beyond straight lines. The scale taught me ambition. The harmony of form and function became my first language."
+        ],
+        "badges": [
+          "BEIJING, CHINA"
+        ]
+      },
+      {
+        "id": "transition",
+        "number": "Chapter 2",
+        "title": "The Architect's Lens",
+        "paragraphs": [
+          "I studied architecture — learning to shape spaces, to design experiences, to think in systems and beauty simultaneously.",
+          "But then I discovered something profound: digital architecture. The blueprints became circuit boards. The buildings became interfaces. The same principles — form, function, user experience — just in a different medium.",
+          "I realized I could build worlds that millions could inhabit instantly. Spaces without physical constraints. Architecture at the speed of thought.",
+          "So I made the leap. From China to America. From architecture school to computer science. The foundation remained — I was still designing experiences. Just in code."
+        ],
+        "badges": [
+          "ARCHITECTURE",
+          "COMPUTER SCIENCE"
+        ]
+      },
+      {
+        "id": "berkeley",
+        "number": "Chapter 3",
+        "title": "The One Path",
+        "paragraphs": [
+          "Arriving in America with a dream, I began my college journey—a place where paths diverge and aspirations are tested.",
+          "The goal seemed impossible: reach UC Berkeley's EECS program—one of the most competitive in the world.",
+          "That year, I became the only student in my cohort to be accepted into Berkeley EECS. Among hundreds who tried, one path lit up in gold.",
+          "It wasn't just about getting in—it was about proving that determination and relentless work could overcome any odds."
+        ],
+        "badges": [
+          "1 IN 100+",
+          "UC BERKELEY"
+        ]
+      },
+      {
+        "id": "robotics",
+        "number": "Chapter 4",
+        "title": "Racing at the Edge",
+        "paragraphs": [
+          "At Berkeley EECS, I pushed the boundaries of what machines could do—building an F1 autonomous racing car from the ground up.",
+          "This wasn't just about speed. It was about creating intelligence at velocity—computer vision processing at 120fps, path planning algorithms making microsecond decisions, sensor fusion creating perfect spatial awareness.",
+          "Every line of code had to be flawless. At those speeds, there's no room for error. The car became an extension of algorithmic precision—where mathematics meets adrenaline.",
+          "This project shaped my philosophy: build systems that perform at the edge of possibility, elegant under pressure, reliable at scale."
+        ],
+        "ctaLabel": "VIEW F1 PROJECT →",
+        "ctaUrl": "https://eecs106b-banana-radiation.github.io/"
+      },
+      {
+        "id": "flowgpt",
+        "number": "Chapter 5",
+        "title": "The Scale",
+        "paragraphs": [
+          "What begins with a single spark can become a wildfire. FlowGPT started with an idea: make AI accessible, delightful, and empowering for everyone.",
+          "As Founding Designer & Engineer, I didn't just build features—I architected experiences. Every pixel, every interaction, every line of code was crafted with intention.",
+          "From 0 users on day one to 6,000,000+ at scale. Exponential growth, sustained delight.",
+          "I learned that scale isn't just about numbers—it's about maintaining soul while growing fast. Every one of those six million users deserved delight, and we delivered it."
+        ],
+        "badges": [
+          "FOUNDING DESIGNER",
+          "6M+ USERS"
+        ]
+      },
+      {
+        "id": "apple",
+        "number": "Chapter 6",
+        "title": "Among Thousands, One",
+        "paragraphs": [
+          "Apple—a place where craft meets innovation, where every detail matters, where design is not just how it looks but how it works.",
+          "That year, among thousands of applicants, I became the only bachelor's degree graduate from Berkeley accepted as a new grad. Not because of years of experience, but because of vision, craft, and relentless attention to detail.",
+          "I joined the masters of craft. I learned that technology, at its best, disappears—leaving only delight, only intuition, only 恰到好处.",
+          "Apple taught me that excellence isn't flashy. It's quiet. Elegant. Inevitable."
+        ],
+        "badges": [
+          "THE ONE",
+          "APPLE"
+        ]
+      },
+      {
+        "id": "community",
+        "number": "Chapter 6",
+        "title": "Building Bridges",
+        "paragraphs": [
+          "Technology connects. But community transforms.",
+          "I founded StartupHarbor, a place where dreamers could find their crew, where founders could share struggles and victories, where ideas could collide and create something greater.",
+          "Collaborating with Bay Area Founders Club, we built a network of 30,000 members—30,000 stories, aspirations, and journeys intertwined.",
+          "Each connection, each conversation, each shared moment of breakthrough—that's where true innovation lives. Not in isolation, but in the spaces between us."
+        ],
+        "badges": [
+          "30K+ MEMBERS",
+          "COMMUNITY"
+        ]
+      },
+      {
+        "id": "livia",
+        "number": "Chapter 7",
+        "title": "The Heart",
+        "paragraphs": [
+          "Livia—born from a simple truth: every human deserves to feel loved, cared for, and understood.",
+          "We live in a world rich with technology but starved for genuine connection. I'm building Livia to bridge that gap—to use AI not as a replacement for human warmth, but as a channel to amplify it.",
+          "博爱—universal love—is not just philosophy. It's my north star. Better resource allocation, deeper emotional intelligence, technology that serves humanity's highest potential.",
+          "This is why I build. This is my purpose. To spread love and care to every human through AI."
+        ],
+        "badges": [
+          "博爱",
+          "CARE"
+        ]
+      }
+    ]
+  },
+  "works": {
+    "headerLabel": "Works",
+    "categories": [
+      {
+        "id": "projects",
+        "number": "01",
+        "title": "Projects",
+        "description": "Building at the intersection of art and technology.",
+        "ctaLabel": "VIEW"
+      },
+      {
+        "id": "music",
+        "number": "02",
+        "title": "Music",
+        "description": "Original EDM compositions and immersive sound design.",
+        "ctaLabel": "VIEW"
+      },
+      {
+        "id": "philosophy",
+        "number": "03",
+        "title": "Thoughts",
+        "description": "Exploring how life, consciousness, and existence intertwine.",
+        "ctaLabel": "VIEW"
+      },
+      {
+        "id": "design",
+        "number": "04",
+        "title": "Awards",
+        "description": "Recognition and honors that mark the journey.",
+        "items": [
+          {
+            "title": "Coming Soon",
+            "description": "Award highlights arriving soon."
+          }
+        ],
+        "ctaLabel": "VIEW"
+      }
+    ]
+  },
+  "projectsSection": {
+    "header": {
+      "title": "Projects",
+      "tagline": "Building at the intersection of art and technology."
+    },
+    "items": [
+      {
+        "name": "Luxiphos",
+        "description": "My company building transformative products including StartUp Harbor, Fireworks VR, Livia AI, and CoinFlip—pioneering solutions at the intersection of innovation and human experience.",
+        "link": "https://www.luxiphos.com/",
+        "tag": "COMPANY",
+        "color": "gold"
+      },
+      {
+        "name": "FlowGPT",
+        "description": "AI accessible, delightful, and empowering for everyone. Grew from 0 to 6M+ users as Founding Designer & Engineer.",
+        "link": "https://flowgpt.com/",
+        "tag": "PRODUCT",
+        "color": "violet"
+      },
+      {
+        "name": "F1 Autonomous Racing",
+        "description": "Building an autonomous racing car from scratch with computer vision and path planning.",
+        "link": "https://eecs106b-banana-radiation.github.io/",
+        "tag": "ROBOTICS",
+        "color": "amber"
+      }
+    ]
+  },
+  "musicShowcase": {
+    "title": "Music Gallery",
+    "tagline": "Original EDM I compose, paired with immersive visualizers.",
+    "tracks": [
+      {
+        "title": "Broken",
+        "artist": "Ray Xi",
+        "genre": "Future Bass / EDM",
+        "url": "/music/broken.mp3",
+        "soundcloudUrl": "https://on.soundcloud.com/UbjDj",
+        "soundcloudLabel": "SoundCloud"
+      }
+    ],
+    "quote": {
+      "text": "\"The art is knowing what to add, and more importantly, what to leave out.\""
+    }
+  },
+  "philosophySection": {
+    "title": "Thoughts",
+    "subtitle": "Mapping the architecture of understanding",
+    "paragraphs": [
+      "At the center of everything I build is 博爱—universal love—treated not as abstraction but as a practical north star.",
+      "I direct energy, attention, and technology toward what truly matters—crafting systems that expand human potential instead of compressing it.",
+      "Emotion and logic are complementary forces; the work feels right only when analytical rigor and intuitive delight move in sync.",
+      "I study how the world really runs across the horizontal axis of time and the vertical layers of society, translating that clarity from the inside out so every decision lands with intent."
+    ],
+    "badges": [
+      "博爱",
+      "BALANCE",
+      "CLARITY"
+    ]
+  },
+  "skillsSection": {
+    "headerLabel": "Ability"
+  },
+  "globalMusicPlayer": {
+    "nowPlayingLabel": "Now Playing",
+    "playlistLabel": "Playlist"
+  }
+}

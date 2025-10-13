@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { skillsData } from '../data/skillsData';
+import siteCopy from '../data/siteCopy.json';
 
 const SkillsSection = ({ onBack }) => {
   const [selectedSkill, setSelectedSkill] = useState(null);
+  const { skillsSection } = siteCopy;
 
   return (
     <div className="relative min-h-screen py-32 px-8">
@@ -38,7 +40,7 @@ const SkillsSection = ({ onBack }) => {
         >
           <div className="w-12 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent mx-auto mb-8" />
           <p className="font-display text-sm tracking-[0.3em] text-text-light/60 dark:text-text-dark/60 uppercase">
-            Skills
+            {skillsSection.headerLabel}
           </p>
         </motion.div>
 

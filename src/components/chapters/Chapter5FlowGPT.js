@@ -4,8 +4,16 @@ import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import Chapter from '../Chapter';
 import FlowGPTGrowth from '../FlowGPTGrowth';
+import siteCopy from '../../data/siteCopy.json';
 
 const Chapter5FlowGPT = () => {
+  const { milestones } = siteCopy;
+  const copy = milestones.chapters.find((chapter) => chapter.id === 'flowgpt');
+
+  if (!copy) {
+    return null;
+  }
+
   return (
     <Chapter id="flowgpt" className="bg-gradient-to-b from-bg-light-secondary dark:from-bg-dark-secondary to-bg-light dark:to-bg-dark">
       <div className="absolute inset-0 flex flex-col lg:flex-row-reverse items-center justify-center gap-8 px-8 lg:px-16">
@@ -43,10 +51,10 @@ const Chapter5FlowGPT = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-text-light dark:text-white-warm mb-4">
-              Chapter 5
+              {copy.number}
             </h2>
             <h3 className="font-display text-3xl md:text-4xl text-bronze dark:text-champagne mb-6">
-              The Scale
+              {copy.title}
             </h3>
           </motion.div>
 
@@ -57,49 +65,33 @@ const Chapter5FlowGPT = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="space-y-4"
           >
-            <p className="font-sans text-lg md:text-xl text-text-light/90 dark:text-cream/90 leading-relaxed">
-              What begins with a single spark can become a wildfire.{' '}
-              <span className="text-amber-dark dark:text-amber font-semibold">FlowGPT</span> started with an idea:
-              make AI accessible, delightful, and empowering for everyone.
-            </p>
-
-            <p className="font-sans text-base md:text-lg text-text-light/80 dark:text-cream/80 leading-relaxed">
-              As <span className="text-gold font-semibold">Founding Designer & Engineer</span>, I didn't just
-              build features—I architected experiences. Every pixel, every interaction, every line of code
-              was crafted with intention.
-            </p>
-
-            <p className="font-sans text-base md:text-lg text-text-light/80 dark:text-cream/80 leading-relaxed">
-              From <span className="text-bronze-dark dark:text-bronze italic">0 users</span> on day one to{' '}
-              <span className="text-amber-dark dark:text-amber font-semibold">6,000,000+</span> at scale.
-              Exponential growth, sustained delight.
-            </p>
-
-            <p className="font-sans text-base md:text-lg text-text-light/80 dark:text-cream/80 leading-relaxed">
-              I learned that scale isn't just about numbers—it's about{' '}
-              <span className="text-bronze dark:text-champagne font-semibold">maintaining soul while growing fast</span>.
-              Every one of those six million users deserved delight, and we delivered it.
-            </p>
+            {copy.paragraphs.map((paragraph, index) => (
+              <p
+                key={index}
+                className={`font-sans ${index === 0 ? 'text-lg md:text-xl text-text-light/90 dark:text-cream/90' : 'text-base md:text-lg text-text-light/80 dark:text-cream/80'} leading-relaxed`}
+              >
+                {paragraph}
+              </p>
+            ))}
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="pt-4 flex gap-4 flex-wrap"
-          >
-            <div className="inline-block px-6 py-2 border border-teal/30 rounded-sm">
-              <p className="font-mono text-sm text-teal tracking-wider">
-                FOUNDING DESIGNER
-              </p>
-            </div>
-            <div className="inline-block px-6 py-2 border border-gold/30 rounded-sm">
-              <p className="font-mono text-sm text-gold tracking-wider">
-                6M+ USERS
-              </p>
-            </div>
-          </motion.div>
+          {copy.badges?.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="pt-4 flex gap-4 flex-wrap"
+            >
+              {copy.badges.map((badge) => (
+                <div key={badge} className="inline-block px-6 py-2 border border-gold/30 rounded-sm">
+                  <p className="font-mono text-sm text-gold tracking-wider">
+                    {badge}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
+          )}
         </div>
       </div>
 
@@ -109,6 +101,9 @@ const Chapter5FlowGPT = () => {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
       >
+        <p className="font-display text-xs text-champagne/60 mb-2 tracking-widest">
+          {milestones.scrollIndicatorLabel}
+        </p>
         <svg
           className="w-6 h-6 mx-auto text-gold"
           fill="none"
