@@ -1,28 +1,26 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PhilosophySection from './PhilosophySection';
+import ProjectsSection from './ProjectsSection';
+import MusicShowcase from './MusicShowcase';
 
 const WorksSection = ({ onBack }) => {
   const [activeCategory, setActiveCategory] = useState(null);
 
   const categories = [
     {
-      id: 'writing',
+      id: 'projects',
       number: '01',
-      title: 'Writing',
-      description: 'Technical articles and personal essays',
-      items: [
-        { title: 'Coming Soon', description: 'Technical articles and personal essays' }
-      ]
+      title: 'Projects',
+      description: 'Building at the intersection of design and engineering',
+      component: ProjectsSection
     },
     {
       id: 'music',
       number: '02',
       title: 'Music',
-      description: 'Original compositions and soundscapes',
-      items: [
-        { title: 'Broken', description: 'Original composition', audio: '/music/broken.mp3' }
-      ]
+      description: 'Interactive audio visualizer and soundscapes',
+      component: MusicShowcase
     },
     {
       id: 'philosophy',
@@ -42,8 +40,8 @@ const WorksSection = ({ onBack }) => {
     },
   ];
 
-  if (activeCategory === 'philosophy') {
-    const PhilosophyComponent = categories.find(c => c.id === 'philosophy').component;
+  if (activeCategory === 'philosophy' || activeCategory === 'projects' || activeCategory === 'music') {
+    const ActiveComponent = categories.find(c => c.id === activeCategory).component;
     return (
       <div className="relative">
         <motion.button
@@ -57,7 +55,7 @@ const WorksSection = ({ onBack }) => {
             <path d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
         </motion.button>
-        <PhilosophyComponent />
+        <ActiveComponent />
       </div>
     );
   }

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Chapter from '../Chapter';
 import FlowGPTGrowth from '../FlowGPTGrowth';
 
-const Chapter4FlowGPT = () => {
+const Chapter5FlowGPT = () => {
   return (
     <Chapter id="flowgpt" className="bg-gradient-to-b from-bg-light-secondary dark:from-bg-dark-secondary to-bg-light dark:to-bg-dark">
       <div className="absolute inset-0 flex flex-col lg:flex-row-reverse items-center justify-center gap-8 px-8 lg:px-16">
@@ -43,7 +43,7 @@ const Chapter4FlowGPT = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-text-light dark:text-white-warm mb-4">
-              Chapter 4
+              Chapter 5
             </h2>
             <h3 className="font-display text-3xl md:text-4xl text-bronze dark:text-champagne mb-6">
               The Scale
@@ -125,4 +125,4 @@ const Chapter4FlowGPT = () => {
   );
 };
 
-export default Chapter4FlowGPT;
+export default Chapter5FlowGPT;

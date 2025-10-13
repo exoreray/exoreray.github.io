@@ -23,6 +23,74 @@ const ImprovedLetterRain = () => {
     const fontSize = 14;
     const columns = canvas.width / fontSize;
 
+    // Splash particle class for impact effects
+    class SplashParticle {
+      constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.vx = (Math.random() - 0.5) * 4; // Horizontal velocity
+        this.vy = -Math.random() * 6 - 2; // Upward velocity
+        this.gravity = 0.3;
+        this.life = 1;
+        this.decay = 0.02;
+        this.size = Math.random() * 3 + 1;
+        this.color = color;
+      }
+
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.vy += this.gravity;
+        this.life -= this.decay;
+        this.vx *= 0.98; // Air resistance
+      }
+
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = this.life;
+        ctx.fillStyle = `${this.color}, ${this.life})`;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = `${this.color}, ${this.life * 0.5})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    // Ripple class for water rings
+    class Ripple {
+      constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.radius = 0;
+        this.maxRadius = Math.random() * 30 + 20;
+        this.life = 1;
+        this.decay = 0.02;
+        this.color = color;
+        this.lineWidth = 2;
+      }
+
+      update() {
+        this.radius += 2;
+        this.life -= this.decay;
+        this.lineWidth = Math.max(0.5, this.lineWidth - 0.05);
+      }
+
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = this.life * 0.3;
+        ctx.strokeStyle = `${this.color}, ${this.life})`;
+        ctx.lineWidth = this.lineWidth;
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = `${this.color}, ${this.life * 0.3})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.restore();
+      }
+    }
+
     // Drop class for firefly effect
     class Drop {
       constructor(x) {
@@ -36,6 +104,7 @@ const ImprovedLetterRain = () => {
         this.color = this.getColor();
         this.changeInterval = Math.floor(Math.random() * 20) + 10;
         this.frameCount = 0;
+        this.hasSplashed = false; // Track if this drop has already splashed
       }
 
       getColor() {
@@ -95,11 +164,32 @@ const ImprovedLetterRain = () => {
 
     // Create drops (heavy rain)
     const drops = [];
+    const splashParticles = [];
+    const ripples = [];
     const dropCount = Math.floor(columns * 1.2); // 120% density - very heavy rain
 
     for (let i = 0; i < dropCount; i++) {
       drops.push(new Drop(Math.floor(Math.random() * columns)));
     }
+
+    // Create splash effect
+    const createSplash = (x, y, color) => {
+      // Create multiple splash particles
+      const particleCount = Math.floor(Math.random() * 5) + 3;
+      for (let i = 0; i < particleCount; i++) {
+        splashParticles.push(new SplashParticle(x, y, color));
+      }
+
+      // Create ripples
+      ripples.push(new Ripple(x, y, color));
+
+      // Occasionally create a second ripple for depth
+      if (Math.random() > 0.5) {
+        setTimeout(() => {
+          ripples.push(new Ripple(x, y, color));
+        }, 100);
+      }
+    };
 
     // Animation loop
     let frameCounter = 0;
@@ -123,14 +213,43 @@ const ImprovedLetterRain = () => {
         }
       }
 
+      // Update and draw ripples (draw first for layering)
+      for (let i = ripples.length - 1; i >= 0; i--) {
+        ripples[i].update();
+        ripples[i].draw();
+
+        // Remove dead ripples
+        if (ripples[i].life <= 0 || ripples[i].radius > ripples[i].maxRadius) {
+          ripples.splice(i, 1);
+        }
+      }
+
       // Update and draw drops
       for (let i = drops.length - 1; i >= 0; i--) {
         drops[i].update();
         drops[i].draw();
 
+        // Check if drop hits the bottom and create splash
+        if (!drops[i].hasSplashed && drops[i].y > canvas.height - 20 && drops[i].y < canvas.height + 10) {
+          drops[i].hasSplashed = true;
+          // Create splash at the drop position
+          createSplash(drops[i].x * fontSize + fontSize/2, canvas.height - 10, drops[i].color);
+        }
+
         // Remove drops that are off screen (cleanup) - iterate backwards
         if (drops[i].y > canvas.height + 100) {
           drops.splice(i, 1);
+        }
+      }
+
+      // Update and draw splash particles
+      for (let i = splashParticles.length - 1; i >= 0; i--) {
+        splashParticles[i].update();
+        splashParticles[i].draw();
+
+        // Remove dead particles
+        if (splashParticles[i].life <= 0) {
+          splashParticles.splice(i, 1);
         }
       }
 
