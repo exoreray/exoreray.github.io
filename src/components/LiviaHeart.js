@@ -15,16 +15,16 @@ const LiviaHeart = () => {
     const colors = new Float32Array(particleCount * 3);
     const scales = new Float32Array(particleCount);
 
-    // Heart curve parameters
+    // Heart curve parameters - smooth and romantic
     for (let i = 0; i < particleCount; i++) {
       const t = (i / particleCount) * Math.PI * 2;
       const layer = Math.floor(i / (particleCount / 10)); // 10 layers
       const layerRadius = 0.3 + (layer * 0.15);
 
-      // Parametric heart curve
-      const x = layerRadius * 16 * Math.pow(Math.sin(t), 3) * 0.15;
-      const y = layerRadius * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t)) * 0.15;
-      const z = (Math.random() - 0.5) * 0.5;
+      // Smooth parametric heart curve (cardioid-based)
+      const x = layerRadius * 16 * Math.pow(Math.sin(t), 3) * 0.08;
+      const y = layerRadius * (13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t)) * 0.08 - 0.3;
+      const z = (Math.random() - 0.5) * 0.3;
 
       positions[i * 3] = x;
       positions[i * 3 + 1] = y;
