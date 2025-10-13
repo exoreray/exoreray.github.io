@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import RandomLetter from './RandomLetter'; // The component we created earlier
 
 // try to link variable change in css file but failed
@@ -8,39 +8,60 @@ import RandomLetter from './RandomLetter'; // The component we created earlier
 // const height = computedStyles.height;
 
 function RandomLetterGrid() {
-  const [numRows, setNumRows] = useState(0);
-  const [numCols, setNumCols] = useState(0);
+  const [dimensions, setDimensions] = useState({
+    rows: 0,
+    cols: 0
+  });
 
+  // Recalculate dimensions on window resize, but throttle the updates
   useEffect(() => {
     function updateDimensions() {
-      // Calculate the number of rows and columns that will fit in the window
-      const rows = Math.floor(window.innerHeight / 20); // 50px is the height of each RandomLetter component
-      const cols = Math.floor(window.innerWidth / 20); // 50px is the width of each RandomLetter component
-      setNumRows(rows);
-      setNumCols(cols);
+      const rows = Math.floor(window.innerHeight / 20);
+      const cols = Math.floor(window.innerWidth / 20);
+
+      // Limit the number of letters to prevent performance issues
+      const maxLetters = 1000;
+      const totalLetters = rows * cols;
+
+      if (totalLetters > maxLetters) {
+        const ratio = Math.sqrt(maxLetters / totalLetters);
+        setDimensions({
+          rows: Math.floor(rows * ratio),
+          cols: Math.floor(cols * ratio)
+        });
+      } else {
+        setDimensions({ rows, cols });
+      }
     }
 
-    // Update the number of rows and columns when the window is resized
-    window.addEventListener('resize', updateDimensions);
+    // Throttle resize updates
+    let resizeTimer;
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(updateDimensions, 100);
+    };
 
-    // Set the initial number of rows and columns
+    window.addEventListener('resize', handleResize);
     updateDimensions();
 
-    return () => window.removeEventListener('resize', updateDimensions);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Generate the grid of RandomLetter components
-  const grid = [];
-  for (let i = 0; i < numRows; i++) {
-    const row = [];
-    for (let j = 0; j < numCols; j++) {
-      row.push(<RandomLetter key={`${i}-${j}`} />);
+  // Use useMemo to prevent unnecessary re-renders of the grid
+  const grid = useMemo(() => {
+    const result = [];
+    for (let i = 0; i < dimensions.rows; i++) {
+      const row = [];
+      for (let j = 0; j < dimensions.cols; j++) {
+        row.push(<RandomLetter key={`${i}-${j}`} />);
+      }
+      result.push(<div key={i} style={{ display: 'flex' }}>{row}</div>);
     }
-    grid.push(<div key={i}>{row}</div>);
-  }
+    return result;
+  }, [dimensions]);
 
   return (
-    <div>
+    <div className="random-letter-grid">
       {grid}
     </div>
   );
