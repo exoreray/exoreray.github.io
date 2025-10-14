@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { motion } from 'framer-motion';
@@ -6,13 +6,40 @@ import Chapter from '../Chapter';
 import WangjingSOHO from '../WangjingSOHO';
 import siteCopy from '../../data/siteCopy.json';
 
+// Check if device is mobile
+const isMobile = () => {
+  if (typeof window === 'undefined') return false;
+  return window.innerWidth < 1024;
+};
+
 const Chapter1Wangjing = () => {
   const { milestones } = siteCopy;
   const copy = milestones.chapters.find((chapter) => chapter.id === 'wangjing');
+  const [mobile, setMobile] = useState(false);
+
+  useEffect(() => {
+    setMobile(isMobile());
+    const handleResize = () => setMobile(isMobile());
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   if (!copy) {
     return null;
   }
+
+  // Simplified animation config for mobile
+  const animationConfig = mobile ? {
+    initial: { opacity: 1, x: 0, y: 0 },
+    whileInView: { opacity: 1, x: 0, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0 }
+  } : {
+    initial: { opacity: 0, x: 50 },
+    whileInView: { opacity: 1, x: 0 },
+    viewport: { once: false },
+    transition: { duration: 0.8 }
+  };
 
   return (
     <Chapter id="wangjing" className="bg-gradient-to-b from-bg-light to-bg-light-secondary dark:from-bg-dark dark:to-bg-dark-secondary">
@@ -21,23 +48,24 @@ const Chapter1Wangjing = () => {
         {/* 3D Scene - Left Side */}
         <div className="w-full lg:w-1/2 h-[50vh] lg:h-[70vh]">
           <Canvas gl={{ antialias: true, alpha: true }} dpr={[1, 1.5]}>
-            <PerspectiveCamera makeDefault position={[0, 2, 8]} />
+            <PerspectiveCamera makeDefault position={[15, 10, 15]} />
 
-            <ambientLight intensity={0.4} />
-            <directionalLight position={[5, 5, 5]} intensity={1} color="#FFD700" />
-            <pointLight position={[-5, 3, -5]} intensity={0.6} color="#9B88DA" />
+            <ambientLight intensity={2.7} />
+            <directionalLight position={[5, 8, 5]} intensity={5.4} color="#FFFFFF" />
+            <pointLight position={[-3, 3, -3]} intensity={3.6} color="#FFFFFF" />
+            <pointLight position={[3, 3, 3]} intensity={3} color="#FFD700" />
 
             <Suspense fallback={null}>
               <WangjingSOHO />
             </Suspense>
 
             <OrbitControls
-              enableZoom={true}
+              enableZoom={false}
               enablePan={false}
               autoRotate
               autoRotateSpeed={0.5}
-              minDistance={5}
-              maxDistance={12}
+              maxPolarAngle={Math.PI / 2}
+              minPolarAngle={Math.PI / 4}
             />
           </Canvas>
         </div>
@@ -45,10 +73,8 @@ const Chapter1Wangjing = () => {
         {/* Content - Right Side */}
         <div className="w-full lg:w-1/2 flex flex-col justify-center text-left space-y-6">
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            {...animationConfig}
+            transition={{ ...animationConfig.transition, delay: mobile ? 0 : 0.2 }}
           >
             <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-text-light dark:text-white-warm mb-4">
               {copy.number}
@@ -59,10 +85,8 @@ const Chapter1Wangjing = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            {...animationConfig}
+            transition={{ ...animationConfig.transition, delay: mobile ? 0 : 0.4 }}
             className="space-y-4"
           >
             {copy.paragraphs.map((paragraph, index) => (
@@ -77,10 +101,8 @@ const Chapter1Wangjing = () => {
 
           {copy.badges?.length > 0 && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.6, delay: 0.6 }}
+              {...animationConfig}
+              transition={{ ...animationConfig.transition, delay: mobile ? 0 : 0.6 }}
               className="pt-4 flex gap-4 flex-wrap"
             >
               {copy.badges.map((badge) => (
@@ -94,28 +116,6 @@ const Chapter1Wangjing = () => {
           )}
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <p className="font-display text-xs text-champagne/60 mb-2 tracking-widest">
-          {milestones.scrollIndicatorLabel}
-        </p>
-        <svg
-          className="w-6 h-6 mx-auto text-gold"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-      </motion.div>
     </Chapter>
   );
 };

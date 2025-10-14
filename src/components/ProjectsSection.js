@@ -1,16 +1,23 @@
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import siteCopy from '../data/siteCopy.json';
 
 const ProjectsSection = () => {
   const { projectsSection } = siteCopy;
   const projects = projectsSection.items;
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setHasAnimated(true);
+  }, []);
 
   return (
     <div className="relative min-h-screen flex items-center justify-center px-8 py-32 bg-gradient-to-b from-bg-light to-bg-light-secondary dark:from-bg-dark dark:to-bg-dark-secondary">
       <div className="max-w-6xl mx-auto w-full">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={hasAnimated ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-24"
@@ -32,9 +39,9 @@ const ProjectsSection = () => {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
+              initial={hasAnimated ? false : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: hasAnimated ? 0 : index * 0.1 }}
               className="group block border-t border-gold/10 last:border-b hover:bg-gradient-to-r hover:from-gold/5 hover:to-transparent transition-all duration-700"
             >
               <div className="py-12 px-8 flex flex-col md:flex-row md:items-center gap-8">
@@ -84,9 +91,9 @@ const ProjectsSection = () => {
 
         {/* Bottom decoration */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={hasAnimated ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
+          transition={{ duration: 1, delay: hasAnimated ? 0 : 0.8 }}
           className="w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent mt-24"
         />
       </div>

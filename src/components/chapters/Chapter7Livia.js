@@ -95,27 +95,6 @@ const Chapter7Livia = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <p className="font-display text-xs text-champagne/60 mb-2 tracking-widest">
-          {milestones.scrollIndicatorLabel}
-        </p>
-        <svg
-          className="w-6 h-6 mx-auto text-gold"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-      </motion.div>
     </Chapter>
   );
 };

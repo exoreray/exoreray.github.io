@@ -19,7 +19,7 @@ const Chapter5FlowGPT = () => {
       <div className="absolute inset-0 flex flex-col lg:flex-row-reverse items-center justify-center gap-8 px-8 lg:px-16">
 
         {/* 3D Scene - Right Side */}
-        <div className="w-full lg:w-1/2 h-[50vh] lg:h-[70vh]">
+        <div className="w-full lg:w-1/2 h-[50vh] lg:h-[70vh] ">
           <Canvas gl={{ antialias: true, alpha: true }} dpr={[1, 1.5]}>
             <PerspectiveCamera makeDefault position={[4, 2, 4]} />
 
@@ -34,10 +34,12 @@ const Chapter5FlowGPT = () => {
             <OrbitControls
               enableZoom={false}
               enablePan={false}
+              
               autoRotate
               autoRotateSpeed={0.5}
               maxPolarAngle={Math.PI / 1.8}
               minPolarAngle={Math.PI / 3}
+              
             />
           </Canvas>
         </div>
@@ -95,27 +97,6 @@ const Chapter5FlowGPT = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <p className="font-display text-xs text-champagne/60 mb-2 tracking-widest">
-          {milestones.scrollIndicatorLabel}
-        </p>
-        <svg
-          className="w-6 h-6 mx-auto text-gold"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-      </motion.div>
     </Chapter>
   );
 };

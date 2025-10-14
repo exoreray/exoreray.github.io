@@ -16,6 +16,7 @@ const MusicShowcase = () => {
   const animationRef = useRef(null);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
