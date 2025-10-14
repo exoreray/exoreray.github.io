@@ -1,10 +1,14 @@
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import { OrbitControls, PerspectiveCamera, useGLTF } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import Chapter from '../Chapter';
-import WangjingSOHO from '../WangjingSOHO';
 import siteCopy from '../../data/siteCopy.json';
+
+const SohoModel = () => {
+  const { scene } = useGLTF('/soho.glb');
+  return <primitive object={scene} scale={15} />;
+};
 
 const Chapter1Wangjing = () => {
   const { milestones } = siteCopy;
@@ -21,23 +25,24 @@ const Chapter1Wangjing = () => {
         {/* 3D Scene - Left Side */}
         <div className="w-full lg:w-1/2 h-[50vh] lg:h-[70vh]">
           <Canvas gl={{ antialias: true, alpha: true }} dpr={[1, 1.5]}>
-            <PerspectiveCamera makeDefault position={[0, 2, 8]} />
+            <PerspectiveCamera makeDefault position={[15, 10, 15]} />
 
-            <ambientLight intensity={0.4} />
-            <directionalLight position={[5, 5, 5]} intensity={1} color="#FFD700" />
-            <pointLight position={[-5, 3, -5]} intensity={0.6} color="#9B88DA" />
+            <ambientLight intensity={2.7} />
+            <directionalLight position={[5, 8, 5]} intensity={5.4} color="#FFFFFF" />
+            <pointLight position={[-3, 3, -3]} intensity={3.6} color="#FFFFFF" />
+            <pointLight position={[3, 3, 3]} intensity={3} color="#FFD700" />
 
             <Suspense fallback={null}>
-              <WangjingSOHO />
+              <SohoModel />
             </Suspense>
 
             <OrbitControls
-              enableZoom={true}
+              enableZoom={false}
               enablePan={false}
               autoRotate
               autoRotateSpeed={0.5}
-              minDistance={5}
-              maxDistance={12}
+              maxPolarAngle={Math.PI / 2}
+              minPolarAngle={Math.PI / 4}
             />
           </Canvas>
         </div>
