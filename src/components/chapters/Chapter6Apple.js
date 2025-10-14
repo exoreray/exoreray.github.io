@@ -21,11 +21,12 @@ const Chapter6Apple = () => {
         {/* 3D Scene - Left Side */}
         <div className="w-full lg:w-1/2 h-[50vh] lg:h-[70vh]">
           <Canvas gl={{ antialias: true, alpha: true }} dpr={[1, 1.5]}>
-            <PerspectiveCamera makeDefault position={[4, 3, 5]} />
+            <PerspectiveCamera makeDefault position={[0, 300, 0]} rotation={[-Math.PI / 2, 0, 0]} />
 
-            <ambientLight intensity={0.5} />
-            <directionalLight position={[5, 8, 5]} intensity={1.2} color="#FFFFFF" />
-            <pointLight position={[-3, 3, -3]} intensity={0.6} color="#C0C0C0" />
+            <ambientLight intensity={0.9} />
+            <directionalLight position={[5, 8, 5]} intensity={1.8} color="#FFFFFF" />
+            <pointLight position={[-3, 3, -3]} intensity={1.2} color="#FFFFFF" />
+            <pointLight position={[3, 3, 3]} intensity={1} color="#C0C0C0" />
 
             <Suspense fallback={null}>
               <ApplePark />

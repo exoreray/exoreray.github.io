@@ -1,10 +1,14 @@
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
+import { OrbitControls, PerspectiveCamera, useGLTF } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import Chapter from '../Chapter';
-import CollegePathway from '../CollegePathway';
 import siteCopy from '../../data/siteCopy.json';
+
+const BerkeleyModel = () => {
+  const { scene } = useGLTF('/berkeley.glb');
+  return <primitive object={scene} scale={3} />;
+};
 
 const Chapter3Berkeley = () => {
   const { milestones } = siteCopy;
@@ -23,13 +27,13 @@ const Chapter3Berkeley = () => {
           <Canvas gl={{ antialias: true, alpha: true }} dpr={[1, 1.5]}>
             <PerspectiveCamera makeDefault position={[3, 2, 4]} />
 
-            <ambientLight intensity={0.4} />
-            <directionalLight position={[5, 5, 5]} intensity={1} color="#FFD700" />
-            <pointLight position={[-3, 2, -2]} intensity={0.8} color="#9B88DA" />
-            <pointLight position={[0, 0, 3]} intensity={0.6} color="#20B2AA" />
+            <ambientLight intensity={0.8} />
+            <directionalLight position={[5, 5, 5]} intensity={2} color="#FFD700" />
+            <pointLight position={[-3, 2, -2]} intensity={1.6} color="#9B88DA" />
+            <pointLight position={[0, 0, 3]} intensity={1.2} color="#20B2AA" />
 
             <Suspense fallback={null}>
-              <CollegePathway />
+              <BerkeleyModel />
             </Suspense>
 
             <OrbitControls

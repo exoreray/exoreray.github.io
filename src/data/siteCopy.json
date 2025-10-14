@@ -259,10 +259,70 @@
     ]
   },
   "skillsSection": {
-    "headerLabel": "Ability"
+    "headerLabel": "Ability",
+    "modalLabels": {
+      "projects": "Projects"
+    }
   },
   "globalMusicPlayer": {
     "nowPlayingLabel": "Now Playing",
     "playlistLabel": "Playlist"
+  },
+  "header": {
+    "siteName": "Ray Xi",
+    "navigation": {
+      "register": "Register",
+      "login": "Login",
+      "about": "About",
+      "projects": "Projects",
+      "skills": "Skills"
+    }
+  },
+  "footer": {
+    "contactHeading": "Connect With Me",
+    "socialLinksHeading": "Social Links",
+    "socialLinks": {
+      "facebook": {
+        "label": "Facebook",
+        "url": "https://www.facebook.com/profile.php?id=100009227797686"
+      },
+      "instagram": {
+        "label": "Instagram",
+        "url": "https://www.instagram.com/exoreray/"
+      }
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Login",
+      "labels": {
+        "username": "Username",
+        "password": "Password"
+      },
+      "submitButton": "Login",
+      "errors": {
+        "emptyFields": "Please fill in all fields",
+        "loginFailed": "Login failed. Please check your credentials."
+      },
+      "registerPrompt": "Don't have an account?",
+      "registerLink": "Register",
+      "homeLink": "Back to Home"
+    },
+    "register": {
+      "title": "Register",
+      "labels": {
+        "username": "Username",
+        "email": "Email",
+        "password": "Password"
+      },
+      "submitButton": "Register",
+      "errors": {
+        "emptyFields": "Please fill in all fields",
+        "registrationFailed": "Registration failed. Please try again."
+      },
+      "loginPrompt": "Already have an account?",
+      "loginLink": "Login",
+      "homeLink": "Back to Home"
+    }
   }
 }
