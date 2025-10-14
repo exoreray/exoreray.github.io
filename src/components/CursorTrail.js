@@ -83,6 +83,8 @@ const CursorTrail = () => {
     const handleTouchMove = (e) => {
       lastTouchTime = Date.now();
       const touch = e.touches[0];
+      if (!touch) return;
+
       const currentX = touch.clientX;
       const currentY = touch.clientY;
 
@@ -116,13 +118,15 @@ const CursorTrail = () => {
     const handleTouchStart = (e) => {
       lastTouchTime = Date.now();
       const touch = e.touches[0];
+      if (!touch) return;
+
       const x = touch.clientX;
       const y = touch.clientY;
 
       cursorRef.current = { x, y };
       previousTouch = { x, y };
 
-      // Create initial particles on touch start
+      // Always create initial particles on touch start
       for (let i = 0; i < 4; i++) {
         particlesRef.current.push(new Particle(x, y));
       }
@@ -130,9 +134,14 @@ const CursorTrail = () => {
 
     const handleTouchEnd = (e) => {
       lastTouchTime = Date.now();
-      // Clear cursor position on touch end to hide the dot
-      cursorRef.current = { x: 0, y: 0 };
+      // Reset previous touch immediately so next swipe starts fresh
       previousTouch = { x: 0, y: 0 };
+      // Hide cursor after brief delay
+      setTimeout(() => {
+        if (cursorRef.current.x !== 0 || cursorRef.current.y !== 0) {
+          cursorRef.current = { x: 0, y: 0 };
+        }
+      }, 50);
     };
 
     // Animation loop

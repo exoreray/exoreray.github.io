@@ -9,6 +9,7 @@ import MainSections from './components/MainSections';
 import MilestonesSection from './components/MilestonesSection';
 import WorksSection from './components/WorksSection';
 import SkillsSection from './components/SkillsSection';
+import ChapterNavigation from './components/ChapterNavigation';
 import ThemeToggle from './components/ThemeToggle';
 import { ThemeProvider } from './context/ThemeContext';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -27,6 +28,9 @@ const App = () => {
       smooth: true,
     });
 
+    // Expose lenis instance globally for navigation
+    window.lenis = lenis;
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -36,6 +40,7 @@ const App = () => {
 
     return () => {
       lenis.destroy();
+      window.lenis = null;
     };
   }, []);
 
@@ -74,6 +79,7 @@ const App = () => {
         <RippleEffect />
         <ImprovedLetterRain />
         <GlobalMusicPlayer />
+        <ChapterNavigation />
 
         <AnimatePresence mode="wait">
           {activeSection === 'home' && (

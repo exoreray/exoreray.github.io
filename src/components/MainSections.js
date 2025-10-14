@@ -1,16 +1,29 @@
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import siteCopy from '../data/siteCopy.json';
+
+// Global flag to track if animations have played (persists across remounts)
+let globalHasAnimated = false;
 
 const MainSections = ({ onSectionClick }) => {
   const { mainSections } = siteCopy;
   const sections = mainSections.items;
+  const [hasAnimated, setHasAnimated] = useState(globalHasAnimated);
+
+  useEffect(() => {
+    // Mark as animated after first render
+    if (!globalHasAnimated) {
+      globalHasAnimated = true;
+      setHasAnimated(true);
+    }
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-8 py-32">
       <div className="max-w-7xl mx-auto w-full">
         {/* Minimal header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={hasAnimated ? false : { opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-24"
@@ -27,7 +40,7 @@ const MainSections = ({ onSectionClick }) => {
             <motion.button
               key={section.id}
               onClick={() => onSectionClick(section.id)}
-              initial={{ opacity: 0 }}
+              initial={hasAnimated ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
               className="group relative h-[500px] bg-transparent overflow-hidden text-left border-l border-gold/10 first:border-l-0 hover:bg-gradient-to-b hover:from-gold/5 hover:to-transparent transition-all duration-700"
@@ -81,7 +94,7 @@ const MainSections = ({ onSectionClick }) => {
 
         {/* Bottom decoration */}
         <motion.div
-          initial={{ opacity: 0 }}
+          initial={hasAnimated ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
           className="w-full h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent mt-24"

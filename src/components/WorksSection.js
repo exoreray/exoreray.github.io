@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PhilosophySection from './PhilosophySection';
 import ProjectsSection from './ProjectsSection';
@@ -7,6 +7,11 @@ import siteCopy from '../data/siteCopy.json';
 
 const WorksSection = ({ onBack }) => {
   const [activeCategory, setActiveCategory] = useState(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    setHasAnimated(true);
+  }, []);
 
   const { works } = siteCopy;
   const componentById = {
@@ -27,7 +32,7 @@ const WorksSection = ({ onBack }) => {
       <div className="relative">
         <motion.button
           onClick={() => setActiveCategory(null)}
-          initial={{ opacity: 0, x: -20 }}
+          initial={hasAnimated ? false : { opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           className="fixed top-8 left-8 z-40 p-3 border border-gold/20 hover:border-gold/50 hover:bg-gold/5 transition-all duration-500"
@@ -46,7 +51,7 @@ const WorksSection = ({ onBack }) => {
       {/* Back Button */}
       <motion.button
         onClick={onBack}
-        initial={{ opacity: 0, x: -20 }}
+        initial={hasAnimated ? false : { opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
         className="fixed top-8 left-8 z-40 p-3 border border-gold/20 hover:border-gold/50 hover:bg-gold/5 transition-all duration-500"

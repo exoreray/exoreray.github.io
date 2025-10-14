@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { motion } from 'framer-motion';
@@ -9,6 +9,10 @@ import siteCopy from '../data/siteCopy.json';
 const PhilosophySection = () => {
   const { philosophySection } = siteCopy;
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Chapter id="philosophy" className="bg-gradient-to-b from-bg-light-secondary to-bg-light dark:from-bg-dark-secondary dark:to-bg-dark">
       <div className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 px-8 lg:px-16">
@@ -16,7 +20,7 @@ const PhilosophySection = () => {
         {/* 3D Scene - Left Side */}
         <div className="w-full lg:w-1/2 h-[50vh] lg:h-[70vh]">
           <Canvas gl={{ antialias: true, alpha: true }} dpr={[1, 1.5]}>
-            <PerspectiveCamera makeDefault position={[0, 0, 7]} />
+            <PerspectiveCamera makeDefault position={[0, 0, 12]} />
 
             <ambientLight intensity={0.3} />
             <directionalLight position={[5, 5, 5]} intensity={0.6} color="#FFD700" />
