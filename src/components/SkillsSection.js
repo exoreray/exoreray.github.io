@@ -184,7 +184,7 @@ const SkillNode = ({ skill, onClick, delay, compact = false }) => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5, delay }}
         onClick={onClick}
-        className="group relative text-left p-4 bg-transparent border border-gold/10 hover:border-gold/40 hover:bg-gold/5 transition-all duration-500"
+        className="group relative text-left p-4 bg-transparent border border-gold/10 hover:border-gold/40 hover:bg-gold/5 transition-all duration-500 backdrop-blur-md bg-bg-light/20 dark:bg-bg-dark/20"
       >
         <div className="flex items-center justify-between mb-2">
           <span className="font-sans text-sm text-text-light dark:text-text-dark group-hover:text-gold transition-colors duration-500">
@@ -214,7 +214,7 @@ const SkillNode = ({ skill, onClick, delay, compact = false }) => {
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay }}
       onClick={onClick}
-      className="group relative p-6 bg-transparent border border-gold/20 hover:border-gold/50 hover:bg-gold/5 transition-all duration-500"
+      className="group relative p-6 bg-transparent border border-gold/20 hover:border-gold/50 hover:bg-gold/5 transition-all duration-500 backdrop-blur-md bg-bg-light/20 dark:bg-bg-dark/20"
     >
       <div className="text-center">
         <h4 className="font-display text-lg text-text-light dark:text-text-dark mb-3 group-hover:text-gold transition-colors duration-500">
@@ -280,7 +280,7 @@ const SkillDetailModal = ({ skill, onClose }) => {
           transition={{ duration: 0.3 }}
           className="w-full max-w-2xl pointer-events-auto"
         >
-          <div className="bg-bg-light dark:bg-bg-dark border border-gold/30 p-12 relative">
+          <div className="bg-bg-light dark:bg-bg-dark border border-gold/30 p-12 relative backdrop-blur-md">
             {/* Close Button */}
             <button
               onClick={onClose}
