@@ -189,8 +189,84 @@
         "description": "Recognition and honors that mark the journey.",
         "items": [
           {
-            "title": "Coming Soon",
-            "description": "Award highlights arriving soon."
+            "title": "Berkeley Engineering Graduation Cover",
+            "award": "Cover Figure",
+            "category": "155th Berkeley Engineering Commencement",
+            "link": "https://engineering.berkeley.edu/",
+            "color": "#003262",
+            "year": "2024",
+            "type": "recognition",
+            "image": "/graduation cover.png"
+          },
+          {
+            "title": "AACYF 30 Under 30",
+            "award": "2025",
+            "category": "Top 30 Under 30",
+            "link": "https://lapost.us/?p=72065",
+            "color": "#E74C3C",
+            "year": "2025",
+            "type": "recognition",
+            "image": "/profile.jpeg"
+          },
+          {
+            "title": "iF Design Award",
+            "award": "Winner",
+            "category": "UX Design - Livia",
+            "link": "https://design.ifdesignaward.com/en/winner-ranking/project/livia/711833",
+            "color": "#EA5B0C",
+            "year": "2025",
+            "type": "design",
+            "image": "/iF-Award.jpg"
+          },
+          {
+            "title": "A' Design Award",
+            "award": "Silver",
+            "category": "Interface Design",
+            "link": "https://competition.adesignaward.com/ada-winner-design.php?ID=167235",
+            "color": "#C0C0C0",
+            "year": "2024-2025",
+            "type": "design",
+            "image": "/a-design-award-black--logo.jpg"
+          },
+          {
+            "title": "2025 Muse Creative Awards",
+            "award": "Gold",
+            "category": "UX Design - Livia",
+            "link": "https://museaward.com/winner-info.php?id=233303",
+            "color": "#C5A572",
+            "year": "2025",
+            "type": "design",
+            "image": "/muse.jpeg"
+          },
+          {
+            "title": "Better Future Gold Award",
+            "award": "Gold",
+            "category": "Digital Innovation",
+            "link": "https://betterfutureawards.com/wld25/project.asp?ID=33998",
+            "color": "#D4AF37",
+            "year": "2025",
+            "type": "design",
+            "image": "/world design-better future.png"
+          },
+          {
+            "title": "UX Design Award",
+            "award": "Winner",
+            "category": "Livia",
+            "link": "https://ux-design-awards.com/winners/2025-1-livia",
+            "color": "#00A8E1",
+            "year": "2025",
+            "type": "design",
+            "image": "/ux-design.jpg"
+          },
+          {
+            "title": "IDA Design Awards",
+            "award": "Nomination",
+            "category": "Digital Design",
+            "link": "https://www.idesignawards.com/winners/zoom.php?eid=9-58839-24",
+            "color": "#4A90E2",
+            "year": "2024",
+            "type": "design",
+            "image": "/ida.png"
           }
         ],
         "ctaLabel": "VIEW"

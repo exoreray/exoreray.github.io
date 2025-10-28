@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import PhilosophySection from './PhilosophySection';
 import ProjectsSection from './ProjectsSection';
 import MusicShowcase from './MusicShowcase';
+import AwardsSection from './AwardsSection';
 import siteCopy from '../data/siteCopy.json';
 
 const WorksSection = ({ onBack }) => {
@@ -18,6 +19,7 @@ const WorksSection = ({ onBack }) => {
     projects: ProjectsSection,
     music: MusicShowcase,
     philosophy: PhilosophySection,
+    design: AwardsSection,
   };
   const categories = works.categories.map((category) => ({
     ...category,
