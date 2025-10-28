@@ -78,10 +78,10 @@ const WorksSection = ({ onBack }) => {
             <button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className="group relative h-[400px] bg-transparent overflow-hidden text-left border-b border-gold/10 last:border-b-0 md:border-b border-l border-gold/10 odd:border-l-0 hover:bg-gradient-to-b hover:from-gold/5 hover:to-transparent transition-all duration-700"
+              className="group relative h-[400px] bg-transparent overflow-hidden text-left border-b border-gold/10 last:border-b-0 md:border-b border-l border-gold/10 odd:border-l-0 hover:bg-gradient-to-b hover:from-gold/5 hover:to-transparent transition-all duration-700 backdrop-blur-md"
             >
               {/* Content wrapper with padding */}
-              <div className="absolute inset-0 p-12 flex flex-col justify-between">
+              <div className="absolute inset-0 p-12 flex flex-col justify-between bg-bg-light/30 dark:bg-bg-dark/30">
                 {/* Number watermark */}
                 <div className="absolute top-8 right-8 font-serif text-[120px] leading-none text-gold/[0.15] group-hover:text-gold/[0.25] transition-all duration-700">
                   {category.number}

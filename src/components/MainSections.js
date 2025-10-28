@@ -43,10 +43,10 @@ const MainSections = ({ onSectionClick }) => {
               initial={hasAnimated ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="group relative h-[500px] bg-transparent overflow-hidden text-left border-l border-gold/10 first:border-l-0 hover:bg-gradient-to-b hover:from-gold/5 hover:to-transparent transition-all duration-700"
+              className="group relative h-[500px] bg-transparent overflow-hidden text-left border-l border-gold/10 first:border-l-0 hover:bg-gradient-to-b hover:from-gold/5 hover:to-transparent transition-all duration-700 backdrop-blur-md"
             >
               {/* Content wrapper with padding */}
-              <div className="absolute inset-0 p-12 flex flex-col justify-between">
+              <div className="absolute inset-0 p-12 flex flex-col justify-between bg-bg-light/30 dark:bg-bg-dark/30">
                 {/* Number watermark */}
                 <div className="absolute top-8 right-8 font-serif text-[140px] leading-none text-gold/[0.15] group-hover:text-gold/[0.25] transition-all duration-700">
                   {section.number}

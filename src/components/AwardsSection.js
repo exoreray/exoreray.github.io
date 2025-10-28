@@ -62,7 +62,7 @@ const AwardsSection = () => {
               className="group block relative"
             >
               {/* Main Award Card */}
-              <div className="relative bg-gradient-to-br from-white/5 to-transparent dark:from-white/[0.02] dark:to-transparent border border-gold/20 hover:border-gold/40 transition-all duration-700 overflow-hidden">
+              <div className="relative bg-gradient-to-br from-white/5 to-transparent dark:from-white/[0.02] dark:to-transparent border border-gold/20 hover:border-gold/40 transition-all duration-700 overflow-hidden backdrop-blur-md">
 
                 {/* Gradient overlay background with award color */}
                 <div
@@ -212,7 +212,7 @@ const AwardsSection = () => {
               className="group block relative"
             >
               {/* Main Award Card */}
-              <div className="relative bg-gradient-to-br from-white/5 to-transparent dark:from-white/[0.02] dark:to-transparent border border-gold/20 hover:border-gold/40 transition-all duration-700 overflow-hidden">
+              <div className="relative bg-gradient-to-br from-white/5 to-transparent dark:from-white/[0.02] dark:to-transparent border border-gold/20 hover:border-gold/40 transition-all duration-700 overflow-hidden backdrop-blur-md">
 
                 {/* Gradient overlay background with award color */}
                 <div
