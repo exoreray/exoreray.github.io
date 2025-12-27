@@ -9,6 +9,7 @@ import MainSections from './components/MainSections';
 import MilestonesSection from './components/MilestonesSection';
 import WorksSection from './components/WorksSection';
 import SkillsSection from './components/SkillsSection';
+import AwardsSection from './components/AwardsSection';
 import ChapterNavigation from './components/ChapterNavigation';
 import ThemeToggle from './components/ThemeToggle';
 import { ThemeProvider } from './context/ThemeContext';
@@ -16,7 +17,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import './App.css';
 
 const App = () => {
-  const [activeSection, setActiveSection] = useState('home'); // 'home', 'milestones', 'works', 'skills'
+  const [activeSection, setActiveSection] = useState('home'); // 'home', 'milestones', 'works', 'design'
   const mainSectionsRef = useRef(null);
   const mainSectionsPositionRef = useRef(0);
 
@@ -124,16 +125,16 @@ const App = () => {
             </motion.div>
           )}
 
-          {activeSection === 'skills' && (
+          {activeSection === 'design' && (
             <motion.div
-              key="skills"
+              key="design"
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
               className="relative z-10"
             >
-              <SkillsSection onBack={handleBackToHome} />
+              <AwardsSection onBack={handleBackToHome} />
             </motion.div>
           )}
         </AnimatePresence>

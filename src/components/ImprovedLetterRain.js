@@ -93,10 +93,15 @@ const ImprovedLetterRain = () => {
 
     // Drop class for firefly effect
     class Drop {
-      constructor(x) {
+      constructor(x, startFromTop = false) {
         this.x = x;
-        // Spread drops from above screen to bottom for continuous rain
-        this.y = Math.random() * (canvas.height * 2) - canvas.height;
+        // Always start from above the screen, or spread if initializing
+        if (startFromTop) {
+          this.y = -Math.random() * 50; // Start just above screen
+        } else {
+          // Initial spread for page load only
+          this.y = Math.random() * (canvas.height * 2) - canvas.height;
+        }
         this.speed = Math.random() * 2.0 + 1.5; // Moderate speed: 1.5-3.5
         this.char = chars[Math.floor(Math.random() * chars.length)];
         this.opacity = darkMode ? Math.random() * 0.4 + 0.35 : Math.random() * 0.3 + 0.25;
@@ -211,9 +216,9 @@ const ImprovedLetterRain = () => {
       // Add new drops at a sustainable rate
       frameCounter++;
       if (frameCounter % 2 === 0 && drops.length < columns * 1.5) {
-        // Add 5 drops every other frame
+        // Add 5 drops every other frame, always starting from top
         for (let i = 0; i < 5; i++) {
-          drops.push(new Drop(Math.floor(Math.random() * columns)));
+          drops.push(new Drop(Math.floor(Math.random() * columns), true));
         }
       }
 
