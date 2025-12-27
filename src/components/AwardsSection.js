@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import siteCopy from '../data/siteCopy.json';
 
-const AwardsSection = () => {
-  const awards = siteCopy.works.categories.find(cat => cat.id === 'design')?.items || [];
+const AwardsSection = ({ onBack }) => {
+  const awards = siteCopy.designSection?.items || [];
   const designAwards = awards.filter(award => award.type === 'design');
   const recognitionAwards = awards.filter(award => award.type === 'recognition');
 
@@ -13,6 +13,28 @@ const AwardsSection = () => {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center px-4 md:px-8 py-32 bg-gradient-to-b from-bg-light via-bg-light to-gold/5 dark:from-bg-dark dark:via-bg-dark dark:to-gold/5">
+      {/* Back Button */}
+      {onBack && (
+        <motion.button
+          onClick={onBack}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="fixed top-8 left-8 z-50 p-3 border border-gold/20 hover:border-gold/50 hover:bg-gold/5 transition-all duration-500"
+        >
+          <svg
+            className="w-5 h-5 text-gold"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.5"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+        </motion.button>
+      )}
       {/* Prestigious Header */}
       <div className="max-w-7xl mx-auto w-full">
         <motion.div

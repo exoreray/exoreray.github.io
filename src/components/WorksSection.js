@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import PhilosophySection from './PhilosophySection';
 import ProjectsSection from './ProjectsSection';
 import MusicShowcase from './MusicShowcase';
-import AwardsSection from './AwardsSection';
+import SkillsSection from './SkillsSection';
 import siteCopy from '../data/siteCopy.json';
 
 const WorksSection = ({ onBack }) => {
@@ -19,7 +19,7 @@ const WorksSection = ({ onBack }) => {
     projects: ProjectsSection,
     music: MusicShowcase,
     philosophy: PhilosophySection,
-    design: AwardsSection,
+    skills: SkillsSection,
   };
   const categories = works.categories.map((category) => ({
     ...category,
@@ -32,18 +32,7 @@ const WorksSection = ({ onBack }) => {
     const ActiveComponent = activeCategoryData.component;
     return (
       <div className="relative">
-        <motion.button
-          onClick={() => setActiveCategory(null)}
-          initial={hasAnimated ? false : { opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="fixed top-8 left-8 z-40 p-3 border border-gold/20 hover:border-gold/50 hover:bg-gold/5 transition-all duration-500"
-        >
-          <svg className="w-5 h-5 text-gold" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" stroke="currentColor">
-            <path d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-        </motion.button>
-        <ActiveComponent />
+        <ActiveComponent onBack={() => setActiveCategory(null)} />
       </div>
     );
   }

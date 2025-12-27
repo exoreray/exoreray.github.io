@@ -6,7 +6,7 @@ import Chapter from './Chapter';
 import PhilosophyMindMap from './PhilosophyMindMap';
 import siteCopy from '../data/siteCopy.json';
 
-const PhilosophySection = () => {
+const PhilosophySection = ({ onBack }) => {
   const { philosophySection } = siteCopy;
 
   useEffect(() => {
@@ -15,6 +15,28 @@ const PhilosophySection = () => {
 
   return (
     <Chapter id="philosophy" className="bg-gradient-to-b from-bg-light-secondary to-bg-light dark:from-bg-dark-secondary dark:to-bg-dark">
+      {/* Back Button */}
+      {onBack && (
+        <motion.button
+          onClick={onBack}
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="fixed top-8 left-8 z-50 p-3 border border-gold/20 hover:border-gold/50 hover:bg-gold/5 transition-all duration-500"
+        >
+          <svg
+            className="w-5 h-5 text-gold"
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.5"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+        </motion.button>
+      )}
       <div className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 px-8 lg:px-16">
 
         {/* 3D Scene - Left Side */}
@@ -91,27 +113,37 @@ const PhilosophySection = () => {
               ))}
             </motion.div>
           )}
+
+          {/* Medium Link */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="pt-6"
+          >
+            <a
+              href="https://medium.com/@DarrenX"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-3 text-gold/70 hover:text-gold transition-all duration-500"
+            >
+              <span className="font-display text-sm tracking-[0.25em]">READ MORE ON MEDIUM</span>
+              <svg
+                className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-500"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </motion.div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <svg
-          className="w-6 h-6 mx-auto text-gold"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-      </motion.div>
     </Chapter>
   );
 };
