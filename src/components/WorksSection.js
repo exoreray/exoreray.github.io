@@ -42,6 +42,7 @@ const WorksSection = ({ onBack }) => {
       {/* Back Button */}
       <motion.button
         onClick={onBack}
+        aria-label="Back"
         initial={hasAnimated ? false : { opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}

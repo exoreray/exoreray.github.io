@@ -123,6 +123,7 @@ const GlobalMusicPlayer = () => {
       {/* Mini Player - Always visible */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="Music player"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.5 }}
@@ -174,6 +175,7 @@ const GlobalMusicPlayer = () => {
               {/* Close button */}
               <button
                 onClick={() => setIsOpen(false)}
+                aria-label="Close music player"
                 className="absolute top-6 right-6 p-2 text-gold/60 hover:text-gold transition-colors duration-300"
               >
                 <svg className="w-5 h-5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" stroke="currentColor">

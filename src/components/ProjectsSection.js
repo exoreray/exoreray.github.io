@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import siteCopy from '../data/siteCopy.json';
+import BackButton from './BackButton';
 
-const ProjectsSection = () => {
+const ProjectsSection = ({ onBack }) => {
   const { projectsSection } = siteCopy;
   const projects = projectsSection.items;
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -14,6 +15,8 @@ const ProjectsSection = () => {
 
   return (
     <div className="relative min-h-screen flex items-center justify-center px-8 py-32 bg-gradient-to-b from-bg-light to-bg-light-secondary dark:from-bg-dark dark:to-bg-dark-secondary">
+      {onBack && <BackButton onClick={onBack} />}
+
       <div className="max-w-6xl mx-auto w-full">
         {/* Header */}
         <motion.div
