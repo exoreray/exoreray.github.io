@@ -1,0 +1,39 @@
+name: E2E tests
+
+# Runs the same suite `npm run deploy` runs locally, on every push and pull
+# request, so a broken change is flagged before anyone deploys it.
+on:
+  push:
+    branches-ignore: [gh-pages]
+  pull_request:
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci --legacy-peer-deps
+
+      - run: npx playwright install --with-deps chromium
+
+      # CI=false: react-scripts would otherwise turn existing lint warnings
+      # into build errors. `npm run deploy` builds the same way.
+      - run: npm run build
+        env:
+          CI: false
+
+      - run: npm run test:e2e
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
