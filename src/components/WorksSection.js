@@ -1,57 +1,13 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import PhilosophySection from './PhilosophySection';
-import ProjectsSection from './ProjectsSection';
-import MusicShowcase from './MusicShowcase';
-import SkillsSection from './SkillsSection';
+import { Link } from 'react-router-dom';
 import siteCopy from '../data/siteCopy.json';
 
-const WorksSection = ({ onBack }) => {
-  const [activeCategory, setActiveCategory] = useState(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
-    setHasAnimated(true);
-  }, []);
-
+const WorksSection = () => {
   const { works } = siteCopy;
-  const componentById = {
-    projects: ProjectsSection,
-    music: MusicShowcase,
-    philosophy: PhilosophySection,
-    skills: SkillsSection,
-  };
-  const categories = works.categories.map((category) => ({
-    ...category,
-    component: componentById[category.id] || null,
-  }));
-
-  const activeCategoryData = categories.find((category) => category.id === activeCategory);
-
-  if (activeCategoryData?.component) {
-    const ActiveComponent = activeCategoryData.component;
-    return (
-      <div className="relative">
-        <ActiveComponent onBack={() => setActiveCategory(null)} />
-      </div>
-    );
-  }
+  const categories = works.categories;
 
   return (
     <div className="relative min-h-screen flex items-center justify-center px-8 py-32">
-      {/* Back Button */}
-      <motion.button
-        onClick={onBack}
-        initial={hasAnimated ? false : { opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        className="fixed top-8 left-8 z-40 p-3 border border-gold/20 hover:border-gold/50 hover:bg-gold/5 transition-all duration-500"
-      >
-        <svg className="w-5 h-5 text-gold" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" stroke="currentColor">
-          <path d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-        </svg>
-      </motion.button>
-
       <div className="max-w-7xl mx-auto w-full">
         {/* Minimal header */}
         <div className="text-center mb-24">
@@ -64,13 +20,14 @@ const WorksSection = ({ onBack }) => {
         {/* Elegant grid - 2x2 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-1">
           {categories.map((category, index) => (
-            <button
+            <motion.div
               key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className="group relative h-[400px] bg-transparent overflow-hidden text-left border-b border-gold/10 last:border-b-0 md:border-b border-l border-gold/10 odd:border-l-0 hover:bg-gradient-to-b hover:from-gold/5 hover:to-transparent transition-all duration-700 backdrop-blur-md"
+              className={`group relative h-[400px] bg-transparent overflow-hidden text-left border-b border-gold/10 ${index % 2 === 1 ? 'md:border-l' : ''} backdrop-blur-md`}
             >
-              {/* Content wrapper with padding */}
-              <div className="absolute inset-0 p-12 flex flex-col justify-between bg-bg-light/30 dark:bg-bg-dark/30">
+              <Link
+                to={`/works/${category.id}`}
+                className="group absolute inset-0 p-12 flex flex-col justify-between bg-bg-light/30 dark:bg-bg-dark/30 hover:bg-gradient-to-b hover:from-gold/5 hover:to-transparent transition-all duration-700 focus-visible:outline-none focus-visible:ring-[2px] focus-visible:ring-[#8A6A00] dark:focus-visible:ring-gold focus-visible:ring-inset"
+              >
                 {/* Number watermark */}
                 <div className="absolute top-8 right-8 font-serif text-[120px] leading-none text-gold/[0.15] group-hover:text-gold/[0.25] transition-all duration-700">
                   {category.number}
@@ -108,11 +65,11 @@ const WorksSection = ({ onBack }) => {
                     </svg>
                   </div>
                 </div>
-              </div>
+              </Link>
 
               {/* Subtle border accent on hover */}
               <div className="absolute inset-0 border border-transparent group-hover:border-gold/20 transition-all duration-700 pointer-events-none" />
-            </button>
+            </motion.div>
           ))}
         </div>
 

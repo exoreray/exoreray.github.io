@@ -9,32 +9,11 @@ import Chapter6Community from './chapters/Chapter6Community';
 import Chapter7Livia from './chapters/Chapter7Livia';
 import siteCopy from '../data/siteCopy.json';
 
-const MilestonesSection = ({ onBack }) => {
+const MilestonesSection = () => {
   const { milestones } = siteCopy;
 
   return (
     <div className="relative">
-      {/* Back Button */}
-      <motion.button
-        onClick={onBack}
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.8 }}
-        className="fixed top-8 left-8 z-40 p-3 border border-gold/20 hover:border-gold/50 hover:bg-gold/5 transition-all duration-500"
-      >
-        <svg
-          className="w-5 h-5 text-gold"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="1.5"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-        </svg>
-      </motion.button>
-
       {/* Milestone Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}

@@ -1,0 +1,49 @@
+.rain-page-journey .living-sculpture { visibility:hidden; }
+.rain-page-journey,.rain-page-journey .rain-page-content { overflow:visible; }
+/* The fixed playback control must stay above the footer's stacking context. */
+.rain-page-journey .rain-page-content { z-index:9; }
+.rain-page-journey .rain-page-footer { padding-bottom:90px; }
+.journey-scroll { position:relative; --journey-progress:0; touch-action:pan-y pinch-zoom; }
+.journey-film-sticky { position:sticky; top:0; height:100svh; margin-bottom:-100svh; pointer-events:none; z-index:1; overflow:hidden; }
+.journey-film-canvas { position:absolute!important; left:0; top:12svh; width:100%!important; height:62svh!important; pointer-events:none!important; }
+.journey-film-canvas canvas { pointer-events:none!important; }
+.journey-film-heading { position:absolute; z-index:3; top:110px; width:100%; padding:0 8%; text-align:center; pointer-events:none; }
+.journey-film-heading h1 { font:300 42px/1 'Cormorant Garamond',Georgia,serif; margin:0 0 13px; letter-spacing:.04em; }
+.journey-film-heading > p { font-size:11px; font-weight:300; color:var(--rain-muted); margin:0; line-height:1.7; }
+.journey-film-chapter { position:relative; z-index:2; min-height:170svh; padding-bottom:25svh; }
+.journey-film-intro { position:relative; height:89svh; pointer-events:none; }
+.journey-film-caption { position:absolute; bottom:5svh; left:10%; right:10%; text-align:center; }
+.journey-film-caption > p { color:var(--rain-gold); font-size:11px; letter-spacing:.14em; margin:0 0 14px; }
+.journey-film-caption > p > span { opacity:.5; margin-left:8px; }
+.journey-film-caption h2 { font:300 clamp(36px,4.5vw,60px)/1.1 'Cormorant Garamond',Georgia,serif; margin:0; text-shadow:0 0 26px var(--rain-bg); }
+.journey-scroll-hint { display:block; font-size:10px; color:var(--rain-muted); letter-spacing:.025em; margin-top:25px; opacity:.65; }
+.journey-film-copy { position:relative; width:min(760px,84%); margin:0 auto; padding:30px 20px; }
+.journey-film-copy::before { content:''; position:absolute; inset:-55px -90px; background:radial-gradient(ellipse,color-mix(in srgb,var(--rain-bg),transparent 2%) 35%,color-mix(in srgb,var(--rain-bg),transparent 12%) 55%,transparent 76%); z-index:-1; pointer-events:none; }
+.journey-film-copy .rain-prose { font-size:15px; line-height:2; }
+.journey-film-copy .rain-prose p { margin-bottom:25px; }
+.journey-film-loading { position:absolute; left:20%; right:20%; top:49%; text-align:center; font-size:11px; color:var(--rain-muted); }
+.journey-vertical-progress { position:absolute; top:44%; right:3%; display:flex; align-items:center; flex-direction:column; gap:12px; color:var(--rain-gold); font-size:9px; }
+.journey-vertical-progress > i { width:1px; height:75px; background:#bba37535; position:relative; }
+.journey-vertical-progress > i::after { content:''; position:absolute; inset:0; background:var(--rain-gold); transform-origin:top; transform:scaleY(var(--journey-progress)); }
+@media (max-width:760px) { .journey-film-heading { top:96px; }.journey-film-heading h1 {font-size:35px;}.journey-film-heading > p {font-size:10px;max-width:290px;margin:auto;}.journey-film-canvas {top:15svh;height:56svh!important;}.journey-film-caption {left:9%;right:9%;bottom:5svh;}.journey-film-caption h2 {font-size:36px;}.journey-film-caption > p {font-size:10px;}.journey-film-copy {width:84%;padding:20px 0;}.journey-film-copy::before {inset:-30px -30px;}.journey-film-copy .rain-prose {font-size:13px;line-height:1.95;}.journey-film-chapter {min-height:175svh;padding-bottom:23svh;}.journey-vertical-progress {right:3%;font-size:8px;}.journey-vertical-progress > i {height:55px;} }
+@media (max-height:500px) { .journey-film-heading {top:80px;}.journey-film-heading h1 {font-size:28px;}.journey-film-heading > p {display:none;}.journey-film-caption h2 {font-size:30px;}.journey-scroll-hint {margin-top:12px;}.journey-film-canvas {top:18svh;height:56svh!important;} }
+/* Larger cinematic image area with titles held while the establishing shot develops. */
+.journey-film-canvas { top:3svh; height:76svh!important; }
+.journey-film-intro { height:112svh; padding-top:72svh; }
+.journey-film-caption { position:sticky; top:72svh; bottom:auto; margin:0 10%; left:auto; right:auto; }
+.journey-film-chapter { min-height:190svh; }
+.journey-cut-veil { position:absolute; inset:0; pointer-events:none; background:var(--rain-bg); opacity:var(--journey-cut,0); }
+.rain-still .journey-cut-veil { opacity:0; }
+@media (max-width:760px) { .journey-film-canvas {top:8svh;height:68svh!important;}.journey-film-intro {height:110svh;padding-top:73svh;}.journey-film-caption {top:73svh;bottom:auto;margin:0 9%;left:auto;right:auto;}.journey-film-chapter {min-height:195svh;} }
+@media (max-height:500px) { .journey-film-canvas {top:10svh;height:66svh!important;}.journey-film-caption {top:70svh;}.journey-film-intro {padding-top:70svh;} }
+.journey-film-copy .rain-prose { color:var(--rain-text); text-shadow:0 1px 5px var(--rain-bg),0 0 12px var(--rain-bg); }
+.journey-scroll:is([data-chapter="0"],[data-chapter="2"],[data-chapter="3"],[data-chapter="5"]) .journey-film-canvas {
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 8%,#000 78%,transparent 100%);
+  mask-image:linear-gradient(to bottom,transparent 0%,#000 8%,#000 78%,transparent 100%);
+}
+.journey-film-chapter:is([data-chapter-index="0"],[data-chapter-index="1"],[data-chapter-index="2"],[data-chapter-index="3"],[data-chapter-index="5"]) .journey-film-intro { height:140svh; }
+.rain-study .journey-autoplay {position:fixed;right:max(22px,env(safe-area-inset-right));bottom:max(22px,env(safe-area-inset-bottom));z-index:30;display:flex;align-items:center;gap:8px;min-height:44px;padding:0 15px;border:1px solid color-mix(in srgb,var(--rain-gold),transparent 65%);border-radius:24px;background:color-mix(in srgb,var(--rain-bg),transparent 12%);color:var(--rain-gold);font:400 11px 'Raleway',sans-serif;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);pointer-events:auto;cursor:pointer;}
+.journey-autoplay .rain-icon {width:14px;height:14px;}
+.rain-study .journey-autoplay:hover {border-color:var(--rain-gold);}
+.rain-study .journey-autoplay:focus-visible {outline:2px solid var(--rain-gold);outline-offset:4px;}
+.journey-autoplay:disabled {opacity:.45;cursor:default;}

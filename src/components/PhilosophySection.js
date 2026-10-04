@@ -6,7 +6,7 @@ import Chapter from './Chapter';
 import PhilosophyMindMap from './PhilosophyMindMap';
 import siteCopy from '../data/siteCopy.json';
 
-const PhilosophySection = ({ onBack }) => {
+const PhilosophySection = () => {
   const { philosophySection } = siteCopy;
 
   useEffect(() => {
@@ -15,28 +15,6 @@ const PhilosophySection = ({ onBack }) => {
 
   return (
     <Chapter id="philosophy" className="bg-gradient-to-b from-bg-light-secondary to-bg-light dark:from-bg-dark-secondary dark:to-bg-dark">
-      {/* Back Button */}
-      {onBack && (
-        <motion.button
-          onClick={onBack}
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          className="fixed top-8 left-8 z-50 p-3 border border-gold/20 hover:border-gold/50 hover:bg-gold/5 transition-all duration-500"
-        >
-          <svg
-            className="w-5 h-5 text-gold"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="1.5"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-        </motion.button>
-      )}
       <div className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 px-8 lg:px-16">
 
         {/* 3D Scene - Left Side */}

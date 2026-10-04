@@ -1,24 +1,25 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 const ThemeToggle = () => {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
+  const shouldReduceMotion = useReducedMotion();
 
   return (
     <motion.button
       onClick={toggleDarkMode}
-      initial={{ opacity: 0, x: 20 }}
+      initial={shouldReduceMotion ? false : { opacity: 0, x: 20 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.8, delay: 0.3 }}
-      className="fixed top-8 right-8 z-50 p-3 border border-gold/20 hover:border-gold/50 hover:bg-gold/5 transition-all duration-500"
-      whileTap={{ scale: 0.95 }}
+      transition={{ duration: shouldReduceMotion ? 0 : 0.8, delay: shouldReduceMotion ? 0 : 0.3 }}
+      className="theme-toggle"
+      whileTap={shouldReduceMotion ? undefined : { scale: 0.95 }}
       aria-label="Toggle theme"
     >
       {darkMode ? (
         // Sun icon for light mode
         <svg
-          className="w-5 h-5 text-gold"
+          className="theme-toggle__icon"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -31,7 +32,7 @@ const ThemeToggle = () => {
       ) : (
         // Moon icon for dark mode
         <svg
-          className="w-5 h-5 text-gold"
+          className="theme-toggle__icon"
           fill="none"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -46,4 +47,4 @@ const ThemeToggle = () => {
   );
 };
 
-export default ThemeToggle; 
+export default ThemeToggle;

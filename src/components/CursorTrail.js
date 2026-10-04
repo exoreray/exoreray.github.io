@@ -1,217 +1,106 @@
-import { useEffect, useRef } from 'react';
+import { useContext, useEffect, useRef } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
+import { readViewportHeight } from './rain-study/useViewportHeight';
+import { advanceCursorFlow, createCursorFlow, endCursorFlow, moveCursorFlow, particleOpacity } from './cursorFlow';
 
-const CursorTrail = () => {
-  const canvasRef = useRef(null);
-  const cursorRef = useRef({ x: 0, y: 0 });
-  const particlesRef = useRef([]);
+const CursorTrail = ({ active = true }) => {
+  const canvasRef=useRef(null);
+  const flowRef=useRef(null);
+  if(!flowRef.current?.particles)flowRef.current=createCursorFlow();
+  const moveCount=useRef(0);
+  const activeRef=useRef(active);activeRef.current=active;
+  const engineRef=useRef(null);
+  const {darkMode}=useContext(ThemeContext);
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    let animationFrameId;
-    let lastTouchTime = 0;
-
-    // Set canvas size
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+  useEffect(()=>{
+    const canvas=canvasRef.current,ctx=canvas.getContext('2d');
+    if(!ctx)return undefined;
+    const flow=flowRef.current;
+    let frame=0,previous=null,width=0,height=0;
+    const touches=new Set();
+    const sprite=document.createElement('canvas');sprite.width=64;sprite.height=64;
+    const brush=sprite.getContext('2d');
+    const halo=brush.createRadialGradient(32,32,0,32,32,32);
+    halo.addColorStop(0,darkMode?'#fff6dfdd':'#785a2c99');
+    halo.addColorStop(.12,darkMode?'#e7d4a978':'#a382474d');
+    halo.addColorStop(.38,darkMode?'#ceb48120':'#b3986620');
+    halo.addColorStop(1,'#c5a87500');
+    brush.fillStyle=halo;brush.fillRect(0,0,64,64);
+    const draw=now=>{
+      frame=0;if(!activeRef.current)return;
+      const delta=previous===null?0:Math.max(0,(now-previous)/1000);previous=now;
+      const moving=advanceCursorFlow(flow,delta);
+      ctx.clearRect(0,0,width,height);
+      for(const particle of flow.particles){
+        const opacity=particleOpacity(particle)*particle.brightness;
+        const size=particle.size*11;
+        ctx.globalAlpha=opacity*.75;
+        ctx.drawImage(sprite,particle.x-size/2,particle.y-size/2,size,size);
+        ctx.globalAlpha=opacity*.62;
+        ctx.fillStyle=darkMode?'#ebd6ae':'#94703e';
+        ctx.beginPath();ctx.arc(particle.x,particle.y,particle.size*.6,0,Math.PI*2);ctx.fill();
+      }
+      if(flow.cursorVisible && flow.positioned){
+        const size=flow.interactive?7:13;
+        ctx.globalAlpha=flow.interactive ? .18 : .38;
+        ctx.drawImage(sprite,flow.x-size/2,flow.y-size/2,size,size);
+        ctx.globalAlpha=flow.interactive ? .5 : .9;
+        ctx.fillStyle=darkMode?'#fff5df':'#85622d';
+        ctx.beginPath();ctx.arc(flow.x,flow.y,flow.interactive ? .8 : 1.55,0,Math.PI*2);ctx.fill();
+      }
+      ctx.globalAlpha=1;
+      canvas.dataset.phase=moving?'flowing':flow.cursorVisible?'resting':'idle';
+      canvas.dataset.particles=String(flow.particles.length);
+      canvas.dataset.oldestParticleOpacity=flow.particles.length?particleOpacity(flow.particles[0]).toFixed(2):'0';
+      if(moving)frame=requestAnimationFrame(draw);else previous=null;
     };
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    // Particle class
-    class Particle {
-      constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.size = Math.random() * 4 + 2;
-        this.speedX = Math.random() * 2 - 1;
-        this.speedY = Math.random() * 2 - 1;
-        this.life = 1;
-        this.decay = Math.random() * 0.015 + 0.008;
-        // Check theme from HTML element
-        const isDark = document.documentElement.classList.contains('dark');
-        // Particles adapt to theme - all gold tones, lighter for dark mode
-        const colorChoices = isDark ? [
-          '255, 235, 100', // Light gold
-          '255, 225, 80',  // Lighter gold
-          '250, 215, 60',  // Soft gold
-        ] : [
-          '255, 215, 0',   // Bright gold
-          '255, 193, 102', // Light amber
-          '240, 180, 80',  // Light golden
-        ];
-        this.colorBase = colorChoices[Math.floor(Math.random() * colorChoices.length)];
-      }
-
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        this.life -= this.decay;
-      }
-
-      draw() {
-        ctx.fillStyle = `rgba(${this.colorBase}, ${this.life})`;
-        ctx.shadowBlur = 20;
-        ctx.shadowColor = `rgba(${this.colorBase}, ${this.life})`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    // Mouse move handler
-    const handleMouseMove = (e) => {
-      // Ignore synthetic mouse events that occur after touch events
-      const now = Date.now();
-      if (now - lastTouchTime < 500) {
-        return;
-      }
-
-      cursorRef.current = { x: e.clientX, y: e.clientY };
-
-      // Create new particles (reduced for performance)
-      for (let i = 0; i < 2; i++) {
-        particlesRef.current.push(new Particle(e.clientX, e.clientY));
-      }
+    const wake=()=>{if(activeRef.current && flow.positioned && !frame)frame=requestAnimationFrame(draw);};
+    const stop=()=>{cancelAnimationFrame(frame);frame=0;previous=null;if(!activeRef.current){flow.particles.length=0;ctx.clearRect(0,0,width,height);}};
+    const record=event=>{
+      const touch=event.pointerType==='touch';
+      if(touch && (touches.size>1 || event.isPrimary===false))return;
+      flow.cursorVisible=!touch;
+      flow.interactive=Boolean(event.target?.closest?.('a,button,input[type="range"],summary,[role="button"],nav,[role="navigation"]'));
+      const bounds=canvas.getBoundingClientRect();
+      moveCursorFlow(flow,event.clientX-bounds.left,event.clientY-bounds.top,activeRef.current);
+      if(activeRef.current){canvas.dataset.moveCount=String(++moveCount.current);wake();}
     };
-
-    // Store previous touch position for interpolation
-    let previousTouch = { x: 0, y: 0 };
-
-    // Touch handlers for mobile
-    const handleTouchMove = (e) => {
-      lastTouchTime = Date.now();
-      const touch = e.touches[0];
-      if (!touch) return;
-
-      const currentX = touch.clientX;
-      const currentY = touch.clientY;
-
-      // Calculate distance from previous touch
-      const dx = currentX - previousTouch.x;
-      const dy = currentY - previousTouch.y;
-      const distance = Math.sqrt(dx * dx + dy * dy);
-
-      // Interpolate particles between previous and current position for smooth trail
-      if (previousTouch.x !== 0 && previousTouch.y !== 0 && distance > 0) {
-        // More particles for longer distances (fast swipes)
-        const steps = Math.max(1, Math.min(10, Math.floor(distance / 10)));
-
-        for (let step = 0; step <= steps; step++) {
-          const t = step / steps;
-          const x = previousTouch.x + dx * t;
-          const y = previousTouch.y + dy * t;
-
-          // Create more particles for fast movements
-          const particleCount = distance > 50 ? 3 : 2;
-          for (let i = 0; i < particleCount; i++) {
-            particlesRef.current.push(new Particle(x, y));
-          }
-        }
+    const down=event=>{
+      if(event.pointerType==='touch'){
+        touches.add(event.pointerId);
+        if(touches.size>1){endCursorFlow(flow);wake();return;}
+        flow.continuous=false;
       }
-
-      cursorRef.current = { x: currentX, y: currentY };
-      previousTouch = { x: currentX, y: currentY };
+      record(event);
     };
-
-    const handleTouchStart = (e) => {
-      lastTouchTime = Date.now();
-      const touch = e.touches[0];
-      if (!touch) return;
-
-      const x = touch.clientX;
-      const y = touch.clientY;
-
-      cursorRef.current = { x, y };
-      previousTouch = { x, y };
-
-      // Always create initial particles on touch start
-      for (let i = 0; i < 4; i++) {
-        particlesRef.current.push(new Particle(x, y));
-      }
+    const up=event=>{if(event.pointerType==='touch'){touches.delete(event.pointerId);endCursorFlow(flow);wake();}};
+    const leave=event=>{if(event.relatedTarget==null){endCursorFlow(flow);wake();}};
+    const blur=()=>{touches.clear();moveCursorFlow(flow,flow.x,flow.y,false);endCursorFlow(flow);wake();};
+    const resize=()=>{
+      const viewportHeight=readViewportHeight();if(viewportHeight===null)return;
+      width=window.innerWidth;height=viewportHeight;
+      const dpr=Math.min(window.devicePixelRatio||1,2);
+      canvas.width=Math.round(width*dpr);canvas.height=Math.round(height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);wake();
     };
-
-    const handleTouchEnd = (e) => {
-      lastTouchTime = Date.now();
-      // Reset previous touch immediately so next swipe starts fresh
-      previousTouch = { x: 0, y: 0 };
-      // Hide cursor after brief delay
-      setTimeout(() => {
-        if (cursorRef.current.x !== 0 || cursorRef.current.y !== 0) {
-          cursorRef.current = { x: 0, y: 0 };
-        }
-      }, 50);
+    engineRef.current={start:wake,stop};
+    canvas.dataset.moveCount=String(moveCount.current);canvas.dataset.phase='idle';
+    resize();
+    const options={capture:true,passive:true};
+    window.addEventListener('pointermove',record,options);window.addEventListener('pointerdown',down,options);
+    window.addEventListener('pointerup',up,options);window.addEventListener('pointercancel',up,options);
+    window.addEventListener('pointerout',leave,options);window.addEventListener('blur',blur);window.addEventListener('resize',resize);
+    window.visualViewport?.addEventListener('resize',resize);
+    return()=>{
+      window.removeEventListener('pointermove',record,true);window.removeEventListener('pointerdown',down,true);
+      window.removeEventListener('pointerup',up,true);window.removeEventListener('pointercancel',up,true);
+      window.removeEventListener('pointerout',leave,true);window.removeEventListener('blur',blur);window.removeEventListener('resize',resize);
+      window.visualViewport?.removeEventListener('resize',resize);
+      stop();engineRef.current=null;
     };
+  },[darkMode]);
 
-    // Animation loop
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Update and draw particles
-      particlesRef.current = particlesRef.current.filter(particle => {
-        particle.update();
-        particle.draw();
-        return particle.life > 0;
-      });
-
-      // Draw cursor - adapts to theme
-      const { x, y } = cursorRef.current;
-      if (x && y) {
-        // Check theme from HTML element
-        const isDark = document.documentElement.classList.contains('dark');
-        const ringColor = isDark ? '255, 215, 0' : '255, 215, 0';
-        const dotColor = isDark ? '250, 250, 250' : '220, 180, 80';
-
-        // Outer glow
-        ctx.beginPath();
-        ctx.arc(x, y, 25, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${ringColor}, 0.08)`;
-        ctx.fill();
-
-        // Middle ring
-        ctx.beginPath();
-        ctx.arc(x, y, 15, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(${ringColor}, 0.3)`;
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-
-        // Inner cursor dot
-        ctx.beginPath();
-        ctx.arc(x, y, 4, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${dotColor}, 0.9)`;
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = `rgba(${ringColor}, 0.6)`;
-        ctx.fill();
-      }
-
-      animationFrameId = requestAnimationFrame(animate);
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('touchmove', handleTouchMove);
-    window.addEventListener('touchstart', handleTouchStart);
-    window.addEventListener('touchend', handleTouchEnd);
-    // window.addEventListener('touchcancel', handleTouchEnd); // Disable touchcancel for now
-    animate();
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('touchmove', handleTouchMove);
-      window.removeEventListener('touchstart', handleTouchStart);
-      window.removeEventListener('touchend', handleTouchEnd);
-      // window.removeEventListener('touchcancel', handleTouchEnd);
-      window.removeEventListener('resize', resizeCanvas);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full pointer-events-none z-[10000]"
-    />
-  );
+  useEffect(()=>{if(active)engineRef.current?.start();else engineRef.current?.stop();return()=>engineRef.current?.stop();},[active,darkMode]);
+  return <canvas ref={canvasRef} data-effect="original-cursor-trail" data-style="particle-trail" data-finish="deposited" data-active={active}
+    aria-hidden="true" style={{height:'var(--rain-viewport-height, 100%)'}} className="fixed top-0 left-0 w-full h-full pointer-events-none z-[10000]" />;
 };
-
 export default CursorTrail;

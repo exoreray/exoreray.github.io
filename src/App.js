@@ -1,5 +1,6 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect } from 'react';
 import Lenis from 'lenis';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import CursorTrail from './components/CursorTrail';
 import RippleEffect from './components/RippleEffect';
 import LandingPage from './components/LandingPage';
@@ -8,18 +9,48 @@ import GlobalMusicPlayer from './components/GlobalMusicPlayer';
 import MainSections from './components/MainSections';
 import MilestonesSection from './components/MilestonesSection';
 import WorksSection from './components/WorksSection';
+import ProjectsSection from './components/ProjectsSection';
+import MusicShowcase from './components/MusicShowcase';
+import PhilosophySection from './components/PhilosophySection';
 import SkillsSection from './components/SkillsSection';
 import AwardsSection from './components/AwardsSection';
 import ChapterNavigation from './components/ChapterNavigation';
 import ThemeToggle from './components/ThemeToggle';
+import SubpageNavigation from './components/SubpageNavigation';
 import { ThemeProvider } from './context/ThemeContext';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import './App.css';
 
-const App = () => {
-  const [activeSection, setActiveSection] = useState('home'); // 'home', 'milestones', 'works', 'design'
-  const mainSectionsRef = useRef(null);
-  const mainSectionsPositionRef = useRef(0);
+const PageTransition = ({ children, slide = false }) => {
+  const shouldReduceMotion = useReducedMotion();
+  const offset = slide && !shouldReduceMotion ? 80 : 0;
+
+  return (
+    <motion.div
+      initial={shouldReduceMotion ? false : { opacity: 0, x: offset }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -offset }}
+      transition={{ duration: shouldReduceMotion ? 0 : 0.45 }}
+      className="relative z-10"
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const SubpageRoute = ({ children, parentTo, parentLabel, parentCompactLabel }) => (
+  <PageTransition slide>
+    <SubpageNavigation
+      parentTo={parentTo}
+      parentLabel={parentLabel}
+      parentCompactLabel={parentCompactLabel}
+    />
+    {children}
+  </PageTransition>
+);
+
+const AppContent = () => {
+  const location = useLocation();
 
   // Initialize smooth scrolling
   useEffect(() => {
@@ -32,115 +63,138 @@ const App = () => {
     // Expose lenis instance globally for navigation
     window.lenis = lenis;
 
+    let animationFrame;
+
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      animationFrame = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    animationFrame = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(animationFrame);
       lenis.destroy();
       window.lenis = null;
     };
   }, []);
 
-  // Store MainSections position when on home page
+  // Each route starts from a predictable position, including Back/Forward visits.
   useEffect(() => {
-    if (activeSection === 'home' && mainSectionsRef.current) {
-      const timer = setTimeout(() => {
-        const rect = mainSectionsRef.current.getBoundingClientRect();
-        mainSectionsPositionRef.current = rect.top + window.scrollY;
-      }, 100);
-      return () => clearTimeout(timer);
-    }
-  }, [activeSection]);
+    const frame = requestAnimationFrame(() => {
+      if (window.lenis?.scrollTo) {
+        window.lenis.scrollTo(0, { immediate: true });
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      }
+    });
 
-  const handleSectionClick = (section) => {
-    setActiveSection(section);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleBackToHome = () => {
-    setActiveSection('home');
-    // Scroll to MainSections position after a brief delay for state update
-    setTimeout(() => {
-      window.scrollTo({
-        top: mainSectionsPositionRef.current,
-        behavior: 'smooth'
-      });
-    }, 100);
-  };
+    return () => cancelAnimationFrame(frame);
+  }, [location.pathname]);
 
   return (
-    <ThemeProvider>
-      <div className="App relative min-h-screen bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark overflow-x-hidden transition-colors duration-300">
-        <ThemeToggle />
-        <CursorTrail />
-        <RippleEffect />
-        <ImprovedLetterRain />
-        <GlobalMusicPlayer />
-        <ChapterNavigation />
+    <div className="App relative min-h-screen bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark overflow-x-hidden transition-colors duration-300">
+      <ThemeToggle />
+      <CursorTrail />
+      <RippleEffect />
+      <ImprovedLetterRain />
+      <GlobalMusicPlayer />
+      <ChapterNavigation />
 
-        <AnimatePresence mode="wait">
-          {activeSection === 'home' && (
-            <motion.div
-              key="home"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5 }}
-              className="relative z-10"
-            >
-              <LandingPage />
-              <div ref={mainSectionsRef}>
-                <MainSections onSectionClick={handleSectionClick} />
-              </div>
-            </motion.div>
-          )}
-
-          {activeSection === 'milestones' && (
-            <motion.div
-              key="milestones"
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5 }}
-              className="relative z-10"
-            >
-              <MilestonesSection onBack={handleBackToHome} />
-            </motion.div>
-          )}
-
-          {activeSection === 'works' && (
-            <motion.div
-              key="works"
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5 }}
-              className="relative z-10"
-            >
-              <WorksSection onBack={handleBackToHome} />
-            </motion.div>
-          )}
-
-          {activeSection === 'design' && (
-            <motion.div
-              key="design"
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5 }}
-              className="relative z-10"
-            >
-              <AwardsSection onBack={handleBackToHome} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </ThemeProvider>
+      <AnimatePresence mode="wait" initial={false}>
+        <Routes location={location} key={location.pathname}>
+          <Route
+            path="/"
+            element={
+              <PageTransition>
+                <LandingPage />
+                <MainSections />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/milestones"
+            element={
+              <SubpageRoute>
+                <MilestonesSection />
+              </SubpageRoute>
+            }
+          />
+          <Route
+            path="/works"
+            element={
+              <SubpageRoute>
+                <WorksSection />
+              </SubpageRoute>
+            }
+          />
+          <Route
+            path="/works/projects"
+            element={
+              <SubpageRoute
+                parentTo="/works"
+                parentLabel="Back to works"
+                parentCompactLabel="Works"
+              >
+                <ProjectsSection />
+              </SubpageRoute>
+            }
+          />
+          <Route
+            path="/works/music"
+            element={
+              <SubpageRoute
+                parentTo="/works"
+                parentLabel="Back to works"
+                parentCompactLabel="Works"
+              >
+                <MusicShowcase />
+              </SubpageRoute>
+            }
+          />
+          <Route
+            path="/works/philosophy"
+            element={
+              <SubpageRoute
+                parentTo="/works"
+                parentLabel="Back to works"
+                parentCompactLabel="Works"
+              >
+                <PhilosophySection />
+              </SubpageRoute>
+            }
+          />
+          <Route
+            path="/works/skills"
+            element={
+              <SubpageRoute
+                parentTo="/works"
+                parentLabel="Back to works"
+                parentCompactLabel="Works"
+              >
+                <SkillsSection />
+              </SubpageRoute>
+            }
+          />
+          <Route
+            path="/design"
+            element={
+              <SubpageRoute>
+                <AwardsSection />
+              </SubpageRoute>
+            }
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </AnimatePresence>
+    </div>
   );
-}
+};
+
+const App = () => (
+  <ThemeProvider>
+    <AppContent />
+  </ThemeProvider>
+);
 
 export default App;

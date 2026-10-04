@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import siteCopy from '../data/siteCopy.json';
 
 // Global flag to track if animations have played (persists across remounts)
 let globalHasAnimated = false;
 
-const MainSections = ({ onSectionClick }) => {
+const MainSections = () => {
   const { mainSections } = siteCopy;
   const sections = mainSections.items;
   const [hasAnimated, setHasAnimated] = useState(globalHasAnimated);
@@ -37,16 +38,17 @@ const MainSections = ({ onSectionClick }) => {
         {/* Elegant grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-1 md:gap-0">
           {sections.map((section, index) => (
-            <motion.button
+            <motion.div
               key={section.id}
-              onClick={() => onSectionClick(section.id)}
               initial={hasAnimated ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
-              className="group relative h-[500px] bg-transparent overflow-hidden text-left border-l border-gold/10 first:border-l-0 hover:bg-gradient-to-b hover:from-gold/5 hover:to-transparent transition-all duration-700 backdrop-blur-md"
+              className={`group relative h-[500px] bg-transparent overflow-hidden text-left ${index === 0 ? '' : 'md:border-l'} border-gold/10 backdrop-blur-md`}
             >
-              {/* Content wrapper with padding */}
-              <div className="absolute inset-0 p-12 flex flex-col justify-between bg-bg-light/30 dark:bg-bg-dark/30">
+              <Link
+                to={`/${section.id}`}
+                className="group absolute inset-0 flex flex-col justify-between bg-bg-light/30 dark:bg-bg-dark/30 p-12 hover:bg-gradient-to-b hover:from-gold/5 hover:to-transparent transition-all duration-700 focus-visible:outline-none focus-visible:ring-[2px] focus-visible:ring-[#8A6A00] dark:focus-visible:ring-gold focus-visible:ring-inset"
+              >
                 {/* Number watermark */}
                 <div className="absolute top-8 right-8 font-serif text-[140px] leading-none text-gold/[0.15] group-hover:text-gold/[0.25] transition-all duration-700">
                   {section.number}
@@ -84,11 +86,11 @@ const MainSections = ({ onSectionClick }) => {
                     </svg>
                   </div>
                 </div>
-              </div>
+              </Link>
 
               {/* Subtle border accent on hover */}
               <div className="absolute inset-0 border border-transparent group-hover:border-gold/20 transition-all duration-700 pointer-events-none" />
-            </motion.button>
+            </motion.div>
           ))}
         </div>
 

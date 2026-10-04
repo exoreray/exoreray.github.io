@@ -1,27 +1,45 @@
 import { useEffect, useRef, useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import { readViewportHeight } from './rain-study/useViewportHeight';
 
-const ImprovedLetterRain = () => {
+const ImprovedLetterRain = ({ paused = false }) => {
   const canvasRef = useRef(null);
+  const impactRef = useRef(null);
   const { darkMode } = useContext(ThemeContext);
+  const pausedRef = useRef(paused); pausedRef.current = paused;
+  const engineRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
+    const rainContext = canvas.getContext('2d');
+    const impactCanvas = impactRef.current;
+    const impactContext = impactCanvas.getContext('2d');
+    if (!rainContext || !impactContext) return undefined;
+    // The original drawing classes use ctx. Switching it between render passes
+    // preserves their exact paint math while lifting only impacts above content.
+    let ctx = rainContext;
     let animationFrameId;
+    const delayedRipples = new Set();
+    const fontSize = 14;
+    let columns = 0;
 
     // Set canvas size
     const resizeCanvas = () => {
+      const height=readViewportHeight();
+      if(height===null)return;
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.height = height;
+      impactCanvas.width = canvas.width;
+      impactCanvas.height = Math.min(144, canvas.height);
+      impactContext.setTransform(1, 0, 0, 1, 0, -(canvas.height - impactCanvas.height));
+      columns = Math.ceil(canvas.width / fontSize);
     };
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
+    window.visualViewport?.addEventListener('resize',resizeCanvas);
 
     // Characters - mix of tech symbols, numbers, and select letters
     const chars = '01アイウエオカキクケコサシスセソタチツテト0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%^&*';
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
 
     // Splash particle class for impact effects
     class SplashParticle {
@@ -193,15 +211,18 @@ const ImprovedLetterRain = () => {
 
       // Occasionally create a second ripple for depth
       if (Math.random() > 0.5) {
-        setTimeout(() => {
-          ripples.push(new Ripple(x, y, color));
+        const timer = setTimeout(() => {
+          delayedRipples.delete(timer);
+          if (!pausedRef.current) ripples.push(new Ripple(x, y, color));
         }, 100);
+        delayedRipples.add(timer);
       }
     };
 
     // Animation loop
     let frameCounter = 0;
     const animate = () => {
+      ctx = rainContext;
       // Fade out trails - match background color based on theme
       const trailOpacity = darkMode ? 0.45 : 0.55;
       if (darkMode) {
@@ -213,6 +234,14 @@ const ImprovedLetterRain = () => {
       }
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+      // Fade the transparent foreground by the original trail amount. Unlike
+      // painting the background color, this cannot dim cards or footer links.
+      impactContext.save();
+      impactContext.globalCompositeOperation = 'destination-out';
+      impactContext.fillStyle = `rgba(0, 0, 0, ${trailOpacity})`;
+      impactContext.fillRect(0, canvas.height - impactCanvas.height, canvas.width, impactCanvas.height);
+      impactContext.restore();
+
       // Add new drops at a sustainable rate
       frameCounter++;
       if (frameCounter % 2 === 0 && drops.length < columns * 1.5) {
@@ -223,6 +252,7 @@ const ImprovedLetterRain = () => {
       }
 
       // Update and draw ripples (draw first for layering)
+      ctx = impactContext;
       for (let i = ripples.length - 1; i >= 0; i--) {
         ripples[i].update();
         ripples[i].draw();
@@ -234,6 +264,7 @@ const ImprovedLetterRain = () => {
       }
 
       // Update and draw drops
+      ctx = rainContext;
       for (let i = drops.length - 1; i >= 0; i--) {
         drops[i].update();
         drops[i].draw();
@@ -252,6 +283,7 @@ const ImprovedLetterRain = () => {
       }
 
       // Update and draw splash particles
+      ctx = impactContext;
       for (let i = splashParticles.length - 1; i >= 0; i--) {
         splashParticles[i].update();
         splashParticles[i].draw();
@@ -262,23 +294,39 @@ const ImprovedLetterRain = () => {
         }
       }
 
-      animationFrameId = requestAnimationFrame(animate);
+      ctx = rainContext;
+      if (!pausedRef.current) animationFrameId = requestAnimationFrame(animate);
     };
 
+    const stop = () => { cancelAnimationFrame(animationFrameId); delayedRipples.forEach(clearTimeout); delayedRipples.clear(); };
+    engineRef.current = { start: () => { cancelAnimationFrame(animationFrameId); animationFrameId = requestAnimationFrame(animate); }, stop };
     animate();
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
-      cancelAnimationFrame(animationFrameId);
+      window.visualViewport?.removeEventListener('resize',resizeCanvas);
+      stop(); engineRef.current = null;
     };
   }, [darkMode]);
 
+  useEffect(() => { if (paused) engineRef.current?.stop(); else engineRef.current?.start(); return () => engineRef.current?.stop(); }, [paused, darkMode]);
+
   return (
-    <canvas
+    <><canvas
       ref={canvasRef}
+      data-effect="original-letter-rain"
+      data-active={!paused}
+      aria-hidden="true"
       className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 blur-[2px]"
-      style={{ opacity: darkMode ? 0.5 : 0.65 }}
-    />
+      style={{ height:'var(--rain-viewport-height, 100%)', opacity: darkMode ? 0.5 : 0.65 }}
+    /><canvas
+      ref={impactRef}
+      data-effect="original-rain-impact"
+      data-active={!paused}
+      aria-hidden="true"
+      className="fixed bottom-0 left-0 w-full pointer-events-none z-20 blur-[2px]"
+      style={{ height: 'min(144px, var(--rain-viewport-height, 100dvh))', opacity: darkMode ? 0.5 : 0.65 }}
+    /></>
   );
 };
 
