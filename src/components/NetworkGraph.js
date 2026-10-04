@@ -2,7 +2,8 @@ import { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-const NetworkGraph = () => {
+const NetworkGraph = ({ active = true }) => {
+  const animationTime = useRef(0);
   const nodesRef = useRef();
   const linesRef = useRef();
   const centralNodeRef = useRef();
@@ -55,8 +56,10 @@ const NetworkGraph = () => {
     return { nodePositions: positions, connections };
   }, []);
 
-  useFrame((state) => {
-    const time = state.clock.elapsedTime;
+  useFrame((state, delta) => {
+    if (!active) return;
+    animationTime.current += Math.min(delta, 0.05);
+    const time = animationTime.current;
 
     // Rotate entire network
     if (nodesRef.current) {

@@ -1,13 +1,15 @@
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 
-const BlueprintToCircuit = () => {
+const BlueprintToCircuit = ({ active = true }) => {
+  const animationTime = useRef(0);
   const groupRef = useRef();
   const linesRef = useRef([]);
 
-  useFrame((state) => {
-    const { clock } = state;
-    const time = clock.getElapsedTime();
+  useFrame((state, delta) => {
+    if (!active) return;
+    animationTime.current += Math.min(delta, 0.05);
+    const time = animationTime.current;
 
     if (groupRef.current) {
       groupRef.current.rotation.z = Math.sin(time * 0.3) * 0.1;
@@ -34,7 +36,7 @@ const BlueprintToCircuit = () => {
       lines.push(
         <mesh
           key={`h-${i}`}
-          ref={(el) => linesRef.current.push(el)}
+          ref={(el) => { linesRef.current[i * 2] = el; }}
           position={[0, pos, 0]}
         >
           <boxGeometry args={[gridSize, 0.02, 0.02]} />
@@ -46,7 +48,7 @@ const BlueprintToCircuit = () => {
       lines.push(
         <mesh
           key={`v-${i}`}
-          ref={(el) => linesRef.current.push(el)}
+          ref={(el) => { linesRef.current[i * 2 + 1] = el; }}
           position={[pos, 0, 0]}
         >
           <boxGeometry args={[0.02, gridSize, 0.02]} />

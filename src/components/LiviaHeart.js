@@ -38,7 +38,8 @@ const ParticleMaterial = shaderMaterial(
 
 extend({ ParticleMaterial });
 
-const LiviaHeart = () => {
+const LiviaHeart = ({ active = true }) => {
+  const animationTime = useRef(0);
   const particlesRef = useRef();
   const heartRef = useRef();
   const outerGlowRef = useRef();
@@ -116,8 +117,10 @@ const LiviaHeart = () => {
     return { positions, colors, scales };
   }, [heartShape]);
 
-  useFrame((state) => {
-    const time = state.clock.elapsedTime;
+  useFrame((state, delta) => {
+    if (!active) return;
+    animationTime.current += Math.min(delta, 0.05);
+    const time = animationTime.current;
 
     // Breathing heart effect
     if (heartRef.current) {

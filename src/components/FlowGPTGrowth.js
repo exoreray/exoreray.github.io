@@ -2,7 +2,8 @@ import { useRef, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
-const FlowGPTGrowth = () => {
+const FlowGPTGrowth = ({ active = true, particleSize = 1 }) => {
+  const animationTime = useRef(0);
   const particlesRef = useRef();
   const groupRef = useRef();
   const flowLinesRef = useRef();
@@ -80,8 +81,10 @@ const FlowGPTGrowth = () => {
     return lines;
   }, []);
 
-  useFrame((state) => {
-    const time = state.clock.elapsedTime;
+  useFrame((state, delta) => {
+    if (!active) return;
+    animationTime.current += Math.min(delta, 0.05);
+    const time = animationTime.current;
 
     // Gentle rotation of entire group
     if (groupRef.current) {
@@ -139,7 +142,7 @@ const FlowGPTGrowth = () => {
           />
         </bufferGeometry>
         <pointsMaterial
-          size={1}
+          size={particleSize}
           vertexColors
           transparent
           opacity={0.8}

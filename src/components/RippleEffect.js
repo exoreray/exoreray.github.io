@@ -1,109 +1,58 @@
-import { useEffect, useRef, useContext } from 'react';
+import { useEffect, useRef, useContext, useId } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import { createClickPalette, createClickPulse, updateClickPulse, removeClickPulse } from './clickPulse';
 
-const RippleEffect = () => {
-  const canvasRef = useRef(null);
-  const ripplesRef = useRef([]);
-  const { darkMode } = useContext(ThemeContext);
+const MAX_PULSES=6;
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    const ctx = canvas.getContext('2d');
-    let animationFrameId;
+const RippleEffect=({active=true})=>{
+  const svgRef=useRef(null),engineRef=useRef(null),clickCount=useRef(0);
+  const activeRef=useRef(active);activeRef.current=active;
+  const {darkMode}=useContext(ThemeContext);
+  const darkRef=useRef(darkMode);darkRef.current=darkMode;
+  const id=useId().replace(/:/g,'');
 
-    // Capture darkMode value for use in Ripple class
-    const isDark = darkMode;
-
-    // Set canvas size
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+  useEffect(()=>{
+    const svg=svgRef.current;
+    const palette=createClickPalette(svg,`click-${id}`,darkRef.current);
+    let pulses=[],frame=0,previous=null;
+    const sync=()=>{
+      svg.dataset.clickCount=String(clickCount.current);
+      svg.dataset.pulseCount=String(pulses.length);
+      svg.dataset.phase=pulses.some(pulse=>pulse.age>=.06 && pulse.age<=.35)?'expanding':pulses.length?'fading':'idle';
+      svg.style.visibility=pulses.length?'visible':'hidden';
     };
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    // Ripple class
-    class Ripple {
-      constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.radius = 0;
-        this.maxRadius = 150;
-        this.speed = 3;
-        this.opacity = 1;
-        this.width = 3;
+    const draw=now=>{
+      frame=0;if(!activeRef.current)return;
+      const delta=previous===null?0:Math.min(Math.max(0,(now-previous)/1000),.05);previous=now;
+      pulses=pulses.filter(pulse=>updateClickPulse(pulse,delta));sync();
+      if(pulses.length)frame=requestAnimationFrame(draw);else previous=null;
+    };
+    const wake=()=>{if(activeRef.current && pulses.length && !frame)frame=requestAnimationFrame(draw);};
+    const clear=()=>{
+      cancelAnimationFrame(frame);frame=0;previous=null;
+      pulses.forEach(removeClickPulse);pulses=[];sync();
+    };
+    const click=event=>{
+      if(!activeRef.current)return;
+      let x=event.clientX,y=event.clientY;
+      if(event.detail===0 && x===0 && y===0 && event.target?.getBoundingClientRect){
+        const bounds=event.target.getBoundingClientRect();x=bounds.left+bounds.width/2;y=bounds.top+bounds.height/2;
       }
-
-      update() {
-        this.radius += this.speed;
-        this.opacity = 1 - (this.radius / this.maxRadius);
-        this.width = 3 - (this.radius / this.maxRadius) * 2;
-      }
-
-      draw() {
-        // Outer ripple - bright gold in both modes
-        const outerColor = isDark ? '255, 215, 0' : '255, 215, 0'; // Gold
-        const innerColor = isDark ? '255, 193, 102' : '240, 180, 80'; // Amber or light golden
-
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(${outerColor}, ${this.opacity})`;
-        ctx.lineWidth = this.width;
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = `rgba(${outerColor}, ${this.opacity})`;
-        ctx.stroke();
-
-        // Inner ripple
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.radius * 0.7, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(${innerColor}, ${this.opacity * 0.6})`;
-        ctx.lineWidth = this.width * 0.5;
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = `rgba(${innerColor}, ${this.opacity * 0.5})`;
-        ctx.stroke();
-      }
-    }
-
-    // Click handler
-    const handleClick = (e) => {
-      ripplesRef.current.push(new Ripple(e.clientX, e.clientY));
-
-      // Create multiple ripples for more impact
-      setTimeout(() => {
-        ripplesRef.current.push(new Ripple(e.clientX, e.clientY));
-      }, 100);
+      const bounds=svg.getBoundingClientRect();x-=bounds.left;y-=bounds.top;
+      clickCount.current++;
+      if(pulses.length===MAX_PULSES)removeClickPulse(pulses.shift());
+      pulses.push(createClickPulse(svg,palette,x,y,window.innerWidth<700?80:106));sync();wake();
     };
+    engineRef.current={start:wake,stop:clear,setTheme:palette.update};sync();
+    window.addEventListener('click',click,true);
+    return()=>{window.removeEventListener('click',click,true);clear();svg.replaceChildren();engineRef.current=null;};
+  },[id]);
 
-    // Animation loop
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Update and draw ripples
-      ripplesRef.current = ripplesRef.current.filter(ripple => {
-        ripple.update();
-        ripple.draw();
-        return ripple.radius < ripple.maxRadius;
-      });
-
-      animationFrameId = requestAnimationFrame(animate);
-    };
-
-    window.addEventListener('click', handleClick);
-    animate();
-
-    return () => {
-      window.removeEventListener('click', handleClick);
-      window.removeEventListener('resize', resizeCanvas);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, [darkMode]);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      className="fixed top-0 left-0 w-full h-full pointer-events-none z-[10000]"
-    />
-  );
+  useEffect(()=>{engineRef.current?.setTheme(darkMode);},[darkMode]);
+  useEffect(()=>{if(active)engineRef.current?.start();else engineRef.current?.stop();return()=>engineRef.current?.stop();},[active]);
+  return <svg ref={svgRef} data-effect="original-click-ripple" data-style="premium" data-renderer="svg" data-finish="svg-lifecycle"
+    data-active={active} aria-hidden="true" focusable="false"
+    className="fixed top-0 left-0 w-full h-full pointer-events-none z-[10000]"
+    style={{height:'var(--rain-viewport-height, 100%)',overflow:'hidden',visibility:'hidden'}} />;
 };
-
 export default RippleEffect;
