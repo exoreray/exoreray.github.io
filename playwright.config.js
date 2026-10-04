@@ -8,17 +8,21 @@
 const { defineConfig } = require('@playwright/test');
 
 const PORT = 4173;
+// Set this to verify the exact same suite against a published deployment.
+const externalBaseURL = process.env.PLAYWRIGHT_BASE_URL;
 
 module.exports = defineConfig({
   testDir: './e2e',
   timeout: 90_000,
   expect: { timeout: 10_000 },
   fullyParallel: true,
+  // Bound simultaneous animation / software-rendering work on developer and CI hosts.
+  workers: 2,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   reporter: [['list'], ['html', { open: 'never' }]],
   use: {
-    baseURL: `http://localhost:${PORT}`,
+    baseURL: externalBaseURL || `http://localhost:${PORT}`,
     browserName: 'chromium',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
@@ -30,10 +34,10 @@ module.exports = defineConfig({
       args: ['--disable-webgl', '--disable-3d-apis'],
     },
   },
-  webServer: {
+  webServer: externalBaseURL ? undefined : {
     command: `npx serve -s build -l ${PORT} --no-clipboard`,
     url: `http://localhost:${PORT}`,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
     timeout: 60_000,
   },
 });

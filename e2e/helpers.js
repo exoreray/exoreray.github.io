@@ -9,14 +9,15 @@ const SETTLE_MS = 1500;
 async function openSite(page) {
   const errors = [];
   page.on('pageerror', (err) => errors.push(err.message));
-  await page.goto('/');
+  // The preserved original portfolio now lives behind an explicit view switch.
+  await page.goto('/?view=original');
   await expect(page.getByText(siteCopy.landingPage.fullName)).toBeVisible();
   return errors;
 }
 
 // A clickable card (home sections, Works categories) identified by its heading.
 function card(page, title) {
-  return page.locator('button', { has: page.getByRole('heading', { name: title, exact: true }) });
+  return page.locator('a', { has: page.getByRole('heading', { name: title, exact: true }) });
 }
 
 // Click one of the home page cards (Journey / Works / Awards).
@@ -36,7 +37,7 @@ async function scrollToY(page, y) {
 
 // Scroll through the whole page, letting scroll-triggered animations finish
 // at each stop, and call `check` at every stop.
-async function scrollThrough(page, check) {
+async function scrollThrough(page, check, settleMs = SETTLE_MS) {
   const { height, vh } = await page.evaluate(() => ({
     height: document.documentElement.scrollHeight,
     vh: window.innerHeight,
@@ -44,7 +45,7 @@ async function scrollThrough(page, check) {
   const step = Math.max(200, Math.floor(vh * 0.8));
   for (let y = 0; y < height; y += step) {
     await scrollToY(page, y);
-    await page.waitForTimeout(SETTLE_MS);
+    await page.waitForTimeout(settleMs);
     await check(y);
   }
   await scrollToY(page, 0);
@@ -81,11 +82,11 @@ async function findHorizontalOverflow(page) {
 
 // Scroll through the page and fail if anything overflows horizontally or the
 // page itself becomes horizontally scrollable.
-async function expectNoHorizontalOverflow(page) {
+async function expectNoHorizontalOverflow(page, settleMs = SETTLE_MS) {
   const found = new Set();
   await scrollThrough(page, async () => {
     for (const o of await findHorizontalOverflow(page)) found.add(o);
-  });
+  }, settleMs);
   const { scrollWidth, clientWidth } = await page.evaluate(() => ({
     scrollWidth: document.documentElement.scrollWidth,
     clientWidth: document.documentElement.clientWidth,
@@ -94,7 +95,19 @@ async function expectNoHorizontalOverflow(page) {
   expect([...found], 'content sticking out of the viewport').toEqual([]);
 }
 
+// Default production UI. Keep this separate so a passing original-view test
+// cannot accidentally stand in for coverage of the public home page.
+async function openRainSite(page, path = '/', query = '') {
+  const errors = [];
+  page.on('pageerror', (err) => errors.push(err.message));
+  await page.goto(`/${query ? `?${query}` : ''}#${path}`);
+  await expect(page.locator('.rain-study')).toBeVisible();
+  await expect(page.locator('#rain-page-title')).toBeVisible();
+  return errors;
+}
+
 module.exports = {
+  openRainSite,
   siteCopy,
   SETTLE_MS,
   card,
