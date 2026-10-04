@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import siteCopy from '../data/siteCopy.json';
+import BackButton from './BackButton';
 
-const MusicShowcase = () => {
+const MusicShowcase = ({ onBack }) => {
   const { musicShowcase } = siteCopy;
   const tracks = musicShowcase.tracks;
 
@@ -86,6 +87,8 @@ const MusicShowcase = () => {
 
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-bg-light to-bg-light-secondary dark:from-bg-dark dark:to-bg-dark-secondary overflow-hidden">
+      {onBack && <BackButton onClick={onBack} />}
+
       {/* Luxury background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-bronze/5 opacity-50" />
 
