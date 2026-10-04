@@ -152,8 +152,11 @@ test.describe('RainStudy navigation and controls', () => {
     await page.addInitScript(() => { HTMLMediaElement.prototype.play = () => Promise.reject(new Error('Simulated unavailable track')); });
     const errors = await openRainSite(page, '/works/music', 'motion=off');
     const volume = page.getByRole('slider', { name: 'Volume', exact: true });
-    await volume.fill('0.35');
-    await expect(volume).toHaveAttribute('aria-valuetext', '35 percent');
+    await volume.focus();
+    await volume.press('End');
+    await expect(volume).toHaveAttribute('aria-valuetext', '100 percent');
+    await volume.press('ArrowLeft');
+    await expect(volume).toHaveAttribute('aria-valuetext', '99 percent');
     await page.getByRole('button', { name: 'Play Broken', exact: true }).click();
     await expect(page.getByRole('region', { name: 'Music player' }).getByRole('alert')).toContainText('Playback could not start');
     await expect(page.getByRole('button', { name: 'Play Broken', exact: true })).toBeVisible();
