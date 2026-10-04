@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
+import Canvas from '../SafeCanvas';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import Chapter from '../Chapter';
@@ -16,7 +16,7 @@ const Chapter6Apple = () => {
 
   return (
     <Chapter id="apple" className="bg-gradient-to-b from-bg-light dark:from-bg-dark to-bg-light-secondary dark:to-bg-dark-secondary">
-      <div className="absolute inset-0 flex flex-col lg:flex-row items-center justify-center gap-8 px-8 lg:px-16">
+      <div className="min-h-screen py-24 flex flex-col lg:flex-row items-center justify-center gap-8 px-8 lg:px-16">
 
         {/* 3D Scene - Left Side */}
         <div className="w-full lg:w-1/2 h-[50vh] lg:h-[70vh] ">
