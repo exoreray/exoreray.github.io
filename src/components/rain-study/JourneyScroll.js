@@ -11,6 +11,7 @@ const chapters = copy.milestones.chapters;
 class FilmBoundary extends Component {
   state = {failed:false};
   static getDerivedStateFromError(){return {failed:true};}
+  componentDidCatch(){this.props.onFailure();}
   render(){return this.state.failed ? <p className="journey-film-loading" role="status">The 3D scene is unavailable. All chapters remain readable.</p> : this.props.children;}
 }
 export default function JourneyScroll({ active = true, motion = true, compact = false, dark = true }) {
@@ -20,10 +21,12 @@ export default function JourneyScroll({ active = true, motion = true, compact = 
   const lastCut=useRef(-1);
   const [selected, setSelected] = useState(0);
   const [inView, setInView] = useState(true);
+  const [filmFailed, setFilmFailed] = useState(false);
   const [ready, setReady] = useState({}), [errors, setErrors] = useState({});
   const autoplay=useJourneyAutoscroll(root,{active,motion});
   const onReady = useCallback(index => setReady(previous => previous[index] ? previous : {...previous,[index]:true}), []);
   const onError = useCallback(index => setErrors(previous => ({...previous,[index]:true})), []);
+  const onFilmFailure = useCallback(() => setFilmFailed(true), []);
   const onCameraProgress=useCallback(progress=>{
     const cut=cinematicCut(progress,motionRef.current);
     if(Math.abs(cut-lastCut.current)<.0001)return;
@@ -72,10 +75,10 @@ export default function JourneyScroll({ active = true, motion = true, compact = 
       <span>{autoplay.state==='ended'?'Replay':autoplay.state==='waiting'?'Starting…':autoplay.state==='paused'?'Paused':'Auto-scroll'}</span>
     </button>
     <div className="journey-film-sticky" ref={stage} data-selected={selected} data-scene-ready={Boolean(ready[selected])}>
-      <FilmBoundary><Suspense fallback={<p className="journey-film-loading" role="status">Loading Journey…</p>}><JourneyFilmScene selected={selected} timeline={timeline} active={active && inView} motion={motion} dark={dark} compact={compact} onReady={onReady} onError={onError} onCameraProgress={onCameraProgress} /></Suspense></FilmBoundary>
+      <FilmBoundary onFailure={onFilmFailure}><Suspense fallback={<p className="journey-film-loading" role="status">Loading Journey…</p>}><JourneyFilmScene selected={selected} timeline={timeline} active={active && inView} motion={motion} dark={dark} compact={compact} onReady={onReady} onError={onError} onCameraProgress={onCameraProgress} /></Suspense></FilmBoundary>
       <div className="journey-cut-veil" aria-hidden="true" />
-      {!ready[selected] && !errors[selected] && <p className="journey-film-loading" role="status">Loading {journeyScenes[selected].label}…</p>}
-      {errors[selected] && <p className="journey-film-loading" role="status">This model could not load. Scroll to continue reading.</p>}
+      {!filmFailed && !ready[selected] && !errors[selected] && <p className="journey-film-loading" role="status">Loading {journeyScenes[selected].label}…</p>}
+      {!filmFailed && errors[selected] && <p className="journey-film-loading" role="status">This model could not load. Scroll to continue reading.</p>}
       <div className="journey-vertical-progress" aria-hidden="true"><span>{String(selected+1).padStart(2,'0')}</span><i/><span>{String(chapters.length).padStart(2,'0')}</span></div>
     </div>
     <div className="journey-film-heading"><h1 id="rain-page-title" tabIndex={-1}>{copy.milestones.header.title}</h1><p>{copy.milestones.header.tagline}</p></div>

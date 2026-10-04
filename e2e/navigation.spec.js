@@ -5,7 +5,7 @@ const { siteCopy, SETTLE_MS, card, openSite, openSection } = require('./helpers'
 
 test.use({ viewport: { width: 1280, height: 800 } });
 
-const back = (page) => page.getByRole('button', { name: 'Back', exact: true });
+const back = (page, destination = '/') => page.getByRole('navigation', { name: 'Page navigation' }).locator(`a[href='#${destination}']`);
 
 test('home page shows the hero and all section cards', async ({ page }) => {
   const errors = await openSite(page);
@@ -19,7 +19,7 @@ test('home page shows the hero and all section cards', async ({ page }) => {
 });
 
 for (const section of siteCopy.mainSections.items) {
-  test(`"${section.title}" opens and Back returns home`, async ({ page }) => {
+  test(`Original "${section.title}" opens and Back returns home`, async ({ page }) => {
     const errors = await openSite(page);
     await openSection(page, section.title);
 
@@ -47,16 +47,17 @@ test('Journey shows every chapter, numbered in order', async ({ page }) => {
 });
 
 for (const category of siteCopy.works.categories) {
-  test(`Works › "${category.title}" opens and has a way back`, async ({ page }) => {
+  test(`Original Works › "${category.title}" opens and has a way back`, async ({ page }) => {
     const errors = await openSite(page);
     await openSection(page, 'Works');
 
     await card(page, category.title).click();
     await page.waitForTimeout(SETTLE_MS);
 
-    // Without a Back button the visitor is stuck on this page.
-    await expect(back(page), 'sub-page needs a Back button').toBeVisible();
-    await back(page).click();
+    // Routed sub-pages must retain a way to return to the Works categories.
+    await expect(page).toHaveURL(new RegExp(`#\\/works\\/${category.id}$`));
+    await expect(back(page, '/works'), 'sub-page needs a parent navigation link').toBeVisible();
+    await back(page, '/works').click();
     await page.waitForTimeout(SETTLE_MS);
     await expect(card(page, category.title)).toBeVisible();
     expect(errors).toEqual([]);
@@ -84,3 +85,18 @@ test('music player opens and closes', async ({ page }) => {
   await page.getByRole('button', { name: 'Close music player' }).click();
   await expect(page.getByText(siteCopy.globalMusicPlayer.playlistLabel)).toBeHidden();
 });
+
+for (const category of siteCopy.works.categories) {
+  test(`Original direct link to ${category.title} survives reload and returns home`, async ({ page }) => {
+    const errors = [];
+    page.on('pageerror', error => errors.push(error.message));
+    await page.goto(`/?view=original#/works/${category.id}`);
+    await expect(back(page, '/works')).toBeVisible();
+    await page.reload();
+    await expect(back(page, '/works')).toBeVisible();
+    await back(page).click();
+    await expect(page).toHaveURL(/\?view=original#\/$/);
+    await expect(card(page, 'Works')).toBeVisible();
+    expect(errors).toEqual([]);
+  });
+}
