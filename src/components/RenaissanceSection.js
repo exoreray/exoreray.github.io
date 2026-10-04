@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
+import Canvas from './SafeCanvas';
 import { OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import { motion } from 'framer-motion';
 import Chapter from './Chapter';
