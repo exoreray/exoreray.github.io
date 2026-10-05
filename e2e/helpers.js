@@ -12,6 +12,7 @@ async function openSite(page) {
   // The preserved original portfolio now lives behind an explicit view switch.
   await page.goto('/?view=original');
   await expect(page.getByText(siteCopy.landingPage.fullName)).toBeVisible();
+  await page.evaluate(async () => { await document.fonts.ready; });
   return errors;
 }
 
@@ -68,8 +69,27 @@ async function findHorizontalOverflow(page) {
     };
     const offenders = [];
     for (const el of document.querySelectorAll('h1,h2,h3,h4,p,a,button,img,li,span')) {
-      const r = el.getBoundingClientRect();
-      if (r.width === 0 || r.height === 0) continue;
+      const raw = el.getBoundingClientRect();
+      if (raw.width === 0 || raw.height === 0) continue;
+      const r = { left: raw.left, right: raw.right, top: raw.top, bottom: raw.bottom };
+      // A local crop (for example, an oversized image inside a logo frame) is
+      // intentionally smaller than its child. Check its painted bounds. A
+      // full-width page shell hiding overflow must NOT conceal layout defects.
+      for (let parent = el.parentElement; parent && parent !== document.documentElement; parent = parent.parentElement) {
+        const style = getComputedStyle(parent);
+        const box = parent.getBoundingClientRect();
+        const localClip = box.width < vw - 1 && box.left >= -1 && box.right <= vw + 1;
+        if (!localClip) continue;
+        if (style.overflowX === 'hidden' || style.overflowX === 'clip') {
+          r.left = Math.max(r.left, box.left);
+          r.right = Math.min(r.right, box.right);
+        }
+        if (style.overflowY === 'hidden' || style.overflowY === 'clip') {
+          r.top = Math.max(r.top, box.top);
+          r.bottom = Math.min(r.bottom, box.bottom);
+        }
+      }
+      if (r.right <= r.left || r.bottom <= r.top) continue;
       if (r.bottom < 0 || r.top > window.innerHeight) continue; // off-screen vertically
       if (r.right <= vw + 1 && r.left >= -1) continue;
       if (effectiveOpacity(el) < 0.95) continue;
@@ -103,6 +123,8 @@ async function openRainSite(page, path = '/', query = '') {
   await page.goto(`/${query ? `?${query}` : ''}#${path}`);
   await expect(page.locator('.rain-study')).toBeVisible();
   await expect(page.locator('#rain-page-title')).toBeVisible();
+  // Font swapping changes grid intrinsic widths; measure the settled type.
+  await page.evaluate(async () => { await document.fonts.ready; });
   return errors;
 }
 

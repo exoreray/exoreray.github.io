@@ -23,7 +23,7 @@
 .rain-hero-copy h1 { font: 300 clamp(72px, 8vw, 115px)/1 'Cormorant Garamond', Georgia, serif; letter-spacing: .055em; margin: 0 0 23px; text-shadow: 0 2px 32px var(--rain-bg), 0 0 60px var(--rain-bg); }
 .rain-subtitle { margin: 0 0 17px; font-size: clamp(13px, 1.3vw, 17px); font-weight: 300; letter-spacing: .035em; color: var(--rain-gold); text-shadow: 0 1px 15px var(--rain-bg); }
 .rain-description { margin: auto; max-width: 340px; color: var(--rain-muted); font-size: 11px; font-weight: 300; line-height: 1.85; text-shadow: 0 1px 12px var(--rain-bg); }
-.rain-destinations { position: absolute; bottom: 42px; left: 50%; transform: translateX(-50%); width: min(760px, 86%); display: grid; grid-template-columns: repeat(3, 1fr); z-index: 10; }
+.rain-destinations { position: absolute; bottom: 42px; left: 50%; transform: translateX(-50%); width: min(760px, 86%); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); z-index: 10; }
 .rain-destinations a { position: relative; text-align: center; padding: 25px 20px 10px; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 29px; font-weight: 300; letter-spacing: .015em; transition: color 200ms; }
 .rain-destinations a:hover { color: var(--rain-gold); }
 .rain-destinations a + a { border-left: 1px solid #c3a56918; }
@@ -91,6 +91,7 @@ html.rain-mode.dark, html.rain-mode.dark body { background:#1a1410; }
 .rain-project-selector { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); width: min(820px,88%); margin: 5px auto 0; }
 .rain-project-selector button { position: relative; padding: 25px 14px 18px; min-height: 110px; transition: color 180ms; }
 .rain-project-selector button + button { border-left: 1px solid #bba37525; }
+.rain-project-selector button { min-width: 0; overflow-wrap: anywhere; hyphens: auto; }
 .rain-project-selector button > span:not(.rain-project-thread) { font: 300 29px/1.1 'Cormorant Garamond',Georgia,serif; }.rain-project-selector small { display: block; font-size: 9px; margin-top: 13px; color: var(--rain-muted); letter-spacing: .04em; }
 .rain-project-thread { position: absolute; height: 1px; top: 7px; left: 35%; right: 35%; background: linear-gradient(90deg,transparent,var(--rain-gold),transparent); opacity: .35; transition: left 180ms,right 180ms; }
 .rain-project-selector button[aria-pressed=true] { color: var(--rain-gold); }.rain-project-selector button[aria-pressed=true] .rain-project-thread { left: 20%; right: 20%; opacity: 1; }
