@@ -1,4 +1,4 @@
-# A letter under the same stars
+# Private relationship essay
 
 Standalone static page: `public/under-the-same-stars-9ec6/`.
 Production URL: `https://exoreray.github.io/under-the-same-stars-9ec6/`.
@@ -17,14 +17,14 @@ To edit: change the private letter, then run `seal.mjs <private-source> <destina
 with the password on stdin. The sealer checks that every paragraph and sentence
 preserves the complete supplied text. Never commit the private plaintext.
 
-`compose.py <wav-output>` creates the original 72 BPM piano/ambient instrumental
+`compose.py <wav-output>` creates the original 64 BPM minimal piano/ambient instrumental
 from synthesized notes; no third-party song or sampled recording is used.
 Convert the WAV to `same-sky.mp3` with ffmpeg at 128 kbps.
-The self-hosted serif is a static subset of Noto Serif SC, with its OFL license
-included in the public directory. The page has no external runtime dependencies.
+The interface uses the device's modern system font. The page uses a plain black background and white subtitles, with no
+decorative title or external runtime dependencies.
 
 Preview with a local HTTP server. Verify wrong/correct password, text checksum,
-sequential reading, user-scroll pause, music, volume, chapter links, dialogs,
+single-sentence subtitle playback, pause frame, user-scroll exit, music, volume, chapter links, dialogs,
 keyboard focus, 320 px / 390 px / desktop layouts and reduced-motion preferences.
 
 For this isolated addition, source is committed to master and the same page
