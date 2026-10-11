@@ -6,7 +6,7 @@ import wave
 import numpy as np
 
 RATE = 32000
-BEAT = 60 / 72
+BEAT = 60 / 64
 BARS = 64
 DURATION = BARS * BEAT * 4 + 8
 rng = np.random.default_rng(111026)
@@ -56,16 +56,16 @@ motifs = [
 for bar in range(BARS):
     chord = chords[bar % 8]; at = bar * BEAT * 4 + .25
     energy = .70 + .15 * math.sin(bar / BARS * math.pi)
-    add_note(chord[0],at,velocity=.105*energy,pan=-.26,sustain=6)
+    add_note(chord[0],at,velocity=.085*energy,pan=-.26,sustain=6)
     add_pad(chord[1:4],at,BEAT*4+4)
     for step, note in enumerate(chord[1:]):
-        add_note(note,at+(step*.57+.37)*BEAT+rng.uniform(-.025,.025),.073*energy*rng.uniform(.9,1.1),pan=(step-1.5)*.12)
+        add_note(note,at+(step*.57+.37)*BEAT+rng.uniform(-.025,.025),.060*energy*rng.uniform(.9,1.1),pan=(step-1.5)*.12)
     # A sparse, repeating melody gains a little height in the middle.
-    if bar >= 4:
+    if bar >= 8 and bar % 2 == 0:
         for beat, note in motifs[bar % 8]:
             if bar >= 48 and beat < 1: continue
-            octave = 12 if 24 <= bar < 40 and bar % 4 == 0 else 0
-            add_note(note+octave,at+beat*BEAT+rng.uniform(-.025,.025),.103*energy*rng.uniform(.85,1.05),pan=.13,sustain=5)
+            octave = 0
+            add_note(note+octave,at+beat*BEAT+rng.uniform(-.025,.025),.070*energy*rng.uniform(.85,1.05),pan=.13,sustain=5)
 
 # Wide multi-tap room: short reflections followed by a long, quiet tail.
 dry = audio.copy()

@@ -10,12 +10,12 @@ if (!password) throw new Error('A password is required');
 const original = await readFile(sourcePath, 'utf8');
 const paragraphs = original.trim().split(/\n\s*\n/);
 const divisions = [
-  [0, '关于我们此刻的名字'],
-  [20, '关于一个人生伙伴'],
-  [25, '关于一起创造的世界'],
-  [51, '关于我想寻找的你'],
-  [60, '关于开始，关于时间'],
-  [76, '关于我们的选择']
+  [0, '关系的名字'],
+  [20, '人生伙伴'],
+  [25, '共同建造'],
+  [51, '彼此的期待'],
+  [60, '何时开始'],
+  [76, '选择与投入']
 ];
 const highlights = new Set([9,13,26,29,31,32,36,46,50,52,58,67,76,78,81,82]);
 const chapters = divisions.map(([start,title],i) => ({title,paragraphs:paragraphs.slice(start,divisions[i+1]?.[0]).map((paragraph,j) => ({key:highlights.has(start+j),sentences:paragraph.match(/[^。！？]+[。！？]?/gu)||[paragraph]}))}));
