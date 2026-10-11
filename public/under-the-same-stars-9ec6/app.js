@@ -117,7 +117,7 @@ function renderLetter(data) {
     const section = document.createElement('section');
     section.className = 'chapter'; section.id = `chapter-${chapterIndex + 1}`;
     const heading = document.createElement('div'); heading.className = 'chapter-heading';
-    
+
     const h2 = document.createElement('h2'); h2.className = 'sr-only'; h2.textContent = `第 ${chapterIndex + 1} 部分`; h2.id = `${section.id}-title`; h2.tabIndex = -1;
     section.setAttribute('aria-labelledby', h2.id); section.append(h2);
     for (const paragraph of chapter.paragraphs) {
