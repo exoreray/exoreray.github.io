@@ -37,7 +37,7 @@ test('the modal uses full resolution, wraps keyboard navigation, and returns foc
   const trigger = screen.getByRole('button', {name:'Open First'});
   trigger.focus();
   fireEvent.click(trigger);
-  const dialog = screen.getByRole('dialog', {name:'Photograph viewer'});
+  const dialog = screen.getByRole('dialog', {name:'Media viewer'});
   expect(within(dialog).getByRole('img')).toHaveAttribute('src','/test-only-one-full.jpg');
   fireEvent.keyDown(dialog, {key:'ArrowLeft'});
   expect(within(dialog).getByRole('img')).toHaveAttribute('alt','Third test photograph');
@@ -46,4 +46,42 @@ test('the modal uses full resolution, wraps keyboard navigation, and returns foc
   fireEvent(dialog, new Event('cancel', {bubbles:false,cancelable:true}));
   expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   expect(trigger).toHaveFocus();
+});
+
+const clip = { id:'clip', type:'video', src:'/test-only-cover.jpg', full:'/test-only-cover.jpg', videoSrc:'/test-only-clip.mp4', title:'Moving light', alt:'Moving light', category:'Light', width:720, height:1280 };
+
+test('photos and videos can be filtered independently without disguising clips as photographs', () => {
+  render(<PhotographyGallery photos={[...photos, clip]} />);
+  expect(screen.getByText('4 works')).toBeVisible();
+  fireEvent.click(screen.getByRole('button', {name:'Videos', exact:true}));
+  expect(screen.getByText('1 video')).toBeVisible();
+  expect(screen.getByRole('button', {name:'Open video Moving light', exact:true})).toBeVisible();
+  expect(screen.queryByRole('button', {name:'Open First'})).not.toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', {name:'Places', exact:true}));
+  expect(screen.getByText('0 videos')).toBeVisible();
+  fireEvent.click(screen.getByRole('button', {name:'All', exact:true}));
+  fireEvent.click(screen.getByRole('button', {name:'Photographs', exact:true}));
+  expect(screen.getByText('3 photographs')).toBeVisible();
+  expect(screen.queryByRole('button', {name:'Open video Moving light'})).not.toBeInTheDocument();
+});
+
+test('the video viewer preserves native controls and stops playback when it closes', () => {
+  const pause = jest.spyOn(HTMLMediaElement.prototype,'pause').mockImplementation(() => {});
+  const load = jest.spyOn(HTMLMediaElement.prototype,'load').mockImplementation(() => {});
+  render(<PhotographyGallery photos={[clip, ...photos]} />);
+  fireEvent.click(screen.getByRole('button', {name:'Open video Moving light', exact:true}));
+  const dialog = screen.getByRole('dialog', {name:'Media viewer'});
+  const player = within(dialog).getByLabelText('Moving light');
+  expect(player.tagName).toBe('VIDEO');
+  expect(player).toHaveAttribute('src','/test-only-clip.mp4');
+  expect(player).toHaveAttribute('controls');
+  expect(player).toHaveAttribute('playsinline');
+  expect(player).not.toHaveAttribute('autoplay');
+  fireEvent.keyDown(player, {key:'ArrowRight'});
+  expect(within(dialog).getByLabelText('Moving light')).toBe(player);
+  fireEvent.click(within(dialog).getByRole('button',{name:'Close',exact:true}));
+  expect(pause).toHaveBeenCalled();
+  expect(load).toHaveBeenCalled();
+  expect(player).not.toHaveAttribute('src');
+  pause.mockRestore();load.mockRestore();
 });
