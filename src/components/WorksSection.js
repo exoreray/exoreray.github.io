@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import siteCopy from '../data/siteCopy.json';
+import { workCategories } from '../data/workCategories';
 
 const WorksSection = () => {
   const { works } = siteCopy;
-  const categories = works.categories;
+  const categories = workCategories;
 
   return (
     <div className="relative min-h-screen flex items-center justify-center px-8 py-32">

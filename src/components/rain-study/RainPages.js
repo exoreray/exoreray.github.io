@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import copy from '../../data/siteCopy.json';
+import { workCategories } from '../../data/workCategories';
 import { skillsData } from '../../data/skillsData';
 import { MusicControls } from './RainMusic';
 import JourneyScroll from './JourneyScroll';
@@ -14,7 +15,7 @@ export function HomePage({ setHovered }) {
   return <><div className="rain-hero-copy"><h1 id="rain-page-title" tabIndex={-1}>{copy.landingPage.fullName}</h1><p className="rain-subtitle">{copy.landingPage.subtitle}</p><p className="rain-description">{copy.landingPage.descriptionLines[0]}</p></div><nav className="rain-destinations" aria-label="Explore Ray’s work">{copy.mainSections.items.map((item, i) => <Link key={item.id} to={`/${item.id}`} onPointerEnter={() => setHovered(i)} onPointerLeave={() => setHovered(-1)} onFocus={() => setHovered(i)} onBlur={() => setHovered(-1)}><span className="rain-destination-mark" aria-hidden="true" /><span>{item.title}</span><small>{item.description}</small></Link>)}</nav></>;
 }
 export function WorksPage({ setHovered }) {
-  return <nav className="rain-works" aria-label="Works categories">{copy.works.categories.map((category, i) => <Link key={category.id} to={`/works/${category.id}`} onPointerEnter={() => setHovered(i)} onPointerLeave={() => setHovered(-1)} onFocus={() => setHovered(i)} onBlur={() => setHovered(-1)}><span className="rain-work-mark" aria-hidden="true" /><h2>{category.title}</h2><p>{category.description}</p><InterfaceIcon name="arrow-right" className="rain-work-enter" /></Link>)}</nav>;
+  return <nav className="rain-works" aria-label="Works categories">{workCategories.map((category, i) => <Link key={category.id} to={`/works/${category.id}`} onPointerEnter={() => setHovered(i)} onPointerLeave={() => setHovered(-1)} onFocus={() => setHovered(i)} onBlur={() => setHovered(-1)}><span className="rain-work-mark" aria-hidden="true" /><h2>{category.title}</h2><p>{category.description}</p><InterfaceIcon name="arrow-right" className="rain-work-enter" /></Link>)}</nav>;
 }
 export function JourneyPage(props) { return <JourneyScroll {...props} />; }
 export function ProjectsPage({ selected, select }) {

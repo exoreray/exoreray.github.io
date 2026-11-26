@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import Lenis from 'lenis';
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import CursorTrail from './components/CursorTrail';
@@ -20,6 +20,8 @@ import SubpageNavigation from './components/SubpageNavigation';
 import { ThemeProvider } from './context/ThemeContext';
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import './App.css';
+
+const PhotographyGallery = lazy(() => import('./components/PhotographyGallery'));
 
 const PageTransition = ({ children, slide = false }) => {
   const shouldReduceMotion = useReducedMotion();
@@ -184,6 +186,11 @@ const AppContent = () => {
               </SubpageRoute>
             }
           />
+          <Route path="/works/photography" element={
+            <SubpageRoute parentTo="/works" parentLabel="Back to works" parentCompactLabel="Works">
+              <Suspense fallback={<p role="status">Loading photographs…</p>}><PhotographyGallery /></Suspense>
+            </SubpageRoute>
+          } />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AnimatePresence>

@@ -7,5 +7,6 @@ export const rainRoutes = [
   { path: '/works/music', title: copy.musicShowcase.title, subtitle: copy.musicShowcase.tagline, shape: 4, kind: 'music' },
   { path: '/works/philosophy', title: copy.philosophySection.title, subtitle: copy.philosophySection.subtitle, shape: 5, kind: 'thoughts' },
   { path: '/works/skills', title: copy.skillsSection.headerLabel, subtitle: copy.works.categories[3].description, shape: 6, kind: 'skills' },
+  { path: '/works/photography', title: 'Photography', subtitle: 'Places, light, and moments from my camera.', shape: 2, kind: 'photography' },
   { path: '/design', title: copy.designSection.headerLabel, subtitle: copy.mainSections.items[2].description, shape: 7, kind: 'awards' },
 ];
