@@ -76,3 +76,55 @@ for (const viewport of [{width:1440,height:1000},{width:390,height:844}]) {
     });
   });
 }
+
+test('the library groups every work, combines facets, filters dates, and resets cleanly',async({page})=>{
+ await page.setViewportSize({width:1440,height:1000});
+ await page.goto('/?motion=off#/works/photography');
+ const tiles=page.locator('.photography__collection button');
+ await expect(tiles).toHaveCount(photos.length);
+ for(const grouping of ['Year','Month','Date','Time','Topic','Subject','Color','Vibe']){
+  await page.getByLabel('Group by',{exact:true}).selectOption(grouping);
+  await expect(tiles).toHaveCount(photos.length);
+  await expect(page.locator('.photography__group-heading').first()).toBeVisible();
+  if(grouping==='Year' && process.env.PHOTO_QA_SCREENSHOTS)await page.screenshot({path:require('path').join(process.env.PHOTO_QA_SCREENSHOTS,'library-year-1440.jpg'),type:'jpeg',quality:88});
+ }
+ await page.getByRole('button',{name:'Reset view',exact:true}).click();
+ const blue=photos.filter(p=>p.colors?.includes('Blue'));
+ await page.getByLabel('Color',{exact:true}).selectOption('Blue');
+ await expect(tiles).toHaveCount(blue.length);
+ const mood=blue[0].vibes[0];
+ await page.getByLabel('Vibe',{exact:true}).selectOption(mood);
+ await expect(tiles).toHaveCount(blue.filter(p=>p.vibes.includes(mood)).length);
+ await page.getByRole('button',{name:'Reset view',exact:true}).click();
+ const year=photos.find(p=>p.date).date.slice(0,4);
+ await page.getByLabel('Year',{exact:true}).selectOption(year);
+ await expect(tiles).toHaveCount(photos.filter(p=>p.date?.startsWith(year)).length);
+ await page.getByRole('button',{name:'Reset view',exact:true}).click();
+ await page.locator('.photography__dates summary').click();
+ await page.getByLabel('Time shared',{exact:true}).selectOption('Unrecorded');
+ await expect(tiles).toHaveCount(photos.filter(p=>!p.timeOfDay).length);
+ await page.getByLabel('Time shared',{exact:true}).selectOption('All');
+ await page.getByLabel('From date',{exact:true}).fill('2024-01-01');
+ await page.getByLabel('To date',{exact:true}).fill('2024-12-31');
+ await expect(tiles).toHaveCount(photos.filter(p=>p.date>='2024-01-01'&&p.date<='2024-12-31').length);
+ await page.getByRole('button',{name:'Reset view',exact:true}).click();
+ await expect(tiles).toHaveCount(photos.length);
+});
+
+test('year groups preserve viewer navigation and the phone filters fit the screen',async({page})=>{
+ await page.setViewportSize({width:390,height:844});
+ await page.goto('/?motion=off#/works/photography');
+ await page.getByLabel('Group by',{exact:true}).selectOption('Year');
+ await page.getByLabel('Sort',{exact:true}).selectOption('Newest');
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.locator('.photography__dates summary').click();
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+ await page.locator('.photography__dates summary').click();
+ const buttons=page.locator('.photography__collection button');const labels=await buttons.evaluateAll(es=>es.map(e=>e.getAttribute('aria-label')));
+ await buttons.first().click();const viewer=page.getByRole('dialog',{name:'Media viewer'});
+ await expect(viewer).toBeVisible();
+ await viewer.getByRole('button',{name:'Next',exact:true}).click();
+ await expect(viewer.locator('figcaption')).toContainText(labels[1].replace(/^Open(?: video)? /,''));
+ await page.keyboard.press('Escape');await expect(viewer).not.toBeVisible();
+ if(process.env.PHOTO_QA_SCREENSHOTS)await page.screenshot({path:require('path').join(process.env.PHOTO_QA_SCREENSHOTS,'library-year-390.jpg'),type:'jpeg',quality:88});
+});
