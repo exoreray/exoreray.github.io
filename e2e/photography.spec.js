@@ -46,7 +46,9 @@ test('the collection is discoverable from Works in both site layouts', async ({ 
 
 for (const viewport of [{width:1440,height:1000},{width:390,height:844}]) {
   test.describe(`Native Story video at ${viewport.width}px`, () => {
-    test.use({viewport});
+    // Verify Instagram's H.264/HE-AAC media with Chrome's production codecs.
+    // The bundled headless Chromium cannot decode these original audio tracks.
+    test.use({viewport, channel:'chrome'});
     test('a real clip loads, plays, seeks and closes without losing photo navigation', async ({page}) => {
       const errors=[];page.on('pageerror',e=>errors.push(e.message));
       await page.goto('/?motion=off#/works/photography');
