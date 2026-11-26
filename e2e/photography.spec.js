@@ -1,5 +1,7 @@
 const { test, expect } = require('@playwright/test');
 const photos = require('../src/data/photographs.json');
+// Exercise original H.264/HE-AAC media using Chrome's production codecs.
+test.use({ channel: 'chrome' });
 
 for (const viewport of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }]) {
   test.describe(`Photography at ${viewport.width}px`, () => {
@@ -46,9 +48,7 @@ test('the collection is discoverable from Works in both site layouts', async ({ 
 
 for (const viewport of [{width:1440,height:1000},{width:390,height:844}]) {
   test.describe(`Native Story video at ${viewport.width}px`, () => {
-    // Verify Instagram's H.264/HE-AAC media with Chrome's production codecs.
-    // The bundled headless Chromium cannot decode these original audio tracks.
-    test.use({viewport, channel:'chrome'});
+    test.use({viewport});
     test('a real clip loads, plays, seeks and closes without losing photo navigation', async ({page}) => {
       const errors=[];page.on('pageerror',e=>errors.push(e.message));
       await page.goto('/?motion=off#/works/photography');
