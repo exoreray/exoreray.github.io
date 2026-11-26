@@ -61,7 +61,7 @@ html.rain-mode.dark, html.rain-mode.dark body { background:#1a1410; }
 .rain-page-heading > p { color: var(--rain-gold); font-size: 13px; font-weight: 300; line-height: 1.7; letter-spacing: .025em; max-width: 460px; margin: 0; text-shadow: 0 0 15px var(--rain-bg); }
 .rain-page-content { animation: rain-content-in 180ms ease-out; }
 @keyframes rain-content-in { from { opacity: .75; } to { opacity: 1; } }
-.rain-works { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); width: min(1080px,88%); margin: 12px auto 60px; }
+.rain-works { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); width: min(1080px,88%); margin: 12px auto 60px; }
 .rain-works > a { position: relative; text-align: center; padding: 32px 24px 38px; min-height: 200px; transition: color 180ms, transform 180ms; }
 .rain-works > a + a { border-left: 1px solid #bba37525; }
 .rain-work-mark { position: absolute; width: 32px; height: 1px; top: 8px; left: calc(50% - 16px); background: linear-gradient(90deg,transparent,var(--rain-gold),transparent); opacity: .7; transition: transform 220ms; }

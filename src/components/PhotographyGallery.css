@@ -27,11 +27,12 @@
 .photo-viewer figure img { width: 100%; min-height: 0; flex: 1; object-fit: contain; }
 .photo-viewer figcaption { display: flex; justify-content: space-between; gap: 24px; padding: 16px 12px 0; font-size: 14px; }
 .photo-viewer nav { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; }
-.rain-page-photography { background: #1b1c1c; }
+.rain-study.rain-study.rain-page-photography { background: #1b1c1c; }
 .rain-page-photography .rain-atmosphere { display: none; }
 .rain-page-photography .rain-page-heading { display: none; }
-.rain-page-photography .photography { padding-top: 40px; }
-.rain-light.rain-page-photography { background: #f5f6f6; }
+.rain-page-photography .photography { padding-top: 100px; }
+.rain-page-photography > canvas { display: none; }
+.rain-light.rain-study.rain-study.rain-page-photography { background: #f5f6f6; }
 .rain-light .photography, .App .photography { color: #202222; }
 .dark .App .photography { color: #e9e5df; }
 .rain-light .photography__featured img { background: #e6e8e8; }
