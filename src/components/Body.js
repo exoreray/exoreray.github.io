@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
-import Avatar from '../assets/profile.png';
+import Avatar from '../assets/monogram.png';
 import RandomLetterGrid from './RandomLetterGrid';
 
 const Body = () => {
@@ -31,7 +31,7 @@ const Body = () => {
       </div>
       <div className="body-container">
         <div className="body-profile">
-          <img className="body-img" alt="avatar" src={Avatar} ></img>
+          <img className="body-img" alt="Ray Xi monogram" src={Avatar} ></img>
           <div className="hole"></div>
 
           <div className="body-content">

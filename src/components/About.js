@@ -1,5 +1,5 @@
 // Create your About component here
-import IMG from '../assets/profile3.png';
+import IMG from '../assets/monogram.png';
 
 const About = () => {
     return (
@@ -12,7 +12,7 @@ const About = () => {
                 </div>
                 <div className="about-img">
                     <div className="about-img-wrapper">
-                        <img src={IMG} alt="Detective" />
+                        <img src={IMG} alt="Ray Xi monogram" />
                     </div>
                 </div>
             </div>
