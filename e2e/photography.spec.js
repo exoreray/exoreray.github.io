@@ -23,7 +23,7 @@ for(const viewport of [{width:1440,height:1000},{width:390,height:844},{width:32
    await first.click();const viewer=page.getByRole('dialog',{name:'Media viewer'});await expect(viewer).toBeVisible();await expect(viewer.locator('img')).toHaveAttribute('src',photos[0].full);
    await page.keyboard.press('ArrowRight');await expect(viewer.locator('img')).toHaveAttribute('src',photos[1].full);
    await page.keyboard.press('Escape');await expect(viewer).not.toBeVisible();await expect(first).toBeFocused();
-   await page.getByRole('button',{name:'Open contact sheet',exact:true}).click();const sheet=page.getByRole('region',{name:'Contact sheet'});await expect(sheet.getByRole('button')).toHaveCount(photos.length);
+   await page.getByRole('button',{name:'Open contact sheet',exact:true}).click();const sheet=page.getByRole('region',{name:'Contact sheet'});await expect(sheet.getByRole('button')).toHaveCount(photos.length);await expect.poll(()=>sheet.evaluate(e=>getComputedStyle(e).transform)).toBe('none');await expect(sheet.getByRole('button').first()).toBeInViewport({ratio:.5});
    const last=sheet.getByRole('button',{name:openLabel(photos[photos.length-1]),exact:true});await last.click();await expect(viewer).toBeVisible();await expect(viewer.locator('img')).toHaveAttribute('src',photos[photos.length-1].full);await page.keyboard.press('Escape');await expect(last).toBeFocused();
    expect(errors).toEqual([]);
   });
@@ -99,3 +99,22 @@ test('photography uses the same page background and text palette as Works in bot
   await screenshot(page,'theme-'+(dark?'dark':'light')+'-1440');
  }
 });
+
+for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
+ test.describe('View switching at '+viewport.width,()=>{
+  test.use({viewport});
+  test('contact sheet stays in frame after live-motion camera changes and repeated toggles',async({page})=>{
+   await start(page);await page.getByRole('button',{name:'Enable live motion',exact:true}).click();
+   await page.getByRole('button',{name:'Zoom in',exact:true}).click();
+   const scene=page.getByRole('region',{name:'Photo constellation'});await scene.focus();await page.keyboard.press('ArrowRight');await page.keyboard.press('ArrowDown');
+   for(let i=0;i<3;i++){
+    await page.getByRole('button',{name:'Open contact sheet',exact:true}).click();const sheet=page.getByRole('region',{name:'Contact sheet'});
+    await expect.poll(()=>sheet.evaluate(e=>getComputedStyle(e).transform)).toBe('none');
+    await expect(sheet.getByRole('button').first()).toBeInViewport({ratio:.5});
+    const b=await sheet.boundingBox(),frame=await scene.boundingBox();expect(Math.abs(b.x-frame.x)).toBeLessThan(2);expect(Math.abs(b.y-frame.y)).toBeLessThan(2);
+    await page.getByRole('button',{name:'Return to photo collage',exact:true}).click();await expect(page.getByRole('button',{name:openLabel(photos[0]),exact:true})).toBeInViewport();
+   }
+   await page.getByRole('button',{name:'Open contact sheet',exact:true}).click();await screenshot(page,'contact-sheet-'+viewport.width);
+  });
+ });
+}

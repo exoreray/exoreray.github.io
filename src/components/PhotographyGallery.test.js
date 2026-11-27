@@ -46,3 +46,13 @@ test('native video controls keep seeking and stop playback on close',()=>{
  fireEvent.click(within(dialog).getByRole('button',{name:'Close',exact:true}));expect(pause).toHaveBeenCalled();expect(load).toHaveBeenCalled();expect(player).not.toHaveAttribute('src');
  pause.mockRestore();load.mockRestore();
 });
+
+test('contact sheet does not inherit the constellation camera transform',()=>{
+ render(<PhotographyGallery photos={photos}/>);
+ const world=document.querySelector('.photo-atlas__world');
+ world.style.transform='translate3d(420px,280px,0) scale(.7)';
+ fireEvent.click(screen.getByRole('button',{name:'Open contact sheet',exact:true}));
+ const sheet=screen.getByRole('region',{name:'Contact sheet'});
+ expect(sheet.style.transform).toBe('');
+ expect(within(sheet).getAllByRole('button')).toHaveLength(3);
+});
