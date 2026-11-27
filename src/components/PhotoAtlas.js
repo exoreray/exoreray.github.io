@@ -5,7 +5,7 @@ import './PhotoAtlas.css';
 
 const MODES=[['wander','Wander'],['words','Words'],['years','Years'],['colors','Colors']];
 const FACETS=[['subjects','Subjects'],['vibes','Feelings'],['category','Themes'],['timeOfDay','Time']];
-const DEFAULT_VIEW={mode:'wander',focus:null,media:'all',wordFacet:'subjects'};
+const DEFAULT_VIEW={mode:'wander',presentation:'cloud',focus:null,media:'all',wordFacet:'subjects'};
 const MONTH_FORMAT=new Intl.DateTimeFormat('en',{month:'short',timeZone:'UTC'});
 const DEFAULT_SEEDS=[['subjects','Water','water',-250,180],['vibes','Calm','calm',285,-155],['subjects','People','people',45,360]];
 
@@ -40,7 +40,7 @@ export default function PhotoAtlas({photos=[],view=DEFAULT_VIEW,setView,onOpen,m
   const [size,setSize]=useState({width:1000,height:650});
   const [hovered,setHovered]=useState(null);
   const [zoom,setZoom]=useState(80);
-  const viewport=useRef(null),world=useRef(null),navigation=useRef(null),camera=useRef({x:500,y:325,scale:.8});
+  const viewport=useRef(null),sheet=useRef(null),world=useRef(null),navigation=useRef(null),camera=useRef({x:500,y:325,scale:.8});
   const pointers=useRef(new Map()),gesture=useRef(null),suppressClick=useRef(false),raf=useRef(null),release=useRef(null);
   const v={...DEFAULT_VIEW,...view};
   const activePhotos=useMemo(()=>{const selected=photos.filter(p=>(v.media!=='films' || isVideo(p)) && matchesFocus(p,v.focus));if(v.focus?.kind==='colors')selected.sort((a,b)=>(b.colorCoverage?.[v.focus.value] || 0)-(a.colorCoverage?.[v.focus.value] || 0));return selected;},[photos,v.media,v.focus]);
@@ -50,6 +50,8 @@ export default function PhotoAtlas({photos=[],view=DEFAULT_VIEW,setView,onOpen,m
   const wordPhotos=useMemo(()=>photos.filter(p=>v.media!=='films' || isVideo(p)),[photos,v.media]);
   const words=useMemo(()=>atlasWords(wordPhotos,kind),[wordPhotos,kind]);
   const showWords=['words','years','colors'].includes(v.mode);
+  const prefersSheet=v.presentation==='sheet' || v.mode==='sheet';
+  const showSheet=v.mode==='sheet' || (showWords && prefersSheet);
   const count=activePhotos.length;
   const years=useMemo(()=>[...new Set(photos.map(p=>p.date?.slice(0,4)).filter(Boolean))].sort(),[photos]);
 
@@ -69,9 +71,10 @@ export default function PhotoAtlas({photos=[],view=DEFAULT_VIEW,setView,onOpen,m
     if(x<40 || x>size.width-40 || y<40 || y>size.height-40){paint({...c,x:size.width/2-node.x*c.scale,y:size.height/2-node.y*c.scale});settle();}
   },[paint,settle,size]);
   const openPhoto=useCallback(id=>{const index=activePhotos.findIndex(p=>p.id===id);if(index>=0)onOpen(activePhotos,index);},[activePhotos,onOpen]);
-  const changeMode=mode=>{setHovered(null);setView(current=>({...DEFAULT_VIEW,...current,mode,focus:null}));};
-  const chooseWord=word=>{setHovered(null);setView(current=>({...DEFAULT_VIEW,...current,mode:'wander',focus:{kind:word.kind,value:word.value,label:word.label}}));};
-  const allMoments=()=>{setHovered(null);setView({...DEFAULT_VIEW});};
+  const changeMode=mode=>{setHovered(null);setView(current=>({...DEFAULT_VIEW,...current,mode,presentation:mode==='wander'?'cloud':mode==='sheet'?'sheet':current.presentation || (current.mode==='sheet'?'sheet':'cloud'),focus:null}));};
+  const chooseWord=word=>{setHovered(null);setView(current=>({...DEFAULT_VIEW,...current,mode:current.presentation==='sheet' || current.mode==='sheet'?'sheet':'wander',focus:{kind:word.kind,value:word.value,label:word.label}}));};
+  const togglePresentation=()=>{setHovered(null);setView(current=>({...DEFAULT_VIEW,...current,presentation:prefersSheet?'cloud':'sheet',mode:prefersSheet?'wander':'sheet'}));};
+  const allMoments=()=>{setHovered(null);setView({...DEFAULT_VIEW,presentation:prefersSheet?'sheet':'cloud',mode:prefersSheet?'sheet':'wander'});};
 
   useEffect(()=>{
     const el=viewport.current;if(!el)return;
@@ -80,6 +83,7 @@ export default function PhotoAtlas({photos=[],view=DEFAULT_VIEW,setView,onOpen,m
     return()=>{observer?.disconnect();window.removeEventListener('resize',measure);};
   },[]);
   useEffect(()=>{if(v.mode!=='sheet')resetCamera();},[resetCamera,v.mode]);
+  useEffect(()=>{if(v.mode==='sheet' && sheet.current)sheet.current.scrollTop=0;},[v.mode,v.focus,v.media]);
   useEffect(()=>{
     const el=viewport.current;if(!el || v.mode!=='wander')return;
     const wheel=e=>{e.preventDefault();e.stopPropagation();const rect=el.getBoundingClientRect();el.dataset.interacting='true';paint(zoomCamera(camera.current,Math.exp(-e.deltaY*.0017),{x:e.clientX-rect.left,y:e.clientY-rect.top}));settle();};
@@ -117,25 +121,25 @@ export default function PhotoAtlas({photos=[],view=DEFAULT_VIEW,setView,onOpen,m
   };
   const zoomBy=factor=>{paint(zoomCamera(camera.current,factor,{x:size.width/2,y:size.height/2}));settle();};
   const months=v.focus?.kind==='year'?[...new Set(activePhotos.map(p=>p.date?.slice(0,7)).filter(Boolean))].sort():[];
-  const helper=v.mode==='wander'?'Drag to wander. Scroll or pinch to get closer.':v.mode==='years'?'Follow a year.':v.mode==='colors'?'Follow a color.':v.mode==='sheet'?'Every photograph, every film.':'Follow a word.';
+  const helper=v.mode==='wander'?'Drag to wander. Scroll or pinch to get closer.':v.mode==='years'?'Follow a year.':v.mode==='colors'?'Follow a color.':v.mode==='sheet'?'Scroll to browse. Follow a word, year or color.':'Follow a word.';
 
   return <section className="photo-atlas" aria-labelledby="rain-page-title" data-mode={v.mode} data-motion={motion===false?'off':'on'}>
     <header className="photo-atlas__heading"><div><h1 id="rain-page-title" tabIndex={-1}>Photography</h1><p>{v.focus?<><span className="photo-atlas__focus">{v.focus.label}</span><button onClick={allMoments}>All moments</button></>:<a href="https://www.instagram.com/exoreray/" target="_blank" rel="noopener noreferrer">@exoreray</a>}</p></div><span className="photo-atlas__span">{years[0]}{years.length>1?' — '+years[years.length-1]:''}</span><button className="atlas-jump" onClick={()=>navigation.current?.querySelector('button')?.focus()}>Jump to exploration controls</button></header>
     {!photos.length?<p className="photo-atlas__empty">The collection is being prepared.</p>:<>
       <div className="photo-atlas__viewport" ref={viewport} role="region" aria-label="Photo constellation" tabIndex={0} data-lenis-prevent="true" onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerUp} onPointerCancel={pointerUp} onKeyDown={keyboard}
         onClickCapture={e=>{if(suppressClick.current){e.preventDefault();e.stopPropagation();suppressClick.current=false;}}}>
-        {v.mode==='sheet'?<div key="contact-sheet" className="atlas-sheet" role="region" aria-label="Contact sheet" data-lenis-prevent="true"><div className="atlas-sheet__tiles">{activePhotos.map(p=><button key={p.id} onClick={()=>openPhoto(p.id)} aria-label={openPhotoLabel(p)}><img src={p.atlasSrc || p.src} alt={p.alt} loading="lazy" width={p.atlasWidth || p.width} height={p.atlasHeight || p.height}/><span>{p.title}{isVideo(p)?' · Film':''}</span></button>)}</div></div>:<>
+        {showSheet?<div key="contact-sheet" ref={sheet} className="atlas-sheet" role="region" aria-label="Contact sheet" aria-hidden={showWords || undefined} data-dimmed={showWords?'true':'false'} tabIndex={showWords?-1:0} data-lenis-prevent="true"><div className="atlas-sheet__tiles">{activePhotos.map(p=><button key={p.id} tabIndex={showWords?-1:0} onClick={()=>openPhoto(p.id)} aria-label={openPhotoLabel(p)}><img src={p.atlasSrc || p.src} alt={p.alt} loading="lazy" width={p.atlasWidth || p.width} height={p.atlasHeight || p.height}/><span>{p.title}{isVideo(p)?' · Film':''}</span></button>)}</div></div>:<>
           <div key="photo-world" className="photo-atlas__world" ref={world} aria-hidden={showWords || undefined} data-dimmed={showWords?'true':'false'}>
             {nodes.map(node=><AtlasPhoto key={node.photo.id} node={node} onOpen={openPhoto} onHover={setHovered} onKeyboardFocus={centerPhoto} dimmed={showWords}/>)}
             {v.mode==='wander'&&!v.focus&&v.media!=='films'&&DEFAULT_SEEDS.map(([k,value,label,x,y])=>wordPhotos.some(p=>matchesFocus(p,{kind:k,value}))?<button data-no-pan="true" key={value} className="atlas-seed" aria-label={'Explore '+value} style={{left:x,top:y}} onClick={()=>chooseWord({kind:k,value,label})}>{label}</button>:null)}
           </div>
-          {showWords&&<WordField key={kind+'-'+v.media} words={words} size={size} kind={kind} onChoose={chooseWord} onHover={setHovered}/>}
-          {v.mode==='words'&&<nav className="atlas-facets" aria-label="Word families">{FACETS.map(([facet,label])=><button key={facet} aria-pressed={v.wordFacet===facet} onClick={()=>setView(current=>({...current,wordFacet:facet}))}>{label}</button>)}</nav>}
           {v.mode==='wander'&&<div className="atlas-camera" data-no-pan="true"><button onClick={()=>zoomBy(1.25)} aria-label="Zoom in">+</button><span aria-hidden="true">{zoom}%</span><button onClick={()=>zoomBy(.8)} aria-label="Zoom out">−</button><button onClick={()=>resetCamera(true)} aria-label="Fit all photographs">⊞</button></div>}
-          {months.length>1&&<nav className="atlas-months" data-no-pan="true" aria-label={'Months in '+v.focus.value}>{months.map(month=><button key={month} onClick={()=>chooseWord({kind:'month',value:month,label:MONTH_FORMAT.format(new Date(month+'-15T12:00:00Z'))+' '+month.slice(0,4)})}>{MONTH_FORMAT.format(new Date(month+'-15T12:00:00Z'))}</button>)}</nav>}
         </>}
+        {showWords&&<WordField key={kind+'-'+v.media} words={words} size={size} kind={kind} onChoose={chooseWord} onHover={setHovered}/>}
+        {v.mode==='words'&&<nav className="atlas-facets" aria-label="Word families">{FACETS.map(([facet,label])=><button key={facet} aria-pressed={v.wordFacet===facet} onClick={()=>setView(current=>({...current,wordFacet:facet}))}>{label}</button>)}</nav>}
+        {!showWords&&months.length>1&&<nav className="atlas-months" data-no-pan="true" aria-label={'Months in '+v.focus.value}>{months.map(month=><button key={month} onClick={()=>chooseWord({kind:'month',value:month,label:MONTH_FORMAT.format(new Date(month+'-15T12:00:00Z'))+' '+month.slice(0,4)})}>{MONTH_FORMAT.format(new Date(month+'-15T12:00:00Z'))}</button>)}</nav>}
       </div>
-      <footer className="photo-atlas__dock"><div className="atlas-caption" aria-live="polite"><span>{hovered?hovered.title:helper}</span><small>{hovered?dateLabel(hovered):count+' moments'}</small></div><nav ref={navigation} aria-label="Ways to explore">{MODES.map(([mode,label])=><button key={mode} aria-pressed={v.mode===mode} onClick={()=>changeMode(mode)}>{label}</button>)}</nav><div className="atlas-utilities"><button aria-label="Explore films" aria-pressed={v.media==='films'} onClick={()=>setView(current=>({...DEFAULT_VIEW,...current,media:current.media==='films'?'all':'films',focus:null,mode:'wander'}))}>Films</button><button aria-label={v.mode==='sheet'?'Return to photo collage':'Open contact sheet'} title={v.mode==='sheet'?'Return to photo collage':'View all photographs'} aria-pressed={v.mode==='sheet'} onClick={()=>changeMode(v.mode==='sheet'?'wander':'sheet')}><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">{[0,1,2,3,4,5,6,7,8].map(i=><rect key={i} x={i%3*6+1} y={Math.floor(i/3)*6+1} width="3" height="3" fill="currentColor"/>)}</svg></button></div></footer>
+      <footer className="photo-atlas__dock"><div className="atlas-caption" aria-live="polite"><span>{hovered?hovered.title:helper}</span><small>{hovered?dateLabel(hovered):count+' moments'}</small></div><nav ref={navigation} aria-label="Ways to explore">{MODES.map(([mode,label])=><button key={mode} aria-pressed={v.mode===mode} onClick={()=>changeMode(mode)}>{label}</button>)}</nav><div className="atlas-utilities"><button aria-label="Explore films" aria-pressed={v.media==='films'} onClick={()=>setView(current=>({...DEFAULT_VIEW,...current,media:current.media==='films'?'all':'films',focus:null,mode:prefersSheet?'sheet':'wander'}))}>Films</button><button aria-label={prefersSheet?'Return to photo collage':'Open contact sheet'} title={prefersSheet?'Return to photo collage':'View all photographs'} aria-pressed={prefersSheet} onClick={togglePresentation}><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">{[0,1,2,3,4,5,6,7,8].map(i=><rect key={i} x={i%3*6+1} y={Math.floor(i/3)*6+1} width="3" height="3" fill="currentColor"/>)}</svg></button></div></footer>
     </>}
   </section>;
 }

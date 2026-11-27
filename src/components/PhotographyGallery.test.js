@@ -56,3 +56,32 @@ test('contact sheet does not inherit the constellation camera transform',()=>{
  expect(sheet.style.transform).toBe('');
  expect(within(sheet).getAllByRole('button')).toHaveLength(3);
 });
+
+test('the mosaic keeps its filters when switching presentation and clearing a selection',()=>{
+ render(<PhotographyGallery photos={photos}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Open contact sheet',exact:true}));
+ fireEvent.click(screen.getByRole('button',{name:'Words',exact:true}));
+ fireEvent.click(screen.getByRole('button',{name:'Explore Water',exact:true}));
+ expect(within(screen.getByRole('region',{name:'Contact sheet'})).getAllByRole('button')).toHaveLength(2);
+ fireEvent.click(screen.getByRole('button',{name:'Return to photo collage',exact:true}));
+ expect(screen.getByRole('button',{name:'Open First',exact:true})).toBeInTheDocument();
+ expect(screen.queryByRole('button',{name:'Open Second',exact:true})).not.toBeInTheDocument();
+ fireEvent.click(screen.getByRole('button',{name:'Open contact sheet',exact:true}));
+ expect(within(screen.getByRole('region',{name:'Contact sheet'})).getAllByRole('button')).toHaveLength(2);
+ fireEvent.click(screen.getByRole('button',{name:'All moments',exact:true}));
+ expect(within(screen.getByRole('region',{name:'Contact sheet'})).getAllByRole('button')).toHaveLength(3);
+});
+
+test('a year, month and viewer date remain browsable in the mosaic',()=>{
+ const july={...photos[1],id:'fourth',date:'2024-07-15'};
+ render(<PhotographyGallery photos={[...photos,july]}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Open contact sheet',exact:true}));
+ fireEvent.click(screen.getByRole('button',{name:'Years',exact:true}));
+ fireEvent.click(screen.getByRole('button',{name:'Explore 2024',exact:true}));
+ expect(within(screen.getByRole('region',{name:'Contact sheet'})).getAllByRole('button')).toHaveLength(3);
+ fireEvent.click(within(screen.getByRole('navigation',{name:'Months in 2024'})).getByRole('button',{name:'Mar',exact:true}));
+ expect(within(screen.getByRole('region',{name:'Contact sheet'})).getAllByRole('button')).toHaveLength(2);
+ fireEvent.click(screen.getByRole('button',{name:'Open First',exact:true}));
+ fireEvent.click(screen.getByRole('button',{name:'Explore date Mar 24, 2024'}));
+ expect(within(screen.getByRole('region',{name:'Contact sheet'})).getAllByRole('button')).toHaveLength(2);
+});

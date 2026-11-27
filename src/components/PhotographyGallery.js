@@ -70,6 +70,6 @@ export default function PhotographyGallery({photos=photographs,motion=true}) {
   const [selected,setSelected]=useState(null);
   return <>
     <PhotoAtlas photos={photos} view={view} setView={setView} motion={motion} onOpen={(collection,index)=>setSelected({photos:collection,index})} />
-    {selected && <PhotoViewer photos={selected.photos} initialIndex={selected.index} onClose={()=>setSelected(null)} onExploreDate={date=>{setSelected(null);setView(current=>({...current,mode:'wander',focus:{kind:'date',value:date,label:dateLabel({date})},media:'all'}));}} />}
+    {selected && <PhotoViewer photos={selected.photos} initialIndex={selected.index} onClose={()=>setSelected(null)} onExploreDate={date=>{setSelected(null);setView(current=>({...current,mode:current.presentation==='sheet' || current.mode==='sheet'?'sheet':'wander',focus:{kind:'date',value:date,label:dateLabel({date})},media:'all'}));}} />}
   </>;
 }
