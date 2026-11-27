@@ -169,10 +169,10 @@
         "ctaLabel": "VIEW"
       },
       {
-        "id": "music",
+        "id": "art",
         "number": "02",
-        "title": "Music",
-        "description": "Original EDM compositions and immersive sound design.",
+        "title": "Art",
+        "description": "Photography, original music, and studies in light and sound.",
         "ctaLabel": "VIEW"
       },
       {
@@ -403,5 +403,27 @@
       "loginLink": "Login",
       "homeLink": "Back to Home"
     }
+  },
+  "art": {
+    "title": "Art",
+    "subtitle": "Ways of seeing. Ways of listening.",
+    "categories": [
+      {
+        "id": "photography",
+        "number": "01",
+        "title": "Photography",
+        "description": "Places, light, and moments worth keeping.",
+        "ctaLabel": "VIEW",
+        "path": "/works/art/photography"
+      },
+      {
+        "id": "music",
+        "number": "02",
+        "title": "Music",
+        "description": "Original EDM compositions and immersive sound design.",
+        "ctaLabel": "LISTEN",
+        "path": "/works/art/music"
+      }
+    ]
   }
 }

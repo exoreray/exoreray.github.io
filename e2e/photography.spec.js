@@ -73,7 +73,7 @@ for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
 
 test('a photograph date gathers its day, and both site layouts retain the gallery route',async({page})=>{
  await start(page);await page.getByRole('button',{name:openLabel(photos[0]),exact:true}).click();const dialog=page.getByRole('dialog',{name:'Media viewer'});await dialog.getByRole('button',{name:/Explore date/}).click();await expect(dialog).not.toBeVisible();await expect(page.locator('.atlas-photo')).toHaveCount(photos.filter(p=>p.date===photos[0].date).length);
- for(const prefix of ['/?motion=off','/?view=original']){await page.goto(prefix+'#/works');await page.getByRole('link',{name:/Photography/}).first().click();await expect(page.getByRole('heading',{name:'Photography',exact:true})).toBeVisible();await expect(page.getByRole('navigation',{name:'Page navigation'}).getByRole('link',{name:/Works/i})).toBeVisible();}
+ for(const prefix of ['/?motion=off','/?view=original']){await page.goto(prefix+'#/works/art');await page.getByRole('link',{name:/Photography/}).first().click();await expect(page.getByRole('heading',{name:'Photography',exact:true})).toBeVisible();await expect(page.getByRole('navigation',{name:'Page navigation'}).getByRole('link',{name:/Art/i})).toBeVisible();}
 });
 
 test.describe('Touch exploration',()=>{
@@ -95,7 +95,7 @@ test('photography uses the same page background and text palette as Works in bot
   const target=page.getByRole('button',{name:dark?'Switch to dark theme':'Switch to light theme',exact:true});
   if(await target.count())await target.click();
   const reference=await page.locator('.rain-study').evaluate(e=>({bg:getComputedStyle(e).backgroundColor,text:getComputedStyle(e).color,muted:getComputedStyle(e).getPropertyValue('--rain-muted').trim()}));
-  await page.getByRole('link',{name:/Photography/}).first().click();await expect(page.locator('.photo-atlas')).toBeVisible();
+  await page.getByRole('link').filter({has:page.getByRole('heading',{name:'Art',exact:true})}).click();await page.getByRole('link',{name:/Photography/}).first().click();await expect(page.locator('.photo-atlas')).toBeVisible();
   await expect.poll(()=>page.locator('.photo-atlas').evaluate(e=>({bg:getComputedStyle(e).backgroundColor,text:getComputedStyle(e).color,muted:getComputedStyle(e).getPropertyValue('--atlas-muted').trim()}))).toEqual(reference);
   await screenshot(page,'theme-'+(dark?'dark':'light')+'-1440');
  }
@@ -134,4 +134,15 @@ test('the contact sheet is seamless and retains classifications while switching 
  await screenshot(page,'blue-mosaic-1440');await page.getByRole('button',{name:'Return to photo collage',exact:true}).click();await expect(page.locator('.atlas-photo')).toHaveCount(blue.length);
  await page.getByRole('button',{name:'Open contact sheet',exact:true}).click();await expect(sheet.getByRole('button')).toHaveCount(blue.length);
  await page.getByRole('button',{name:'All moments',exact:true}).click();await expect(sheet.getByRole('button')).toHaveCount(photos.length);
+});
+
+for(const view of ['default','original'])for(const width of [390,1280])test('Art contains both collections with working parents in '+view+' at '+width,async({page})=>{
+ await page.setViewportSize({width,height:844});const prefix=view==='original'?'/?view=original':'/?motion=off';
+ const card=title=>page.getByRole('link').filter({has:page.getByRole('heading',{name:title,exact:true})});
+ await page.goto(prefix+'#/works');await card('Art').click();await expect(page.getByRole('heading',{name:'Art',exact:true})).toBeVisible();await screenshot(page,'art-'+view+'-'+width);
+ await card('Photography').click();await expect(page).toHaveURL(/#\/works\/art\/photography$/);await expect(page.getByRole('heading',{name:'Photography',exact:true})).toBeVisible();
+ const parent=()=>page.getByRole('navigation',{name:'Page navigation'}).locator('a[href="#/works/art"]');await parent().click();
+ await card('Music').click();await expect(page).toHaveURL(/#\/works\/art\/music$/);await expect(page.getByRole('heading',{name:'Music Gallery',exact:true})).toBeVisible();await expect(parent()).toBeVisible();
+ for(const child of ['music','photography']){await page.goto(prefix+'#/works/'+child);await expect(page).toHaveURL(new RegExp('#/works/art/'+child+'$'));await expect(parent()).toBeVisible();}
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
 });

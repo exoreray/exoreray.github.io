@@ -9,6 +9,8 @@ import GlobalMusicPlayer from './components/GlobalMusicPlayer';
 import MainSections from './components/MainSections';
 import MilestonesSection from './components/MilestonesSection';
 import WorksSection from './components/WorksSection';
+import { artCategories } from './data/workCategories';
+import siteCopy from './data/siteCopy.json';
 import ProjectsSection from './components/ProjectsSection';
 import MusicShowcase from './components/MusicShowcase';
 import PhilosophySection from './components/PhilosophySection';
@@ -143,12 +145,16 @@ const AppContent = () => {
             }
           />
           <Route
-            path="/works/music"
+            path="/works/art"
+            element={<SubpageRoute parentTo="/works" parentLabel="Back to works" parentCompactLabel="Works"><WorksSection categories={artCategories} title={siteCopy.art.title}/></SubpageRoute>}
+          />
+          <Route
+            path="/works/art/music"
             element={
               <SubpageRoute
-                parentTo="/works"
-                parentLabel="Back to works"
-                parentCompactLabel="Works"
+                parentTo="/works/art"
+                parentLabel="Back to art"
+                parentCompactLabel="Art"
               >
                 <MusicShowcase />
               </SubpageRoute>
@@ -186,11 +192,13 @@ const AppContent = () => {
               </SubpageRoute>
             }
           />
-          <Route path="/works/photography" element={
-            <SubpageRoute parentTo="/works" parentLabel="Back to works" parentCompactLabel="Works">
+          <Route path="/works/art/photography" element={
+            <SubpageRoute parentTo="/works/art" parentLabel="Back to art" parentCompactLabel="Art">
               <Suspense fallback={<p role="status">Loading photographs…</p>}><PhotographyGallery /></Suspense>
             </SubpageRoute>
           } />
+          <Route path="/works/music" element={<Navigate to="/works/art/music" replace/>}/>
+          <Route path="/works/photography" element={<Navigate to="/works/art/photography" replace/>}/>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AnimatePresence>

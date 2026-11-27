@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import copy from '../../data/siteCopy.json';
-import { workCategories } from '../../data/workCategories';
+import { workCategories, artCategories } from '../../data/workCategories';
 import { skillsData } from '../../data/skillsData';
 import { MusicControls } from './RainMusic';
 import JourneyScroll from './JourneyScroll';
@@ -16,6 +16,9 @@ export function HomePage({ setHovered }) {
 }
 export function WorksPage({ setHovered }) {
   return <nav className="rain-works" aria-label="Works categories">{workCategories.map((category, i) => <Link key={category.id} to={`/works/${category.id}`} onPointerEnter={() => setHovered(i)} onPointerLeave={() => setHovered(-1)} onFocus={() => setHovered(i)} onBlur={() => setHovered(-1)}><span className="rain-work-mark" aria-hidden="true" /><h2>{category.title}</h2><p>{category.description}</p><InterfaceIcon name="arrow-right" className="rain-work-enter" /></Link>)}</nav>;
+}
+export function ArtPage({setHovered}) {
+  return <nav className="rain-works rain-art" aria-label="Art categories">{artCategories.map((category,i)=><Link key={category.id} to={category.path} onPointerEnter={()=>setHovered(i)} onPointerLeave={()=>setHovered(-1)} onFocus={()=>setHovered(i)} onBlur={()=>setHovered(-1)}><span className="rain-work-mark" aria-hidden="true"/><h2>{category.title}</h2><p>{category.description}</p><InterfaceIcon name="arrow-right" className="rain-work-enter"/></Link>)}</nav>;
 }
 export function JourneyPage(props) { return <JourneyScroll {...props} />; }
 export function ProjectsPage({ selected, select }) {

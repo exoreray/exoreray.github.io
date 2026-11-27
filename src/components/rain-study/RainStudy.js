@@ -2,10 +2,9 @@ import { Component, Suspense, lazy, useContext, useEffect, useLayoutEffect, useR
 import { Link, NavLink, Navigate, useLocation, useNavigationType } from 'react-router-dom';
 import { ThemeContext } from '../../context/ThemeContext';
 import AtmosphericRain from './AtmosphericRain';
-import photographs from '../../data/photographs.json';
-import { rainRoutes } from './rainRoutes';
+import { rainRoutes, rainRouteAliases } from './rainRoutes';
 import { MusicProvider, MusicControls } from './RainMusic';
-import { Heading, HomePage, WorksPage, JourneyPage, ProjectsPage, MusicPage, ThoughtsPage, SkillsPage, AwardsPage } from './RainPages';
+import { Heading, HomePage, WorksPage, ArtPage, JourneyPage, ProjectsPage, MusicPage, ThoughtsPage, SkillsPage, AwardsPage } from './RainPages';
 import './rain-study.css';
 import useHomeGesture from './useHomeGesture';
 import useViewportHeight from './useViewportHeight';
@@ -19,7 +18,7 @@ class SculptureBoundary extends Component {
   static getDerivedStateFromError() { return { failed: true }; }
   render() { return this.state.failed ? null : this.props.children; }
 }
-const pageComponents = { photography:PhotographyGallery, works:WorksPage, journey:JourneyPage, projects:ProjectsPage, music:MusicPage, thoughts:ThoughtsPage, skills:SkillsPage, awards:AwardsPage };
+const pageComponents = { photography:PhotographyGallery, works:WorksPage, art:ArtPage, journey:JourneyPage, projects:ProjectsPage, music:MusicPage, thoughts:ThoughtsPage, skills:SkillsPage, awards:AwardsPage };
 export default function RainStudy() {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
   const location = useLocation(); const navigationType = useNavigationType();
@@ -75,7 +74,7 @@ export default function RainStudy() {
     });
     return () => cancelAnimationFrame(frame);
   }, [location.key, navigationType, page?.title, page?.kind]);
-  if (!page) return <Navigate to="/" replace />;
+  if (!page) return <Navigate to={rainRouteAliases[location.pathname] || '/'} replace />;
   const selected = selections[page.kind] || 0;
   const select = value => setSelections(previous => ({...previous,[page.kind]:value}));
   const active = motion && visible;
@@ -99,10 +98,10 @@ export default function RainStudy() {
     <SculptureBoundary><Suspense fallback={null}><LivingSculpture interaction={interaction} active={active && inHero && !['journey','photography'].includes(page.kind)} suspended={page.kind === 'journey' || page.kind === 'photography'} hovered={hovered} dark={darkMode} shape={page.shape} selected={selected} compact={compact} analysis={analysis} /></Suspense></SculptureBoundary>
     <a className="rain-skip" href="#rain-page-title" onClick={e=>{e.preventDefault();document.getElementById('rain-page-title')?.focus();}}>Skip to content</a>
     <header className="rain-header"><Link className="rain-signature" to="/" aria-label="Ray Xi home"><img src="/rx-icon.png" alt="Ray Xi" width="110" height="110" /></Link>
-      {page.kind!=='home' && <nav className="rain-breadcrumbs" aria-label="Page navigation"><Link to="/">Home</Link>{page.path.startsWith('/works/') && <Link to="/works">Works</Link>}<span aria-current="page">{page.title}</span></nav>}
+      {page.kind!=='home' && <nav className={`rain-breadcrumbs${page.parent?' rain-breadcrumbs--nested':''}`} aria-label="Page navigation"><Link to="/">Home</Link>{page.path.startsWith('/works/') && <Link to="/works">Works</Link>}{page.parent && <Link to={page.parent}>Art</Link>}<span aria-current="page">{page.breadcrumbLabel || page.title}</span></nav>}
       <div className="rain-header-controls"><button onClick={()=>setMotion(value=>!value)} aria-label={motion?'Pause live motion':'Enable live motion'} aria-pressed={motion} className="rain-motion"><span className="rain-motion-indicator" /><span>{motion?'Motion on':'Motion off'}</span></button><MusicControls compact /><button onClick={toggleDarkMode} className="rain-theme" aria-label={darkMode?'Switch to light theme':'Switch to dark theme'}><InterfaceIcon name={darkMode?'sun':'moon'} /></button></div>
     </header>
     <main className="rain-page-content" key={page.path}>{page.kind==='home'?<HomePage setHovered={setHovered}/>:<>{!['journey','photography'].includes(page.kind) && <Heading page={page}/>}<Suspense fallback={<p role="status">Loading…</p>}><Page selected={selected} select={select} setHovered={setHovered} active={active} motion={motion} compact={compact} dark={darkMode}/></Suspense></>}</main>
-    {page.kind!=='home' && <footer className="rain-page-footer"><nav aria-label="All pages">{rainRoutes.filter(route => route.kind !== 'photography' || photographs.length).map(route=><NavLink key={route.path} to={route.path} end>{route.kind==='home'?'Home':route.title}</NavLink>)}</nav></footer>}
+    {page.kind!=='home' && <footer className="rain-page-footer"><nav aria-label="All pages">{rainRoutes.filter(route => !route.parent).map(route=><NavLink key={route.path} to={route.path} end>{route.kind==='home'?'Home':route.title}</NavLink>)}</nav></footer>}
   </div></MusicProvider>;
 }

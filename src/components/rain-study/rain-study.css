@@ -213,3 +213,6 @@ html.rain-home-locked .rain-page-home a, html.rain-home-locked .rain-page-home b
 .journey-scroll-hint .rain-icon { width:14px; height:14px; }
 .rain-header button:active .rain-icon, .rain-play:active .rain-icon { transform:scale(.92); }
 .rain-still .rain-icon { transition:none; }
+.rain-art { width:min(760px,88%); }
+@media(max-width:600px) { .rain-art { grid-template-columns:1fr; }.rain-works.rain-art > a + a { border-left:0;border-top:1px solid #bba37525; } }
+@media(max-width:600px) { .rain-breadcrumbs--nested a:not(:last-of-type) { display:none; } }

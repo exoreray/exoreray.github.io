@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 import siteCopy from '../data/siteCopy.json';
 import { workCategories } from '../data/workCategories';
 
-const WorksSection = () => {
-  const { works } = siteCopy;
-  const categories = workCategories;
+const WorksSection = ({ categories=workCategories, title=siteCopy.works.headerLabel }) => {
+  const isArt=title===siteCopy.art.title;
 
   return (
     <div className="relative min-h-screen flex items-center justify-center px-8 py-32">
@@ -13,9 +12,9 @@ const WorksSection = () => {
         {/* Minimal header */}
         <div className="text-center mb-24">
           <div className="w-12 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent mx-auto mb-8" />
-          <p className="font-display text-sm tracking-[0.3em] text-text-light/60 dark:text-text-dark/60 uppercase">
-            {works.headerLabel}
-          </p>
+          <h1 className="font-display text-sm tracking-[0.3em] text-text-light/60 dark:text-text-dark/60 uppercase">
+            {title}
+          </h1>
         </div>
 
         {/* Elegant grid - 2x2 */}
@@ -26,8 +25,8 @@ const WorksSection = () => {
               className={`group relative h-[400px] bg-transparent overflow-hidden text-left border-b border-gold/10 ${index % 2 === 1 ? 'md:border-l' : ''} backdrop-blur-md`}
             >
               <Link
-                to={`/works/${category.id}`}
-                className="group absolute inset-0 p-12 flex flex-col justify-between bg-bg-light/30 dark:bg-bg-dark/30 hover:bg-gradient-to-b hover:from-gold/5 hover:to-transparent transition-all duration-700 focus-visible:outline-none focus-visible:ring-[2px] focus-visible:ring-[#8A6A00] dark:focus-visible:ring-gold focus-visible:ring-inset"
+                to={category.path || `/works/${category.id}`}
+                className={`group absolute inset-0 ${isArt?'p-8 sm:p-12':'p-12'} flex flex-col justify-between bg-bg-light/30 dark:bg-bg-dark/30 hover:bg-gradient-to-b hover:from-gold/5 hover:to-transparent transition-all duration-700 focus-visible:outline-none focus-visible:ring-[2px] focus-visible:ring-[#8A6A00] dark:focus-visible:ring-gold focus-visible:ring-inset`}
               >
                 {/* Number watermark */}
                 <div className="absolute top-8 right-8 font-serif text-[120px] leading-none text-gold/[0.15] group-hover:text-gold/[0.25] transition-all duration-700">

@@ -26,6 +26,26 @@ function mount(path='/') {
 }
 function navigate(name) { fireEvent.click(within(screen.getByRole('navigation',{name:'All pages'})).getByRole('link',{name,exact:true})); }
 
+test('Art groups photography and music below Works',async()=>{
+ mount('/works');
+ const works=screen.getByRole('navigation',{name:'Works categories'});
+ expect(within(works).queryByRole('heading',{name:'Music',exact:true})).not.toBeInTheDocument();
+ expect(within(works).queryByRole('heading',{name:'Photography',exact:true})).not.toBeInTheDocument();
+ fireEvent.click(within(works).getByRole('link',{name:/Art/}));
+ const art=screen.getByRole('navigation',{name:'Art categories'});
+ expect(within(art).getByRole('link',{name:/Photography/})).toHaveAttribute('href','/works/art/photography');
+ expect(within(art).getByRole('link',{name:/Music/})).toHaveAttribute('href','/works/art/music');
+ fireEvent.click(within(art).getByRole('link',{name:/Music/}));
+ expect(screen.getByRole('navigation',{name:'Page navigation'}).querySelector('a[href="/works/art"]')).toHaveTextContent('Art');
+ expect(screen.getByRole('heading',{level:1})).toHaveTextContent('Music Gallery');
+});
+
+test.each([['/works/music','Music Gallery'],['/works/photography','Photography']])('the old %s link opens its Art child',async(path,title)=>{
+ mount(path);
+ expect(await screen.findByRole('heading',{level:1,name:title})).toBeInTheDocument();
+ expect(screen.getByRole('navigation',{name:'Page navigation'}).querySelector('a[href="/works/art"]')).toHaveTextContent('Art');
+});
+
 test('a direct chapter link lands after its fractional pixel boundary',async()=>{
   window.history.replaceState({},'','/?chapter=apple');
   jest.spyOn(HTMLElement.prototype,'getBoundingClientRect').mockImplementation(function(){
@@ -49,12 +69,12 @@ test('all routes keep the same sculpture and audio elements while retaining sour
   expect(document.querySelector('.rain-pointer-wake')).toBeNull();
   fireEvent.click(screen.getByRole('link',{name:'Works Thought & creation.'}));
   expect(screen.getByRole('heading',{level:1})).toHaveTextContent('Works');
-  const cases=[['Journey','Journey'],['Projects','Projects'],['Music Gallery','Music Gallery'],['Thoughts','Thoughts'],['Ability','Ability'],['Awards','Awards']];
+  const cases=[['Journey','Journey'],['Projects','Projects'],['Art','Art'],['Thoughts','Thoughts'],['Ability','Ability'],['Awards','Awards']];
   for(const [link,heading] of cases){
     navigate(link);
     expect(screen.getByRole('heading',{level:1})).toHaveTextContent(heading);
     if(link === 'Journey') await screen.findByTestId('journey-film-scene');
-    if(link === 'Music Gallery')expect(document.querySelector('.rain-oscilloscope')).toBeNull();
+    if(link === 'Art'){fireEvent.click(within(screen.getByRole('navigation',{name:'Art categories'})).getByRole('link',{name:/Music/}));expect(screen.getByRole('heading',{level:1})).toHaveTextContent('Music Gallery');expect(document.querySelector('.rain-oscilloscope')).toBeNull();}
     expect(screen.getByTestId('sculpture')).toBe(sculpture);
     expect(document.querySelector('audio')).toBe(audio);
     expect(screen.getByTestId('original-cursor')).toBe(cursor);
