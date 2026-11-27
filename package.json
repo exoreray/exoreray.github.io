@@ -30,7 +30,7 @@
     "zustand": "^5.0.8"
   },
   "scripts": {
-    "predeploy": "npm run test:unit && npm run build && npm run test:e2e",
+    "predeploy": "npm run check:photography-privacy && npm run test:unit && npm run build && npm run test:e2e",
     "deploy": "node scripts/publish.cjs",
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -38,7 +38,9 @@
     "eject": "react-scripts eject",
     "test:e2e": "playwright test",
     "test:e2e:report": "playwright show-report",
-    "test:unit": "react-scripts test --watchAll=false --runInBand && node --test scripts/publish.test.cjs"
+    "test:unit": "react-scripts test --watchAll=false --runInBand && node --test scripts/publish.test.cjs && node --test scripts/photography-privacy.test.cjs",
+    "check:photography-privacy": "node scripts/check-photography-privacy.cjs",
+    "prebuild": "npm run check:photography-privacy"
   },
   "eslintConfig": {
     "extends": [

@@ -26,6 +26,7 @@ async function retainPreviousAssets(git) {
 }
 
 if(require.main===module){
+  require('node:child_process').execFileSync(process.execPath,[path.join(__dirname,'check-photography-privacy.cjs'),path.resolve(process.argv[2] || 'build')],{stdio:'inherit'});
   require('gh-pages').publish(path.resolve(process.argv[2] || 'build'),{
     branch:'gh-pages',message:process.argv[3] || 'Publish portfolio',
     beforeAdd:async git=>console.log(`Retained ${await retainPreviousAssets(git)} previous release assets for cached tabs.`),

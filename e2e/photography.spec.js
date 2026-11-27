@@ -118,3 +118,12 @@ for(const viewport of [{width:1440,height:1000},{width:390,height:844}]){
   });
  });
 }
+
+test('the contact sheet is a seamless photo mosaic without caption or column gaps',async({page})=>{
+ await page.setViewportSize({width:1440,height:1000});await start(page);await page.getByRole('button',{name:'Open contact sheet',exact:true}).click();
+ const geometry=await page.locator('.atlas-sheet__tiles').evaluate(e=>({gap:getComputedStyle(e).columnGap,items:Array.from(e.querySelectorAll('button')).map(b=>{const r=b.getBoundingClientRect(),im=b.querySelector('img').getBoundingClientRect();return {x:r.x,y:r.y,w:r.width,h:r.height,ih:im.height};})}));
+ expect(parseFloat(geometry.gap)).toBe(0);const cols=new Map();for(const item of geometry.items){expect(Math.abs(item.h-item.ih)).toBeLessThan(1);const x=Math.round(item.x);if(!cols.has(x))cols.set(x,[]);cols.get(x).push(item);}
+ const ordered=[...cols.values()].sort((a,b)=>a[0].x-b[0].x);for(let i=1;i<ordered.length;i++)expect(Math.abs(ordered[i][0].x-ordered[i-1][0].x-ordered[i-1][0].w)).toBeLessThan(1.5);
+ for(const col of ordered){col.sort((a,b)=>a.y-b.y);for(let i=1;i<col.length;i++)expect(Math.abs(col[i].y-col[i-1].y-col[i-1].h)).toBeLessThan(1.5);}
+ await screenshot(page,'seamless-mosaic-1440');
+});
