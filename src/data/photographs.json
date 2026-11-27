@@ -28,7 +28,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "05:10",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-f50470fe498c-atlas-34b5b2b2d6.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Orange": 0.2246,
+      "Yellow": 0.0391,
+      "Gray": 0.2288,
+      "Blue": 0.4521,
+      "Brown": 0.0072,
+      "Red": 0.0072,
+      "Pink": 0.0007,
+      "Purple": 0.0026,
+      "Green": 0.0143,
+      "Black": 0.0234,
+      "Monochrome": 0.2523
+    }
   },
   {
     "id": "rx-7b18d0380f94",
@@ -59,7 +75,19 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "00:12",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-7b18d0380f94-atlas-20a7c8937e.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 236,
+    "colorCoverage": {
+      "Green": 0.5794,
+      "Blue": 0.1875,
+      "Gray": 0.1892,
+      "Yellow": 0.0399,
+      "Orange": 0.0017,
+      "Brown": 0.0022,
+      "Monochrome": 0.1892
+    }
   },
   {
     "id": "rx-eebea4b19352",
@@ -88,7 +116,20 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "19:14",
-    "timeOfDay": "Evening"
+    "timeOfDay": "Evening",
+    "atlasSrc": "/photography/rx-eebea4b19352-atlas-0b76297c78.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.4663,
+      "Blue": 0.0089,
+      "Gray": 0.2237,
+      "Yellow": 0.132,
+      "Green": 0.1124,
+      "Brown": 0.0564,
+      "Orange": 0.0003,
+      "Monochrome": 0.69
+    }
   },
   {
     "id": "rx-7e1d8deb4a42",
@@ -118,7 +159,16 @@
     "date": "2025-07-23",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-7e1d8deb4a42-atlas-403362aa32.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.7079,
+      "Gray": 0.2917,
+      "Purple": 0.0004,
+      "Monochrome": 0.2917
+    }
   },
   {
     "id": "rx-1c9cda3535e4",
@@ -147,7 +197,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "07:00",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-1c9cda3535e4-atlas-22aee52aa0.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Blue": 0.3584,
+      "Gray": 0.3294,
+      "Orange": 0.1055,
+      "Yellow": 0.0049,
+      "Brown": 0.0101,
+      "Red": 0.0049,
+      "Black": 0.1761,
+      "Green": 0.0107,
+      "Monochrome": 0.5055
+    }
   },
   {
     "id": "rx-a49c471ff5e5",
@@ -176,7 +240,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "16:11",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-a49c471ff5e5-atlas-4d2cb95298.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 318,
+    "colorCoverage": {
+      "Blue": 0.3451,
+      "Gray": 0.599,
+      "Black": 0.0439,
+      "Green": 0.002,
+      "Yellow": 0.0007,
+      "Brown": 0.0046,
+      "Red": 0.0029,
+      "Orange": 0.0013,
+      "Pink": 0.0007,
+      "Monochrome": 0.6429
+    }
   },
   {
     "id": "rx-813da472186a",
@@ -207,7 +286,20 @@
     "date": "2026-09-26",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-813da472186a-atlas-e41afecc44.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Yellow": 0.2092,
+      "Orange": 0.1615,
+      "Blue": 0.237,
+      "Brown": 0.1324,
+      "Black": 0.1185,
+      "Gray": 0.069,
+      "Green": 0.0725,
+      "Monochrome": 0.1875
+    }
   },
   {
     "id": "rx-164d4b0ec908",
@@ -234,7 +326,21 @@
     "date": "2026-09-15",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-164d4b0ec908-atlas-b7af8e7f17.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.74,
+      "Green": 0.0412,
+      "Yellow": 0.0647,
+      "Orange": 0.013,
+      "Brown": 0.0664,
+      "Black": 0.0486,
+      "Gray": 0.0247,
+      "Red": 0.0013,
+      "Monochrome": 0.0734
+    }
   },
   {
     "id": "rx-d256638e91c8",
@@ -265,7 +371,19 @@
     "date": "2026-11-08",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-d256638e91c8-atlas-a1d5e41c84.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.1936,
+      "Purple": 0.0104,
+      "Pink": 0.3103,
+      "Red": 0.4653,
+      "Gray": 0.02,
+      "Orange": 0.0004,
+      "Monochrome": 0.02
+    }
   },
   {
     "id": "rx-b7087d51b719",
@@ -294,7 +412,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "20:03",
-    "timeOfDay": "Evening"
+    "timeOfDay": "Evening",
+    "atlasSrc": "/photography/rx-b7087d51b719-atlas-33d902c7c4.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Red": 0.0867,
+      "Blue": 0.4118,
+      "Black": 0.3465,
+      "Gray": 0.0836,
+      "Brown": 0.0092,
+      "Green": 0.0009,
+      "Pink": 0.0389,
+      "Orange": 0.0049,
+      "Yellow": 0.0003,
+      "Purple": 0.0172,
+      "Monochrome": 0.4301
+    }
   },
   {
     "id": "rx-7ae607c62703",
@@ -325,7 +459,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "15:43",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-7ae607c62703-atlas-a6f115c97d.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 280,
+    "colorCoverage": {
+      "Black": 0.2682,
+      "Blue": 0.0214,
+      "Gray": 0.0549,
+      "Brown": 0.411,
+      "Yellow": 0.0432,
+      "Purple": 0.0007,
+      "Green": 0.0015,
+      "Red": 0.0225,
+      "Orange": 0.1762,
+      "Pink": 0.0004,
+      "Monochrome": 0.323
+    }
   },
   {
     "id": "rx-7fd879ff0dca",
@@ -352,7 +502,15 @@
     "date": "2025-07-23",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-7fd879ff0dca-atlas-186b1e887f.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.2843,
+      "Blue": 0.7157,
+      "Monochrome": 0.2843
+    }
   },
   {
     "id": "rx-edd2cb2641af",
@@ -381,7 +539,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "20:03",
-    "timeOfDay": "Evening"
+    "timeOfDay": "Evening",
+    "atlasSrc": "/photography/rx-edd2cb2641af-atlas-1f6bc05888.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.6477,
+      "Gray": 0.061,
+      "Pink": 0.0248,
+      "Red": 0.0708,
+      "Purple": 0.0028,
+      "Black": 0.1299,
+      "Brown": 0.0119,
+      "Green": 0.0478,
+      "Yellow": 0.0025,
+      "Orange": 0.0009,
+      "Monochrome": 0.1909
+    }
   },
   {
     "id": "rx-c88c7243db47",
@@ -412,7 +586,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "20:03",
-    "timeOfDay": "Evening"
+    "timeOfDay": "Evening",
+    "atlasSrc": "/photography/rx-c88c7243db47-atlas-44e388d6b8.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Red": 0.0938,
+      "Blue": 0.2224,
+      "Pink": 0.0794,
+      "Purple": 0.0159,
+      "Gray": 0.1118,
+      "Orange": 0.0049,
+      "Black": 0.095,
+      "Brown": 0.0086,
+      "Green": 0.3627,
+      "Yellow": 0.0055,
+      "Monochrome": 0.2068
+    }
   },
   {
     "id": "rx-399151da1a48",
@@ -441,7 +631,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "05:10",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-399151da1a48-atlas-21ba531915.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Orange": 0.0534,
+      "Brown": 0.0339,
+      "Gray": 0.321,
+      "Blue": 0.4212,
+      "Green": 0.0221,
+      "Yellow": 0.0482,
+      "Black": 0.0404,
+      "Red": 0.0482,
+      "Purple": 0.0033,
+      "Pink": 0.0085,
+      "Monochrome": 0.3613
+    }
   },
   {
     "id": "rx-23cb9f50dccd",
@@ -470,7 +676,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "05:10",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-23cb9f50dccd-atlas-20fb9d0407.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Gray": 0.1953,
+      "Blue": 0.57,
+      "Purple": 0.0046,
+      "Pink": 0.0039,
+      "Red": 0.0205,
+      "Orange": 0.1123,
+      "Yellow": 0.0016,
+      "Brown": 0.0094,
+      "Black": 0.082,
+      "Green": 0.0003,
+      "Monochrome": 0.2773
+    }
   },
   {
     "id": "rx-2400505a6b3c",
@@ -501,7 +723,20 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "07:00",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-2400505a6b3c-atlas-aed6e9bece.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Brown": 0.3861,
+      "Black": 0.1699,
+      "Gray": 0.0329,
+      "Blue": 0.3115,
+      "Orange": 0.0485,
+      "Yellow": 0.0475,
+      "Green": 0.0036,
+      "Monochrome": 0.2028
+    }
   },
   {
     "id": "rx-b475605c54b4",
@@ -532,7 +767,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "07:00",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-b475605c54b4-atlas-1a6794eba8.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Blue": 0.0859,
+      "Gray": 0.222,
+      "Black": 0.1136,
+      "Yellow": 0.0208,
+      "Orange": 0.1497,
+      "Green": 0.0319,
+      "Brown": 0.3737,
+      "Red": 0.0023,
+      "Monochrome": 0.3356
+    }
   },
   {
     "id": "rx-46e57a3dd6eb",
@@ -561,7 +810,20 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "12:08",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-46e57a3dd6eb-atlas-dbe1f197f7.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 318,
+    "colorCoverage": {
+      "Blue": 0.8359,
+      "Black": 0.1341,
+      "Yellow": 0.0033,
+      "Brown": 0.0042,
+      "Green": 0.0003,
+      "Purple": 0.0199,
+      "Orange": 0.0023,
+      "Monochrome": 0.1341
+    }
   },
   {
     "id": "rx-21a0a87207d0",
@@ -590,7 +852,20 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "15:43",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-21a0a87207d0-atlas-62d3751bcd.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 280,
+    "colorCoverage": {
+      "Black": 0.5603,
+      "Brown": 0.0745,
+      "Green": 0.1762,
+      "Orange": 0.0055,
+      "Yellow": 0.0799,
+      "Red": 0.0207,
+      "Gray": 0.0828,
+      "Monochrome": 0.6432
+    }
   },
   {
     "id": "rx-db0d65502d38",
@@ -617,7 +892,15 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "13:04",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-db0d65502d38-atlas-312ea9f6e7.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.0162,
+      "Gray": 0.9838,
+      "Monochrome": 1.0
+    }
   },
   {
     "id": "rx-9095e6c627d7",
@@ -644,7 +927,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "04:19",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-9095e6c627d7-atlas-c4bbb518e2.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 420,
+    "colorCoverage": {
+      "Black": 0.7097,
+      "Brown": 0.1116,
+      "Gray": 0.0913,
+      "Red": 0.0054,
+      "Orange": 0.0671,
+      "Blue": 0.0015,
+      "Yellow": 0.012,
+      "Green": 0.0015,
+      "Monochrome": 0.801
+    }
   },
   {
     "id": "rx-fe5a7f0fc941",
@@ -675,7 +972,19 @@
     "date": "2026-09-26",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-fe5a7f0fc941-atlas-aa658665be.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Yellow": 0.4674,
+      "Green": 0.0425,
+      "Gray": 0.003,
+      "Brown": 0.3368,
+      "Orange": 0.0482,
+      "Black": 0.102,
+      "Monochrome": 0.105
+    }
   },
   {
     "id": "rx-0c2028bec51f",
@@ -706,7 +1015,19 @@
     "date": "2026-09-26",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-0c2028bec51f-atlas-a9868dc730.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.0595,
+      "Brown": 0.6532,
+      "Orange": 0.207,
+      "Yellow": 0.076,
+      "Green": 0.0022,
+      "Black": 0.0022,
+      "Monochrome": 0.0616
+    }
   },
   {
     "id": "rx-1a8a9c053357",
@@ -737,7 +1058,20 @@
     "date": "2026-09-26",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-1a8a9c053357-atlas-1e11798854.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.3229,
+      "Gray": 0.1124,
+      "Yellow": 0.0464,
+      "Blue": 0.3828,
+      "Orange": 0.1033,
+      "Black": 0.0286,
+      "Green": 0.0035,
+      "Monochrome": 0.1411
+    }
   },
   {
     "id": "rx-ef122a6349aa",
@@ -766,7 +1100,19 @@
     "date": "2026-09-18",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-ef122a6349aa-atlas-f07835d4b5.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.4466,
+      "Black": 0.0425,
+      "Red": 0.1267,
+      "Orange": 0.1276,
+      "Blue": 0.25,
+      "Gray": 0.0065,
+      "Monochrome": 0.049
+    }
   },
   {
     "id": "rx-15442f1ced0b",
@@ -795,7 +1141,23 @@
     "date": "2026-09-18",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-15442f1ced0b-atlas-d18a267455.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.2804,
+      "Red": 0.148,
+      "Orange": 0.0694,
+      "Gray": 0.1306,
+      "Blue": 0.2096,
+      "Black": 0.1228,
+      "Green": 0.0061,
+      "Yellow": 0.0009,
+      "Pink": 0.0317,
+      "Purple": 0.0004,
+      "Monochrome": 0.2535
+    }
   },
   {
     "id": "rx-c167e676da69",
@@ -822,7 +1184,23 @@
     "date": "2026-09-18",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-c167e676da69-atlas-34bd526cd3.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.3694,
+      "Black": 0.3012,
+      "Gray": 0.1328,
+      "Brown": 0.1263,
+      "Orange": 0.02,
+      "Yellow": 0.0022,
+      "Green": 0.0252,
+      "Red": 0.0165,
+      "Pink": 0.0052,
+      "Purple": 0.0013,
+      "Monochrome": 0.434
+    }
   },
   {
     "id": "rx-40f542328b81",
@@ -849,7 +1227,20 @@
     "date": "2026-09-15",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-40f542328b81-atlas-89d905d20d.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.3329,
+      "Gray": 0.2348,
+      "Black": 0.2726,
+      "Orange": 0.0686,
+      "Brown": 0.0373,
+      "Yellow": 0.0521,
+      "Green": 0.0017,
+      "Monochrome": 0.5074
+    }
   },
   {
     "id": "rx-acd2c6bf57db",
@@ -877,7 +1268,21 @@
     "date": "2026-08-24",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-acd2c6bf57db-atlas-44f5cf8d81.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.3737,
+      "Blue": 0.5382,
+      "Brown": 0.0434,
+      "Gray": 0.0369,
+      "Yellow": 0.0022,
+      "Green": 0.0035,
+      "Orange": 0.0009,
+      "Red": 0.0013,
+      "Monochrome": 0.4106
+    }
   },
   {
     "id": "rx-61f661f80024",
@@ -902,7 +1307,15 @@
     "date": "2026-01-29",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-61f661f80024-atlas-98a432378c.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.76,
+      "Black": 0.24,
+      "Monochrome": 1.0
+    }
   },
   {
     "id": "rx-ab534e9a0e8d",
@@ -927,7 +1340,15 @@
     "date": "2025-12-25",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-ab534e9a0e8d-atlas-4becb7ec6a.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.8477,
+      "Black": 0.1523,
+      "Monochrome": 1.0
+    }
   },
   {
     "id": "rx-24ea636879bb",
@@ -954,7 +1375,21 @@
     "date": "2025-12-25",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-24ea636879bb-atlas-da98a209de.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.3806,
+      "Brown": 0.1793,
+      "Gray": 0.2266,
+      "Orange": 0.0139,
+      "Green": 0.0291,
+      "Yellow": 0.0608,
+      "Red": 0.1081,
+      "Blue": 0.0017,
+      "Monochrome": 0.6072
+    }
   },
   {
     "id": "rx-94e684067152",
@@ -979,7 +1414,14 @@
     "date": "2025-11-18",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-94e684067152-atlas-402e089b83.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 1.0,
+      "Monochrome": 1.0
+    }
   },
   {
     "id": "rx-6966c8a73942",
@@ -1008,7 +1450,22 @@
     "date": "2025-09-25",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-6966c8a73942-atlas-d604589ef1.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.1372,
+      "Brown": 0.3438,
+      "Orange": 0.247,
+      "Red": 0.0352,
+      "Yellow": 0.0065,
+      "Gray": 0.1146,
+      "Blue": 0.0977,
+      "Green": 0.0178,
+      "Pink": 0.0004,
+      "Monochrome": 0.2517
+    }
   },
   {
     "id": "rx-295a7ab6de5c",
@@ -1038,7 +1495,21 @@
     "date": "2025-08-28",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-295a7ab6de5c-atlas-899f596825.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Orange": 0.3299,
+      "Brown": 0.1046,
+      "Gray": 0.2279,
+      "Red": 0.0022,
+      "Yellow": 0.0638,
+      "Green": 0.2648,
+      "Black": 0.0061,
+      "Blue": 0.0009,
+      "Monochrome": 0.2339
+    }
   },
   {
     "id": "rx-bcf06372f150",
@@ -1065,7 +1536,19 @@
     "date": "2024-05-15",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-bcf06372f150-atlas-6cedb09032.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.1146,
+      "Blue": 0.2326,
+      "Gray": 0.5473,
+      "Green": 0.0703,
+      "Yellow": 0.0156,
+      "Brown": 0.0195,
+      "Monochrome": 0.6619
+    }
   },
   {
     "id": "rx-cbf609820daf",
@@ -1092,7 +1575,21 @@
     "date": "2024-03-26",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-cbf609820daf-atlas-75d117a575.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.8607,
+      "Black": 0.0069,
+      "Red": 0.0872,
+      "Pink": 0.003,
+      "Gray": 0.0378,
+      "Purple": 0.0009,
+      "Brown": 0.0022,
+      "Orange": 0.0013,
+      "Monochrome": 0.0447
+    }
   },
   {
     "id": "rx-64b1de359a28",
@@ -1119,7 +1616,23 @@
     "date": "2024-01-14",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-64b1de359a28-atlas-830d960a17.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.6111,
+      "Black": 0.1576,
+      "Gray": 0.0911,
+      "Purple": 0.0538,
+      "Orange": 0.0022,
+      "Yellow": 0.0004,
+      "Pink": 0.0451,
+      "Red": 0.0273,
+      "Green": 0.0082,
+      "Brown": 0.003,
+      "Monochrome": 0.2487
+    }
   },
   {
     "id": "rx-a076c3b32ec7",
@@ -1148,7 +1661,23 @@
     "date": "2024-01-14",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-a076c3b32ec7-atlas-31d8c14288.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.3594,
+      "Gray": 0.0556,
+      "Green": 0.0017,
+      "Brown": 0.1354,
+      "Red": 0.1068,
+      "Orange": 0.0347,
+      "Blue": 0.168,
+      "Pink": 0.0707,
+      "Yellow": 0.0039,
+      "Purple": 0.0638,
+      "Monochrome": 0.4149
+    }
   },
   {
     "id": "rx-362dd39e6cdd",
@@ -1175,7 +1704,20 @@
     "date": "2024-01-14",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-362dd39e6cdd-atlas-e5609d0da9.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.714,
+      "Black": 0.1927,
+      "Orange": 0.0747,
+      "Yellow": 0.003,
+      "Red": 0.0126,
+      "Blue": 0.0017,
+      "Gray": 0.0013,
+      "Monochrome": 0.194
+    }
   },
   {
     "id": "rx-0c55ac2975d9",
@@ -1205,7 +1747,21 @@
     "date": "2024-01-14",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-0c55ac2975d9-atlas-6ac9adecf6.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.3203,
+      "Brown": 0.3199,
+      "Gray": 0.0174,
+      "Orange": 0.0859,
+      "Yellow": 0.076,
+      "Green": 0.0074,
+      "Black": 0.1727,
+      "Red": 0.0004,
+      "Monochrome": 0.1901
+    }
   },
   {
     "id": "rx-d95cb7922443",
@@ -1234,7 +1790,22 @@
     "date": "2022-10-29",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-d95cb7922443-atlas-e880f148fa.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.372,
+      "Yellow": 0.0473,
+      "Brown": 0.3607,
+      "Orange": 0.0998,
+      "Black": 0.1128,
+      "Gray": 0.0004,
+      "Red": 0.0052,
+      "Pink": 0.0009,
+      "Purple": 0.0009,
+      "Monochrome": 0.1133
+    }
   },
   {
     "id": "rx-95d5d1dd0bd8",
@@ -1265,7 +1836,23 @@
     "date": "2026-10-13",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-95d5d1dd0bd8-atlas-153600d93e.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.0942,
+      "Orange": 0.0677,
+      "Red": 0.2561,
+      "Gray": 0.1979,
+      "Pink": 0.0095,
+      "Brown": 0.1732,
+      "Black": 0.1984,
+      "Yellow": 0.0009,
+      "Purple": 0.0013,
+      "Green": 0.0009,
+      "Monochrome": 0.3963
+    }
   },
   {
     "id": "rx-b3470f2ddba1",
@@ -1295,7 +1882,20 @@
     "date": "2023-02-25",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-b3470f2ddba1-atlas-76b8e1c44d.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.556,
+      "Gray": 0.2031,
+      "Green": 0.003,
+      "Pink": 0.1571,
+      "Red": 0.059,
+      "Purple": 0.0213,
+      "Brown": 0.0004,
+      "Monochrome": 0.2031
+    }
   },
   {
     "id": "rx-da4c7384de74",
@@ -1324,7 +1924,18 @@
     "date": "2025-07-21",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-da4c7384de74-atlas-bef115e969.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.9657,
+      "Green": 0.026,
+      "Gray": 0.0056,
+      "Purple": 0.0022,
+      "Red": 0.0004,
+      "Monochrome": 0.0056
+    }
   },
   {
     "id": "rx-69c73e0a84ea",
@@ -1355,7 +1966,19 @@
     "date": "2025-07-24",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-69c73e0a84ea-atlas-9a709fb7f5.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.0135,
+      "Blue": 0.2101,
+      "Yellow": 0.053,
+      "Green": 0.7201,
+      "Brown": 0.003,
+      "Orange": 0.0004,
+      "Monochrome": 0.0135
+    }
   },
   {
     "id": "rx-038ab0a16f88",
@@ -1386,7 +2009,22 @@
     "date": "2025-01-26",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-038ab0a16f88-atlas-67f0fe72f3.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.2378,
+      "Blue": 0.1931,
+      "Green": 0.2448,
+      "Yellow": 0.2986,
+      "Black": 0.0087,
+      "Brown": 0.0087,
+      "Orange": 0.0039,
+      "Red": 0.0009,
+      "Purple": 0.0035,
+      "Monochrome": 0.2465
+    }
   },
   {
     "id": "rx-1ba8a369f4bd",
@@ -1413,7 +2051,17 @@
     "date": "2025-01-26",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-1ba8a369f4bd-atlas-4234636dc5.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.6962,
+      "Gray": 0.0269,
+      "Black": 0.2639,
+      "Green": 0.013,
+      "Monochrome": 0.2908
+    }
   },
   {
     "id": "rx-6e0f312bb5c4",
@@ -1444,7 +2092,18 @@
     "date": "2026-11-08",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-6e0f312bb5c4-atlas-60ac3fe0b6.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.0195,
+      "Gray": 0.3069,
+      "Red": 0.5161,
+      "Pink": 0.1562,
+      "Orange": 0.0013,
+      "Monochrome": 0.3069
+    }
   },
   {
     "id": "rx-50ad04476d9b",
@@ -1475,7 +2134,20 @@
     "date": "2026-09-29",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-50ad04476d9b-atlas-65a13c33d2.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.4627,
+      "Pink": 0.0013,
+      "Gray": 0.0091,
+      "Red": 0.3859,
+      "Orange": 0.0191,
+      "Brown": 0.1211,
+      "Black": 0.0009,
+      "Monochrome": 0.01
+    }
   },
   {
     "id": "rx-e8dc286da0db",
@@ -1506,7 +2178,20 @@
     "date": "2026-09-28",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-e8dc286da0db-atlas-c550896513.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.1684,
+      "Gray": 0.1437,
+      "Red": 0.1411,
+      "Brown": 0.4366,
+      "Orange": 0.0616,
+      "Black": 0.0482,
+      "Pink": 0.0004,
+      "Monochrome": 0.1918
+    }
   },
   {
     "id": "rx-cb634a63fe1f",
@@ -1537,7 +2222,23 @@
     "date": "2026-09-29",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-cb634a63fe1f-atlas-e6e08c4f91.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.3832,
+      "Gray": 0.0174,
+      "Brown": 0.2465,
+      "Black": 0.1814,
+      "Red": 0.0742,
+      "Orange": 0.0356,
+      "Pink": 0.0026,
+      "Yellow": 0.0547,
+      "Green": 0.0039,
+      "Purple": 0.0004,
+      "Monochrome": 0.1988
+    }
   },
   {
     "id": "rx-68b085f39b53",
@@ -1566,7 +2267,23 @@
     "date": "2026-02-08",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-68b085f39b53-atlas-9a630de2f4.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.0043,
+      "Purple": 0.2986,
+      "Gray": 0.4666,
+      "Red": 0.0069,
+      "Pink": 0.0169,
+      "Black": 0.013,
+      "Brown": 0.0521,
+      "Green": 0.0004,
+      "Yellow": 0.0885,
+      "Orange": 0.0525,
+      "Monochrome": 0.4796
+    }
   },
   {
     "id": "rx-28496fabc16d",
@@ -1595,7 +2312,21 @@
     "date": "2025-01-28",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-28496fabc16d-atlas-316cd85ead.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.5777,
+      "Gray": 0.2691,
+      "Purple": 0.0009,
+      "Pink": 0.0087,
+      "Red": 0.0855,
+      "Orange": 0.0551,
+      "Black": 0.0022,
+      "Brown": 0.0009,
+      "Monochrome": 0.2713
+    }
   },
   {
     "id": "rx-8c5dfc51ada7",
@@ -1622,7 +2353,19 @@
     "date": "2025-01-26",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-8c5dfc51ada7-atlas-06d1599416.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.8155,
+      "Gray": 0.0825,
+      "Black": 0.0438,
+      "Green": 0.0538,
+      "Brown": 0.0026,
+      "Yellow": 0.0017,
+      "Monochrome": 0.1263
+    }
   },
   {
     "id": "rx-b553be267e48",
@@ -1650,7 +2393,23 @@
     "date": "2024-12-14",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-b553be267e48-atlas-480a65d144.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Green": 0.3411,
+      "Gray": 0.3147,
+      "Purple": 0.0178,
+      "Pink": 0.053,
+      "Blue": 0.0295,
+      "Yellow": 0.0543,
+      "Brown": 0.0825,
+      "Red": 0.0503,
+      "Black": 0.0286,
+      "Orange": 0.0282,
+      "Monochrome": 0.3433
+    }
   },
   {
     "id": "rx-1799a263c1da",
@@ -1679,7 +2438,23 @@
     "date": "2024-12-14",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-1799a263c1da-atlas-a5412c7c97.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Green": 0.3424,
+      "Blue": 0.0048,
+      "Gray": 0.2747,
+      "Yellow": 0.0174,
+      "Black": 0.01,
+      "Purple": 0.0022,
+      "Red": 0.178,
+      "Brown": 0.046,
+      "Pink": 0.0039,
+      "Orange": 0.1207,
+      "Monochrome": 0.2847
+    }
   },
   {
     "id": "rx-7d946fd2adca",
@@ -1708,7 +2483,23 @@
     "date": "2024-10-23",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-7d946fd2adca-atlas-cb9f349bb0.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Green": 0.5126,
+      "Yellow": 0.0538,
+      "Red": 0.1029,
+      "Brown": 0.0668,
+      "Pink": 0.0664,
+      "Orange": 0.0143,
+      "Blue": 0.1159,
+      "Gray": 0.0226,
+      "Black": 0.043,
+      "Purple": 0.0017,
+      "Monochrome": 0.0655
+    }
   },
   {
     "id": "rx-b62c97fef0b5",
@@ -1737,7 +2528,19 @@
     "date": "2024-09-18",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-b62c97fef0b5-atlas-5a2952d0df.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.5017,
+      "Brown": 0.1949,
+      "Red": 0.2248,
+      "Orange": 0.0052,
+      "Yellow": 0.0052,
+      "Pink": 0.0681,
+      "Monochrome": 0.5017
+    }
   },
   {
     "id": "rx-3f17ad9b07ed",
@@ -1764,7 +2567,19 @@
     "date": "2024-09-18",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-3f17ad9b07ed-atlas-cb4fb616ff.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.9188,
+      "Gray": 0.0486,
+      "Orange": 0.0243,
+      "Yellow": 0.0052,
+      "Red": 0.0026,
+      "Brown": 0.0004,
+      "Monochrome": 0.0486
+    }
   },
   {
     "id": "rx-c0d6e9ece483",
@@ -1795,7 +2610,23 @@
     "date": "2024-08-03",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-c0d6e9ece483-atlas-bb85fe68e7.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Yellow": 0.0273,
+      "Brown": 0.3481,
+      "Green": 0.0339,
+      "Black": 0.0742,
+      "Gray": 0.1962,
+      "Pink": 0.0859,
+      "Red": 0.1324,
+      "Orange": 0.0043,
+      "Blue": 0.079,
+      "Purple": 0.0187,
+      "Monochrome": 0.2704
+    }
   },
   {
     "id": "rx-debf11d68f21",
@@ -1825,7 +2656,20 @@
     "date": "2024-08-03",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-debf11d68f21-atlas-011d2104f8.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Red": 0.5842,
+      "Pink": 0.2917,
+      "Purple": 0.02,
+      "Black": 0.0851,
+      "Blue": 0.0017,
+      "Brown": 0.0117,
+      "Gray": 0.0056,
+      "Monochrome": 0.0907
+    }
   },
   {
     "id": "rx-b748475aeac2",
@@ -1852,7 +2696,20 @@
     "date": "2024-08-03",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-b748475aeac2-atlas-c4a61f5646.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.1089,
+      "Red": 0.5126,
+      "Black": 0.2717,
+      "Orange": 0.0621,
+      "Yellow": 0.0087,
+      "Pink": 0.0356,
+      "Gray": 0.0004,
+      "Monochrome": 0.2721
+    }
   },
   {
     "id": "rx-624c0b74452a",
@@ -1881,7 +2738,16 @@
     "date": "2024-03-24",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-624c0b74452a-atlas-3420fa70c5.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.3351,
+      "Blue": 0.6233,
+      "Green": 0.0417,
+      "Monochrome": 0.3351
+    }
   },
   {
     "id": "rx-1a7e74e92beb",
@@ -1912,7 +2778,23 @@
     "date": "2024-03-05",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-1a7e74e92beb-atlas-fa8a91aa5e.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Pink": 0.0386,
+      "Black": 0.0156,
+      "Red": 0.0547,
+      "Gray": 0.434,
+      "Orange": 0.1914,
+      "Brown": 0.0187,
+      "Green": 0.1363,
+      "Blue": 0.0872,
+      "Purple": 0.0182,
+      "Yellow": 0.0052,
+      "Monochrome": 0.4497
+    }
   },
   {
     "id": "rx-d26797c3864a",
@@ -1943,7 +2825,23 @@
     "date": "2024-02-19",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-d26797c3864a-atlas-489e222e47.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Green": 0.4787,
+      "Gray": 0.0317,
+      "Blue": 0.1085,
+      "Yellow": 0.2943,
+      "Black": 0.0317,
+      "Brown": 0.0286,
+      "Red": 0.0178,
+      "Pink": 0.0017,
+      "Orange": 0.0065,
+      "Purple": 0.0004,
+      "Monochrome": 0.0634
+    }
   },
   {
     "id": "rx-11f891a3fa97",
@@ -1972,7 +2870,22 @@
     "date": "2023-12-08",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-11f891a3fa97-atlas-906aed1e79.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Pink": 0.0842,
+      "Red": 0.5942,
+      "Blue": 0.0547,
+      "Gray": 0.1632,
+      "Orange": 0.0647,
+      "Purple": 0.0113,
+      "Brown": 0.0135,
+      "Black": 0.0135,
+      "Yellow": 0.0009,
+      "Monochrome": 0.1766
+    }
   },
   {
     "id": "rx-b7a4694d387a",
@@ -1999,7 +2912,20 @@
     "date": "2023-05-22",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-b7a4694d387a-atlas-5984921479.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.4557,
+      "Black": 0.3073,
+      "Yellow": 0.0929,
+      "Orange": 0.0946,
+      "Gray": 0.0078,
+      "Red": 0.0013,
+      "Green": 0.0404,
+      "Monochrome": 0.3151
+    }
   },
   {
     "id": "rx-c4a96d8e9648",
@@ -2030,7 +2956,20 @@
     "date": "2022-10-29",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-c4a96d8e9648-atlas-fac644e3fb.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.0247,
+      "Red": 0.1146,
+      "Orange": 0.0924,
+      "Brown": 0.5039,
+      "Yellow": 0.2122,
+      "Black": 0.0339,
+      "Green": 0.0182,
+      "Monochrome": 0.0586
+    }
   },
   {
     "id": "rx-077cb8fd0bef",
@@ -2060,7 +2999,18 @@
     "date": "2022-08-21",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-077cb8fd0bef-atlas-e392ea86b9.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.7435,
+      "Gray": 0.2543,
+      "Orange": 0.0004,
+      "Yellow": 0.0009,
+      "Green": 0.0009,
+      "Monochrome": 0.2543
+    }
   },
   {
     "id": "rx-11d79f1aac7e",
@@ -2089,7 +3039,17 @@
     "date": "2019-01-21",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-11d79f1aac7e-atlas-17b276cbc5.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.9874,
+      "Black": 0.0065,
+      "Gray": 0.0048,
+      "Purple": 0.0013,
+      "Monochrome": 0.0113
+    }
   },
   {
     "id": "rx-e4751bedd542",
@@ -2120,7 +3080,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "23:41",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-e4751bedd542-atlas-6ce5557395.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Orange": 0.5267,
+      "Gray": 0.0502,
+      "Red": 0.2157,
+      "Brown": 0.0135,
+      "Pink": 0.0181,
+      "Purple": 0.0211,
+      "Blue": 0.1057,
+      "Yellow": 0.0003,
+      "Black": 0.0487,
+      "Monochrome": 0.099
+    }
   },
   {
     "id": "rx-bb08175d46d1",
@@ -2150,7 +3125,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "02:10",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-bb08175d46d1-atlas-c6a1530ee4.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.432,
+      "Blue": 0.4911,
+      "Gray": 0.0218,
+      "Purple": 0.0015,
+      "Pink": 0.0021,
+      "Red": 0.0092,
+      "Brown": 0.0089,
+      "Orange": 0.0288,
+      "Yellow": 0.0046,
+      "Monochrome": 0.4537
+    }
   },
   {
     "id": "rx-76f3a3d50b12",
@@ -2181,7 +3171,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "07:00",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-76f3a3d50b12-atlas-78cc5a6846.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Blue": 0.2236,
+      "Red": 0.0745,
+      "Gray": 0.0911,
+      "Brown": 0.4456,
+      "Orange": 0.1478,
+      "Pink": 0.001,
+      "Yellow": 0.0065,
+      "Green": 0.0003,
+      "Black": 0.0094,
+      "Monochrome": 0.1006
+    }
   },
   {
     "id": "rx-f48d36bc853a",
@@ -2212,7 +3217,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "07:00",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-f48d36bc853a-atlas-7cbf0f3a3b.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Brown": 0.613,
+      "Orange": 0.321,
+      "Yellow": 0.0332,
+      "Black": 0.0091,
+      "Gray": 0.013,
+      "Red": 0.0088,
+      "Blue": 0.0016,
+      "Green": 0.0003,
+      "Monochrome": 0.0221
+    }
   },
   {
     "id": "rx-369506dd70dd",
@@ -2243,7 +3262,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "07:00",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-369506dd70dd-atlas-748ac828db.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Blue": 0.514,
+      "Gray": 0.2077,
+      "Red": 0.1673,
+      "Pink": 0.0176,
+      "Orange": 0.0544,
+      "Yellow": 0.0166,
+      "Purple": 0.0033,
+      "Black": 0.0176,
+      "Brown": 0.0016,
+      "Monochrome": 0.2253
+    }
   },
   {
     "id": "rx-2fa82a3413dc",
@@ -2272,7 +3306,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "07:00",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-2fa82a3413dc-atlas-49e514d541.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Blue": 0.7959,
+      "Gray": 0.096,
+      "Purple": 0.0029,
+      "Red": 0.0049,
+      "Orange": 0.0137,
+      "Pink": 0.0016,
+      "Brown": 0.0049,
+      "Green": 0.0703,
+      "Yellow": 0.0007,
+      "Black": 0.0091,
+      "Monochrome": 0.1051
+    }
   },
   {
     "id": "rx-fdaf86076167",
@@ -2300,7 +3350,20 @@
     "date": "2026-09-27",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-fdaf86076167-atlas-6df4044027.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.6289,
+      "Purple": 0.0022,
+      "Gray": 0.2977,
+      "Black": 0.0234,
+      "Brown": 0.0456,
+      "Orange": 0.0009,
+      "Yellow": 0.0013,
+      "Monochrome": 0.3212
+    }
   },
   {
     "id": "rx-9a0ed1faf779",
@@ -2331,7 +3394,20 @@
     "date": "2025-12-25",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-9a0ed1faf779-atlas-2aa4ef2d38.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.6675,
+      "Orange": 0.2509,
+      "Red": 0.0026,
+      "Black": 0.0551,
+      "Gray": 0.0082,
+      "Yellow": 0.0056,
+      "Blue": 0.01,
+      "Monochrome": 0.0634
+    }
   },
   {
     "id": "rx-742af11f37d6",
@@ -2360,7 +3436,22 @@
     "date": "2025-12-25",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-742af11f37d6-atlas-eedd5d6264.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.385,
+      "Orange": 0.2565,
+      "Gray": 0.023,
+      "Yellow": 0.049,
+      "Red": 0.01,
+      "Black": 0.2622,
+      "Blue": 0.0095,
+      "Green": 0.0039,
+      "Pink": 0.0009,
+      "Monochrome": 0.2852
+    }
   },
   {
     "id": "rx-aebfacddc681",
@@ -2389,7 +3480,22 @@
     "date": "2025-10-08",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-aebfacddc681-atlas-663312f23e.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.4171,
+      "Green": 0.0026,
+      "Gray": 0.3173,
+      "Purple": 0.0729,
+      "Black": 0.1628,
+      "Pink": 0.0082,
+      "Brown": 0.0109,
+      "Red": 0.0078,
+      "Yellow": 0.0004,
+      "Monochrome": 0.48
+    }
   },
   {
     "id": "rx-8f9f05532865",
@@ -2420,7 +3526,22 @@
     "date": "2025-07-28",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-8f9f05532865-atlas-43c6707c5f.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.2509,
+      "Red": 0.2765,
+      "Gray": 0.0694,
+      "Pink": 0.0365,
+      "Purple": 0.0126,
+      "Orange": 0.2734,
+      "Brown": 0.076,
+      "Yellow": 0.003,
+      "Green": 0.0017,
+      "Monochrome": 0.0694
+    }
   },
   {
     "id": "rx-129979248064",
@@ -2449,7 +3570,22 @@
     "date": "2025-04-27",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-129979248064-atlas-2e56bab76f.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Green": 0.1289,
+      "Gray": 0.6766,
+      "Yellow": 0.0043,
+      "Pink": 0.0599,
+      "Red": 0.0786,
+      "Blue": 0.0278,
+      "Brown": 0.0039,
+      "Purple": 0.0165,
+      "Black": 0.0035,
+      "Monochrome": 0.6801
+    }
   },
   {
     "id": "rx-306a7ef2f3e4",
@@ -2478,7 +3614,19 @@
     "date": "2024-12-06",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-306a7ef2f3e4-atlas-420ca0a354.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Orange": 0.5516,
+      "Brown": 0.2109,
+      "Black": 0.0074,
+      "Gray": 0.2253,
+      "Yellow": 0.0022,
+      "Red": 0.0026,
+      "Monochrome": 0.2326
+    }
   },
   {
     "id": "rx-62c5e6583a78",
@@ -2507,7 +3655,21 @@
     "date": "2024-11-24",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-62c5e6583a78-atlas-ea184bc64e.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.645,
+      "Yellow": 0.0599,
+      "Orange": 0.1016,
+      "Green": 0.0048,
+      "Brown": 0.0629,
+      "Blue": 0.0273,
+      "Red": 0.0113,
+      "Pink": 0.0872,
+      "Monochrome": 0.645
+    }
   },
   {
     "id": "rx-defe4f4db240",
@@ -2538,7 +3700,22 @@
     "date": "2024-10-16",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-defe4f4db240-atlas-9d717b2e1d.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.4054,
+      "Brown": 0.1263,
+      "Purple": 0.0421,
+      "Blue": 0.0304,
+      "Black": 0.043,
+      "Pink": 0.0221,
+      "Red": 0.0829,
+      "Orange": 0.2461,
+      "Yellow": 0.0017,
+      "Monochrome": 0.4484
+    }
   },
   {
     "id": "rx-0591bd6a8d9a",
@@ -2569,7 +3746,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "23:57",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-0591bd6a8d9a-atlas-abf67c7d22.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Gray": 0.3447,
+      "Red": 0.0452,
+      "Orange": 0.1628,
+      "Yellow": 0.016,
+      "Brown": 0.318,
+      "Pink": 0.0042,
+      "Purple": 0.0029,
+      "Blue": 0.0059,
+      "Black": 0.1003,
+      "Monochrome": 0.445
+    }
   },
   {
     "id": "rx-2b2d02d09a6f",
@@ -2600,7 +3792,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "23:57",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-2b2d02d09a6f-atlas-b53f6b6224.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Brown": 0.5205,
+      "Yellow": 0.0195,
+      "Green": 0.1628,
+      "Black": 0.0221,
+      "Blue": 0.0156,
+      "Red": 0.0319,
+      "Gray": 0.0322,
+      "Orange": 0.1891,
+      "Purple": 0.0007,
+      "Pink": 0.0055,
+      "Monochrome": 0.0544
+    }
   },
   {
     "id": "rx-c8deba6f5ba7",
@@ -2631,7 +3839,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "07:00",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-c8deba6f5ba7-atlas-c7b0499009.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Blue": 0.0423,
+      "Brown": 0.4339,
+      "Green": 0.0534,
+      "Black": 0.0749,
+      "Yellow": 0.1911,
+      "Gray": 0.0521,
+      "Orange": 0.1507,
+      "Red": 0.0016,
+      "Monochrome": 0.127
+    }
   },
   {
     "id": "rx-f88335dec496",
@@ -2662,7 +3884,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "18:23",
-    "timeOfDay": "Evening"
+    "timeOfDay": "Evening",
+    "atlasSrc": "/photography/rx-f88335dec496-atlas-0cdab1ce0e.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 398,
+    "colorCoverage": {
+      "Blue": 0.196,
+      "Gray": 0.0771,
+      "Yellow": 0.1171,
+      "Brown": 0.1342,
+      "Green": 0.0218,
+      "Orange": 0.1652,
+      "Red": 0.1711,
+      "Black": 0.0661,
+      "Pink": 0.0261,
+      "Purple": 0.0254,
+      "Monochrome": 0.1432
+    }
   },
   {
     "id": "rx-0193b4ed77dc",
@@ -2693,7 +3931,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "11:30",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-0193b4ed77dc-atlas-90b8f18acc.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Pink": 0.402,
+      "Gray": 0.1445,
+      "Red": 0.1735,
+      "Brown": 0.0173,
+      "Blue": 0.0531,
+      "Green": 0.0537,
+      "Black": 0.1387,
+      "Orange": 0.0036,
+      "Yellow": 0.0059,
+      "Purple": 0.0078,
+      "Monochrome": 0.2832
+    }
   },
   {
     "id": "rx-b2d2f6777992",
@@ -2722,7 +3976,18 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "02:48",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-b2d2f6777992-atlas-7c02a73aef.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Black": 0.5114,
+      "Blue": 0.471,
+      "Gray": 0.0163,
+      "Red": 0.001,
+      "Purple": 0.0003,
+      "Monochrome": 0.5277
+    }
   },
   {
     "id": "rx-1ccc9774f355",
@@ -2749,7 +4014,15 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "13:04",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-1ccc9774f355-atlas-7ba98af68f.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.9372,
+      "Black": 0.0628,
+      "Monochrome": 1.0
+    }
   },
   {
     "id": "rx-6ecb45f567cd",
@@ -2776,7 +4049,22 @@
     "date": "2025-04-27",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-6ecb45f567cd-atlas-fa884c0972.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.2365,
+      "Green": 0.5924,
+      "Brown": 0.0187,
+      "Yellow": 0.0977,
+      "Pink": 0.0004,
+      "Black": 0.023,
+      "Orange": 0.0087,
+      "Blue": 0.0204,
+      "Red": 0.0022,
+      "Monochrome": 0.2595
+    }
   },
   {
     "id": "rx-586677d09ccf",
@@ -2803,7 +4091,21 @@
     "date": "2025-04-27",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-586677d09ccf-atlas-e7e2b76f50.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Green": 0.3928,
+      "Gray": 0.3785,
+      "Yellow": 0.0894,
+      "Orange": 0.079,
+      "Black": 0.0017,
+      "Red": 0.0078,
+      "Brown": 0.0113,
+      "Blue": 0.0395,
+      "Monochrome": 0.3802
+    }
   },
   {
     "id": "rx-d7fe182f4502",
@@ -2830,7 +4132,22 @@
     "date": "2025-04-27",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-d7fe182f4502-atlas-2f20bb91e4.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.056,
+      "Gray": 0.2244,
+      "Green": 0.625,
+      "Yellow": 0.0404,
+      "Brown": 0.0161,
+      "Orange": 0.0065,
+      "Red": 0.0022,
+      "Black": 0.0291,
+      "Pink": 0.0004,
+      "Monochrome": 0.2535
+    }
   },
   {
     "id": "rx-fa0da1f463e6",
@@ -2859,7 +4176,22 @@
     "date": "2025-04-27",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-fa0da1f463e6-atlas-1930b86d10.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.3698,
+      "Green": 0.4062,
+      "Blue": 0.1107,
+      "Brown": 0.0239,
+      "Red": 0.0148,
+      "Pink": 0.0317,
+      "Yellow": 0.0208,
+      "Black": 0.0074,
+      "Orange": 0.0148,
+      "Monochrome": 0.3772
+    }
   },
   {
     "id": "rx-38d0123498f9",
@@ -2888,7 +4220,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "19:14",
-    "timeOfDay": "Evening"
+    "timeOfDay": "Evening",
+    "atlasSrc": "/photography/rx-38d0123498f9-atlas-151ebc5124.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.2243,
+      "Green": 0.3113,
+      "Yellow": 0.008,
+      "Black": 0.3588,
+      "Brown": 0.0037,
+      "Orange": 0.0104,
+      "Blue": 0.0561,
+      "Red": 0.0273,
+      "Pink": 0.0003,
+      "Monochrome": 0.583
+    }
   },
   {
     "id": "rx-b9b4fdaabaf5",
@@ -2917,7 +4264,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "01:03",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-b9b4fdaabaf5-atlas-9119abd418.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Blue": 0.7591,
+      "Gray": 0.0143,
+      "Brown": 0.0195,
+      "Black": 0.0212,
+      "Orange": 0.0098,
+      "Red": 0.096,
+      "Yellow": 0.0029,
+      "Purple": 0.0251,
+      "Pink": 0.0521,
+      "Monochrome": 0.0355
+    }
   },
   {
     "id": "rx-62c000acb29e",
@@ -2946,7 +4308,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "04:58",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-62c000acb29e-atlas-872da0f179.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Blue": 0.7757,
+      "Gray": 0.0898,
+      "Orange": 0.0664,
+      "Yellow": 0.0127,
+      "Red": 0.0111,
+      "Pink": 0.0088,
+      "Purple": 0.0039,
+      "Black": 0.0309,
+      "Green": 0.0007,
+      "Monochrome": 0.1208
+    }
   },
   {
     "id": "rx-49a946f5dd87",
@@ -2977,7 +4354,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "15:43",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-49a946f5dd87-atlas-d5389132a9.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 280,
+    "colorCoverage": {
+      "Brown": 0.3779,
+      "Orange": 0.2151,
+      "Red": 0.0472,
+      "Black": 0.1722,
+      "Gray": 0.1668,
+      "Pink": 0.0007,
+      "Yellow": 0.0058,
+      "Blue": 0.0142,
+      "Monochrome": 0.339
+    }
   },
   {
     "id": "rx-7b667e940e2d",
@@ -3004,7 +4395,20 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "15:43",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-7b667e940e2d-atlas-3db880407e.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 280,
+    "colorCoverage": {
+      "Gray": 0.8521,
+      "Black": 0.0218,
+      "Brown": 0.0469,
+      "Orange": 0.0371,
+      "Red": 0.0015,
+      "Blue": 0.0403,
+      "Yellow": 0.0004,
+      "Monochrome": 0.8739
+    }
   },
   {
     "id": "rx-7a108e160deb",
@@ -3033,7 +4437,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "15:43",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-7a108e160deb-atlas-3993309936.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 280,
+    "colorCoverage": {
+      "Gray": 0.4379,
+      "Blue": 0.3536,
+      "Orange": 0.0044,
+      "Brown": 0.0251,
+      "Black": 0.1221,
+      "Red": 0.0142,
+      "Green": 0.0374,
+      "Yellow": 0.0033,
+      "Pink": 0.0022,
+      "Monochrome": 0.56
+    }
   },
   {
     "id": "rx-353875edf85a",
@@ -3060,7 +4479,18 @@
     "date": "2026-11-22",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-353875edf85a-atlas-250241e403.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Orange": 0.7218,
+      "Brown": 0.1263,
+      "Gray": 0.0143,
+      "Black": 0.099,
+      "Red": 0.0386,
+      "Monochrome": 0.1133
+    }
   },
   {
     "id": "rx-e72e4c065c21",
@@ -3087,7 +4517,15 @@
     "date": "2026-09-18",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-e72e4c065c21-atlas-273e964464.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 239,
+    "colorCoverage": {
+      "Gray": 0.4497,
+      "Blue": 0.5503,
+      "Monochrome": 0.4497
+    }
   },
   {
     "id": "rx-d8ff3706b6ac",
@@ -3114,7 +4552,22 @@
     "date": "2026-09-18",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-d8ff3706b6ac-atlas-5bc955279b.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 241,
+    "colorCoverage": {
+      "Brown": 0.405,
+      "Black": 0.0861,
+      "Gray": 0.2361,
+      "Yellow": 0.0642,
+      "Orange": 0.1913,
+      "Blue": 0.0106,
+      "Green": 0.0038,
+      "Red": 0.0017,
+      "Pink": 0.0013,
+      "Monochrome": 0.3222
+    }
   },
   {
     "id": "rx-63840bef9bfa",
@@ -3141,7 +4594,20 @@
     "date": "2026-08-30",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-63840bef9bfa-atlas-f7bb1bfb68.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 392,
+    "colorCoverage": {
+      "Brown": 0.6859,
+      "Red": 0.0156,
+      "Gray": 0.0461,
+      "Black": 0.0919,
+      "Yellow": 0.0182,
+      "Orange": 0.1414,
+      "Green": 0.0008,
+      "Monochrome": 0.138
+    }
   },
   {
     "id": "rx-fa10963c7531",
@@ -3170,7 +4636,20 @@
     "date": "2026-08-30",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-fa10963c7531-atlas-ee02e7f693.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 322,
+    "colorCoverage": {
+      "Yellow": 0.0896,
+      "Brown": 0.5902,
+      "Green": 0.0143,
+      "Orange": 0.1314,
+      "Gray": 0.0029,
+      "Black": 0.1614,
+      "Red": 0.0102,
+      "Monochrome": 0.1642
+    }
   },
   {
     "id": "rx-fd3ec5e46b76",
@@ -3199,7 +4678,19 @@
     "date": "2026-09-18",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-fd3ec5e46b76-atlas-8004df82a3.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.049,
+      "Gray": 0.0065,
+      "Brown": 0.6871,
+      "Red": 0.0022,
+      "Orange": 0.2322,
+      "Black": 0.023,
+      "Monochrome": 0.0295
+    }
   },
   {
     "id": "rx-24c750bc05d7",
@@ -3228,7 +4719,20 @@
     "date": "2026-09-15",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-24c750bc05d7-atlas-38590e607f.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.0078,
+      "Gray": 0.3216,
+      "Brown": 0.2396,
+      "Orange": 0.1367,
+      "Yellow": 0.0161,
+      "Black": 0.2713,
+      "Red": 0.0069,
+      "Monochrome": 0.5929
+    }
   },
   {
     "id": "rx-a145628d83dc",
@@ -3257,7 +4761,20 @@
     "date": "2026-02-17",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-a145628d83dc-atlas-238446a7e4.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.1836,
+      "Orange": 0.4792,
+      "Red": 0.2313,
+      "Black": 0.0959,
+      "Yellow": 0.0074,
+      "Green": 0.0013,
+      "Pink": 0.0013,
+      "Monochrome": 0.0959
+    }
   },
   {
     "id": "rx-e38f964998b0",
@@ -3284,7 +4801,22 @@
     "date": "2025-12-26",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-e38f964998b0-atlas-861351a0aa.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 248,
+    "colorCoverage": {
+      "Brown": 0.3154,
+      "Black": 0.1357,
+      "Orange": 0.1653,
+      "Red": 0.0078,
+      "Blue": 0.1776,
+      "Purple": 0.0008,
+      "Gray": 0.1764,
+      "Yellow": 0.0197,
+      "Green": 0.0012,
+      "Monochrome": 0.3121
+    }
   },
   {
     "id": "rx-9824155b48a4",
@@ -3313,7 +4845,22 @@
     "date": "2025-12-25",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-9824155b48a4-atlas-0fa4fdfef6.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.3746,
+      "Black": 0.0929,
+      "Red": 0.0625,
+      "Yellow": 0.082,
+      "Pink": 0.0039,
+      "Orange": 0.1914,
+      "Gray": 0.1727,
+      "Purple": 0.0126,
+      "Blue": 0.0074,
+      "Monochrome": 0.2656
+    }
   },
   {
     "id": "rx-042f4b4e1b96",
@@ -3340,7 +4887,20 @@
     "date": "2025-12-25",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-042f4b4e1b96-atlas-e9138c89ce.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.2956,
+      "Red": 0.2057,
+      "Brown": 0.0521,
+      "Orange": 0.0095,
+      "Gray": 0.3724,
+      "Blue": 0.0638,
+      "Pink": 0.0009,
+      "Monochrome": 0.668
+    }
   },
   {
     "id": "rx-e99c97127c54",
@@ -3369,7 +4929,23 @@
     "date": "2025-04-27",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-e99c97127c54-atlas-ff41ac542e.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.2891,
+      "Green": 0.2522,
+      "Blue": 0.1146,
+      "Brown": 0.0851,
+      "Yellow": 0.1211,
+      "Orange": 0.0616,
+      "Red": 0.046,
+      "Black": 0.0004,
+      "Pink": 0.026,
+      "Purple": 0.0039,
+      "Monochrome": 0.2895
+    }
   },
   {
     "id": "rx-eaf1351c6c93",
@@ -3398,7 +4974,21 @@
     "date": "2025-04-16",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-eaf1351c6c93-atlas-4c6958d89b.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.3064,
+      "Orange": 0.1133,
+      "Yellow": 0.2062,
+      "Red": 0.2088,
+      "Brown": 0.0825,
+      "Green": 0.0738,
+      "Pink": 0.0056,
+      "Black": 0.0035,
+      "Monochrome": 0.3099
+    }
   },
   {
     "id": "rx-6f662a899dc1",
@@ -3425,7 +5015,21 @@
     "date": "2025-04-27",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-6f662a899dc1-atlas-9fe451ca6b.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.1003,
+      "Gray": 0.3659,
+      "Green": 0.4327,
+      "Yellow": 0.01,
+      "Brown": 0.0347,
+      "Red": 0.0043,
+      "Black": 0.0516,
+      "Pink": 0.0004,
+      "Monochrome": 0.4175
+    }
   },
   {
     "id": "rx-19aa7b29b2e9",
@@ -3454,7 +5058,22 @@
     "date": "2025-04-27",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-19aa7b29b2e9-atlas-0a857acb83.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.3134,
+      "Brown": 0.0065,
+      "Blue": 0.1428,
+      "Green": 0.49,
+      "Yellow": 0.023,
+      "Red": 0.0087,
+      "Pink": 0.0013,
+      "Orange": 0.0074,
+      "Black": 0.0069,
+      "Monochrome": 0.3203
+    }
   },
   {
     "id": "rx-8cf472e474cc",
@@ -3483,7 +5102,23 @@
     "date": "2025-04-04",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-8cf472e474cc-atlas-8acec2d3c8.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Orange": 0.2702,
+      "Gray": 0.4681,
+      "Brown": 0.0938,
+      "Blue": 0.1348,
+      "Green": 0.0065,
+      "Pink": 0.0033,
+      "Red": 0.0039,
+      "Purple": 0.0016,
+      "Yellow": 0.0062,
+      "Black": 0.0117,
+      "Monochrome": 0.4798
+    }
   },
   {
     "id": "rx-648400b649c8",
@@ -3512,7 +5147,19 @@
     "date": "2025-03-03",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-648400b649c8-atlas-cc22bbd8a0.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Orange": 0.7552,
+      "Gray": 0.0786,
+      "Yellow": 0.0408,
+      "Brown": 0.1215,
+      "Green": 0.0013,
+      "Blue": 0.0026,
+      "Monochrome": 0.0786
+    }
   },
   {
     "id": "rx-e2939cd2177b",
@@ -3539,7 +5186,21 @@
     "date": "2025-01-28",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-e2939cd2177b-atlas-091de407a4.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 313,
+    "colorCoverage": {
+      "Black": 0.096,
+      "Gray": 0.3294,
+      "Blue": 0.3249,
+      "Green": 0.0003,
+      "Orange": 0.2161,
+      "Yellow": 0.028,
+      "Brown": 0.0039,
+      "Purple": 0.0013,
+      "Monochrome": 0.4255
+    }
   },
   {
     "id": "rx-bb2576903099",
@@ -3566,7 +5227,19 @@
     "date": "2025-01-26",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-bb2576903099-atlas-2e95ab4824.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Blue": 0.7383,
+      "Gray": 0.1169,
+      "Green": 0.0765,
+      "Black": 0.0677,
+      "Yellow": 0.0003,
+      "Brown": 0.0003,
+      "Monochrome": 0.1846
+    }
   },
   {
     "id": "rx-d2d53b05eefe",
@@ -3593,7 +5266,22 @@
     "date": "2025-01-08",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-d2d53b05eefe-atlas-a97b191840.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Brown": 0.1706,
+      "Green": 0.1035,
+      "Black": 0.1549,
+      "Gray": 0.2982,
+      "Yellow": 0.0602,
+      "Orange": 0.2044,
+      "Red": 0.0059,
+      "Blue": 0.0016,
+      "Purple": 0.0007,
+      "Monochrome": 0.4531
+    }
   },
   {
     "id": "rx-f3f5c6804afe",
@@ -3622,7 +5310,23 @@
     "date": "2024-12-24",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-f3f5c6804afe-atlas-bf8a6c8742.webp",
+    "atlasWidth": 365,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Red": 0.2548,
+      "Gray": 0.0717,
+      "Brown": 0.3039,
+      "Orange": 0.2219,
+      "Black": 0.0411,
+      "Yellow": 0.0788,
+      "Purple": 0.0086,
+      "Blue": 0.0124,
+      "Green": 0.0016,
+      "Pink": 0.0051,
+      "Monochrome": 0.1129
+    }
   },
   {
     "id": "rx-d45995c21b92",
@@ -3651,7 +5355,23 @@
     "date": "2024-12-24",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-d45995c21b92-atlas-84bebb9840.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.1918,
+      "Green": 0.1641,
+      "Gray": 0.0208,
+      "Blue": 0.0651,
+      "Yellow": 0.0299,
+      "Brown": 0.1246,
+      "Orange": 0.0482,
+      "Red": 0.1137,
+      "Purple": 0.1445,
+      "Pink": 0.0972,
+      "Monochrome": 0.2127
+    }
   },
   {
     "id": "rx-d1a84ac5ed2b",
@@ -3680,7 +5400,20 @@
     "date": "2024-11-06",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-d1a84ac5ed2b-atlas-2223ce1311.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Pink": 0.536,
+      "Black": 0.0985,
+      "Red": 0.2574,
+      "Brown": 0.0017,
+      "Orange": 0.0017,
+      "Yellow": 0.0004,
+      "Purple": 0.1042,
+      "Monochrome": 0.0985
+    }
   },
   {
     "id": "rx-6656bf830017",
@@ -3709,7 +5442,20 @@
     "date": "2024-11-06",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-6656bf830017-atlas-adfc9a6250.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Pink": 0.2743,
+      "Black": 0.326,
+      "Purple": 0.0082,
+      "Red": 0.352,
+      "Brown": 0.0091,
+      "Orange": 0.0282,
+      "Gray": 0.0022,
+      "Monochrome": 0.3281
+    }
   },
   {
     "id": "rx-c756367abb02",
@@ -3738,7 +5484,17 @@
     "date": "2024-10-18",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-c756367abb02-atlas-4db11a8181.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.6602,
+      "Brown": 0.197,
+      "Orange": 0.1411,
+      "Yellow": 0.0017,
+      "Monochrome": 0.6602
+    }
   },
   {
     "id": "rx-6c3eff428250",
@@ -3767,7 +5523,20 @@
     "date": "2024-10-16",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-6c3eff428250-atlas-3d87cbb25d.webp",
+    "atlasWidth": 353,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Orange": 0.1888,
+      "Yellow": 0.1968,
+      "Brown": 0.3497,
+      "Pink": 0.0007,
+      "Red": 0.012,
+      "Gray": 0.1589,
+      "Black": 0.0931,
+      "Monochrome": 0.252
+    }
   },
   {
     "id": "rx-f73afcb97eb0",
@@ -3796,7 +5565,19 @@
     "date": "2024-10-11",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-f73afcb97eb0-atlas-2b992c0bd0.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Orange": 0.3416,
+      "Brown": 0.3568,
+      "Gray": 0.2309,
+      "Black": 0.0612,
+      "Yellow": 0.0087,
+      "Red": 0.0009,
+      "Monochrome": 0.2921
+    }
   },
   {
     "id": "rx-1661bd50e880",
@@ -3821,7 +5602,16 @@
     "date": "2024-10-08",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-1661bd50e880-atlas-300836e27d.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 352,
+    "colorCoverage": {
+      "Black": 0.6432,
+      "Gray": 0.2882,
+      "Blue": 0.0686,
+      "Monochrome": 0.9314
+    }
   },
   {
     "id": "rx-000c71472a12",
@@ -3848,7 +5638,20 @@
     "date": "2024-10-08",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-000c71472a12-atlas-f20b123aab.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.3728,
+      "Yellow": 0.0109,
+      "Gray": 0.1905,
+      "Black": 0.3911,
+      "Green": 0.0069,
+      "Blue": 0.023,
+      "Orange": 0.0048,
+      "Monochrome": 0.5816
+    }
   },
   {
     "id": "rx-1d142969efb1",
@@ -3875,7 +5678,20 @@
     "date": "2024-08-16",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-1d142969efb1-atlas-cac0b746d7.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.3607,
+      "Gray": 0.4154,
+      "Black": 0.1628,
+      "Pink": 0.0273,
+      "Purple": 0.0043,
+      "Red": 0.0286,
+      "Brown": 0.0009,
+      "Monochrome": 0.5781
+    }
   },
   {
     "id": "rx-4b1139b05cdc",
@@ -3900,7 +5716,15 @@
     "date": "2024-10-02",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-4b1139b05cdc-atlas-c981f027aa.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.99,
+      "Black": 0.01,
+      "Monochrome": 1.0
+    }
   },
   {
     "id": "rx-051f43cbca2f",
@@ -3925,7 +5749,15 @@
     "date": "2024-10-02",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-051f43cbca2f-atlas-c1ba1e3e1d.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.6784,
+      "Black": 0.3216,
+      "Monochrome": 1.0
+    }
   },
   {
     "id": "rx-e420cbf1f142",
@@ -3954,7 +5786,22 @@
     "date": "2024-07-09",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-e420cbf1f142-atlas-b674b9bf83.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 322,
+    "colorCoverage": {
+      "Blue": 0.3393,
+      "Green": 0.214,
+      "Gray": 0.0737,
+      "Yellow": 0.0051,
+      "Black": 0.0775,
+      "Red": 0.0038,
+      "Pink": 0.0016,
+      "Brown": 0.0938,
+      "Orange": 0.1913,
+      "Monochrome": 0.1511
+    }
   },
   {
     "id": "rx-be325339c40c",
@@ -3983,7 +5830,21 @@
     "date": "2024-05-15",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-be325339c40c-atlas-c1432102a7.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Blue": 0.3737,
+      "Green": 0.0785,
+      "Yellow": 0.0732,
+      "Gray": 0.1152,
+      "Black": 0.2266,
+      "Brown": 0.068,
+      "Orange": 0.0625,
+      "Red": 0.0023,
+      "Monochrome": 0.3418
+    }
   },
   {
     "id": "rx-86f75b3dc9ff",
@@ -4010,7 +5871,23 @@
     "date": "2024-03-26",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-86f75b3dc9ff-atlas-89850c209b.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.1007,
+      "Black": 0.408,
+      "Orange": 0.0447,
+      "Yellow": 0.0243,
+      "Gray": 0.1562,
+      "Blue": 0.2235,
+      "Purple": 0.0052,
+      "Red": 0.0082,
+      "Pink": 0.0022,
+      "Green": 0.0269,
+      "Monochrome": 0.5642
+    }
   },
   {
     "id": "rx-4d5db3e5fd01",
@@ -4037,7 +5914,23 @@
     "date": "2024-01-14",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-4d5db3e5fd01-atlas-121f60619d.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Green": 0.138,
+      "Blue": 0.2884,
+      "Black": 0.3903,
+      "Red": 0.0299,
+      "Pink": 0.0244,
+      "Purple": 0.0407,
+      "Gray": 0.0254,
+      "Orange": 0.0068,
+      "Yellow": 0.0163,
+      "Brown": 0.0397,
+      "Monochrome": 0.4157
+    }
   },
   {
     "id": "rx-54e654077823",
@@ -4066,7 +5959,23 @@
     "date": "2024-01-14",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-54e654077823-atlas-40c6971d75.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.2357,
+      "Blue": 0.099,
+      "Green": 0.0152,
+      "Yellow": 0.0469,
+      "Brown": 0.1975,
+      "Gray": 0.0569,
+      "Orange": 0.0334,
+      "Red": 0.2543,
+      "Pink": 0.0469,
+      "Purple": 0.0143,
+      "Monochrome": 0.2925
+    }
   },
   {
     "id": "rx-3e4f129dca52",
@@ -4093,7 +6002,23 @@
     "date": "2024-01-14",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-3e4f129dca52-atlas-1952cd9afa.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.5391,
+      "Yellow": 0.0035,
+      "Orange": 0.0286,
+      "Brown": 0.059,
+      "Gray": 0.0256,
+      "Purple": 0.0833,
+      "Pink": 0.0829,
+      "Red": 0.0846,
+      "Black": 0.0907,
+      "Green": 0.0026,
+      "Monochrome": 0.1163
+    }
   },
   {
     "id": "rx-13a72b351a64",
@@ -4122,7 +6047,22 @@
     "date": "2024-01-14",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-13a72b351a64-atlas-de3d896dd4.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.1506,
+      "Purple": 0.0421,
+      "Pink": 0.408,
+      "Red": 0.2036,
+      "Orange": 0.1055,
+      "Gray": 0.0017,
+      "Brown": 0.0369,
+      "Black": 0.0477,
+      "Yellow": 0.0039,
+      "Monochrome": 0.0495
+    }
   },
   {
     "id": "rx-18750a05b505",
@@ -4149,7 +6089,23 @@
     "date": "2024-01-14",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-18750a05b505-atlas-d7a6c1f707.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.1107,
+      "Black": 0.5026,
+      "Purple": 0.0139,
+      "Pink": 0.0751,
+      "Red": 0.0885,
+      "Gray": 0.1315,
+      "Yellow": 0.0464,
+      "Green": 0.0239,
+      "Brown": 0.0069,
+      "Orange": 0.0004,
+      "Monochrome": 0.6341
+    }
   },
   {
     "id": "rx-dfbbb5d86f55",
@@ -4176,7 +6132,23 @@
     "date": "2024-01-14",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-dfbbb5d86f55-atlas-22f7ff15dc.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.2504,
+      "Blue": 0.6285,
+      "Purple": 0.026,
+      "Gray": 0.046,
+      "Pink": 0.0135,
+      "Red": 0.0156,
+      "Brown": 0.0091,
+      "Yellow": 0.0069,
+      "Orange": 0.0009,
+      "Green": 0.003,
+      "Monochrome": 0.2964
+    }
   },
   {
     "id": "rx-565894e9d2ef",
@@ -4203,7 +6175,23 @@
     "date": "2024-01-14",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-565894e9d2ef-atlas-3dcf13ab7d.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.2222,
+      "Blue": 0.5122,
+      "Gray": 0.0768,
+      "Pink": 0.0226,
+      "Purple": 0.0282,
+      "Brown": 0.0473,
+      "Red": 0.0577,
+      "Orange": 0.013,
+      "Green": 0.0069,
+      "Yellow": 0.013,
+      "Monochrome": 0.299
+    }
   },
   {
     "id": "rx-4f6337dd2da5",
@@ -4232,7 +6220,20 @@
     "date": "2024-01-04",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-4f6337dd2da5-atlas-55788cd65e.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Green": 0.4731,
+      "Blue": 0.1259,
+      "Yellow": 0.053,
+      "Black": 0.263,
+      "Gray": 0.0373,
+      "Brown": 0.0265,
+      "Orange": 0.0213,
+      "Monochrome": 0.3003
+    }
   },
   {
     "id": "rx-f64d65a83eed",
@@ -4259,7 +6260,23 @@
     "date": "2024-01-04",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-f64d65a83eed-atlas-3a84f2e6b6.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.4635,
+      "Pink": 0.0074,
+      "Brown": 0.3325,
+      "Red": 0.0786,
+      "Orange": 0.1115,
+      "Yellow": 0.0013,
+      "Purple": 0.0013,
+      "Blue": 0.0022,
+      "Gray": 0.0013,
+      "Green": 0.0004,
+      "Monochrome": 0.4648
+    }
   },
   {
     "id": "rx-e13204b7c0cb",
@@ -4288,7 +6305,19 @@
     "date": "2023-12-29",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-e13204b7c0cb-atlas-f0792e7c26.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Brown": 0.374,
+      "Black": 0.0765,
+      "Orange": 0.3691,
+      "Gray": 0.1064,
+      "Yellow": 0.0052,
+      "Blue": 0.0687,
+      "Monochrome": 0.1829
+    }
   },
   {
     "id": "rx-4696afb8a532",
@@ -4315,7 +6344,20 @@
     "date": "2023-12-29",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-4696afb8a532-atlas-68309abb4f.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.2682,
+      "Black": 0.6419,
+      "Yellow": 0.0256,
+      "Gray": 0.056,
+      "Green": 0.0004,
+      "Orange": 0.0017,
+      "Red": 0.0061,
+      "Monochrome": 0.6979
+    }
   },
   {
     "id": "rx-a45457619640",
@@ -4340,7 +6382,21 @@
     "date": "2023-12-29",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-a45457619640-atlas-eba3f83177.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.796,
+      "Blue": 0.0395,
+      "Yellow": 0.0716,
+      "Brown": 0.0122,
+      "Red": 0.0017,
+      "Black": 0.069,
+      "Green": 0.0009,
+      "Orange": 0.0091,
+      "Monochrome": 0.865
+    }
   },
   {
     "id": "rx-8e10d0bc9a71",
@@ -4369,7 +6425,21 @@
     "date": "2023-12-31",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-8e10d0bc9a71-atlas-eaf74591aa.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.3819,
+      "Gray": 0.0803,
+      "Red": 0.0725,
+      "Orange": 0.0551,
+      "Brown": 0.0421,
+      "Green": 0.3511,
+      "Yellow": 0.0095,
+      "Pink": 0.0074,
+      "Monochrome": 0.0803
+    }
   },
   {
     "id": "rx-ec8435bd91d3",
@@ -4396,7 +6466,20 @@
     "date": "2023-12-22",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-ec8435bd91d3-atlas-ad86d64fe0.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.4245,
+      "Orange": 0.1037,
+      "Gray": 0.1567,
+      "Black": 0.1267,
+      "Green": 0.0781,
+      "Yellow": 0.1098,
+      "Blue": 0.0004,
+      "Monochrome": 0.2834
+    }
   },
   {
     "id": "rx-f09616660910",
@@ -4425,7 +6508,20 @@
     "date": "2023-12-06",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-f09616660910-atlas-457288577c.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 373,
+    "colorCoverage": {
+      "Brown": 0.3646,
+      "Red": 0.0049,
+      "Black": 0.048,
+      "Orange": 0.5529,
+      "Gray": 0.0159,
+      "Yellow": 0.0121,
+      "Green": 0.0016,
+      "Monochrome": 0.0639
+    }
   },
   {
     "id": "rx-958dc844cbc9",
@@ -4454,7 +6550,23 @@
     "date": "2023-12-06",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-958dc844cbc9-atlas-eabcf38bc7.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 397,
+    "colorCoverage": {
+      "Yellow": 0.0437,
+      "Green": 0.326,
+      "Brown": 0.2367,
+      "Gray": 0.0779,
+      "Black": 0.0982,
+      "Orange": 0.1552,
+      "Red": 0.0396,
+      "Blue": 0.0128,
+      "Pink": 0.0036,
+      "Purple": 0.0063,
+      "Monochrome": 0.176
+    }
   },
   {
     "id": "rx-14c0583ba8de",
@@ -4483,7 +6595,23 @@
     "date": "2019-10-24",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-14c0583ba8de-atlas-3a199ac184.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.1163,
+      "Black": 0.1953,
+      "Gray": 0.0161,
+      "Purple": 0.0117,
+      "Brown": 0.2452,
+      "Green": 0.0009,
+      "Red": 0.2444,
+      "Pink": 0.0295,
+      "Orange": 0.1398,
+      "Yellow": 0.0009,
+      "Monochrome": 0.2114
+    }
   },
   {
     "id": "rx-23fb758ecf7b",
@@ -4510,7 +6638,20 @@
     "date": "2023-11-16",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-23fb758ecf7b-atlas-4998e93e99.webp",
+    "atlasWidth": 383,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.7304,
+      "Black": 0.0404,
+      "Gray": 0.1308,
+      "Green": 0.0025,
+      "Yellow": 0.0741,
+      "Orange": 0.0208,
+      "Red": 0.0009,
+      "Monochrome": 0.1713
+    }
   },
   {
     "id": "rx-910f19ccde49",
@@ -4539,7 +6680,21 @@
     "date": "2023-11-15",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-910f19ccde49-atlas-1fa6e976cb.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.4227,
+      "Green": 0.0161,
+      "Black": 0.0543,
+      "Yellow": 0.0265,
+      "Blue": 0.0343,
+      "Brown": 0.1359,
+      "Orange": 0.2509,
+      "Red": 0.0595,
+      "Monochrome": 0.477
+    }
   },
   {
     "id": "rx-94f25acc18ff",
@@ -4566,7 +6721,17 @@
     "date": "2023-11-09",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-94f25acc18ff-atlas-c152813a6a.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.9826,
+      "Gray": 0.0156,
+      "Purple": 0.0013,
+      "Pink": 0.0004,
+      "Monochrome": 0.0156
+    }
   },
   {
     "id": "rx-b3f7ffb247e5",
@@ -4595,7 +6760,21 @@
     "date": "2023-10-24",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-b3f7ffb247e5-atlas-2847b8517d.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.1641,
+      "Brown": 0.3451,
+      "Orange": 0.2322,
+      "Gray": 0.1641,
+      "Yellow": 0.0924,
+      "Red": 0.0004,
+      "Green": 0.0013,
+      "Blue": 0.0004,
+      "Monochrome": 0.3281
+    }
   },
   {
     "id": "rx-8381313185ed",
@@ -4624,7 +6803,19 @@
     "date": "2023-10-24",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-8381313185ed-atlas-c086772d10.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.5786,
+      "Orange": 0.2079,
+      "Gray": 0.0473,
+      "Yellow": 0.0043,
+      "Black": 0.0881,
+      "Red": 0.0738,
+      "Monochrome": 0.1354
+    }
   },
   {
     "id": "rx-4a276c6fdf08",
@@ -4653,7 +6844,22 @@
     "date": "2023-10-19",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-4a276c6fdf08-atlas-7dc3313fab.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.2812,
+      "Brown": 0.1762,
+      "Yellow": 0.2248,
+      "Orange": 0.1701,
+      "Green": 0.003,
+      "Red": 0.0095,
+      "Black": 0.1254,
+      "Blue": 0.0082,
+      "Pink": 0.0013,
+      "Monochrome": 0.4067
+    }
   },
   {
     "id": "rx-4f56fdfe6d3a",
@@ -4682,7 +6888,19 @@
     "date": "2023-10-16",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-4f56fdfe6d3a-atlas-409fa51236.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Brown": 0.3772,
+      "Yellow": 0.0074,
+      "Orange": 0.556,
+      "Gray": 0.0182,
+      "Green": 0.0022,
+      "Black": 0.0391,
+      "Monochrome": 0.0573
+    }
   },
   {
     "id": "rx-bc94f2347ece",
@@ -4711,7 +6929,22 @@
     "date": "2023-08-11",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-bc94f2347ece-atlas-bc8d02bcd0.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.3424,
+      "Blue": 0.1549,
+      "Brown": 0.0807,
+      "Orange": 0.2708,
+      "Yellow": 0.0152,
+      "Red": 0.1233,
+      "Pink": 0.0082,
+      "Purple": 0.0013,
+      "Black": 0.003,
+      "Monochrome": 0.3455
+    }
   },
   {
     "id": "rx-2c1c63188d5d",
@@ -4740,7 +6973,23 @@
     "date": "2023-07-07",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-2c1c63188d5d-atlas-39829a01d7.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.467,
+      "Gray": 0.0734,
+      "Yellow": 0.0786,
+      "Green": 0.1519,
+      "Brown": 0.0595,
+      "Orange": 0.0104,
+      "Black": 0.0833,
+      "Purple": 0.0165,
+      "Red": 0.0356,
+      "Pink": 0.0239,
+      "Monochrome": 0.1567
+    }
   },
   {
     "id": "rx-e10b19e200e3",
@@ -4767,7 +7016,21 @@
     "date": "2023-06-11",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-e10b19e200e3-atlas-40015ad0ef.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Orange": 0.0599,
+      "Red": 0.0425,
+      "Gray": 0.4379,
+      "Blue": 0.3646,
+      "Pink": 0.0056,
+      "Purple": 0.0052,
+      "Brown": 0.0608,
+      "Black": 0.0234,
+      "Monochrome": 0.4614
+    }
   },
   {
     "id": "rx-bda8f125e3a9",
@@ -4796,7 +7059,23 @@
     "date": "2023-06-14",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-bda8f125e3a9-atlas-91cd652479.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.5343,
+      "Gray": 0.0994,
+      "Orange": 0.0625,
+      "Yellow": 0.0464,
+      "Brown": 0.1918,
+      "Green": 0.0117,
+      "Black": 0.0365,
+      "Red": 0.0082,
+      "Pink": 0.0074,
+      "Purple": 0.0017,
+      "Monochrome": 0.1359
+    }
   },
   {
     "id": "rx-4609468252d9",
@@ -4825,7 +7104,22 @@
     "date": "2023-05-22",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-4609468252d9-atlas-89f6363616.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Orange": 0.2387,
+      "Brown": 0.2266,
+      "Gray": 0.4444,
+      "Red": 0.0061,
+      "Black": 0.0074,
+      "Blue": 0.0734,
+      "Purple": 0.0013,
+      "Yellow": 0.0017,
+      "Pink": 0.0004,
+      "Monochrome": 0.4518
+    }
   },
   {
     "id": "rx-be0d5e4baf80",
@@ -4852,7 +7146,21 @@
     "date": "2023-05-22",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-be0d5e4baf80-atlas-969bcfd9fa.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.5148,
+      "Yellow": 0.0373,
+      "Orange": 0.0768,
+      "Brown": 0.0651,
+      "Blue": 0.0286,
+      "Pink": 0.0048,
+      "Red": 0.263,
+      "Black": 0.0095,
+      "Monochrome": 0.5243
+    }
   },
   {
     "id": "rx-a91d38c3bc04",
@@ -4879,7 +7187,23 @@
     "date": "2023-05-18",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-a91d38c3bc04-atlas-f79a017f96.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Blue": 0.2087,
+      "Green": 0.0046,
+      "Gray": 0.1032,
+      "Purple": 0.1576,
+      "Red": 0.1406,
+      "Pink": 0.2214,
+      "Yellow": 0.0007,
+      "Orange": 0.013,
+      "Brown": 0.0254,
+      "Black": 0.125,
+      "Monochrome": 0.2282
+    }
   },
   {
     "id": "rx-c5ff3bf4ec78",
@@ -4908,7 +7232,22 @@
     "date": "2023-05-18",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-c5ff3bf4ec78-atlas-425b381457.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.3893,
+      "Gray": 0.2457,
+      "Red": 0.1298,
+      "Orange": 0.0174,
+      "Purple": 0.026,
+      "Black": 0.1458,
+      "Brown": 0.0269,
+      "Pink": 0.0174,
+      "Yellow": 0.0017,
+      "Monochrome": 0.3915
+    }
   },
   {
     "id": "rx-120534e2558b",
@@ -4935,7 +7274,21 @@
     "date": "2023-05-02",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-120534e2558b-atlas-4fd5d419e9.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Black": 0.1572,
+      "Brown": 0.3092,
+      "Yellow": 0.0257,
+      "Red": 0.221,
+      "Orange": 0.1745,
+      "Gray": 0.0413,
+      "Green": 0.0163,
+      "Blue": 0.0547,
+      "Monochrome": 0.1986
+    }
   },
   {
     "id": "rx-82debb5b8697",
@@ -4964,7 +7317,21 @@
     "date": "2023-02-10",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-82debb5b8697-atlas-8b68072770.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Red": 0.3958,
+      "Black": 0.0579,
+      "Pink": 0.0495,
+      "Orange": 0.2448,
+      "Gray": 0.0068,
+      "Purple": 0.001,
+      "Brown": 0.2428,
+      "Yellow": 0.0013,
+      "Monochrome": 0.0648
+    }
   },
   {
     "id": "rx-c6f5b8123bdc",
@@ -4993,7 +7360,21 @@
     "date": "2022-12-25",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-c6f5b8123bdc-atlas-c3e96a4085.webp",
+    "atlasWidth": 350,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.1592,
+      "Brown": 0.4215,
+      "Yellow": 0.0615,
+      "Orange": 0.1486,
+      "Gray": 0.1223,
+      "Green": 0.0708,
+      "Red": 0.0066,
+      "Blue": 0.0093,
+      "Monochrome": 0.2816
+    }
   },
   {
     "id": "rx-91a7896fedb7",
@@ -5020,7 +7401,21 @@
     "date": "2022-11-30",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-91a7896fedb7-atlas-fd73042409.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 239,
+    "colorCoverage": {
+      "Black": 0.4692,
+      "Blue": 0.1675,
+      "Gray": 0.0764,
+      "Brown": 0.2057,
+      "Yellow": 0.0139,
+      "Orange": 0.0495,
+      "Green": 0.0169,
+      "Red": 0.0009,
+      "Monochrome": 0.5456
+    }
   },
   {
     "id": "rx-67bbd5a8a8c7",
@@ -5049,7 +7444,22 @@
     "date": "2022-11-30",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-67bbd5a8a8c7-atlas-c40bf2c1e5.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Yellow": 0.0254,
+      "Orange": 0.4144,
+      "Brown": 0.4248,
+      "Gray": 0.0306,
+      "Red": 0.0195,
+      "Black": 0.0732,
+      "Blue": 0.0055,
+      "Green": 0.0062,
+      "Pink": 0.0003,
+      "Monochrome": 0.1038
+    }
   },
   {
     "id": "rx-94670c7059a7",
@@ -5078,7 +7488,21 @@
     "date": "2022-11-30",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-94670c7059a7-atlas-742e5ffa49.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.2778,
+      "Brown": 0.2179,
+      "Orange": 0.4327,
+      "Yellow": 0.0217,
+      "Green": 0.0048,
+      "Black": 0.033,
+      "Blue": 0.0109,
+      "Red": 0.0013,
+      "Monochrome": 0.3108
+    }
   },
   {
     "id": "rx-36e60832a4cd",
@@ -5105,7 +7529,23 @@
     "date": "2022-11-29",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-36e60832a4cd-atlas-4b3e7a8c7c.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.2791,
+      "Gray": 0.3164,
+      "Orange": 0.1055,
+      "Yellow": 0.003,
+      "Purple": 0.0104,
+      "Pink": 0.0122,
+      "Brown": 0.0629,
+      "Red": 0.0464,
+      "Black": 0.1619,
+      "Green": 0.0022,
+      "Monochrome": 0.4783
+    }
   },
   {
     "id": "rx-50fedca7fc4e",
@@ -5134,7 +7574,22 @@
     "date": "2022-11-19",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-50fedca7fc4e-atlas-8fd3870ab8.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Black": 0.2161,
+      "Brown": 0.3431,
+      "Red": 0.2917,
+      "Orange": 0.0417,
+      "Gray": 0.0052,
+      "Yellow": 0.0039,
+      "Pink": 0.0563,
+      "Purple": 0.0394,
+      "Blue": 0.0026,
+      "Monochrome": 0.2214
+    }
   },
   {
     "id": "rx-405cb0e57db7",
@@ -5161,7 +7616,22 @@
     "date": "2022-11-19",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-405cb0e57db7-atlas-b41edc0244.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 286,
+    "colorCoverage": {
+      "Black": 0.5728,
+      "Brown": 0.1442,
+      "Orange": 0.0827,
+      "Yellow": 0.0028,
+      "Red": 0.0806,
+      "Pink": 0.0408,
+      "Purple": 0.0511,
+      "Blue": 0.0245,
+      "Gray": 0.0004,
+      "Monochrome": 0.5732
+    }
   },
   {
     "id": "rx-4edb16603b1c",
@@ -5190,7 +7660,20 @@
     "date": "2022-10-31",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-4edb16603b1c-atlas-64efef3ecb.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 318,
+    "colorCoverage": {
+      "Red": 0.2839,
+      "Brown": 0.443,
+      "Black": 0.0762,
+      "Orange": 0.1865,
+      "Green": 0.001,
+      "Yellow": 0.0055,
+      "Gray": 0.0039,
+      "Monochrome": 0.0801
+    }
   },
   {
     "id": "rx-cbe8064dfcd5",
@@ -5217,7 +7700,21 @@
     "date": "2022-08-21",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-cbe8064dfcd5-atlas-68e6688e6f.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.4618,
+      "Gray": 0.0686,
+      "Blue": 0.0022,
+      "Brown": 0.316,
+      "Yellow": 0.0213,
+      "Red": 0.0503,
+      "Orange": 0.0516,
+      "Green": 0.0282,
+      "Monochrome": 0.5304
+    }
   },
   {
     "id": "rx-01f5b3fd4e0b",
@@ -5246,7 +7743,17 @@
     "date": "2022-08-21",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-01f5b3fd4e0b-atlas-90a72c6cfc.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 337,
+    "colorCoverage": {
+      "Orange": 0.557,
+      "Red": 0.0573,
+      "Brown": 0.3817,
+      "Gray": 0.004,
+      "Monochrome": 0.004
+    }
   },
   {
     "id": "rx-f522fdb5c43a",
@@ -5275,7 +7782,23 @@
     "date": "2022-08-17",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-f522fdb5c43a-atlas-569abffe08.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.4692,
+      "Gray": 0.0812,
+      "Green": 0.227,
+      "Black": 0.076,
+      "Red": 0.0443,
+      "Purple": 0.0039,
+      "Pink": 0.0039,
+      "Yellow": 0.0221,
+      "Brown": 0.0399,
+      "Orange": 0.0326,
+      "Monochrome": 0.1571
+    }
   },
   {
     "id": "rx-c99474976850",
@@ -5304,7 +7827,20 @@
     "date": "2022-08-17",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-c99474976850-atlas-262ccff946.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Blue": 0.5889,
+      "Gray": 0.0075,
+      "Green": 0.2581,
+      "Black": 0.0443,
+      "Yellow": 0.0094,
+      "Brown": 0.0107,
+      "Orange": 0.0811,
+      "Monochrome": 0.0518
+    }
   },
   {
     "id": "rx-160a0c0d6a8e",
@@ -5331,7 +7867,23 @@
     "date": "2022-08-17",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-160a0c0d6a8e-atlas-ab1f9a0d31.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Blue": 0.2826,
+      "Gray": 0.4587,
+      "Orange": 0.0283,
+      "Red": 0.0794,
+      "Yellow": 0.0176,
+      "Brown": 0.0391,
+      "Pink": 0.0046,
+      "Green": 0.0628,
+      "Black": 0.0267,
+      "Purple": 0.0003,
+      "Monochrome": 0.4854
+    }
   },
   {
     "id": "rx-d4ad3b696cf3",
@@ -5360,7 +7912,21 @@
     "date": "2022-08-17",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-d4ad3b696cf3-atlas-4b0339abc3.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Red": 0.0729,
+      "Orange": 0.2858,
+      "Brown": 0.2441,
+      "Gray": 0.0703,
+      "Yellow": 0.0107,
+      "Green": 0.1865,
+      "Black": 0.0322,
+      "Blue": 0.0973,
+      "Monochrome": 0.1025
+    }
   },
   {
     "id": "rx-6fe30b7c3b8b",
@@ -5387,7 +7953,19 @@
     "date": "2022-08-17",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-6fe30b7c3b8b-atlas-e1e5db7758.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 175,
+    "colorCoverage": {
+      "Gray": 0.353,
+      "Red": 0.1175,
+      "Orange": 0.0116,
+      "Blue": 0.4537,
+      "Yellow": 0.0035,
+      "Brown": 0.0608,
+      "Monochrome": 0.353
+    }
   },
   {
     "id": "rx-9ac5426e4515",
@@ -5412,7 +7990,19 @@
     "date": "2022-08-17",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-9ac5426e4515-atlas-116077cd03.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Black": 0.2497,
+      "Gray": 0.498,
+      "Yellow": 0.028,
+      "Green": 0.0013,
+      "Brown": 0.153,
+      "Orange": 0.07,
+      "Monochrome": 0.7477
+    }
   },
   {
     "id": "rx-2dd4462678bb",
@@ -5439,7 +8029,22 @@
     "date": "2022-08-16",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-2dd4462678bb-atlas-510ef0ceb6.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.6072,
+      "Gray": 0.1263,
+      "Black": 0.0312,
+      "Pink": 0.0004,
+      "Red": 0.0165,
+      "Green": 0.0894,
+      "Brown": 0.066,
+      "Orange": 0.0564,
+      "Yellow": 0.0065,
+      "Monochrome": 0.1576
+    }
   },
   {
     "id": "rx-c9530d019f5b",
@@ -5468,7 +8073,19 @@
     "date": "2022-06-27",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-c9530d019f5b-atlas-89b513cb2e.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.4579,
+      "Orange": 0.3641,
+      "Yellow": 0.0217,
+      "Brown": 0.1549,
+      "Red": 0.0004,
+      "Black": 0.0009,
+      "Monochrome": 0.4588
+    }
   },
   {
     "id": "rx-046c4a392523",
@@ -5497,7 +8114,23 @@
     "date": "2022-06-24",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-046c4a392523-atlas-1286814542.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Pink": 0.0577,
+      "Black": 0.0386,
+      "Blue": 0.2339,
+      "Gray": 0.1523,
+      "Red": 0.171,
+      "Brown": 0.0299,
+      "Orange": 0.2556,
+      "Purple": 0.0564,
+      "Yellow": 0.0022,
+      "Green": 0.0022,
+      "Monochrome": 0.191
+    }
   },
   {
     "id": "rx-2cd2e2488138",
@@ -5526,7 +8159,21 @@
     "date": "2022-01-08",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-2cd2e2488138-atlas-cfb06cac01.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Orange": 0.3845,
+      "Brown": 0.1814,
+      "Yellow": 0.0391,
+      "Gray": 0.1567,
+      "Green": 0.0091,
+      "Red": 0.0074,
+      "Blue": 0.2179,
+      "Black": 0.0039,
+      "Monochrome": 0.1606
+    }
   },
   {
     "id": "rx-5b3dedbb8d18",
@@ -5555,7 +8202,20 @@
     "date": "2022-02-07",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-5b3dedbb8d18-atlas-021cce34fb.webp",
+    "atlasWidth": 270,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.5404,
+      "Gray": 0.0503,
+      "Yellow": 0.1181,
+      "Green": 0.053,
+      "Brown": 0.1866,
+      "Orange": 0.0308,
+      "Black": 0.0208,
+      "Monochrome": 0.0712
+    }
   },
   {
     "id": "rx-a12e381007c8",
@@ -5582,7 +8242,21 @@
     "date": "2022-02-07",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-a12e381007c8-atlas-7ce803b3ff.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 203,
+    "colorCoverage": {
+      "Blue": 0.5902,
+      "Purple": 0.0262,
+      "Gray": 0.2354,
+      "Orange": 0.0343,
+      "Yellow": 0.005,
+      "Brown": 0.0116,
+      "Green": 0.001,
+      "Black": 0.0963,
+      "Monochrome": 0.3317
+    }
   },
   {
     "id": "rx-c3b0d48b4472",
@@ -5609,7 +8283,22 @@
     "date": "2019-01-27",
     "datePrecision": "day",
     "dateSource": "Instagram Story archive",
-    "dateKind": "shared"
+    "dateKind": "shared",
+    "atlasSrc": "/photography/rx-c3b0d48b4472-atlas-f063a82b45.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 231,
+    "colorCoverage": {
+      "Blue": 0.3812,
+      "Black": 0.3063,
+      "Purple": 0.0674,
+      "Pink": 0.0554,
+      "Gray": 0.0116,
+      "Red": 0.0911,
+      "Brown": 0.0223,
+      "Orange": 0.0513,
+      "Yellow": 0.0134,
+      "Monochrome": 0.3179
+    }
   },
   {
     "id": "rx-541c9bc10121",
@@ -5642,7 +8331,22 @@
     "dateKind": "shared",
     "sourceNote": "AI info on the original Instagram post.",
     "sharedTime": "22:46",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-541c9bc10121-atlas-9754143f5a.webp",
+    "atlasWidth": 360,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.1038,
+      "Purple": 0.0615,
+      "Red": 0.2311,
+      "Pink": 0.0358,
+      "Gray": 0.1387,
+      "Orange": 0.2952,
+      "Yellow": 0.0013,
+      "Black": 0.0498,
+      "Brown": 0.0827,
+      "Monochrome": 0.1885
+    }
   },
   {
     "id": "rx-06de766fd7e7",
@@ -5675,7 +8379,21 @@
     "dateKind": "shared",
     "sourceNote": "AI info on the original Instagram post.",
     "sharedTime": "22:46",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-06de766fd7e7-atlas-f5a9fa579a.webp",
+    "atlasWidth": 360,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Purple": 0.1465,
+      "Blue": 0.1426,
+      "Pink": 0.1794,
+      "Red": 0.3636,
+      "Orange": 0.1058,
+      "Black": 0.0352,
+      "Gray": 0.0016,
+      "Brown": 0.0254,
+      "Monochrome": 0.0368
+    }
   },
   {
     "id": "rx-a840b09fc499",
@@ -5707,7 +8425,20 @@
     "dateKind": "shared",
     "sourceNote": "AI info on the original Instagram post.",
     "sharedTime": "22:46",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-a840b09fc499-atlas-1bfd8b7478.webp",
+    "atlasWidth": 360,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.7191,
+      "Purple": 0.0267,
+      "Pink": 0.013,
+      "Gray": 0.1917,
+      "Red": 0.0371,
+      "Black": 0.012,
+      "Brown": 0.0003,
+      "Monochrome": 0.2038
+    }
   },
   {
     "id": "rx-b8a077fc14cc",
@@ -5740,7 +8471,22 @@
     "dateKind": "shared",
     "sourceNote": "AI info on the original Instagram post.",
     "sharedTime": "22:46",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-b8a077fc14cc-atlas-6694d84857.webp",
+    "atlasWidth": 360,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.0068,
+      "Gray": 0.0794,
+      "Red": 0.2041,
+      "Orange": 0.2835,
+      "Yellow": 0.0143,
+      "Brown": 0.3307,
+      "Black": 0.0596,
+      "Pink": 0.0202,
+      "Purple": 0.0013,
+      "Monochrome": 0.139
+    }
   },
   {
     "id": "rx-850d54e25919",
@@ -5773,7 +8519,23 @@
     "dateKind": "shared",
     "sourceNote": "AI info on the original Instagram post.",
     "sharedTime": "09:50",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-850d54e25919-atlas-69ef7ec72a.webp",
+    "atlasWidth": 360,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.1416,
+      "Blue": 0.0365,
+      "Brown": 0.3971,
+      "Red": 0.0186,
+      "Pink": 0.0013,
+      "Orange": 0.346,
+      "Yellow": 0.0459,
+      "Green": 0.0101,
+      "Black": 0.0026,
+      "Purple": 0.0003,
+      "Monochrome": 0.1442
+    }
   },
   {
     "id": "rx-61afd41cdbc6",
@@ -5806,7 +8568,22 @@
     "dateKind": "shared",
     "sourceNote": "AI info on the original Instagram post.",
     "sharedTime": "09:50",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-61afd41cdbc6-atlas-363a38e273.webp",
+    "atlasWidth": 360,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Orange": 0.2666,
+      "Yellow": 0.0924,
+      "Brown": 0.6077,
+      "Black": 0.0072,
+      "Green": 0.0029,
+      "Red": 0.0133,
+      "Pink": 0.0003,
+      "Purple": 0.0003,
+      "Gray": 0.0091,
+      "Monochrome": 0.0163
+    }
   },
   {
     "id": "rx-32e3b6252674",
@@ -5839,7 +8616,23 @@
     "dateKind": "shared",
     "sourceNote": "AI info on the original Instagram post.",
     "sharedTime": "09:50",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-32e3b6252674-atlas-bb8c3880b0.webp",
+    "atlasWidth": 360,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Yellow": 0.1969,
+      "Gray": 0.1283,
+      "Brown": 0.1335,
+      "Orange": 0.2363,
+      "Red": 0.1055,
+      "Green": 0.0488,
+      "Blue": 0.0156,
+      "Black": 0.0765,
+      "Pink": 0.0378,
+      "Purple": 0.0208,
+      "Monochrome": 0.2048
+    }
   },
   {
     "id": "rx-a54b54f5229c",
@@ -5872,7 +8665,22 @@
     "dateKind": "shared",
     "sourceNote": "AI info on the original Instagram post.",
     "sharedTime": "09:50",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-a54b54f5229c-atlas-3ecb9f19c0.webp",
+    "atlasWidth": 360,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.3073,
+      "Brown": 0.3607,
+      "Green": 0.0013,
+      "Red": 0.1729,
+      "Yellow": 0.0094,
+      "Pink": 0.0065,
+      "Blue": 0.0218,
+      "Black": 0.0355,
+      "Orange": 0.0846,
+      "Monochrome": 0.3428
+    }
   },
   {
     "id": "rx-45679f11af06",
@@ -5902,7 +8710,20 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "00:12",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-45679f11af06-atlas-f6114eae8a.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 236,
+    "colorCoverage": {
+      "Gray": 0.2843,
+      "Blue": 0.6988,
+      "Yellow": 0.0004,
+      "Brown": 0.0022,
+      "Black": 0.0022,
+      "Red": 0.0113,
+      "Orange": 0.0009,
+      "Monochrome": 0.2865
+    }
   },
   {
     "id": "rx-4e85f8f34765",
@@ -5932,7 +8753,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "00:12",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-4e85f8f34765-atlas-52bfc70907.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 236,
+    "colorCoverage": {
+      "Blue": 0.6775,
+      "Gray": 0.2526,
+      "Orange": 0.0109,
+      "Red": 0.0035,
+      "Black": 0.0382,
+      "Brown": 0.0165,
+      "Yellow": 0.0004,
+      "Green": 0.0004,
+      "Monochrome": 0.2908
+    }
   },
   {
     "id": "rx-36b86f913383",
@@ -5964,7 +8799,20 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "00:12",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-36b86f913383-atlas-8271899699.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 236,
+    "colorCoverage": {
+      "Blue": 0.5686,
+      "Gray": 0.2604,
+      "Green": 0.1571,
+      "Black": 0.0039,
+      "Yellow": 0.0009,
+      "Brown": 0.0043,
+      "Orange": 0.0048,
+      "Monochrome": 0.2643
+    }
   },
   {
     "id": "rx-8811f3fcbdd1",
@@ -5994,7 +8842,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "02:56",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-8811f3fcbdd1-atlas-70a93a8462.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.4966,
+      "Green": 0.0772,
+      "Black": 0.197,
+      "Blue": 0.0763,
+      "Yellow": 0.0037,
+      "Brown": 0.0744,
+      "Orange": 0.0662,
+      "Red": 0.0086,
+      "Monochrome": 0.6936
+    }
   },
   {
     "id": "rx-3a84f6f8ea8f",
@@ -6026,7 +8888,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "11:58",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-3a84f6f8ea8f-atlas-59442458e2.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 420,
+    "colorCoverage": {
+      "Brown": 0.2524,
+      "Black": 0.1355,
+      "Gray": 0.3411,
+      "Pink": 0.0237,
+      "Red": 0.0918,
+      "Orange": 0.1343,
+      "Blue": 0.0056,
+      "Purple": 0.0137,
+      "Yellow": 0.002,
+      "Monochrome": 0.4766
+    }
   },
   {
     "id": "rx-784a5c75b047",
@@ -6058,7 +8935,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "16:11",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-784a5c75b047-atlas-140854b896.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 318,
+    "colorCoverage": {
+      "Blue": 0.2005,
+      "Green": 0.5999,
+      "Yellow": 0.0576,
+      "Orange": 0.0059,
+      "Red": 0.0859,
+      "Brown": 0.0088,
+      "Gray": 0.0072,
+      "Pink": 0.0264,
+      "Purple": 0.0049,
+      "Black": 0.0029,
+      "Monochrome": 0.0101
+    }
   },
   {
     "id": "rx-4d76bcae8184",
@@ -6088,7 +8981,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "19:14",
-    "timeOfDay": "Evening"
+    "timeOfDay": "Evening",
+    "atlasSrc": "/photography/rx-4d76bcae8184-atlas-7d074dfaf4.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.4948,
+      "Blue": 0.0888,
+      "Green": 0.235,
+      "Black": 0.0867,
+      "Yellow": 0.0245,
+      "Red": 0.0153,
+      "Brown": 0.0358,
+      "Purple": 0.0031,
+      "Pink": 0.0031,
+      "Orange": 0.0129,
+      "Monochrome": 0.5815
+    }
   },
   {
     "id": "rx-e2e4f491831b",
@@ -6118,7 +9027,19 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "23:57",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-e2e4f491831b-atlas-bd243f7bbe.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Brown": 0.7949,
+      "Orange": 0.068,
+      "Black": 0.0811,
+      "Red": 0.029,
+      "Gray": 0.026,
+      "Yellow": 0.001,
+      "Monochrome": 0.1071
+    }
   },
   {
     "id": "rx-a8dd5062e64e",
@@ -6148,7 +9069,20 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "23:57",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-a8dd5062e64e-atlas-8d9758f840.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 316,
+    "colorCoverage": {
+      "Brown": 0.666,
+      "Gray": 0.1709,
+      "Blue": 0.0127,
+      "Yellow": 0.0036,
+      "Orange": 0.0586,
+      "Black": 0.0872,
+      "Red": 0.001,
+      "Monochrome": 0.2581
+    }
   },
   {
     "id": "rx-fb01310542d8",
@@ -6180,7 +9114,20 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "23:57",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-fb01310542d8-atlas-764b590d10.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Blue": 0.028,
+      "Gray": 0.3298,
+      "Orange": 0.1468,
+      "Brown": 0.4714,
+      "Yellow": 0.0078,
+      "Black": 0.0133,
+      "Red": 0.0029,
+      "Monochrome": 0.3431
+    }
   },
   {
     "id": "rx-248fa6fa6f26",
@@ -6212,7 +9159,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "23:57",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-248fa6fa6f26-atlas-f1b4bdbc32.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Gray": 0.5905,
+      "Orange": 0.1396,
+      "Brown": 0.1247,
+      "Blue": 0.0381,
+      "Green": 0.0977,
+      "Yellow": 0.0049,
+      "Black": 0.0036,
+      "Red": 0.001,
+      "Monochrome": 0.5941
+    }
   },
   {
     "id": "rx-4a42c929075c",
@@ -6244,7 +9205,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "20:03",
-    "timeOfDay": "Evening"
+    "timeOfDay": "Evening",
+    "atlasSrc": "/photography/rx-4a42c929075c-atlas-2c31e0e8a9.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.4265,
+      "Purple": 0.0214,
+      "Pink": 0.0885,
+      "Red": 0.1474,
+      "Gray": 0.0738,
+      "Black": 0.2331,
+      "Orange": 0.0055,
+      "Brown": 0.0037,
+      "Monochrome": 0.307
+    }
   },
   {
     "id": "rx-78c12ed5d4d3",
@@ -6274,7 +9249,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "20:03",
-    "timeOfDay": "Evening"
+    "timeOfDay": "Evening",
+    "atlasSrc": "/photography/rx-78c12ed5d4d3-atlas-5f30ef7441.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.5291,
+      "Gray": 0.0591,
+      "Pink": 0.0619,
+      "Brown": 0.0218,
+      "Red": 0.1048,
+      "Purple": 0.0178,
+      "Black": 0.1094,
+      "Orange": 0.0067,
+      "Green": 0.0864,
+      "Yellow": 0.0031,
+      "Monochrome": 0.1685
+    }
   },
   {
     "id": "rx-007433ce100b",
@@ -6304,7 +9295,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "02:10",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-007433ce100b-atlas-a023a53d36.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.5407,
+      "Blue": 0.3487,
+      "Gray": 0.0362,
+      "Pink": 0.0003,
+      "Red": 0.011,
+      "Brown": 0.008,
+      "Orange": 0.0368,
+      "Yellow": 0.0184,
+      "Monochrome": 0.5769
+    }
   },
   {
     "id": "rx-4f7e6b9d0e97",
@@ -6336,7 +9341,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "03:03",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-4f7e6b9d0e97-atlas-b119b4fc7e.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Black": 0.3232,
+      "Brown": 0.31,
+      "Green": 0.0947,
+      "Yellow": 0.0334,
+      "Orange": 0.1847,
+      "Gray": 0.0411,
+      "Red": 0.0049,
+      "Blue": 0.0074,
+      "Purple": 0.0006,
+      "Monochrome": 0.3643
+    }
   },
   {
     "id": "rx-a7d3a035b30f",
@@ -6368,7 +9388,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "23:48",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-a7d3a035b30f-atlas-14bc132770.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Blue": 0.4403,
+      "Green": 0.0968,
+      "Black": 0.1955,
+      "Gray": 0.0637,
+      "Purple": 0.0086,
+      "Pink": 0.0095,
+      "Red": 0.1219,
+      "Orange": 0.042,
+      "Brown": 0.0214,
+      "Yellow": 0.0003,
+      "Monochrome": 0.2592
+    }
   },
   {
     "id": "rx-2373873af40a",
@@ -6398,7 +9434,16 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "12:08",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-2373873af40a-atlas-07d8696f6c.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 318,
+    "colorCoverage": {
+      "Blue": 0.9821,
+      "Gray": 0.0068,
+      "Black": 0.0111,
+      "Monochrome": 0.0179
+    }
   },
   {
     "id": "rx-c8c733552181",
@@ -6430,7 +9475,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "18:23",
-    "timeOfDay": "Evening"
+    "timeOfDay": "Evening",
+    "atlasSrc": "/photography/rx-c8c733552181-atlas-8e6c4813ea.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 398,
+    "colorCoverage": {
+      "Black": 0.0879,
+      "Brown": 0.3291,
+      "Orange": 0.3074,
+      "Gray": 0.0348,
+      "Red": 0.1235,
+      "Yellow": 0.0553,
+      "Green": 0.0287,
+      "Blue": 0.0333,
+      "Monochrome": 0.1227
+    }
   },
   {
     "id": "rx-5149a76139e8",
@@ -6462,7 +9521,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "18:23",
-    "timeOfDay": "Evening"
+    "timeOfDay": "Evening",
+    "atlasSrc": "/photography/rx-5149a76139e8-atlas-6ae8cf09cd.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 398,
+    "colorCoverage": {
+      "Blue": 0.2188,
+      "Gray": 0.1288,
+      "Yellow": 0.0671,
+      "Brown": 0.2024,
+      "Green": 0.0172,
+      "Red": 0.218,
+      "Orange": 0.1347,
+      "Black": 0.0085,
+      "Purple": 0.0008,
+      "Pink": 0.0038,
+      "Monochrome": 0.1373
+    }
   },
   {
     "id": "rx-ce5b11e26cd1",
@@ -6494,7 +9569,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "18:23",
-    "timeOfDay": "Evening"
+    "timeOfDay": "Evening",
+    "atlasSrc": "/photography/rx-ce5b11e26cd1-atlas-a66f866ebe.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 398,
+    "colorCoverage": {
+      "Gray": 0.084,
+      "Orange": 0.2702,
+      "Yellow": 0.1163,
+      "Green": 0.0133,
+      "Red": 0.1683,
+      "Brown": 0.1603,
+      "Blue": 0.0791,
+      "Pink": 0.0482,
+      "Purple": 0.0394,
+      "Black": 0.0207,
+      "Monochrome": 0.1048
+    }
   },
   {
     "id": "rx-b51f052f8fe7",
@@ -6524,7 +9615,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "11:30",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-b51f052f8fe7-atlas-20c09948d7.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Blue": 0.2806,
+      "Green": 0.0465,
+      "Black": 0.4525,
+      "Gray": 0.0391,
+      "Yellow": 0.0166,
+      "Brown": 0.0215,
+      "Orange": 0.0036,
+      "Pink": 0.055,
+      "Red": 0.0833,
+      "Purple": 0.0013,
+      "Monochrome": 0.4915
+    }
   },
   {
     "id": "rx-c8b96ad08fde",
@@ -6556,7 +9663,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "11:30",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-c8b96ad08fde-atlas-0bfc9c9932.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Pink": 0.3001,
+      "Red": 0.2728,
+      "Orange": 0.0075,
+      "Gray": 0.2113,
+      "Brown": 0.0273,
+      "Blue": 0.0114,
+      "Black": 0.1481,
+      "Green": 0.0143,
+      "Yellow": 0.002,
+      "Purple": 0.0052,
+      "Monochrome": 0.3594
+    }
   },
   {
     "id": "rx-022e0967b397",
@@ -6588,7 +9711,19 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "02:48",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-022e0967b397-atlas-da56523c88.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Purple": 0.3229,
+      "Pink": 0.1439,
+      "Red": 0.0381,
+      "Blue": 0.389,
+      "Black": 0.0882,
+      "Gray": 0.0179,
+      "Monochrome": 0.1061
+    }
   },
   {
     "id": "rx-2be4ba285eab",
@@ -6618,7 +9753,20 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "02:48",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-2be4ba285eab-atlas-7736c06794.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Blue": 0.5417,
+      "Black": 0.4333,
+      "Red": 0.0107,
+      "Brown": 0.0046,
+      "Gray": 0.0088,
+      "Purple": 0.0007,
+      "Pink": 0.0003,
+      "Monochrome": 0.4421
+    }
   },
   {
     "id": "rx-1bb0e9384ae1",
@@ -6648,7 +9796,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "15:43",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-1bb0e9384ae1-atlas-e0df61b29b.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 280,
+    "colorCoverage": {
+      "Gray": 0.6602,
+      "Blue": 0.1937,
+      "Black": 0.0065,
+      "Red": 0.0015,
+      "Brown": 0.0727,
+      "Green": 0.0098,
+      "Orange": 0.0363,
+      "Yellow": 0.0193,
+      "Monochrome": 0.6668
+    }
   },
   {
     "id": "rx-5abc5baeb257",
@@ -6680,7 +9842,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "15:43",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-5abc5baeb257-atlas-5eb356ba59.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 280,
+    "colorCoverage": {
+      "Brown": 0.1748,
+      "Orange": 0.1301,
+      "Gray": 0.524,
+      "Yellow": 0.0171,
+      "Black": 0.0294,
+      "Red": 0.0076,
+      "Blue": 0.0854,
+      "Green": 0.0312,
+      "Purple": 0.0004,
+      "Monochrome": 0.5534
+    }
   },
   {
     "id": "rx-70d91397aebe",
@@ -6710,7 +9887,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "15:43",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-70d91397aebe-atlas-f1514f573b.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 336,
+    "colorCoverage": {
+      "Brown": 0.1069,
+      "Gray": 0.5873,
+      "Orange": 0.0974,
+      "Yellow": 0.0202,
+      "Green": 0.0404,
+      "Blue": 0.1005,
+      "Black": 0.0319,
+      "Red": 0.0153,
+      "Monochrome": 0.6192
+    }
   },
   {
     "id": "rx-db0c5ceba3d4",
@@ -6738,7 +9929,15 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "13:04",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-db0c5ceba3d4-atlas-b506d3ff01.webp",
+    "atlasWidth": 384,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.78,
+      "Black": 0.22,
+      "Monochrome": 1.0
+    }
   },
   {
     "id": "rx-88fef97dddb0",
@@ -6766,7 +9965,15 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "13:04",
-    "timeOfDay": "Afternoon"
+    "timeOfDay": "Afternoon",
+    "atlasSrc": "/photography/rx-88fef97dddb0-atlas-bf1993e638.webp",
+    "atlasWidth": 383,
+    "atlasHeight": 480,
+    "colorCoverage": {
+      "Gray": 0.8747,
+      "Black": 0.1253,
+      "Monochrome": 1.0
+    }
   },
   {
     "id": "rx-bae9eebe4abd",
@@ -6796,7 +10003,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "00:11",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-bae9eebe4abd-atlas-0b4a9c47dc.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 314,
+    "colorCoverage": {
+      "Gray": 0.4173,
+      "Blue": 0.0426,
+      "Brown": 0.0921,
+      "Red": 0.2214,
+      "Orange": 0.1113,
+      "Black": 0.0703,
+      "Yellow": 0.0374,
+      "Green": 0.0029,
+      "Pink": 0.0046,
+      "Monochrome": 0.4876
+    }
   },
   {
     "id": "rx-0bd5eab9ba48",
@@ -6828,7 +10050,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "00:11",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-0bd5eab9ba48-atlas-848566c76e.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Green": 0.0439,
+      "Gray": 0.2533,
+      "Yellow": 0.1481,
+      "Brown": 0.0508,
+      "Black": 0.0557,
+      "Orange": 0.1201,
+      "Red": 0.1992,
+      "Blue": 0.1123,
+      "Pink": 0.012,
+      "Purple": 0.0046,
+      "Monochrome": 0.3089
+    }
   },
   {
     "id": "rx-e3436a9a84ce",
@@ -6858,7 +10096,22 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "21:21",
-    "timeOfDay": "Evening"
+    "timeOfDay": "Evening",
+    "atlasSrc": "/photography/rx-e3436a9a84ce-atlas-2de4f1f348.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 315,
+    "colorCoverage": {
+      "Brown": 0.0869,
+      "Black": 0.7646,
+      "Gray": 0.0225,
+      "Yellow": 0.0068,
+      "Blue": 0.1136,
+      "Purple": 0.0026,
+      "Orange": 0.002,
+      "Green": 0.0007,
+      "Pink": 0.0003,
+      "Monochrome": 0.7871
+    }
   },
   {
     "id": "rx-733bfb392c95",
@@ -6890,7 +10143,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "10:09",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-733bfb392c95-atlas-5bddaa22a6.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 314,
+    "colorCoverage": {
+      "Blue": 0.1074,
+      "Black": 0.1527,
+      "Green": 0.221,
+      "Yellow": 0.0716,
+      "Gray": 0.3024,
+      "Brown": 0.0719,
+      "Orange": 0.0723,
+      "Red": 0.0007,
+      "Monochrome": 0.4551
+    }
   },
   {
     "id": "rx-f9602009eafa",
@@ -6922,7 +10189,23 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "10:09",
-    "timeOfDay": "Morning"
+    "timeOfDay": "Morning",
+    "atlasSrc": "/photography/rx-f9602009eafa-atlas-b22c183da4.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 314,
+    "colorCoverage": {
+      "Green": 0.2067,
+      "Blue": 0.1543,
+      "Yellow": 0.0179,
+      "Gray": 0.5107,
+      "Black": 0.0521,
+      "Brown": 0.015,
+      "Orange": 0.0374,
+      "Red": 0.0036,
+      "Pink": 0.0013,
+      "Purple": 0.001,
+      "Monochrome": 0.5628
+    }
   },
   {
     "id": "rx-384cf1d7c05e",
@@ -6952,7 +10235,18 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "01:40",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-384cf1d7c05e-atlas-108053da3f.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 420,
+    "colorCoverage": {
+      "Red": 0.0415,
+      "Brown": 0.1184,
+      "Orange": 0.5251,
+      "Gray": 0.302,
+      "Yellow": 0.0129,
+      "Monochrome": 0.302
+    }
   },
   {
     "id": "rx-d1f0b8638080",
@@ -6984,7 +10278,19 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "01:40",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-d1f0b8638080-atlas-5a06cc9ee1.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 420,
+    "colorCoverage": {
+      "Brown": 0.2798,
+      "Black": 0.0181,
+      "Red": 0.0588,
+      "Orange": 0.5281,
+      "Gray": 0.0964,
+      "Yellow": 0.0188,
+      "Monochrome": 0.1145
+    }
   },
   {
     "id": "rx-db1d0ad05b4a",
@@ -7016,7 +10322,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "01:40",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-db1d0ad05b4a-atlas-9f9eaa2e7a.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 420,
+    "colorCoverage": {
+      "Gray": 0.4126,
+      "Green": 0.0005,
+      "Blue": 0.2476,
+      "Yellow": 0.0154,
+      "Brown": 0.1899,
+      "Orange": 0.0286,
+      "Black": 0.1052,
+      "Red": 0.0002,
+      "Monochrome": 0.5178
+    }
   },
   {
     "id": "rx-2752aab01358",
@@ -7046,7 +10366,21 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "01:40",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-2752aab01358-atlas-a4779565b9.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 420,
+    "colorCoverage": {
+      "Blue": 0.5303,
+      "Gray": 0.239,
+      "Orange": 0.1038,
+      "Yellow": 0.0332,
+      "Brown": 0.0789,
+      "Red": 0.0012,
+      "Black": 0.0117,
+      "Green": 0.002,
+      "Monochrome": 0.2507
+    }
   },
   {
     "id": "rx-758b44648021",
@@ -7076,6 +10410,20 @@
     "dateSource": "Instagram post",
     "dateKind": "shared",
     "sharedTime": "04:19",
-    "timeOfDay": "Night"
+    "timeOfDay": "Night",
+    "atlasSrc": "/photography/rx-758b44648021-atlas-e99754870b.webp",
+    "atlasWidth": 420,
+    "atlasHeight": 420,
+    "colorCoverage": {
+      "Black": 0.593,
+      "Brown": 0.2639,
+      "Red": 0.0107,
+      "Gray": 0.1018,
+      "Orange": 0.0234,
+      "Blue": 0.0039,
+      "Yellow": 0.0029,
+      "Green": 0.0002,
+      "Monochrome": 0.6948
+    }
   }
 ]
