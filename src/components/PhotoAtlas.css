@@ -1,9 +1,8 @@
-.photo-atlas { --atlas-ground:#142334;--atlas-ink:#e4eaf0;--atlas-muted:#9caebc;--atlas-line:#8ca2b137;position:relative;box-sizing:border-box;height:100svh;min-height:540px;padding:92px 4.5vw 22px;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:10px;background:var(--atlas-ground);color:var(--atlas-ink);overflow:hidden;text-align:left;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
-.rain-light .photo-atlas,.App .photo-atlas { --atlas-ground:#e6ecef;--atlas-ink:#243b4d;--atlas-muted:#5a7182;--atlas-line:#405d7625; }
-.dark .App .photo-atlas { --atlas-ground:#142334;--atlas-ink:#e4eaf0;--atlas-muted:#9caebc;--atlas-line:#8ca2b137; }
+.photo-atlas { --atlas-ground:var(--rain-bg,#fdfbf7);--atlas-ink:var(--rain-text,#362d20);--atlas-muted:var(--rain-muted,#887a63);--atlas-line:color-mix(in srgb,var(--atlas-ink) 18%,transparent);position:relative;box-sizing:border-box;height:100svh;min-height:540px;padding:92px 4.5vw 22px;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:10px;background:var(--atlas-ground);color:var(--atlas-ink);overflow:hidden;text-align:left;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; }
+.dark .App .photo-atlas { --atlas-ground:var(--rain-bg,#1a1410);--atlas-ink:var(--rain-text,#faf4e7);--atlas-muted:var(--rain-muted,#cabda6); }
 .photo-atlas,.photo-atlas * { cursor:auto;box-sizing:border-box; }
 .photo-atlas button { background:none;color:inherit;border:0;font:inherit;cursor:pointer; }
-.photo-atlas button:focus-visible,.photo-atlas a:focus-visible,.photo-atlas__viewport:focus-visible { outline:2px solid #a99568;outline-offset:5px; }
+.photo-atlas button:focus-visible,.photo-atlas a:focus-visible,.photo-atlas__viewport:focus-visible { outline:2px solid var(--rain-gold,#987233);outline-offset:5px; }
 .photo-atlas__heading { position:relative;z-index:4;display:flex;align-items:baseline;justify-content:space-between;gap:20px;pointer-events:none; }
 .photo-atlas__heading h1 { margin:0;font:400 clamp(37px,4.3vw,64px)/1.08 'Cormorant Garamond',Georgia,serif;letter-spacing:-.025em; }
 .photo-atlas__heading p { margin:9px 0 0;min-height:24px;font-size:14px;color:var(--atlas-muted); }
@@ -19,8 +18,8 @@
 .atlas-photo { position:absolute;display:block;padding:0;transform:translate(-50%,-50%) rotate(var(--rotation));transition:left 800ms cubic-bezier(.2,.7,.25,1),top 800ms cubic-bezier(.2,.7,.25,1),width 800ms,height 800ms,transform 220ms;box-shadow:0 5px 18px #0002;touch-action:none; }
 .atlas-photo img { display:block;width:100%;height:100%;object-fit:contain;background:#64778618;user-select:none;pointer-events:none; }
 .atlas-photo:hover,.atlas-photo:focus-visible { z-index:8;transform:translate(-50%,-50%) rotate(0deg) scale(1.08); }
-.atlas-photo__film { position:absolute;right:7px;bottom:7px;color:white;background:#10202dbe;padding:5px 7px;font-size:12px;line-height:1; }
-.atlas-seed { position:absolute;z-index:9;transform:translate(-50%,-50%);font:400 46px/1.1 'Cormorant Garamond',Georgia,serif!important;letter-spacing:-.025em;padding:12px!important;text-shadow:0 2px 18px var(--atlas-ground),0 0 9px var(--atlas-ground); }
+.atlas-photo__film { position:absolute;right:7px;bottom:7px;color:white;background:#1a1410d8;padding:5px 7px;font-size:12px;line-height:1; }
+.atlas-seed { position:absolute;z-index:9;transform:translate(-50%,-50%);font:400 42px/1.1 'Cormorant Garamond',Georgia,serif!important;letter-spacing:-.025em;padding:5px 10px!important;background:var(--atlas-ground)!important;box-shadow:0 0 10px 3px var(--atlas-ground);text-shadow:0 2px 18px var(--atlas-ground),0 0 9px var(--atlas-ground); }
 .atlas-seed:hover { text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px; }
 .atlas-words { position:absolute;inset:0;z-index:5; }
 .atlas-word { position:absolute;transform:translate(-50%,-50%);padding:6px 9px;line-height:1.02!important;white-space:nowrap;font-family:'Cormorant Garamond',Georgia,serif!important;letter-spacing:-.03em;font-weight:400;min-height:44px; }
@@ -60,8 +59,6 @@
 .photo-atlas__empty { font-size:16px;padding:80px 0; }
 .rain-page-photography .rain-atmosphere,.rain-page-photography > canvas,.rain-page-photography .rain-page-heading,.rain-page-photography .rain-page-footer { display:none; }
 .rain-page-photography .rain-page-content { padding:0;min-height:0;animation:none; }
-.rain-study.rain-study.rain-page-photography { background:#142334; }
-.rain-light.rain-study.rain-study.rain-page-photography { background:#e6ecef; }
 .photo-atlas[data-motion="off"] .photo-atlas__world,.photo-atlas[data-motion="off"] .atlas-photo { transition:none; }
 @media(max-width:1000px) { .photo-atlas__dock { grid-template-columns:1fr auto;gap:6px 15px; }.atlas-caption { grid-column:1 / -1; }.photo-atlas__dock > nav { justify-content:flex-start; }.atlas-sheet { grid-template-columns:repeat(4,minmax(0,1fr)); } }
 @media(max-width:600px) {

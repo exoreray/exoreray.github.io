@@ -86,3 +86,16 @@ test.describe('Touch exploration',()=>{
   await expect.poll(readZoom).toBeGreaterThan(before);await expect(page.getByRole('dialog')).toHaveCount(0);await client.detach();
  });
 });
+
+test('photography uses the same page background and text palette as Works in both themes',async({page})=>{
+ await page.setViewportSize({width:1440,height:1000});
+ for(const dark of [false,true]){
+  await page.goto('/?motion=off#/works');await expect(page.getByRole('heading',{name:'Works',exact:true})).toBeVisible();
+  const target=page.getByRole('button',{name:dark?'Switch to dark theme':'Switch to light theme',exact:true});
+  if(await target.count())await target.click();
+  const reference=await page.locator('.rain-study').evaluate(e=>({bg:getComputedStyle(e).backgroundColor,text:getComputedStyle(e).color,muted:getComputedStyle(e).getPropertyValue('--rain-muted').trim()}));
+  await page.getByRole('link',{name:/Photography/}).first().click();await expect(page.locator('.photo-atlas')).toBeVisible();
+  await expect.poll(()=>page.locator('.photo-atlas').evaluate(e=>({bg:getComputedStyle(e).backgroundColor,text:getComputedStyle(e).color,muted:getComputedStyle(e).getPropertyValue('--atlas-muted').trim()}))).toEqual(reference);
+  await screenshot(page,'theme-'+(dark?'dark':'light')+'-1440');
+ }
+});

@@ -1,19 +1,26 @@
 import { isVideo } from './photographyLibrary';
 
-const GOLDEN_ANGLE = Math.PI * (3 - Math.sqrt(5));
 export const COLOR_INK = { Blue:'#598da8', Green:'#6b927c', Red:'#b87070', Orange:'#be9064', Yellow:'#b5a266', Pink:'#b9819d', Purple:'#9585ab', Brown:'#9e8871', Black:'#75828c', Gray:'#8b989e', Monochrome:'#929b9e' };
 const hash = value => [...value].reduce((h,c)=>Math.imul(h ^ c.charCodeAt(0),16777619)>>>0,2166136261);
 export const openPhotoLabel = p => 'Open' + (isVideo(p) ? ' video' : '') + ' ' + (p.title || p.alt);
 
 export function cloudLayout(photos) {
+  const gap=14,stride=244;
+  const columns=Array.from({length:Math.max(1,Math.ceil(Math.sqrt(photos.length)*1.12))},(_,i)=>({offset:i===0?0:i%2?Math.ceil(i/2):-i/2,top:0,bottom:0,empty:true}));
   return photos.map((photo,index)=>{
-    const seed=hash(photo.id), angle=index*GOLDEN_ANGLE+(seed%17)/85;
-    const radius=index<3 ? 0 : (photos.length<=24?160:260)+Math.sqrt(index-2)*(photos.length<=24?85:114);
-    const hero=[[-175,-65],[210,115],[75,-245]][index];
-    const width=index<3 ? [265,245,160][index] : 108+seed%65;
-    const ratio=(photo.atlasHeight || photo.height || 100)/(photo.atlasWidth || photo.width || 100);
-    const height=Math.min(width*ratio,index<3?250:204);
-    return {photo,x:hero?hero[0]:Math.cos(angle)*radius*1.12,y:hero?hero[1]:Math.sin(angle)*radius*.85,width:Math.max(76,height/ratio),height,rotation:((seed%25)-12)/5};
+    const seed=hash(photo.id),width=index<3?232:208+seed%17;
+    const ratio=(photo.atlasHeight || photo.height || 100)/(photo.atlasWidth || photo.width || 100),height=width*ratio;
+    let chosen;
+    for(const column of columns){
+      for(const direction of column.empty?['center']:['top','bottom']){
+        const y=direction==='center'?0:direction==='top'?column.top-gap-height/2:column.bottom+gap+height/2;
+        const x=column.offset*stride+Math.sin(y/380)*4;
+        const score=x*x*.72+y*y*1.15;
+        if(!chosen || score<chosen.score)chosen={column,x,y,score};
+      }
+    }
+    const {column,x,y}=chosen;column.top=Math.min(column.top,y-height/2);column.bottom=Math.max(column.bottom,y+height/2);column.empty=false;
+    return {photo,x,y,width,height,rotation:((seed%17)-8)/10};
   });
 }
 
@@ -23,11 +30,11 @@ export function layoutBounds(nodes) {
 }
 
 export function fitCamera(bounds,size,padding=50) {
-  const scale=Math.max(.12,Math.min(1.2,(size.width-padding*2)/(bounds.maxX-bounds.minX),(size.height-padding*2)/(bounds.maxY-bounds.minY)));
+  const scale=Math.max(.04,Math.min(1.2,(size.width-padding*2)/(bounds.maxX-bounds.minX),(size.height-padding*2)/(bounds.maxY-bounds.minY)));
   return {scale,x:size.width/2-(bounds.minX+bounds.maxX)/2*scale,y:size.height/2-(bounds.minY+bounds.maxY)/2*scale};
 }
 export function zoomCamera(camera,factor,point) {
-  const scale=Math.max(.12,Math.min(2.4,camera.scale*factor)),ratio=scale/camera.scale;
+  const scale=Math.max(.04,Math.min(2.4,camera.scale*factor)),ratio=scale/camera.scale;
   return {scale,x:point.x-(point.x-camera.x)*ratio,y:point.y-(point.y-camera.y)*ratio};
 }
 

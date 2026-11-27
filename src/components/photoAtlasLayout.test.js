@@ -24,3 +24,12 @@ test('word and year explorations select actual work metadata, preserving unknown
  const p={date:'2024-03-24',subjects:['Water'],colors:['Blue'],vibes:['Calm']};
  expect(matchesFocus(p,{kind:'year',value:'2024'})).toBe(true);expect(matchesFocus(p,{kind:'date',value:'2024-03-25'})).toBe(false);expect(matchesFocus(p,{kind:'colors',value:'Blue'})).toBe(true);expect(matchesFocus(p,{kind:'timeOfDay',value:'Unrecorded'})).toBe(true);
 });
+
+test('prints form a dense, cohesive collage rather than an outward scattered field',()=>{
+ const nodes=cloudLayout(photographs),b=layoutBounds(nodes),area=nodes.reduce((total,n)=>total+n.width*n.height,0);
+ expect(area/((b.maxX-b.minX)*(b.maxY-b.minY))).toBeGreaterThan(.55);
+ expect(nodes[0].x).toBe(0);expect(nodes[0].y).toBe(0);
+ for(const n of nodes)expect(n.width/n.height).toBeCloseTo((n.photo.atlasWidth || n.photo.width)/(n.photo.atlasHeight || n.photo.height),6);
+ const size={width:358,height:500},camera=fitCamera(b,size,28);
+ expect(camera.x+b.minX*camera.scale).toBeGreaterThanOrEqual(27);expect(camera.x+b.maxX*camera.scale).toBeLessThanOrEqual(331);
+});
